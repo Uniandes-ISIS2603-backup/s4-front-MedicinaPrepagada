@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {PacienteModule} from './paciente/paciente.module';
+import {MedicoModule} from './medico/medico.module';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    PacienteModule
+    PacienteModule,
+    MedicoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
