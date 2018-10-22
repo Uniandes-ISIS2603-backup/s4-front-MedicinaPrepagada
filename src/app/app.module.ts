@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {PacienteModule} from './paciente/paciente.module';
+import {
 
 import { AppComponent } from './app.component';
 import { MedicoComponent } from './medico/medico.component';
