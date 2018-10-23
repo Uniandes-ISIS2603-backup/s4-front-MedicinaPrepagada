@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {PacienteModule} from './paciente/paciente.module';
 import {MedicoModule} from './medico/medico.module';
+import {MedicamentoModule} from './medicamento/medicamento.module';
 
 
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import {FormsModule} from '@angular/forms';
     
     PacienteModule,
     MedicoModule,
+    MedicamentoModule,
     FormsModule
 
   ],
