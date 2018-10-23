@@ -7,12 +7,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdministradorService } from './administrador.service';
-import { AdministradorListComponent } from '..administrador/administrador-list/administrador-list.component'
+import { AdministradorListComponent } from '../administrador/administrador-list/administrador-list.component'
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '../app-routing/app-routing.module';
+import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -20,8 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         AppRoutingModule,
         HttpClientModule,
         CommonModule,
-        FormsModule,
-        NgbModule
+        FormsModule
             ],
   declarations: [AdministradorListComponent],
   providers: [AdministradorService],
