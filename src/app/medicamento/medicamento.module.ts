@@ -1,14 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MedicamentoListComponent } from './medicamento-list/medicamento-list.component';
+import {MedicamentoService} from './medicamento.service';
+import { MedicamentoListComponent } from '../medicamento/medicamento-list/medicamento-list.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../routing-module/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   declarations: [MedicamentoListComponent],
-  exports:[MedicamentoListComponent],
-    providers: [MedicamentoService]
-
+  providers:[MedicamentoService],
+  exports: [MedicamentoListComponent],
+  bootstrap: [MedicamentoListComponent]
 })
 export class MedicamentoModule { }
