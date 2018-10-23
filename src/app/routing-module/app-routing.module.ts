@@ -7,6 +7,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {PacienteListComponent} from '../paciente/paciente-list/paciente-list.component';
+import {PacienteDetailComponent} from '../paciente/paciente-detail/paciente-detail.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,11 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : PacienteListComponent
+            },
+            {
+                path: ':id',
+                component: PacienteDetailComponent
+                
             }
         ]
     }
@@ -25,7 +31,7 @@ const routes: Routes = [
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
     ],
     exports: [RouterModule],
     declarations: []
