@@ -4,7 +4,9 @@ import { HttpClient } from '@angular/common/http';
 
 import { Medicamento } from './medicamento';
 
-const medicamentos = '/medicamentos';
+const medicamentos = '/medicamentos.json';
+
+const API_URL = '../../assets/';
 
 
 /**
