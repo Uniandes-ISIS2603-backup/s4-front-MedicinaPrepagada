@@ -1,15 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { HttpClientModule } from '@angular/common/http';
+
+import {PacienteModule} from './paciente/paciente.module';
+import {MedicoModule} from './medico/medico.module';
+
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing-module/app-routing.module';
-import {PacienteModule} from './paciente/paciente.module';
+
 import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -17,7 +23,9 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     
     PacienteModule,
+    MedicoModule,
     FormsModule
+
   ],
   bootstrap: [AppComponent]
 })
