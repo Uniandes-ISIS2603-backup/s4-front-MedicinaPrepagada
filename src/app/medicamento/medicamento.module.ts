@@ -7,6 +7,8 @@ import { MedicamentoListComponent } from './medicamento-list/medicamento-list.co
     CommonModule
   ],
   declarations: [MedicamentoListComponent],
-  exports:[MedicamentoListComponent]
+  exports:[MedicamentoListComponent],
+    providers: [MedicamentoService]
+
 })
 export class MedicamentoModule { }
