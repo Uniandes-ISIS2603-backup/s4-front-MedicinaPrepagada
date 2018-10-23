@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {PacienteModule} from './paciente/paciente.module';
 import {MedicoModule} from './medico/medico.module';
+import {MedicamentoModule} from './medicamento/medicamento.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -27,6 +28,7 @@ import {FormsModule} from '@angular/forms';
     
     PacienteModule,
     MedicoModule,
+    MedicamentoModule,
     FormsModule,
     BrowserAnimationsModule,
       ToastrModule.forRoot() 

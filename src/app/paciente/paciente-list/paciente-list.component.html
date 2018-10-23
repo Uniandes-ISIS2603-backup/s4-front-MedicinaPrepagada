@@ -10,9 +10,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let paciente of pacientes">
+                <tr *ngFor ="let paciente of pacientes" routerLink="/pacientes/{{paciente.id}}">
                     <td><span>{{paciente.id}}</span></td>
-                    <td routerLink="/pacientes/{{paciente.id}}">{{paciente.nombre}}</td>
+                    <td>{{paciente.nombre}}</td>
                     <td>{{paciente.documentoIdentidad}}</td>
                 </tr>
             </tbody>

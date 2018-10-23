@@ -1,3 +1,29 @@
-<p>
-  medicamento-list works!
-</p>
+<div style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Descripción</th>
+                    <th>Elaborado por</th>
+                    <th>Costo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let medicamento of medicamentos">
+                    <td><span>{{medicamento.id}}</span></td>
+                    <td>{{medicamento.nombre}}</td>
+                    <td>{{medicamento.cantidad}}</td>
+                    <td>{{medicamento.descripcion}}</td>
+                    <td>{{medicamento.elaboradoPor}}</td>
+                    <td>{{medicamento.costo}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
