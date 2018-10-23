@@ -7,7 +7,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AdministradorService} from '../administrador.service';
 import {Administrador} from '../administrador';
-import { AdministradorService } from '../administrador.service';
 
 @Component({
   selector: 'app-administrador-list',
