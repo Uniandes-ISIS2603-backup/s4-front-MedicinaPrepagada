@@ -1,12 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PacienteListComponent } from '../Paciente/paciente-list/paciente-list.component';
+import {PacienteService} from './paciente.service';
+import { PacienteListComponent } from '../paciente/paciente-list/paciente-list.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../routing-module/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   declarations: [PacienteListComponent],
-  exports: [PacienteListComponent]
+  providers:[PacienteService],
+  exports: [PacienteListComponent],
+  bootstrap: [PacienteListComponent]
 })
 export class PacienteModule { }

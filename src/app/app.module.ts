@@ -1,9 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import {PacienteModule} from './paciente/paciente.module';
 import {MedicoModule} from './medico/medico.module';
 
+
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './routing-module/app-routing.module';
+
+import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -11,10 +19,14 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    
     PacienteModule,
-    MedicoModule
+    MedicoModule,
+    FormsModule
+
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
