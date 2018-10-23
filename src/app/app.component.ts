@@ -6,11 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string;
-  
-  ngOnInit() : void {
-      this.title = "Medisistemas";
-  }
-  
-  constructor() {}
+  title = 's4-front-MedicinaPrepagada';
 }
