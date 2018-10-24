@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    BrowserModule,
+        BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         CommonModule,
@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
             ],
   declarations: [AdministradorListComponent],
   providers: [AdministradorService],
-  exports:[AdministradorListComponent]
+  exports:[AdministradorListComponent],
+  bootstrap: [AdministradorListComponent]
 })
 export class AdministradorModule { }
