@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="container-fluid">
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Login</th>
+                    <th>Password</th>
+                    <th>Permisos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let administrador of administradores">
+                    <td><span>{{administrador.id}}</span></td>
+                    <td>{{administrador.login}}</td>
+                    <td>{{administrador.password}}</td>
+                    <td>{{administrador.permisos}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

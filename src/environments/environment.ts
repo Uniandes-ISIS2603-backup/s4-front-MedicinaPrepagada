@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apirURL : 'http://localhost:8080/s4_MedicinaPrepagada-api/api'
 };
 
 /*
