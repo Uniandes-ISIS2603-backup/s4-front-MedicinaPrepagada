@@ -1,3 +1,45 @@
-<p>
-  medico-list works!
-</p>
+<div id="alertPanel" style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+<!--                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Create an editorial</button>-->
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th>Documento Médico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let medico of medicos'>
+                        <td>
+                            {{medico.nombre}}
+                        </td>
+                        <td>
+                            {{medico.telefono}}
+                        </td>
+                        <td>
+                            {{medico.correo}}
+                        </td>
+                        <td>
+                            {{medico.documentoMedico}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-8">
+<!--            <app-editorial-create (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"></app-editorial-create>
+            <app-editorial-edit [editorial_id]="edit_editorial_id" (cancel)="hideEditEditorial()" (update)="ngOnInit()"
+                *ngIf="showEdit"></app-editorial-edit>-->
+        </div>
+    </div>
+</div>
