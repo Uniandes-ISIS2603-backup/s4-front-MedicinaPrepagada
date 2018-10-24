@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Medico} from './medico.model';
+import {Medico} from '../medico';
+import {MedicoService} from '../medico.service'
 
 @Component({
   selector: 'app-medico-list',
@@ -8,14 +9,17 @@ import {Medico} from './medico.model';
   styleUrls: ['./medico-list.component.css']
 })
 export class MedicoListComponent implements OnInit {
-  medicos: Medico[];
-  constructor() {
-    this.medicos = [];
-    var medico = new Medico('David', 4234234, 'david@gmail.com', 123456789);
-    this.medicos.push(medico);
-  }
-  
+  constructor(private medicoService: MedicoService) { }
+    
+    medicos: Medico[];
+    
+    getMedicos(): void {
+        this.medicoService.getMedicos()
+            .subscribe(medicos => this.medicos = medicos);
+    }
+
   ngOnInit() {
+      this.getMedicos();
   }
 
 }
