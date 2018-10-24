@@ -12,17 +12,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {AdministradorDetailComponent} from './administrador-detail/administrador-detail.component';
 
 @NgModule({
   imports: [
-    BrowserModule,
+        BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         CommonModule,
         FormsModule
             ],
-  declarations: [AdministradorListComponent],
+  declarations: [AdministradorListComponent, AdministradorDetailComponent],
   providers: [AdministradorService],
-  exports:[AdministradorListComponent]
+  exports:[AdministradorListComponent, AdministradorDetailComponent],
+  bootstrap: [AdministradorListComponent, AdministradorDetailComponent]
 })
 export class AdministradorModule { }

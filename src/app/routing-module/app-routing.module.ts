@@ -10,6 +10,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {PacienteListComponent} from '../paciente/paciente-list/paciente-list.component';
 import {PacienteDetailComponent} from '../paciente/paciente-detail/paciente-detail.component';
 import {MedicamentoListComponent} from '../medicamento/medicamento-list/medicamento-list.component';
+import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
+import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 
 
 const routes: Routes = [
@@ -36,7 +38,22 @@ const routes: Routes = [
                 component : MedicamentoListComponent
             }
         ]
+    },
+    {
+        path: 'administradores',
+        children: [
+            {
+                path: 'list',
+                component : AdministradorListComponent
+            },
+            {
+                path: ':id',
+                component: AdministradorDetailComponent
+                
+            }
+        ]
     }
+    
 ]
 
 @NgModule({

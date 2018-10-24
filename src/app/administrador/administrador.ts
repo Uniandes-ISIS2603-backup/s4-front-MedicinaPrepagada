@@ -11,4 +11,6 @@ export class Administrador
     login: string;
     
     password: string;
+    
+    permisos: string; 
 }

@@ -9,11 +9,10 @@ import {AdministradorService} from '../administrador.service';
 import {Administrador} from '../administrador';
 
 @Component({
-  selector: 'app-administrador-list',
+  selector: 'app-administrador',
   templateUrl: './administrador-list.component.html',
   styleUrls: ['./administrador-list.component.css']
 })
-
 
 export class AdministradorListComponent implements OnInit 
 {
