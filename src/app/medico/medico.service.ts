@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 import {Injectable} from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable , throwError} from 'rxjs';
 
 import {Medico} from './Medico';
 import {HttpClient} from '@angular/common/http';

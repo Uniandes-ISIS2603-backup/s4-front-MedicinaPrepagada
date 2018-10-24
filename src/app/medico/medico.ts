@@ -5,18 +5,18 @@
  */
 export class Medico {
 
-  private idMedico: number;
-  private login: string;
-  private contrasena: string;
-  private tipoUsuario: string;
-  private documentoIdentidad: number;
-  private nombre: string;
-  private telefono: number;
-  private correo: string;
-  private documentoMedico: number;
-  private firma: string;
-  private descripcion: string;
-  private especialidad: string;
+  idMedico: number;
+  login: string;
+  contrasena: string;
+  tipoUsuario: string;
+  documentoIdentidad: number;
+  nombre: string;
+  telefono: number;
+  correo: string;
+  documentoMedico: number;
+  firma: string;
+  descripcion: string;
+  especialidad: string;
   
   constructor(idMedico: number,login: string,contrasena: string,tipoUsuario:string,documentoIdentidad: number, nombre: string, telefono: number, correo: string, documentoMedico: number,firma:string, descripcion: string, especialidad: string) {
     this.idMedico = idMedico;
