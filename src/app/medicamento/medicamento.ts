@@ -13,10 +13,6 @@ export class Medicamento {
     */
     nombre: string;
 
-    /**
-    * The medicamento's descripcion
-    */
-    descripcion: string;
     
     /**
     * The medicamento's cantidad

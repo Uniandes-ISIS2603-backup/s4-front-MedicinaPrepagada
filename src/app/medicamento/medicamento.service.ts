@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Medicamento } from './medicamento';
+import { MedicamentoDetail } from './medicamento-detail';
+
 import {environment} from '../../environments/environment'; 
 
 
@@ -22,10 +24,18 @@ export class MedicamentoService {
 
     /**
     * Returns the Observable object containing the list of medicamentos retrieved from the API
-    * @returns The list of medicamentos in real time
+    * @returns The list of medicamentos in real time from the back app
     */
     getMedicamentos(): Observable<Medicamento[]> {
         return this.http.get<Medicamento[]>(API_URL + medicamentos);
+    }
+    
+     /**
+    * Returns the Observable object containing the medicamento retrieved from the API
+    * @returns The medicamento
+    */
+    getMedicamentoDetail(medicamentoId): Observable<MedicamentoDetail> {
+        return this.http.get<MedicamentoDetail>(API_URL + medicamentos + '/' + medicamentoId);
     }
 }
 
