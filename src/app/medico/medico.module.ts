@@ -18,7 +18,7 @@ import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
   ],
   declarations: [MedicoListComponent, MedicoDetailComponent],
   providers:[MedicoService],
-  exports:[MedicoListComponent],
-  bootstrap: [MedicoListComponent]
+  exports:[MedicoListComponent, MedicoDetailComponent],
+  bootstrap: [MedicoListComponent, MedicoDetailComponent]
 })
 export class MedicoModule { }

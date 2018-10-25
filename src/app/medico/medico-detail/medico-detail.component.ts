@@ -20,10 +20,10 @@ export class MedicoDetailComponent implements OnInit {
         
     medico: Medico;
     
-    idMedico: number;
+    idMed: number;
     
-    getPaciente(): void {
-        this.medicoService.getMedico(this.idMedico)
+    getMedico(): void {
+        this.medicoService.getMedico(this.idMed)
             .subscribe(medico => {
             this.medico = medico}, err => {
                 this.toastrservice.error(err, "error");
@@ -33,7 +33,7 @@ export class MedicoDetailComponent implements OnInit {
     }
 
   ngOnInit() {
-      this.idMedico = +this.route.snapshot.paramMap.get('id');
+      this.idMed = +this.route.snapshot.paramMap.get('id');
       this.medico = new Medico;
       this.getMedico();
   }
