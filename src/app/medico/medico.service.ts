@@ -20,5 +20,9 @@ export class MedicoService{
     getMedicos() : Observable<Medico[]>{
         return this.http.get<Medico[]> (API_URL + medicos);
     }
+    
+    getPaciente(pacienteId): Observable<Paciente>{
+        return this.http.get<Paciente>(API_URL + pacienteDetail+ '/' + pacienteId + '.json').catch(err => this.handleError(err));
+    }
 }
 

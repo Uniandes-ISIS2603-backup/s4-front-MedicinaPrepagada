@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {ActivatedRoute} from '@angular/router/';
+import {Medico} from '../medico';
+import {ToastrService} from 'ngx-toastr';
+
+import {MedicoService} from '../medico.service';
 
 @Component({
   selector: 'app-medico-detail',
@@ -7,9 +12,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicoDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+        private medicoService: MedicoService,
+        private route: ActivatedRoute,
+        private toastrservice: ToastrService
+        ) {}
+        
+    medico: Medico;
+    
+    idMedico: number;
+    
+    getPaciente(): void {
+        this.medicoService.getMedico(this.idMedico)
+            .subscribe(medico => {
+            this.medico = medico}, err => {
+                this.toastrservice.error(err, "error");
+            }
+            
+        );
+    }
 
   ngOnInit() {
+      this.medicoId = +this.route.snapshot.paramMap.get('id');
+      this.medico = new Medico;
+      this.getMedico();
   }
 
 }
