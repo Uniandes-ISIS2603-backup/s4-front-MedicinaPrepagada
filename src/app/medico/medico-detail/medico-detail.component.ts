@@ -33,7 +33,7 @@ export class MedicoDetailComponent implements OnInit {
     }
 
   ngOnInit() {
-      this.medicoId = +this.route.snapshot.paramMap.get('id');
+      this.idMedico = +this.route.snapshot.paramMap.get('id');
       this.medico = new Medico;
       this.getMedico();
   }
