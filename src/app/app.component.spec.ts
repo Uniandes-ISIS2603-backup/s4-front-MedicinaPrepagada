@@ -2,9 +2,10 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {PacienteListComponent} from './paciente/paciente-list/paciente-list.component';
 import {MedicamentoListComponent} from './medicamento/medicamento-list/medicamento-list.component';
-import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
 import {SedeListComponent} from './sede/sede-list/sede-list.component';
 import {MedicoListComponent} from './medico/medico-list/medico-list.component';
+import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
+
 
 
 
@@ -20,10 +21,8 @@ describe('AppComponent', () => {
         LaboratorioListComponent,
         AdministradorListComponent,
         SedeListComponent,
-        AdministradorListComponent,
         MedicoListComponent
         
-
       ],
     }).compileComponents();
   }));
