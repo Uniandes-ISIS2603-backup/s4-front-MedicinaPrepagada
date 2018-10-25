@@ -10,7 +10,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {PacienteListComponent} from '../paciente/paciente-list/paciente-list.component';
 import {PacienteDetailComponent} from '../paciente/paciente-detail/paciente-detail.component';
 import {MedicamentoListComponent} from '../medicamento/medicamento-list/medicamento-list.component';
+import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
+import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
+import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
+import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
+
+
 
 
 const routes: Routes = [
@@ -39,6 +45,20 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'administradores',
+        children: [
+            {
+                path: 'list',
+                component : AdministradorListComponent
+            },
+            {
+                path: ':id',
+                component: AdministradorDetailComponent
+                
+            }
+        ]
+    },
+    {
         path: 'sedes',
         children: [
             {
@@ -46,7 +66,22 @@ const routes: Routes = [
                 component : SedeListComponent
             }
         ]
+    },
+    {
+        path: 'medicos',
+        children: [
+            {
+                path: 'list',
+                component : MedicoListComponent
+            },
+            {
+                path: ':id',
+                component: MedicoDetailComponent
+                
+            }
+        ]
     }
+    
 ]
 
 @NgModule({

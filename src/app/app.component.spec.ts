@@ -4,6 +4,7 @@ import {PacienteListComponent} from './paciente/paciente-list/paciente-list.comp
 import {MedicamentoListComponent} from './medicamento/medicamento-list/medicamento-list.component';
 import {SedeListComponent} from './sede/sede-list/sede-list.component';
 
+import {AdministradorListComponent} from './administrador/administrador-list/administrador-list.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -12,7 +13,8 @@ describe('AppComponent', () => {
         AppComponent,
         PacienteListComponent,
         MedicamentoListComponent,
-        SedeListComponent
+        SedeListComponent,
+        AdministradorListComponent
       ],
     }).compileComponents();
   }));
