@@ -11,8 +11,8 @@ import {Paciente} from './paciente';
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 
-const API_URL = '../../assets/';
-const pacientes = '/pacientes.json';
+const API_URL = environment.apirURL;
+const pacientes = '/pacientes';
 const pacienteDetail = '/pacienteDetails';
 
 @Injectable()
@@ -25,7 +25,7 @@ export class PacienteService{
     }
     
     getPaciente(pacienteId): Observable<Paciente>{
-        return this.http.get<Paciente>(API_URL + pacienteDetail+ '/' + pacienteId + '.json').catch(err => this.handleError(err));
+        return this.http.get<Paciente>(API_URL + pacientes+ '/' + pacienteId ).catch(err => this.handleError(err));
     }
     
     
