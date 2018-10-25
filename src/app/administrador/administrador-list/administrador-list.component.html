@@ -13,16 +13,12 @@ and open the template in the editor.
                 <tr>
                     <th>Id</th>
                     <th>Login</th>
-                    <th>Password</th>
-                    <th>Permisos</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let administrador of administradores">
+                <tr *ngFor ="let administrador of administradores" routerLink="/administradores/{{administrador.id}}">
                     <td><span>{{administrador.id}}</span></td>
                     <td>{{administrador.login}}</td>
-                    <td>{{administrador.password}}</td>
-                    <td>{{administrador.permisos}}</td>
                 </tr>
             </tbody>
         </table>
