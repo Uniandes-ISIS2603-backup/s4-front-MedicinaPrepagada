@@ -13,6 +13,11 @@ import {MedicamentoListComponent} from '../medicamento/medicamento-list/medicame
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
+import {SedeListComponent} from '../sede/sede-list/sede-list.component';
+import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
+import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
+
+
 
 
 const routes: Routes = [
@@ -59,6 +64,29 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: AdministradorDetailComponent
+                
+            }
+        ]
+    },
+    {
+        path: 'sedes',
+        children: [
+            {
+                path: 'list',
+                component : SedeListComponent
+            }
+        ]
+    },
+    {
+        path: 'medicos',
+        children: [
+            {
+                path: 'list',
+                component : MedicoListComponent
+            },
+            {
+                path: ':id',
+                component: MedicoDetailComponent
                 
             }
         ]

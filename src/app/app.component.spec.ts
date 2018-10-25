@@ -3,6 +3,11 @@ import { AppComponent } from './app.component';
 import {PacienteListComponent} from './paciente/paciente-list/paciente-list.component';
 import {MedicamentoListComponent} from './medicamento/medicamento-list/medicamento-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
+import {SedeListComponent} from './sede/sede-list/sede-list.component';
+import {MedicoListComponent} from './medico/medico-list/medico-list.component';
+
+
+
 import {AdministradorListComponent} from './administrador/administrador-list/administrador-list.component';
 
 describe('AppComponent', () => {
@@ -13,7 +18,12 @@ describe('AppComponent', () => {
         PacienteListComponent,
         MedicamentoListComponent,
         LaboratorioListComponent,
-        AdministradorListComponent
+        AdministradorListComponent,
+        SedeListComponent,
+        AdministradorListComponent,
+        MedicoListComponent
+        
+
       ],
     }).compileComponents();
   }));

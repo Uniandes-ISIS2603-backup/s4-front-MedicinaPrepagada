@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {PacienteModule} from './paciente/paciente.module';
 import {MedicoModule} from './medico/medico.module';
 import {MedicamentoModule} from './medicamento/medicamento.module';
+import {SedeModule} from './sede/sede.module';
 import {LaboratorioModule} from './laboratorio/laboratorio.module';
 import {AdministradorModule} from './administrador/administrador.module';
 
@@ -32,6 +33,7 @@ import {FormsModule} from '@angular/forms';
     MedicoModule,
     LaboratorioModule,
     MedicamentoModule,
+    SedeModule,
     AdministradorModule,
     FormsModule,
     BrowserAnimationsModule,
