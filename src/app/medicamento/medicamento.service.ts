@@ -3,12 +3,11 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Medicamento } from './medicamento';
-
-const medicamentos = '/medicamentos.json';
-
-const API_URL = '../../assets/';
+import {environment} from '../../environments/environment'; 
 
 
+const API_URL = "http://localhost:8080/s4_MedicinaPrepagada-api/api";
+const medicamentos = '/medicamentos';
 /**
 * The service provider for everything related to medicamentos
 */
@@ -29,6 +28,7 @@ export class MedicamentoService {
         return this.http.get<Medicamento[]>(API_URL + medicamentos);
     }
 }
+
 
 
 
