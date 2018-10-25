@@ -1,0 +1,36 @@
+
+  <div style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Tipo de Sede</th>
+                    <th>Descripcion</th>
+                    <th>Longitud</th>
+                    <th>Latitud</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let sede of sedes" >
+                    <td><span id ="idSede">{{sede.id}}</span></td>
+                    <td>{{sede.nombre}}</td>
+                    <td>{{sede.direccion}}</td>
+                    <td>{{sede.tipoSede}}</td>
+                    <td>{{sede.descripcion}}</td>
+                    <td>{{sede.longitud}}</td>
+                    <td>{{sede.latitud}}</td>
+                    <td>{{sede.telefono}}</td>
+                    <td>{{sede.correo}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
