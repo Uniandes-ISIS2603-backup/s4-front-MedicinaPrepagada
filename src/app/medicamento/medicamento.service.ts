@@ -22,7 +22,7 @@ export class MedicamentoService {
 
     /**
     * Returns the Observable object containing the list of medicamentos retrieved from the API
-    * @returns The list of medicamentos in real time
+    * @returns The list of medicamentos in real time from the back app
     */
     getMedicamentos(): Observable<Medicamento[]> {
         return this.http.get<Medicamento[]>(API_URL + medicamentos);
