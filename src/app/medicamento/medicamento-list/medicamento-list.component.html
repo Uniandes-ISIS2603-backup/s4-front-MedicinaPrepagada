@@ -1,4 +1,4 @@
-<div style="text-align: center"></div>
+<!--<div style="text-align: center"></div>
 <div class="container-fluid">
     <div class="col-md-4">
         <table class="table table-striped">
@@ -22,6 +22,25 @@
                     <td>{{medicamento.elaboradoPor}}</td>
                     <td>{{medicamento.costo}}</td>
                     
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+
+<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let medicamento of medicamentos">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/medicamentos/{{medicamento.id}}">{{medicamento.nombre}}</dd>
+                    </td>
                 </tr>
             </tbody>
         </table>
