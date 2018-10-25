@@ -12,7 +12,6 @@ import {AdministradorModule} from './administrador/administrador.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing-module/app-routing.module';
 
