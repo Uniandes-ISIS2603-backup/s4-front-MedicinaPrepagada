@@ -1,0 +1,20 @@
+<div style="text-align: center">
+    <div class="container-fluid">
+        <div class="col-md-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor ="let laboratorio of laboratorios">
+                        <td><span>{{laboratorio.id}}</span></td>
+                        <td>{{laboratorio.nombre}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+    </div>
+</div>
