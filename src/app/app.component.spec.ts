@@ -2,6 +2,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {PacienteListComponent} from './paciente/paciente-list/paciente-list.component';
 import {MedicamentoListComponent} from './medicamento/medicamento-list/medicamento-list.component';
+import {SedeListComponent} from './sede/sede-list/sede-list.component';
+
 import {AdministradorListComponent} from './administrador/administrador-list/administrador-list.component';
 
 describe('AppComponent', () => {
@@ -11,6 +13,7 @@ describe('AppComponent', () => {
         AppComponent,
         PacienteListComponent,
         MedicamentoListComponent,
+        SedeListComponent,
         AdministradorListComponent
       ],
     }).compileComponents();
