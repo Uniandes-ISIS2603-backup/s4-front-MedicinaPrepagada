@@ -1,7 +1,17 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import { Medicamento } from './medicamento';
+
+/**
+* This class represents a medicamento
+* It contains all the information relevant to the medicamento
+*/
+export class MedicamentoDetail extends Medicamento {
+   
+/**
+    * The medicamento's descripcion
+    */
+    descripcion: string;
+        
+    
+}
 
 
