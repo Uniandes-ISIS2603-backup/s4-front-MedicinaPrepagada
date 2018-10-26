@@ -5,12 +5,15 @@
  */
 import {Injectable} from '@angular/core';
 import { Observable , throwError} from 'rxjs';
+import {environment} from '../../environments/environment'; 
 
-import {Medico} from './Medico';
+import {Medico} from './medico';
 import {HttpClient} from '@angular/common/http';
+import 'rxjs/add/operator/catch';
 
 const API_URL = '../../assets/';
 const medicos = '/medicos.json';
+const medicoDetail = '/medicoDetails';
 
 @Injectable()
 export class MedicoService{
@@ -19,6 +22,14 @@ export class MedicoService{
     
     getMedicos() : Observable<Medico[]>{
         return this.http.get<Medico[]> (API_URL + medicos);
+    }
+    
+    getMedico(idMedico): Observable<Medico>{
+        return this.http.get<Medico>(API_URL + medicoDetail+ '/' + idMedico + '.json').catch(err => this.handleError(err));
+    }
+    
+     private handleError(error: any){
+        return throwError(error.error.errorMessage);
     }
 }
 

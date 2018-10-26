@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let medico of medicos'>
+                    <tr *ngFor="let medico of medicos" routerLink="/medicos/{{medico.id}}">
                         <td>
                             {{medico.nombre}}
                         </td>
