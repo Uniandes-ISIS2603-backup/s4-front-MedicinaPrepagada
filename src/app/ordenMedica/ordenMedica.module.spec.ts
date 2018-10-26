@@ -4,4 +4,17 @@
  * and open the template in the editor.
  */
 
+import {OrdenMedicaModule} from './ordenMedica.module';
+
+describe('OrdenMedicaModule', () => {
+    let ordenMedicaModule: OrdenMedicaModule;
+
+    beforeEach(() => {
+        ordenMedicaModule = new OrdenMedicaModule();
+    });
+
+    it('should create an instance', () => {
+        expect(ordenMedicaModule).toBeTruthy();
+    });
+});
 

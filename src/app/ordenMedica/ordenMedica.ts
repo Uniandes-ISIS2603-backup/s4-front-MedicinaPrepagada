@@ -5,3 +5,16 @@
  */
 
 
+export class OrdenMedica
+{
+    id: number;
+
+    firmaMedico: string;
+    
+    fechaExpedicion: string;
+    
+    comentarios: string; 
+    
+    validaHasta: string; 
+}
+
