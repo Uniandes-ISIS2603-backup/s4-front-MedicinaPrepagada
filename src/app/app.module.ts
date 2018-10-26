@@ -18,6 +18,7 @@ import { AppRoutingModule } from './routing-module/app-routing.module';
 
 import {FormsModule} from '@angular/forms';
 import {HistoriaClinicaModule} from './historiaClinica/historiaClinica.module';
+import {OrdenMedicaModule} from './ordenMedica/ordenMedica.module';
 
 
 
@@ -37,6 +38,7 @@ import {HistoriaClinicaModule} from './historiaClinica/historiaClinica.module';
     SedeModule,
     AdministradorModule,
     HistoriaClinicaModule,
+    OrdenMedicaModule,
     FormsModule,
     BrowserAnimationsModule,
       ToastrModule.forRoot() 
