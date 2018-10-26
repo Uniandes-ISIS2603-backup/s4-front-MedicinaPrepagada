@@ -17,6 +17,10 @@ import {AdministradorDetailComponent} from '../administrador/administrador-detai
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
+import {HistoriaClinicaListComponent} from '../historiaClinica/historiaClinica-list/historiaClinica-list.component';
+import {HistoriaClinicaDetailComponent} from '../historiaClinica/historiaClinica-detail/historiaClinica-detail.component';
+import {OrdenMedicaListComponent} from '../ordenMedica/ordenMedica-list/ordenMedica-list.component';
+import {OrdenMedicaDetailComponent} from '../ordenMedica/ordenMedica-detail/ordenMedica-detail.component';
 
 
 
@@ -93,6 +97,34 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: MedicoDetailComponent
+                
+            }
+        ]
+    },
+    {
+        path: 'historiasClinicas',
+        children: [
+            {
+                path: 'list',
+                component : HistoriaClinicaListComponent
+            },
+            {
+                path: ':id',
+                component: HistoriaClinicaDetailComponent
+                
+            }
+        ]
+    },
+    {
+        path: 'ordenesMedicas',
+        children: [
+            {
+                path: 'list',
+                component : OrdenMedicaListComponent
+            },
+            {
+                path: ':id',
+                component: OrdenMedicaDetailComponent
                 
             }
         ]

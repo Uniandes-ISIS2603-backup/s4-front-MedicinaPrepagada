@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<div style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Descripcion</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let historiaClinica of historiasClinicas" routerLink="/historiasClinicas/{{historiaClinica.id}}">
+                    <td><span>{{historiaClinica.id}}</span></td>
+                    <td>{{historiaClinica.descripcion}}</td>
+                    <td>{{historiaClinica.fecha}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+[{"id":1,"fecha":"10/12/2017","descripcion":"Gripa","alergias":"Ninguna","peso":87,"estatura":184,"fuma":"Si","bebe":"Si","operaciones":"Ninguna"},
+{"id":2,"fecha":"22/11/2017","descripcion":"Dolor de cabeza","alergias":"Ninguna","peso":49,"estatura":184,"fuma":"Si","bebe":"Si","operaciones":"Ninguna"},
+{"id":3,"fecha":"05/08/2018","descripcion":"Dolor de estomago","alergias":"Mani","peso":59,"estatura":193,"fuma":"No","bebe":"Si","operaciones":"Ninguna"},
+{"id":4,"fecha":"19/12/2017","descripcion":"Gripa","alergias":"Mani, Mariscos","peso":99,"estatura":153,"fuma":"No","bebe":"No","operaciones":"Corazon"},
+{"id":5,"fecha":"07/04/2018","descripcion":"Accidente automovil","alergias":"Ninguna","peso":60,"estatura":180,"fuma":"No","bebe":"No","operaciones":"Ninguna"},
+{"id":6,"fecha":"08/12/2017","descripcion":"Control","alergias":"Ninguna","peso":77,"estatura":151,"fuma":"No","bebe":"Si","operaciones":"Fractura brazo"},
+{"id":7,"fecha":"12/10/2018","descripcion":"Migraña","alergias":"Mani","peso":49,"estatura":201,"fuma":"No","bebe":"Si","operaciones":"Ninguna"},
+{"id":8,"fecha":"22/02/2018","descripcion":"Gripa","alergias":"Ninguna","peso":52,"estatura":188,"fuma":"Si","bebe":"No","operaciones":"Ninguna"},
+{"id":9,"fecha":"10/03/2018","descripcion":"Gripa","alergias":"Ninguna","peso":52,"estatura":158,"fuma":"No","bebe":"Si","operaciones":"Apendicitis"},
+{"id":10,"fecha":"23/01/2018","descripcion":"Caida bicicleta","alergias":"Ninguna","peso":54,"estatura":181,"fuma":"No","bebe":"No","operaciones":"Ninguna"}]

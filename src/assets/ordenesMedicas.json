@@ -1,0 +1,10 @@
+[{"id":1,"fechaExpedicion":"18/08/2018","comentarios":"Acetaminofen 20 tabletas, una cada 8 horas","validaHasta":"18/10/2018","firmaMedico":"Carlos Suarez"},
+{"id":2,"fechaExpedicion":"01/10/2018","comentarios":"Examen de sangre","validaHasta":"01/12/2018","firmaMedico":"Pedro Montoya"},
+{"id":3,"fechaExpedicion":"03/10/2018","comentarios":"Loperamida 10 tabletas, una cada 12 horas","validaHasta":"03/12/2018","firmaMedico":"Liliana Moreno"},
+{"id":4,"fechaExpedicion":"26/02/2018","comentarios":"Acetaminofen 10 tabletas, una cada 8 horas","validaHasta":"26/04/2018","firmaMedico":"Carlos Avila"},
+{"id":5,"fechaExpedicion":"15/02/2018","comentarios":"Dolex gripa 10 tabletas, una cada 8 horas","validaHasta":"15/04/2018","firmaMedico":"Esteban Quintero"},
+{"id":6,"fechaExpedicion":"06/02/2018","comentarios":"Examen de rayos X","validaHasta":"06/04/2018","firmaMedico":"Laura Ramos"},
+{"id":7,"fechaExpedicion":"28/03/2018","comentarios":"Examen de orina","validaHasta":"28/05/2018","firmaMedico":"Jimena Perez"},
+{"id":8,"fechaExpedicion":"05/12/2017","comentarios":"Examen de sangre","validaHasta":"05/02/2018","firmaMedico":"Daniela Forero"},
+{"id":9,"fechaExpedicion":"29/06/2018","comentarios":"Biopsia","validaHasta":"29/08/2018","firmaMedico":"Carlos Suarez"},
+{"id":10,"fechaExpedicion":"21/11/2017","comentarios":"Dolex gripa 10 tabletas, una cada 6 horas","validaHasta":"21/01/2018","firmaMedico":"Julian Ramirez"}]
