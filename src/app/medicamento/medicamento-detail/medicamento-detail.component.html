@@ -1,23 +1,20 @@
-<div class="panel panel-default"> 
-    <div>
-        <div class="border margin">
-            <p class="h3 p-3">{{medicamentoDetail.name}}</p> 
-            <div class="row">
-               
-                <div class="col-md-3">
-                    <dl>  
-                        <dt> Descripción</dt>
-                        <dd>{{medicamentoDetail.descripcion}}</dd>
-                        <dt>Elaborado Por</dt>
-                        <dd>{{medicamentoDetail.elaboradoPor}}</dd>
+<h1 id = "texto"> Medicamento: {{medicamentoDetail.nombre}}</h1> 
+            <table class ="table">
+                   <thead class ="thead-dark">
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Elaborado Por</th>
+                        <th>Cantidad</th>
+                        <th>Costo</th>
+                    </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>{{medicamentoDetail.descripcion}}</td>
+                           <td>{{medicamentoDetail.elaboradoPor}}</td>
+                           <td>{{medicamentoDetail.cantidad}}</td>
+                           <td>{{medicamentoDetail.costo}}</td>
+                       </tr>
+            </tbody>
+            </table>
                         
-                        <dt class="bold">Costo</dt>
-                        <dd>{{medicamentoDetail.costo}}</dd>
-                    </dl>
-                 
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</div>
