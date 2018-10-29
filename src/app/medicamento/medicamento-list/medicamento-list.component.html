@@ -28,7 +28,7 @@
     </div>
 </div> -->
 
-<div class="container-fluid">
+<!--<div class="container-fluid">
     <div class="col-md-2">
         <table class="table table-striped">
             <thead>
@@ -45,4 +45,42 @@
             </tbody>
         </table>
     </div>
+</div>-->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear un medicamento</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Nombre del medicamento</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let medicamento of medicamentos"
+                        (click)="onSelected(medicamento.id)">
+                        <td style="cursor: pointer;"> 
+                <dd>{{medicamento.nombre}}</dd>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">
+            <div *ngIf="selectedMedicamento">
+                <app-medicamento-detail [medicamentoDetail]="selectedMedicamento"></app-medicamento-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-medicamento-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-medicamento-create>
+            </div>
+        </div>   
+    </div>
 </div>
+

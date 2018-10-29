@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ToastrService } from 'ngx-toastr';
 
@@ -43,14 +43,15 @@ export class ExamenMedicoCreateComponent implements OnInit {
     /**
     * Creates a new examen
     */
-    createExamenMedico(): void {
+     createExamenMedico(): ExamenMedico {
+       
         this.examenService.createExamenMedico(this.examen)
-            .subscribe(() => {
+            .subscribe((examen) => {
+                this.examen = examen;
                 this.create.emit();
-                this.toastrService.success("The examen was created", "Examen creation");
-            }, err => {
-                this.toastrService.error(err, "Error");
+                this.toastrService.success("The examen medico was created", "Examen medico creation");                
             });
+            return this.examen;
     }
 
     /**
@@ -67,4 +68,4 @@ export class ExamenMedicoCreateComponent implements OnInit {
         this.examen = new ExamenMedico();
     }
 }
-}
+

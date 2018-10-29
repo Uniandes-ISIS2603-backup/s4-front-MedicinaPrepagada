@@ -43,8 +43,8 @@ export class MedicamentoService {
     * @param medicamento The medicamento which will be created
     * @returns The confirmation of the medicamento's creation
     */
-    createMedicamento(medicamento): Observable<boolean> {
-        return this.http.post<boolean>(API_URL + medicamentos, medicamento);
+    createMedicamento(medicamento): Observable<Medicamento> {
+        return this.http.post<Medicamento>(API_URL + medicamentos, medicamento);
     }
 }
 

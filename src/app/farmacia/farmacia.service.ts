@@ -43,8 +43,8 @@ export class FarmaciaService {
     * @param farmacia The farmacia which will be created
     * @returns The confirmation of the farmacia's creation
     */
-    createFarmacia(farmacia): Observable<boolean> {
-        return this.http.post<boolean>(API_URL + farmacias, farmacia);
+    createFarmacia(farmacia): Observable<Farmacia> {
+        return this.http.post<Farmacia>(API_URL + farmacias, farmacia);
     }
 }
 

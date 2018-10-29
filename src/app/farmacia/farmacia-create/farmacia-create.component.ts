@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ToastrService } from 'ngx-toastr';
 
@@ -43,14 +43,15 @@ export class FarmaciaCreateComponent implements OnInit {
     /**
     * Creates a new farmacia
     */
-    createFarmacia(): void {
+     createFarmacia(): Farmacia {
+       
         this.farmaciaService.createFarmacia(this.farmacia)
-            .subscribe(() => {
+            .subscribe((farmacia) => {
+                this.farmacia = farmacia;
                 this.create.emit();
-                this.toastrService.success("The farmacia was created", "Farmacia creation");
-            }, err => {
-                this.toastrService.error(err, "Error");
+                this.toastrService.success("The farmacia was created", "Farmacia creation");                
             });
+            return this.farmacia;
     }
 
     /**
