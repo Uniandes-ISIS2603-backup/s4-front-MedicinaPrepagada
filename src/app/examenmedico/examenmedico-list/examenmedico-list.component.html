@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let examen of examenesMedicos">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/examenesMedicos/{{examen.id}}">{{examen.nombre}}</dd>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
