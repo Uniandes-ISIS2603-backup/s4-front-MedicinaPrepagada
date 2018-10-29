@@ -20,6 +20,8 @@ import {FormsModule} from '@angular/forms';
 import {HistoriaClinicaModule} from './historiaClinica/historiaClinica.module';
 import {OrdenMedicaModule} from './ordenMedica/ordenMedica.module';
 
+import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
+
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import {OrdenMedicaModule} from './ordenMedica/ordenMedica.module';
     AdministradorModule,
     HistoriaClinicaModule,
     OrdenMedicaModule,
+    TarjetaCreditoModule,
     FormsModule,
     BrowserAnimationsModule,
       ToastrModule.forRoot() 
