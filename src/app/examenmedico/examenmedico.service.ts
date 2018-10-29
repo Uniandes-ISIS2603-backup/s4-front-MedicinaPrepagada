@@ -43,8 +43,8 @@ export class ExamenMedicoService {
     * @param examen The examen medicowhich will be created
     * @returns The confirmation of the examen medico's creation
     */
-    createExamenMedico(examen): Observable<boolean> {
-        return this.http.post<boolean>(API_URL + examenes, examen);
+    createExamenMedico(examen): Observable<ExamenMedico> {
+        return this.http.post<ExamenMedico>(API_URL + examenes, examen);
     }
 }
 

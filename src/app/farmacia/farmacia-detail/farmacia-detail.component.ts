@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { FarmaciaService } from '../farmacia.service';
@@ -22,10 +22,10 @@ export class FarmaciaDetailComponent implements OnInit {
         private route: ActivatedRoute
     ) { }
 
-    /**
-    * The farmacia whose details we want to show
+      /**
+    * The farmacia
     */
-    farmaciaDetail: FarmaciaDetail;
+    @Input() farmaciaDetail: FarmaciaDetail;
 
 
 

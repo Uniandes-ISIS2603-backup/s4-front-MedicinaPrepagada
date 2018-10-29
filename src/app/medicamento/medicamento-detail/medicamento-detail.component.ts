@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { MedicamentoService } from '../medicamento.service';
@@ -10,6 +10,11 @@ import { MedicamentoDetail } from '../medicamento-detail';
   styleUrls: ['./medicamento-detail.component.css']
 })
 export class MedicamentoDetailComponent implements OnInit {
+    
+    /**
+    * The medicamento
+    */
+    @Input() medicamentoDetail: MedicamentoDetail;
 
   /**
     * The component's constructor
@@ -22,10 +27,7 @@ export class MedicamentoDetailComponent implements OnInit {
         private route: ActivatedRoute
     ) { }
 
-    /**
-    * The medicamento whose details we want to show
-    */
-    medicamentoDetail: MedicamentoDetail;
+
 
 
 
@@ -50,8 +52,10 @@ export class MedicamentoDetailComponent implements OnInit {
     */
     ngOnInit() {
         this.medicamento_id = +this.route.snapshot.paramMap.get('id');
+       if (this.medicamento_id){
         this.medicamentoDetail = new MedicamentoDetail();
         this.getMedicamentoDetail();
+        }
     }
 
 }
