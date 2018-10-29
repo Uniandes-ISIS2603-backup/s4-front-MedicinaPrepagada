@@ -7,6 +7,7 @@ import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MedicamentoDetailComponent } from './medicamento-detail/medicamento-detail.component';
+import { MedicamentoCreateComponent } from './medicamento-create/medicamento-create.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { MedicamentoDetailComponent } from './medicamento-detail/medicamento-det
     HttpClientModule,
     FormsModule
   ],
-  declarations: [MedicamentoListComponent, MedicamentoDetailComponent],
+  declarations: [MedicamentoListComponent, MedicamentoDetailComponent, MedicamentoCreateComponent],
   providers:[MedicamentoService],
   exports: [MedicamentoListComponent],
   bootstrap: [MedicamentoListComponent]

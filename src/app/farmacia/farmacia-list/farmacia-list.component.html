@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let farmacia of farmacias">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/farmacias/{{farmacia.id}}">{{farmacia.nombre}}</dd>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
