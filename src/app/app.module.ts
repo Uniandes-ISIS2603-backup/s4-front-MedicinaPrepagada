@@ -6,6 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {PacienteModule} from './paciente/paciente.module';
 import {MedicoModule} from './medico/medico.module';
 import {MedicamentoModule} from './medicamento/medicamento.module';
+import {FarmaciaModule} from './farmacia/farmacia.module';
+import {ExamenMedicoModule} from './examenmedico/examenmedico.module';
+
 import {SedeModule} from './sede/sede.module';
 import {LaboratorioModule} from './laboratorio/laboratorio.module';
 import {AdministradorModule} from './administrador/administrador.module';
@@ -37,6 +40,8 @@ import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
     MedicoModule,
     LaboratorioModule,
     MedicamentoModule,
+    FarmaciaModule,
+    ExamenMedicoModule,
     SedeModule,
     AdministradorModule,
     HistoriaClinicaModule,

@@ -11,6 +11,10 @@ import {PacienteListComponent} from '../paciente/paciente-list/paciente-list.com
 import {PacienteDetailComponent} from '../paciente/paciente-detail/paciente-detail.component';
 import {MedicamentoListComponent} from '../medicamento/medicamento-list/medicamento-list.component';
 import {MedicamentoDetailComponent} from '../medicamento/medicamento-detail/medicamento-detail.component';
+import {FarmaciaListComponent} from '../farmacia/farmacia-list/farmacia-list.component';
+import {FarmaciaDetailComponent} from '../farmacia/farmacia-detail/farmacia-detail.component';
+import {ExamenMedicoListComponent} from '../examenmedico/examenmedico-list/examenmedico-list.component';
+import {ExamenMedicoDetailComponent} from '../examenmedico/examenmedico-detail/examenmedico-detail.component';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
@@ -58,6 +62,34 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: MedicamentoDetailComponent
+                
+            }
+        ]
+    },
+    {
+        path: 'farmacias',
+        children: [
+            {
+                path: 'list',
+                component : FarmaciaListComponent
+            },
+            {
+                path: ':id',
+                component: FarmaciaDetailComponent
+                
+            }
+        ]
+    },
+    {
+        path: 'examenesMedicos',
+        children: [
+            {
+                path: 'list',
+                component : ExamenMedicoListComponent
+            },
+            {
+                path: ':id',
+                component: ExamenMedicoDetailComponent
                 
             }
         ]

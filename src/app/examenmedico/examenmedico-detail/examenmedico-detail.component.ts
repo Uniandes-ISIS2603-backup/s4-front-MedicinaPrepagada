@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ExamenMedicoService } from '../examenmedico.service';
@@ -25,7 +25,7 @@ export class ExamenMedicoDetailComponent implements OnInit {
     /**
     * The examen medico whose details we want to show
     */
-    examenDetail: ExamenMedicoDetail;
+    @Input() examenDetail: ExamenMedicoDetail;
 
     /**
     * The examen's id retrieved from the address
