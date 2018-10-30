@@ -10,7 +10,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let paciente of pacientes" routerLink="/pacientes/{{paciente.id}}">
+                <tr *ngFor ="let paciente of pacientes" routerLink="/pacientes/{{paciente.id}}" style="cursor: pointer;">
                     <td><span>{{paciente.id}}</span></td>
                     <td>{{paciente.nombre}}</td>
                     <td>{{paciente.documentoIdentidad}}</td>
@@ -18,4 +18,5 @@
             </tbody>
         </table>
     </div>
+    <button class="btn btn-success" routerLink="/pacientes/add">Crear Paciente</button>
 </div>

@@ -7,18 +7,19 @@ import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PacienteDetailComponent } from '../paciente/paciente-detail/paciente-detail.component';
+import {PacienteCreateComponent} from './paciente-create/paciente-create.component';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  declarations: [PacienteListComponent, PacienteDetailComponent],
+    declarations: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent],
   providers:[PacienteService],
-  exports: [PacienteListComponent, PacienteDetailComponent],
-    bootstrap: [PacienteListComponent, PacienteDetailComponent]
+    exports: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent],
+    bootstrap: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent]
 })
 export class PacienteModule { }
