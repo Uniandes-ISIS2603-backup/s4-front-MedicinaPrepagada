@@ -19,7 +19,7 @@ import { PacienteCreateComponent } from '../Paciente/paciente-create/paciente-cr
   ],
   declarations: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent],
   providers:[PacienteService],
-  exports: [PacienteListComponent, PacienteDetailComponent],
-  bootstrap: [PacienteListComponent, PacienteDetailComponent]
+    exports: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent],
+    bootstrap: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent]
 })
 export class PacienteModule { }

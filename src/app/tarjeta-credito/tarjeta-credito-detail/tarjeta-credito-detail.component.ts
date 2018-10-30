@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {TarjetaCreditoService} from '../tarjeta-credito.service';
 import {TarjetaCredito} from '../tarjeta-credito';
+import {ToastrService} from 'ngx-toastr';
+import {ActivatedRoute} from '@angular/router/';
 
 @Component({
   selector: 'app-tarjeta-credito-detail',
@@ -9,7 +11,9 @@ import {TarjetaCredito} from '../tarjeta-credito';
 })
 export class TarjetaCreditoDetailComponent implements OnInit {
 
-    constructor(private tarjetaCreditoService: TarjetaCreditoService) { }
+    constructor(private tarjetaCreditoService: TarjetaCreditoService,
+        private toastr: ToastrService,
+        private route: ActivatedRoute,) { }
     
     tarjetaCredito: TarjetaCredito;
     
@@ -17,10 +21,14 @@ export class TarjetaCreditoDetailComponent implements OnInit {
     
     getTarjetaCredito(){
         return this.tarjetaCreditoService.getTarjetaCredito(this.id)
-            .subscribe(tarjetaCredito => this.tarjetaCredito = tarjetaCredito)
+            .subscribe(tarjetaCredito => {this.tarjetaCredito = tarjetaCredito},
+            err => {this.toastr.error(err,"Error");});
     }
 
   ngOnInit() {
+      this.id = +this.route.snapshot.paramMap.get('id');
+      this.tarjetaCredito = new TarjetaCredito;
+      this.getTarjetaCredito();
   }
 
 }

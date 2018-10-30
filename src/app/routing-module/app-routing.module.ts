@@ -23,6 +23,7 @@ import {OrdenMedicaListComponent} from '../ordenMedica/ordenMedica-list/ordenMed
 import {OrdenMedicaDetailComponent} from '../ordenMedica/ordenMedica-detail/ordenMedica-detail.component';
 import {TarjetaCreditoListComponent} from '../tarjeta-credito/tarjeta-credito-list/tarjeta-credito-list.component';
 import {TarjetaCreditoDetailComponent} from '../tarjeta-credito/tarjeta-credito-detail/tarjeta-credito-detail.component';
+import {PacienteCreateComponent} from '../paciente/paciente-create/paciente-create.component';
 
 
 
@@ -40,6 +41,10 @@ const routes: Routes = [
                 path: ':id',
                 component: PacienteDetailComponent
                 
+            },
+            {
+                path: 'add',
+                component: PacienteCreateComponent
             }
         ]
     },

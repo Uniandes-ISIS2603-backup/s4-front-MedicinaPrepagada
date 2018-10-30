@@ -19,7 +19,7 @@ export class TarjetaCreditoService{
     }
     
     getTarjetaCredito(id: number): Observable<TarjetaCredito>{
-        return this.http.get<TarjetaCredito>(API_URL + tarjetasCredito + id).catch(err => this.handleError(err));
+        return this.http.get<TarjetaCredito>(API_URL + tarjetasCredito + '/'+id).catch(err => this.handleError(err));
     }
     
     handleError(error:any){

@@ -1,3 +1,13 @@
-<p>
-  paciente-create works!
-</p>
+<div class="row">
+    <div class="col-6">
+        <h2>crear Un Paciente</h2>
+        <form name="paciente" (ngSubmit)="f.form.valid && createPaciente()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="Nomre"><b>Nombre</b></label>
+                <input type="text" name="pacienteNombre" class="form-control" id="pacienteNombre" [(ngModel)] = paciente.nombre
+                       #pacienteNombre="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.nombre.invalid}" required>
+            </div>
+            
+        </form>
+    </div>
+</div>
