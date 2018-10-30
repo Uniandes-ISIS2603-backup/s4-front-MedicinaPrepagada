@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import {LaboratorioService} from '../laboratorio.service';
 import {Laboratorio} from '../laboratorio';
 import {LaboratorioDetail} from '../laboratorio-detail';
@@ -18,6 +19,11 @@ export class LaboratorioListComponent implements OnInit {
     getLaboratorios(): void {
         this.laboratorioService.getLaboratorios()
             .subscribe(laboratorios => this.laboratorios = laboratorios);
+    }
+    onSelected(laboratorio_id: number):void {
+        this.laboratorio_id = laboratorio_id;
+        this.selectedLaboratorio = new LaboratorioDetail();
+        this.getLaboratorioDetail();     
     }
     getLaboratorioDetail(): void {
         this.laboratorioService.getLaboratorioDetail(this.laboratorio_id)

@@ -1,33 +1,20 @@
+<div style="text-align: center"></div>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-4">
-            <br>
-            <div class="row justify-content-center align-self-center">
-                
-            </div>
-            <br>
-            <br>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="h4">Nombre del laboratorio</th>    
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor = "let labroatorio of laboratorios"
-                        (click)="onSelected(medicamento.id)">
-                        <td style="cursor: pointer;"> 
-                <dd>{{laboratorio.nombre}}</dd>
-                </td>
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
                 </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-8">
-            <div *ngIf="selectedLaboratorio">
-                <app-laboratorio-detail [laboratorioDetail]="selectedLaboratorio"></app-laboratorio-detail>
-            </div>
-            
-        </div>   
+            </thead>
+            <tbody>
+                <tr *ngFor ="let laboratorio of laboratorios" routerLink="/laboratorios/{{laboratorio.id}}">
+                    <td><span>{{laboratorio.id}}</span></td>
+                    <td>{{laboratorio.nombre}}</td>
+              
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

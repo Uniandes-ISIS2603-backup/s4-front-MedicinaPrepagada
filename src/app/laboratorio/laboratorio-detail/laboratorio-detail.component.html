@@ -1,19 +1,23 @@
-<h1 id = "texto"> Laboratorio: {{laboratorioDetail.nombre}}</h1> 
-            <table class ="table">
-                   <thead class ="thead-dark">
-                    <tr>
-                        <th>Horario de Atencion</th>
-                        <th>telefono</th>
-                        <th>Direccion</th>
-                        <th></th>
-                    </tr>
-                   </thead>
-                   <tbody>
-                       <tr>
-                           <td>{{laboratorio.horarioDeAtencion}}</td>
-                           <td>{{laboratorio.telefono}}</td>
-                           <td>{{laboratorio.direccion}</td>
-                           
-                       </tr>
-            </tbody>
-            </table>
+<div class="col-md-12">
+    <div class="container-fluid">
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>{{laboratorio.id}}</th>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <th>{{laboratorio.nombre}}</th>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <th>{{laboratorio.telefono}}</th>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <th>{{laboratorio.direccion}}</th>
+            </tr>
+           
+        </table>
+    </div>
+</div>
