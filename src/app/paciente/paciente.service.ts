@@ -28,6 +28,10 @@ export class PacienteService{
         return this.http.get<Paciente>(API_URL + pacientes+ '/' + pacienteId ).catch(err => this.handleError(err));
     }
     
+    createPaciente(paciente): Observable<Paciente>{
+        return this.http.post<Paciente>(API_URL + pacientes, paciente).catch(err => this.handleError(err));
+    }
+    
     
     private handleError(error: any){
         return throwError(error.error.errorMessage);

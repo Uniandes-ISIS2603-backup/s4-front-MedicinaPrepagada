@@ -42,13 +42,13 @@ const routes: Routes = [
                 component : PacienteListComponent
             },
             {
+                path:'add',
+                component: PacienteCreateComponent
+            },
+            {
                 path: ':id',
                 component: PacienteDetailComponent
                 
-            },
-            {
-                path: 'add',
-                component: PacienteCreateComponent
             }
         ]
     },
