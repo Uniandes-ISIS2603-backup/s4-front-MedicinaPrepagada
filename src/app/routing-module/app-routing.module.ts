@@ -26,6 +26,9 @@ import {HistoriaClinicaListComponent} from '../historiaClinica/historiaClinica-l
 import {HistoriaClinicaDetailComponent} from '../historiaClinica/historiaClinica-detail/historiaClinica-detail.component';
 import {OrdenMedicaListComponent} from '../ordenMedica/ordenMedica-list/ordenMedica-list.component';
 import {OrdenMedicaDetailComponent} from '../ordenMedica/ordenMedica-detail/ordenMedica-detail.component';
+import {TarjetaCreditoListComponent} from '../tarjeta-credito/tarjeta-credito-list/tarjeta-credito-list.component';
+import {TarjetaCreditoDetailComponent} from '../tarjeta-credito/tarjeta-credito-detail/tarjeta-credito-detail.component';
+import {PacienteCreateComponent} from '../paciente/paciente-create/paciente-create.component';
 
 
 
@@ -38,6 +41,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : PacienteListComponent
+            },
+            {
+                path:'add',
+                component: PacienteCreateComponent
             },
             {
                 path: ':id',
@@ -163,6 +170,19 @@ const routes: Routes = [
                 path: ':id',
                 component: OrdenMedicaDetailComponent
                 
+            }
+        ]
+    },
+    {
+        path: 'tarjetascredito',
+        children:[
+            {
+                path:'list',
+                component: TarjetaCreditoListComponent
+            },
+            {
+                path: ':id',
+                component: TarjetaCreditoDetailComponent
             }
         ]
     }
