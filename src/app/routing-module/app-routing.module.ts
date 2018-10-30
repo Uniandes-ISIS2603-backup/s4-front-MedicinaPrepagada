@@ -17,6 +17,7 @@ import {ExamenMedicoListComponent} from '../examenmedico/examenmedico-list/exame
 import {ExamenMedicoDetailComponent} from '../examenmedico/examenmedico-detail/examenmedico-detail.component';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
+import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/laboratorio-detail.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
@@ -93,6 +94,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : LaboratorioListComponent
+            },
+            {
+                path:':id',
+                component:LaboratorioDetailComponent
             }
         ]
     },
