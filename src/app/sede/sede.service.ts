@@ -6,8 +6,9 @@ import 'rxjs/add/operator/catch';
 
 import { Sede } from './sede';
 
-const API_URL = "../../assets/";
-const sedes = 'sedes.json';
+const API_URL = environment.apirURL;
+const sedes = '/sedes';
+const sedeDetail = '/sedeDetails';
 
 
 @Injectable()
@@ -19,6 +20,11 @@ export class SedeService{
         return this.http.get<Sede[]> (API_URL + sedes);
     }
     
+      
+    getSede(sedeId): Observable<Sede>
+    {
+        return this.http.get<Sede>(API_URL + sedes+ '/' + sedeId ).catch(err => this.handleError(err));
+    }
 
     private handleError(error: any){
         return throwError(error.error.errorMessage);

@@ -7,6 +7,8 @@ import {PacienteModule} from './paciente/paciente.module';
 import {MedicoModule} from './medico/medico.module';
 import {MedicamentoModule} from './medicamento/medicamento.module';
 import {SedeModule} from './sede/sede.module';
+import {HorarioAtencionModule} from './horario-atencion/horario-atencion.module';
+
 import {LaboratorioModule} from './laboratorio/laboratorio.module';
 import {AdministradorModule} from './administrador/administrador.module';
 
@@ -36,6 +38,7 @@ import {OrdenMedicaModule} from './ordenMedica/ordenMedica.module';
     LaboratorioModule,
     MedicamentoModule,
     SedeModule,
+      HorarioAtencionModule,
     AdministradorModule,
     HistoriaClinicaModule,
     OrdenMedicaModule,
