@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MedicamentoService} from './medicamento.service';
 import { MedicamentoListComponent } from '../medicamento/medicamento-list/medicamento-list.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,8 +17,7 @@ import { MedicamentoCreateComponent } from './medicamento-create/medicamento-cre
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    NgbModule
+    FormsModule
   ],
   declarations: [MedicamentoListComponent, MedicamentoDetailComponent, MedicamentoCreateComponent],
   providers:[MedicamentoService],

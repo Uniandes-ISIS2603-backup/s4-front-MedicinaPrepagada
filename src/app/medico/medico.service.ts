@@ -11,8 +11,8 @@ import {Medico} from './medico';
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 
-const API_URL = '../../assets/';
-const medicos = '/medicos.json';
+const API_URL = environment.apirURL;
+const medicos = '/medico';
 const medicoDetail = '/medicoDetails';
 
 @Injectable()
@@ -25,7 +25,11 @@ export class MedicoService{
     }
     
     getMedico(idMedico): Observable<Medico>{
-        return this.http.get<Medico>(API_URL + medicoDetail+ '/' + idMedico + '.json').catch(err => this.handleError(err));
+        return this.http.get<Medico>(API_URL + medicos + '/' + idMedico ).catch(err => this.handleError(err));
+    }
+    
+    createMedico(medico): Observable<Medico>{
+        return this.http.post<Medico>(API_URL + medicos, medico).catch(err => this.handleError(err));
     }
     
      private handleError(error: any){

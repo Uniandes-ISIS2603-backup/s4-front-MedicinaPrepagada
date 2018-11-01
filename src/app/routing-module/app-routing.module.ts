@@ -20,6 +20,7 @@ import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laborato
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
+import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
 import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
 import {HistoriaClinicaListComponent} from '../historiaClinica/historiaClinica-list/historiaClinica-list.component';
 import {HistoriaClinicaDetailComponent} from '../historiaClinica/historiaClinica-detail/historiaClinica-detail.component';
@@ -28,6 +29,7 @@ import {OrdenMedicaDetailComponent} from '../ordenMedica/ordenMedica-detail/orde
 import {TarjetaCreditoListComponent} from '../tarjeta-credito/tarjeta-credito-list/tarjeta-credito-list.component';
 import {TarjetaCreditoDetailComponent} from '../tarjeta-credito/tarjeta-credito-detail/tarjeta-credito-detail.component';
 import {PacienteCreateComponent} from '../paciente/paciente-create/paciente-create.component';
+
 
 
 
@@ -132,6 +134,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : MedicoListComponent
+            },
+            {
+                path:'create',
+                component: MedicoCreateComponent
             },
             {
                 path: ':id',
