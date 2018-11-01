@@ -147,6 +147,24 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'especialidades',
+        children: [
+//            {
+//                path: 'list',
+//                component : EspecialidadListComponent
+//            },
+//            {
+//                path:'create',
+//                component: EspecialidadCreateComponent
+//            },
+//            {
+//                path: ':id',
+//                component: EspecialidadDetailComponent
+//                
+//            }
+        ]
+    },
+    {
         path: 'historiasClinicas',
         children: [
             {

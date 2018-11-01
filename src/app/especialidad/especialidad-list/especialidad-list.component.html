@@ -1,0 +1,36 @@
+<div id="alertPanel" style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+<!--                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Create an editorial</button>-->
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Especialidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let especialidad of especialidades" routerLink="/especialidad/{{especialidad.nombre}}" style="cursor: pointer;">
+                        <td>
+                            {{especialidad.nombre}}
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-8">
+<!--            <app-editorial-create (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"></app-editorial-create>
+            <app-editorial-edit [editorial_id]="edit_editorial_id" (cancel)="hideEditEditorial()" (update)="ngOnInit()"
+                *ngIf="showEdit"></app-editorial-edit>-->
+        </div>
+    </div>
+    <button class="btn btn-success" routerLink="/especialidades/create">Crear Especialidad</button>
+</div>
+
