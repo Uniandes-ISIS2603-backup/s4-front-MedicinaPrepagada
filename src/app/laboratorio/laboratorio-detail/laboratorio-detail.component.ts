@@ -36,7 +36,7 @@ export class LaboratorioDetailComponent implements OnInit {
 
     /**
     * The method which initializes the component
-    * We need to initialize the farmacia so it is never considered as undefined
+    * We need to initialize the lab so it is never considered as undefined
     */
     ngOnInit() {
         this.laboratorio_id = +this.route.snapshot.paramMap.get('id');

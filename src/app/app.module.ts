@@ -13,6 +13,7 @@ import {ExamenMedicoModule} from './examenmedico/examenmedico.module';
 
 import {SedeModule} from './sede/sede.module';
 import {LaboratorioModule} from './laboratorio/laboratorio.module';
+import {FacturaModule} from './factura/factura.module';
 import {AdministradorModule} from './administrador/administrador.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,6 +41,7 @@ import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
     PacienteModule,
     MedicoModule,
     LaboratorioModule,
+    FacturaModule,
     MedicamentoModule,
     FarmaciaModule,
     ExamenMedicoModule,

@@ -3,13 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
- import {Laboratorio} from './laboratorio';
- 
- export class LaboratorioDetail extends Laboratorio
- {
-     latitud:number;
-     
-     longitud:number;
- }
 
-
+export class Factura 
+{
+    id:number;
+    
+    idCliente:number;
+    
+    fecha:string;
+    
+    valor:number;
+    
+    concepto:string;
+    
+    pagada:boolean;
+    
+    
+}
