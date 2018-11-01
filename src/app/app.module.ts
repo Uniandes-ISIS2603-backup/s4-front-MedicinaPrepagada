@@ -14,6 +14,8 @@ import {FarmaciaModule} from './farmacia/farmacia.module';
 import {ExamenMedicoModule} from './examenmedico/examenmedico.module';
 
 import {SedeModule} from './sede/sede.module';
+import {HorarioAtencionModule} from './horario-atencion/horario-atencion.module';
+
 import {LaboratorioModule} from './laboratorio/laboratorio.module';
 import {AdministradorModule} from './administrador/administrador.module';
 
@@ -48,6 +50,7 @@ import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
     FarmaciaModule,
     ExamenMedicoModule,
     SedeModule,
+      HorarioAtencionModule,
     AdministradorModule,
     HistoriaClinicaModule,
     OrdenMedicaModule,

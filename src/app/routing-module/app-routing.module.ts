@@ -19,6 +19,9 @@ import {AdministradorListComponent} from '../administrador/administrador-list/ad
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
+import {SedeDetailComponent} from '../sede/sede-detail/sede-detail.component';
+import {HorarioAtencionListComponent} from '../horario-atencion/horario-atencion-list/horario-atencion-list.component';
+
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
 import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
@@ -125,6 +128,20 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : SedeListComponent
+            },
+            {
+                path: ':id',
+                component: SedeDetailComponent
+                
+            }
+        ]
+    },
+    {
+        path: 'horariosAtencion',
+        children: [
+            {
+                path: 'list',
+                component: HorarioAtencionListComponent
             }
         ]
     },

@@ -5,8 +5,9 @@ import {MedicamentoListComponent} from './medicamento/medicamento-list/medicamen
 import {FarmaciaListComponent} from './farmacia/farmacia-list/farmacia-list.component';
 
 import {SedeListComponent} from './sede/sede-list/sede-list.component';
+import {HorarioAtencionListComponent} from './horario-atencion/horario-atencion-list/horario-atencion-list.component'
 import {MedicoListComponent} from './medico/medico-list/medico-list.component';
-import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
+import {LaboratorioListComponent} from './laboratorio/laboratorio-list/laboratorio-list.component';
 import {AdministradorListComponent} from './administrador/administrador-list/administrador-list.component';
 import {HistoriaClinicaListComponent} from './historiaClinica/historiaClinica-list/historiaClinica-list.component';
 import {OrdenMedicaListComponent} from './ordenMedica/ordenMedica-list/ordenMedica-list.component';
@@ -22,6 +23,7 @@ describe('AppComponent', () => {
         LaboratorioListComponent,
         AdministradorListComponent,
         SedeListComponent,
+        HorarioAtencionListComponent,
         MedicoListComponent,
         HistoriaClinicaListComponent,
         OrdenMedicaListComponent
