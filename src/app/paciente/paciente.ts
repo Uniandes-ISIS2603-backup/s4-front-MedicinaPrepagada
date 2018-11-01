@@ -7,7 +7,7 @@
 export class Paciente{
     id: number;
 
-    usuario: string;
+    login: string;
     
     contrasena: string;
     

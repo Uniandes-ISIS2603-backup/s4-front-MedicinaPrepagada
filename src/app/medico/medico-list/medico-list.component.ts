@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Medico} from '../medico';
-import {MedicoService} from '../medico.service'
+import {MedicoService} from '../medico.service';
 
 @Component({
   selector: 'app-medico-list',

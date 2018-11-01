@@ -37,6 +37,15 @@ export class MedicamentoService {
     getMedicamentoDetail(medicamentoId): Observable<MedicamentoDetail> {
         return this.http.get<MedicamentoDetail>(API_URL + medicamentos + '/' + medicamentoId);
     }
+    
+    /**
+    * Creates a medicamento
+    * @param medicamento The medicamento which will be created
+    * @returns The confirmation of the medicamento's creation
+    */
+    createMedicamento(medicamento): Observable<Medicamento> {
+        return this.http.post<Medicamento>(API_URL + medicamentos, medicamento);
+    }
 }
 
 

@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Create an examen</h2>
+        <br>
+        <form name="examen" (ngSubmit)="f.form.valid && createExamenMedico()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="examenName"><b>Name</b></label>
+                <input type="text" name="examenName" class="form-control" id="examenName" [(ngModel)]="examen.name"
+                    #examenName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && examenName.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>The examen's name is missing</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

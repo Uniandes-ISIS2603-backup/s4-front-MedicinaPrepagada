@@ -1,0 +1,56 @@
+<!--<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let farmacia of farmacias">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/farmacias/{{farmacia.id}}">{{farmacia.nombre}}</dd>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear una farmacia</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Nombre del farmacia</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let farmacia of farmacias"
+                        (click)="onSelected(farmacia.id)">
+                        <td style="cursor: pointer;"> 
+                <dd>{{farmacia.nombre}}</dd>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">
+            <div *ngIf="selectedFarmacia">
+                <app-farmacia-detail [farmaciaDetail]="selectedFarmacia"></app-farmacia-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-farmacia-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-farmacia-create>
+            </div>
+        </div>   
+    </div>
+</div>
+

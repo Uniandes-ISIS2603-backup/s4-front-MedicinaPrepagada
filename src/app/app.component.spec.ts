@@ -2,6 +2,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {PacienteListComponent} from './paciente/paciente-list/paciente-list.component';
 import {MedicamentoListComponent} from './medicamento/medicamento-list/medicamento-list.component';
+import {FarmaciaListComponent} from './farmacia/farmacia-list/farmacia-list.component';
+
 import {SedeListComponent} from './sede/sede-list/sede-list.component';
 import {HorarioAtencionListComponent} from './horario-atencion/horario-atencion-list/horario-atencion-list.component'
 import {MedicoListComponent} from './medico/medico-list/medico-list.component';
@@ -17,6 +19,7 @@ describe('AppComponent', () => {
         AppComponent,
         PacienteListComponent,
         MedicamentoListComponent,
+        FarmaciaListComponent,
         LaboratorioListComponent,
         AdministradorListComponent,
         SedeListComponent,

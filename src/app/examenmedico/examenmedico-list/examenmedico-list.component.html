@@ -1,0 +1,55 @@
+<!--<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let examen of examenesMedicos">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/examenesMedicos/{{examen.id}}">{{examen.nombre}}</dd>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear un examen médico</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Nombre del examen</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let examen of examenes"
+                        (click)="onSelected(examen.id)">
+                        <td style="cursor: pointer;"> 
+                <dd>{{examen.nombre}}</dd>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">
+            <div *ngIf="selectedExamen">
+                <app-examenmedico-detail [examenDetail]="selectedExamen"></app-examenmedico-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-examenmedico-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-examenmedico-create>
+            </div>
+        </div>   
+    </div>
+</div>

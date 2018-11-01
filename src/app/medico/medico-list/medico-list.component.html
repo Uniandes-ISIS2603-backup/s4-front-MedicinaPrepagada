@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let medico of medicos" routerLink="/medicos/{{medico.id}}">
+                    <tr *ngFor="let medico of medicos" routerLink="/medicos/{{medico.idMedico}}" style="cursor: pointer;">
                         <td>
                             {{medico.nombre}}
                         </td>
@@ -42,4 +42,5 @@
                 *ngIf="showEdit"></app-editorial-edit>-->
         </div>
     </div>
+    <button class="btn btn-success" routerLink="/medicos/create">Crear Medico</button>
 </div>
