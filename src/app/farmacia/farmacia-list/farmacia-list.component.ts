@@ -12,10 +12,27 @@ import {FarmaciaDetail} from '../farmacia-detail';
 export class FarmaciaListComponent implements OnInit {
 
     constructor(private farmaciaService: FarmaciaService) { }
-    
+   /**
+    * The list of farmacias which belong to the BookStore
+    */
     farmacias: Farmacia[];
+
+    /**
+    * Shows or hides the farmacia-create-component
+    */
+    showCreate: boolean;
+    
+    /**
+    * The id of the farmacia that the user wants to view
+    */
     farmacia_id: number;
+    
+    /**
+     * the farmacia that the user views.
+     */
     selectedFarmacia : Farmacia;
+    
+    
     
     
     getFarmacias(): void {
@@ -39,6 +56,18 @@ export class FarmaciaListComponent implements OnInit {
   ngOnInit() {
       this.getFarmacias();
   }
+  
+  /**
+    * Shows or hides the create component
+    */
+    showHideCreate(): void {
+        if (this.selectedFarmacia) {
+            this.selectedFarmacia = undefined;
+            this.farmacia_id = undefined;
+        }
+        this.showCreate = !this.showCreate;
+    }
+
 
 }
 

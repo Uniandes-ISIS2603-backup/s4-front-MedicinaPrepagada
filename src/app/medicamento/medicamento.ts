@@ -28,6 +28,12 @@ export class Medicamento {
     * The medicamento's cost
     */
     costo: number;
+    
+    /**
+    * The medicamento's descripcion
+    */
+    descripcion: string;
+    
 
 }
 
