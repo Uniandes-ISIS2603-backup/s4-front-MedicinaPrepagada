@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FarmaciaService} from './farmacia.service';
 import { FarmaciaListComponent } from '../farmacia/farmacia-list/farmacia-list.component';
 import { BrowserModule } from '@angular/platform-browser';
