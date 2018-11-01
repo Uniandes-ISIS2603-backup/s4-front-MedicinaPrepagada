@@ -49,7 +49,7 @@ export class MedicamentoCreateComponent implements OnInit {
             .subscribe((medicamento) => {
                 this.medicamento = medicamento;
                 this.create.emit();
-                this.toastrService.success("The medicamento was created", "Medicamento creation");                
+                this.toastrService.success("El medicamento fue creado", "Creacion de medicamento");                
             });
             return this.medicamento;
     }

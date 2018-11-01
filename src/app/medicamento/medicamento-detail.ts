@@ -8,10 +8,6 @@ import { Farmacia } from '../farmacia/farmacia';
 */
 export class MedicamentoDetail extends Medicamento {
    
-    /**
-    * The medicamento's descripcion
-    */
-    descripcion: string;
     
      /**
      * Las farmacias del medicamento

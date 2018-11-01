@@ -2,17 +2,65 @@
     <div class="col-3"></div>
     <div class="col-6">
         <br>
-        <h2 class="text-center">Create an farmacia</h2>
+        <h2 class="text-center">Crear una farmacia</h2>
         <br>
         <form name="farmacia" (ngSubmit)="f.form.valid && createFarmacia()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="farmaciaName"><b>Name</b></label>
-                <input type="text" name="farmaciaName" class="form-control" id="farmaciaName" [(ngModel)]="farmacia.name"
-                    #farmaciaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && farmaciaName.invalid }" required>
+                <label for="farmaciaNombre"><b>Nombre</b></label>
+                <input type="text" name="farmaciaNombre" class="form-control" id="farmaciaNombre" [(ngModel)]="farmacia.nombre"
+                    #farmaciaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && farmaciaNombre.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>The farmacia's name is missing</div>
+                    <div>Hace falta el nombre de la farmacia</div>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="farmaciaUbicacion"><b>Ubicacion</b></label>
+                <input name="farmaciaUbicacion" class="form-control" id="farmaciaUbicacion" [(ngModel)]="farmacia.ubicacion"
+                    #farmaciaUbicacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && farmaciaUbicacion.invalid }"
+                    required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la ubicacion de la farmacia</div>
+                </div>
+            </div>
+           
+            <div class="form-group">
+                <label for="farmaciaTelefono"><b>Telefono</b></label>
+                <input type="text" name="farmaciaTelefono" class="form-control" id="farmaciaTelefono" [(ngModel)]="farmacia.telefono"
+                    #farmaciaTelefono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && farmaciaTelefono.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el telefono de la farmacia</div>
+                </div>
+            </div>
+              
+            <div class="form-group">
+                <label for="farmaciaCorreo"><b>Correo</b></label>
+                <input type="text" name="farmaciaCorreo" class="form-control" id="farmaciaCorreo" [(ngModel)]="farmacia.correo"
+                    #farmaciaCorreo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && farmaciaCorreo.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el correo de la farmacia</div>
+                </div>
+            </div>
+              
+              <div class="form-group">
+                <label for="farmaciaLatitud"><b>Latitud</b></label>
+                <input type="text" name="farmaciaLatitud" class="form-control" id="farmaciaLatitud" [(ngModel)]="farmacia.latitud"
+                    #farmaciaLatitud="ngModel" [ngClass]="{ 'is-invalid': f.submitted && farmaciaLatitud.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la latitud de la farmacia</div>
+                </div>
+            </div>
+              
+              <div class="form-group">
+                <label for="farmaciaLongitud"><b>Longitud</b></label>
+                <input type="text" name="farmaciaLongitud" class="form-control" id="farmaciaLongitud" [(ngModel)]="farmacia.longitud"
+                    #farmaciaLongitud="ngModel" [ngClass]="{ 'is-invalid': f.submitted && farmaciaLongitud.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la longitud de la farmacia</div>
+                </div>
+            </div>
+              
+            
+              
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>
                 <div class="divider"></div>
