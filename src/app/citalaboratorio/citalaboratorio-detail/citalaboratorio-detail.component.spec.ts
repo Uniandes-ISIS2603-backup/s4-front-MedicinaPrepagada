@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CitalaboratorioDetailComponent } from './citalaboratorio-detail.component';
+import { CitaLaboratorioDetailComponent } from './citalaboratorio-detail.component';
 
 describe('CitalaboratorioDetailComponent', () => {
-  let component: CitalaboratorioDetailComponent;
-  let fixture: ComponentFixture<CitalaboratorioDetailComponent>;
+  let component: CitaLaboratorioDetailComponent;
+  let fixture: ComponentFixture<CitaLaboratorioDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CitalaboratorioDetailComponent ]
+      declarations: [ CitaLaboratorioDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CitalaboratorioDetailComponent);
+    fixture = TestBed.createComponent(CitaLaboratorioDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,13 +4,12 @@
  * and open the template in the editor.
  */
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-
+import {Observable, throwError} from 'rxjs';
 import {CitaLaboratorio} from './citalaboratorio';
 import {HttpClient} from '@angular/common/http';
-
 const API_URL = '../../assets/';
 const citaslaboratorio = '/citaLaboratorio.json';
+const citaLabDetail = '/citaLaboratorioDetails';
 
 @Injectable()
 export class CitaLaboratorioService{
@@ -32,8 +31,13 @@ export class CitaLaboratorioService{
     * Returns the Observable object containing the laboratorio retrieved from the API
     * @returns Laboratorio
     */
-   // getLaboratorioDetail(laboratorioId): Observable<LaboratorioDetail> {
-    //    return this.http.get<LaboratorioDetail>(API_URL + laboratorios + '/' + laboratorioId);
-   // }
+    getCitaLaboratorio(citaLabId): Observable<CitaLaboratorio>
+    {
+        return this.http.get<CitaLaboratorio>(API_URL + citaLabDetail+ '/' +citaLabId + '.json').catch(err => this.handleError(err));
+    }
+        private handleError(error: any){
+        return throwError(error.error.errorMessage);
+    }
+
 }
 

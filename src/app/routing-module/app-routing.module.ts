@@ -21,6 +21,7 @@ import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/labo
 import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
 import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
 import {CitaLaboratorioListComponent} from '../citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
+import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio-detail/citalaboratorio-detail.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
 import {SedeDetailComponent} from '../sede/sede-detail/sede-detail.component';
@@ -109,6 +110,10 @@ const routes: Routes = [
             {
                 path:'list',
                 component: CitaLaboratorioListComponent
+            },
+            {
+                path: ':id',
+                component:CitaLaboratorioDetailComponent
             }
         ]
     },
