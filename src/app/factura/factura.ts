@@ -6,16 +6,34 @@
 
 export class Factura 
 {
+    /**
+     * Factura id
+     */
     id:number;
     
+    /**
+     * id del cliente asociado a la factura
+     */
     idCliente:number;
     
+    /**
+     * Fecha factura
+     */
     fecha:string;
     
+    /**
+     * Factura valor
+     */
     valor:number;
     
+    /**
+     * Factura concepto
+     */
     concepto:string;
     
+    /**
+     * Factura pagada
+     */
     pagada:boolean;
     
     

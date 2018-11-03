@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import {ToastrService} from 'ngx-toastr';
 import {LaboratorioService} from '../laboratorio.service';
 import {Laboratorio} from '../laboratorio';
-import {LaboratorioDetail} from '../laboratorio-detail';
 
 @Component({
   selector: 'app-laboratorio-detail',
@@ -14,24 +13,29 @@ export class LaboratorioDetailComponent implements OnInit {
 
   constructor(
         private laboratorioService: LaboratorioService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private toastrservice: ToastrService
     ) { }
     
-    @Input () laboratorioDetail:LaboratorioDetail;
     
     /**
     * The lab's id
     */
     laboratorio_id: number;
     
+    laboratorio: Laboratorio;
    /**
     * The method which retrieves info of a lab
     */
-    getLaboratorioDetail(): void {
-        this.laboratorioService.getLaboratorioDetail(this.laboratorio_id)
-            .subscribe(laboratorioDetail => {
-                this.laboratorioDetail = laboratorioDetail
-            });
+    getLaboratorio(): void 
+        {
+        this.laboratorioService.getLaboratorio(this.laboratorio_id)
+            .subscribe(laboratorio => {
+            this.laboratorio = laboratorio}, err => {
+                this.toastrservice.error(err, "error");
+            }
+            
+        );
     }
 
     /**
@@ -40,8 +44,8 @@ export class LaboratorioDetailComponent implements OnInit {
     */
     ngOnInit() {
         this.laboratorio_id = +this.route.snapshot.paramMap.get('id');
-        this.laboratorioDetail = new LaboratorioDetail();
-        this.getLaboratorioDetail();
+      this.laboratorio = new Laboratorio;
+      this.getLaboratorio();
     }
 
 }

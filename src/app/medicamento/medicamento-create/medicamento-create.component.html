@@ -6,13 +6,51 @@
         <br>
         <form name="medicamento" (ngSubmit)="f.form.valid && createMedicamento()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="medicamentoName"><b>Name</b></label>
-                <input type="text" name="medicamentoName" class="form-control" id="medicamentoName" [(ngModel)]="medicamento.name"
-                    #medicamentoName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && medicamentoName.invalid }" required>
+                <label for="medicamentoNombre"><b>Nombre</b></label>
+                <input type="text" name="medicamentoNombre" class="form-control" id="medicamentoNombre" [(ngModel)]="medicamento.nombre"
+                    #medicamentoNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && medicamentoNombre.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>The medicamento's name is missing</div>
+                    <div>Hace falta el nombre del medicamento</div>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="medicamentoCantidad"><b>Cantidad</b></label>
+                <input name="medicamentoCantidad" class="form-control" id="medicamentoCantidad" [(ngModel)]="medicamento.cantidad"
+                    #medicamentoCantidad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && medicamentoCantidad.invalid }"
+                    required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la cantidad del medicamento</div>
+                </div>
+            </div>
+           
+            <div class="form-group">
+                <label for="medicamentoCosto"><b>Costo</b></label>
+                <input type="text" name="medicamentoCosto" class="form-control" id="medicamentoCosto" [(ngModel)]="medicamento.costo"
+                    #medicamentoCosto="ngModel" [ngClass]="{ 'is-invalid': f.submitted && medicamentoCosto.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el costo del medicamento</div>
+                </div>
+            </div>
+              
+            <div class="form-group">
+                <label for="medicamentoElaboradoPor"><b>Casa farmacéutica que elabora el medicamento</b></label>
+                <input type="text" name="medicamentoElaboradoPor" class="form-control" id="medicamentoElaboradoPor" [(ngModel)]="medicamento.elaboradoPor"
+                    #medicamentoElaboradoPor="ngModel" [ngClass]="{ 'is-invalid': f.submitted && medicamentoElaboradoPor.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la casa farmacéutica que elabora el medicamento</div>
+                </div>
+            </div>
+              
+              <div class="form-group">
+                <label for="medicamentoDescripcion"><b>Descripción</b></label>
+                <textarea name="medicamentoDescripcion" class="form-control" id="medicamentoDescripcion" [(ngModel)]="medicamento.descripcion"
+                    #medicamentoDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && medicamentoDescripcion.invalid }"
+                    required></textarea>
+                <div class="invalid-feedback">
+                    <div>Hace falta la descripción del medicamento</div>
+                </div>
+            </div>
+              
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>
                 <div class="divider"></div>

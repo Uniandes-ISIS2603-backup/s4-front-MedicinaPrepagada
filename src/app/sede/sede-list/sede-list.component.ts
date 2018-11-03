@@ -6,7 +6,7 @@ import {Sede} from '../sede';
 
 
 @Component({
-  selector: 'app-sede-list',
+  selector: 'app-sede',
   templateUrl: './sede-list.component.html',
   styleUrls: ['./sede-list.component.css']
 })

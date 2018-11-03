@@ -7,6 +7,7 @@ import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
+import { MedicoCreateComponent } from './medico-create/medico-create.component';
 
 @NgModule({
   imports: [
@@ -16,9 +17,9 @@ import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
     HttpClientModule,
     FormsModule
   ],
-  declarations: [MedicoListComponent, MedicoDetailComponent],
+  declarations: [MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent],
   providers:[MedicoService],
-  exports:[MedicoListComponent, MedicoDetailComponent],
-  bootstrap: [MedicoListComponent, MedicoDetailComponent]
+  exports:[MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent],
+  bootstrap: [MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent]
 })
 export class MedicoModule { }

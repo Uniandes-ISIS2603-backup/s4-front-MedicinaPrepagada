@@ -7,11 +7,10 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
 import {CitaLaboratorio} from './citalaboratorio';
-//import {citaLaboratorioDetail} from './citalaboratorio-detail';
 import {HttpClient} from '@angular/common/http';
 
 const API_URL = '../../assets/';
-const citaslaboratorio = '/citalaboratorio.json';
+const citaslaboratorio = '/citaLaboratorio.json';
 
 @Injectable()
 export class CitaLaboratorioService{

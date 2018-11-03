@@ -6,7 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-//import { FacturaDetailComponent } from './factura-detail/laboratorio-detail.component';
+import { FacturaDetailComponent } from './factura-detail/factura-detail.component';
+
 
 
 @NgModule({
@@ -17,9 +18,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  declarations: [FacturaListComponent],
+  declarations: [FacturaListComponent, FacturaDetailComponent],
   providers:[FacturaService],
-  exports: [FacturaListComponent],
-  bootstrap: [FacturaListComponent]
+  exports: [FacturaListComponent, FacturaDetailComponent],
+  bootstrap: [FacturaListComponent, FacturaDetailComponent]
 })
 export class FacturaModule { }

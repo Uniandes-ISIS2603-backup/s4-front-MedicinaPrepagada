@@ -7,11 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {PacienteModule} from './paciente/paciente.module';
 import {MedicoModule} from './medico/medico.module';
+import {EspecialidadModule} from './especialidad/especialidad.module';
+import {CitaMedicaModule} from './cita-medica/cita-medica.module';
 import {MedicamentoModule} from './medicamento/medicamento.module';
 import {FarmaciaModule} from './farmacia/farmacia.module';
 import {ExamenMedicoModule} from './examenmedico/examenmedico.module';
 
 import {SedeModule} from './sede/sede.module';
+import {HorarioAtencionModule} from './horario-atencion/horario-atencion.module';
+import {CitaLaboratorioModule} from './citalaboratorio/citalaboratorio.module';
 import {LaboratorioModule} from './laboratorio/laboratorio.module';
 import {FacturaModule} from './factura/factura.module';
 import {AdministradorModule} from './administrador/administrador.module';
@@ -40,12 +44,16 @@ import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
     
     PacienteModule,
     MedicoModule,
+    EspecialidadModule,
+    CitaMedicaModule,
     LaboratorioModule,
+    CitaLaboratorioModule,
     FacturaModule,
     MedicamentoModule,
     FarmaciaModule,
     ExamenMedicoModule,
     SedeModule,
+      HorarioAtencionModule,
     AdministradorModule,
     HistoriaClinicaModule,
     OrdenMedicaModule,

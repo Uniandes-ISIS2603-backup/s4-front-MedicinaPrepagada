@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import {FacturaService} from '../factura.service';
 import {Factura} from '../factura';
-//import {FacturaDetail} from '../factura-detail';
 
 @Component({
   selector: 'app-factura-list',
@@ -20,17 +19,6 @@ export class FacturaListComponent implements OnInit {
         this.facturaService.getFacturas()
             .subscribe(facturas => this.facturas = facturas);
     }
-   // onSelected(factura_id: number):void {
-    //    this.factura_id = factura_id;
-   //     this.selectedFactura = new FacturaDetail();
-   //     this.getFacturaDetail();     
-   // }
-   // getFacturaDetail(): void {
-     //   this.facturaService.getFacturaDetail(this.factura_id)
-    //        .subscribe(selectedFactura => {
-     //           this.selectedFactura = selectedFactura
-     //       });
-    // }
 
   ngOnInit() {
       this.getFacturas();

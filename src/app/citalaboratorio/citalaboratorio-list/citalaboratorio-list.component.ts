@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import {CitaLaboratorioService} from '../citalaboratorio.service';
 import {CitaLaboratorio} from '../citalaboratorio';
-//import {FacturaDetail} from '../factura-detail';
 
 @Component({
   selector: 'app-citalaboratorio-list',
@@ -20,17 +19,6 @@ export class CitaLaboratorioListComponent implements OnInit {
         this.citaLabService.getCitasLaboratorio()
             .subscribe(citas => this.citas = citas);
     }
-   // onSelected(factura_id: number):void {
-    //    this.factura_id = factura_id;
-   //     this.selectedFactura = new FacturaDetail();
-   //     this.getFacturaDetail();     
-   // }
-   // getFacturaDetail(): void {
-     //   this.facturaService.getFacturaDetail(this.factura_id)
-    //        .subscribe(selectedFactura => {
-     //           this.selectedFactura = selectedFactura
-     //       });
-    // }
 
   ngOnInit() {
       this.getCitasLaboratorio();

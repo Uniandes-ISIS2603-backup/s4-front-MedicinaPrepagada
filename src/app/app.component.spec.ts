@@ -3,13 +3,14 @@ import { AppComponent } from './app.component';
 import {PacienteListComponent} from './paciente/paciente-list/paciente-list.component';
 import {MedicamentoListComponent} from './medicamento/medicamento-list/medicamento-list.component';
 import {FarmaciaListComponent} from './farmacia/farmacia-list/farmacia-list.component';
-
 import {SedeListComponent} from './sede/sede-list/sede-list.component';
+import {HorarioAtencionListComponent} from './horario-atencion/horario-atencion-list/horario-atencion-list.component'
 import {MedicoListComponent} from './medico/medico-list/medico-list.component';
-import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
+import {LaboratorioListComponent} from './laboratorio/laboratorio-list/laboratorio-list.component';
 import {AdministradorListComponent} from './administrador/administrador-list/administrador-list.component';
 import {HistoriaClinicaListComponent} from './historiaClinica/historiaClinica-list/historiaClinica-list.component';
 import {OrdenMedicaListComponent} from './ordenMedica/ordenMedica-list/ordenMedica-list.component';
+import {CitaLaboratorioListComponent} from './citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -22,9 +23,11 @@ describe('AppComponent', () => {
         LaboratorioListComponent,
         AdministradorListComponent,
         SedeListComponent,
+        HorarioAtencionListComponent,
         MedicoListComponent,
         HistoriaClinicaListComponent,
-        OrdenMedicaListComponent
+        OrdenMedicaListComponent,
+        CitaLaboratorioListComponent
         
       ],
     }).compileComponents();

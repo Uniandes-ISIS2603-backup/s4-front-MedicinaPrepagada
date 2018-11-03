@@ -19,7 +19,7 @@ import { LaboratorioDetailComponent } from './laboratorio-detail/laboratorio-det
   ],
   declarations: [LaboratorioListComponent, LaboratorioDetailComponent],
   providers:[LaboratorioService],
-  exports: [LaboratorioListComponent],
-  bootstrap: [LaboratorioListComponent]
+  exports: [LaboratorioListComponent, LaboratorioDetailComponent],
+  bootstrap: [LaboratorioListComponent, LaboratorioDetailComponent]
 })
 export class LaboratorioModule { }

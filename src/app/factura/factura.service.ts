@@ -5,14 +5,12 @@
  */
  
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-
-import {Factura} from './factura';
-//import {FacturaDetail} from './factura-detail';
+import {Observable, throwError} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-
+import {Factura} from './factura';
 const API_URL = '../../assets/';
 const facturas = '/factura.json';
+const facturaDetail = '/facturaDetails';
 
 @Injectable()
 export class FacturaService{
@@ -32,11 +30,15 @@ export class FacturaService{
     }
     /**
     * Returns the Observable object containing the laboratorio retrieved from the API
-    * @returns Laboratorio
+    * @returns Factura
     */
-   // getLaboratorioDetail(facturaId): Observable<FacturaDetail> {
-      //  return this.http.get<FacturaDetail>(API_URL + facturas + '/' + facturaId);
-   // }
+    getFactura(facturaId): Observable<Factura>
+    {
+        return this.http.get<Factura>(API_URL + facturaDetail+ '/' +facturaId + '.json').catch(err => this.handleError(err));
+    }
+    private handleError(error: any){
+        return throwError(error.error.errorMessage);
+    }
 }
 
 

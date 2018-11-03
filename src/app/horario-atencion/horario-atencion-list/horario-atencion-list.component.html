@@ -1,0 +1,24 @@
+  <div style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha de Fin</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let horarioAtencion of horariosAtencion" routerLink="/horariosAtencion/{{horarioAtencion.id}}" >
+                    <td><span id ="idHorarioAtencoon">{{horarioAtencion.id}}</span></td>
+                    <td>{{horarioAtencion.fechaInicio}}</td>
+                    <td>{{horarioAtencion.fechaFin}}</td>
+                  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
- import {Laboratorio} from './laboratorio';
- 
- export class LaboratorioDetail extends Laboratorio
- {
-     latitud:number;
-     
-     longitud:number;
- }
 
+export class CitaMedica{
 
+  idCitaMedica: number;
+  fecha: string;
+  comentarios: string;
+  paciente: number;
+  horario: number;
+  
+}  
