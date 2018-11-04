@@ -16,9 +16,9 @@
             </div>
               
             <div class="form-group">
-                <label for="documentoMedico"><b>Numero Documento Medico</b></label>
-                <input type="number" name="documentoMedico" class="form-control" id="documentoMedico" [(ngModel)]= medico.documentoMedico
-                       #medicoDocumentoMedico="ngModel" [ngClass]="{'is-valid': f.submitted && medico.documentoMedico.invalid}" requireds>
+                <label for="documentoMedico"><b>Documento Medico</b></label>
+                <input type="number" name="documentoMedico" class="form-control" id="medicoDocumento" [(ngModel)] = medico.documentoMedico
+                       #medicoDocumentoMedico="ngModel" [ngClass]="{'is-valid': f.submitted && medico.documentoMedico.invalid}" required>
             </div>
             
             <div class="form-group">
@@ -27,11 +27,11 @@
                        #medicoNombre="ngModel" [ngClass]="{'is-valid': f.submitted && medico.nombre.invalid}" required>
             </div>
               
-            <div class="form-group">
+<!--            <div class="form-group">
                 <label  for="Especialidad"><b>Especialidad</b></label>
                 <input type="text" name="medicoEspecialidad" class="form-control" id="medicoEspecialidad" [(ngModel)] = medico.especialidad
                       #medicoEspecialidad="ngModel" [ngClass]="{'is-valid': f.submitted && medico.especialidad.invalid}" required>
-            </div>
+            </div>-->
               
             <div class="form-group">
                 <label for="Descripcion"><b>Descripción</b></label>
@@ -40,14 +40,14 @@
             </div>
               
             <div class="form-group">
-                <label for="Telefono"><b>Numero Contacto</b></label>
-                <input type="number" name="medicoNumeroContacto" class="form-control" id="medicoNumeroContacto" [(ngModel)] = medico.numeroContacto
-                       #medicoDireccion="ngModel" [ngClass]="{'is-valid': f.submitted && medico.numeroContacto.invalid}" required>
+                <label for="telefono"><b>Número Telefónico</b></label>
+                <input type="number" name="telefono" class="form-control" id="medicoTelefono" [(ngModel)] = medico.telefono
+                       #medicoDocumentoIdentidad="ngModel" [ngClass]="{'is-valid': f.submitted && medico.telefono.invalid}" required>
             </div>
               
             <div class="form-group">
                 <label for="Correo"><b>Correo electrónico</b></label>
-                <input type="text" name="medicoMail" class="form-control" id="medicoMail" [(ngModel)] = medico.mail
+                <input type="text" name="medicoMail" class="form-control" id="medicoMail" [(ngModel)] = medico.correo
                        #medicoMail="ngModel" [ngClass]="{'is-valid': f.submitted && medico.mail.invalid}" required> 
             </div>
               
@@ -55,6 +55,18 @@
                 <label for="Firma"><b>Firma</b></label>
                 <input type="text" name="medicoFirma" class="form-control" id="medicoFirma" [(ngModel)] = medico.firma
                        #medicoFirma="ngModel" [ngClass]="{'is-valid': f.submitted && medico.firma.invalid}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="documentoIdentidad"><b>Documento de Identidad</b></label>
+                <input type="number" name="tipo" class="form-control" id="medicoIdentidad" [(ngModel)] = medico.documentoIdentidad
+                       #medicoDocumentoIdentidad="ngModel" [ngClass]="{'is-valid': f.submitted && medico.documentoIdentidad.invalid}" required>
+            </div>
+              
+            <div class="form-group">
+                <label for="TipoUsuario"><b>Tipo de Usuario</b></label>
+                <input type="text" name="tipo" class="form-control" id="medicoTipo" [(ngModel)] = medico.tipoUsuario
+                       #medicoTipoUsuario="ngModel" [ngClass]="{'is-valid': f.submitted && medico.tipoUsuario.invalid}" required>
             </div>
               
             <div class=" row form-inline justify-content-center aliign-self-center">

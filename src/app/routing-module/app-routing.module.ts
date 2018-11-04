@@ -22,6 +22,12 @@ import {SedeListComponent} from '../sede/sede-list/sede-list.component';
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
 import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
+import {EspecialidadListComponent} from '../especialidad/especialidad-list/especialidad-list.component';
+import {EspecialidadCreateComponent} from '../especialidad/especialidad-create/especialidad-create.component';
+import {EspecialidadDetailComponent} from '../especialidad/especialidad-detail/especialidad-detail.component';
+import {CitaMedicaListComponent} from '../cita-medica/cita-medica-list/cita-medica-list.component';
+import {CitaMedicaCreateComponent} from '../cita-medica/cita-medica-create/cita-medica-create.component';
+import {CitaMedicaDetailComponent} from '../cita-medica/cita-medica-detail/cita-medica-detail.component';
 import {HistoriaClinicaListComponent} from '../historiaClinica/historiaClinica-list/historiaClinica-list.component';
 import {HistoriaClinicaDetailComponent} from '../historiaClinica/historiaClinica-detail/historiaClinica-detail.component';
 import {OrdenMedicaListComponent} from '../ordenMedica/ordenMedica-list/ordenMedica-list.component';
@@ -149,10 +155,10 @@ const routes: Routes = [
     {
         path: 'especialidades',
         children: [
-//            {
-//                path: 'list',
-//                component : EspecialidadListComponent
-//            },
+            {
+                path: 'list',
+                component : EspecialidadListComponent
+            }
 //            {
 //                path:'create',
 //                component: EspecialidadCreateComponent
