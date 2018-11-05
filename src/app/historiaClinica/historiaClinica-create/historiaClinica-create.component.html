@@ -12,36 +12,54 @@
                 <label  for="historiaFecha"><b>Fecha (DD/MM/AAAA)</b></label>
                 <input type="text" name="historiaFecha" class="form-control" id="historiaFecha" [(ngModel)] = historiaClinica.fecha
                       #historiaFecha="ngModel" [ngClass]="{'is-valid': f.submitted && historiaClinica.fecha.invalid}" required>
+                                      <div class="invalid-feedback">
+                    <div>Hace falta la fecha</div>
+                </div>
             </div>
               
             <div class="form-group">
                 <label for="historiaDescripcion"><b>Descripcion</b></label>
                 <input name="historiaDescripcion" type = "text"  class="form-control" id="historiaDescripcion" [(ngModel)]= historiaClinica.descripcion
                     #historiaDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.descripcion.invalid }" required>
+                                    <div class="invalid-feedback">
+                    <div>Hace falta la descripcion</div>
+                </div>
             </div>
               
             <div class="form-group">
                 <label for="historiaAlergias"><b>Alergias</b></label>
                 <input name="historiaAlergias" type = "text"  class="form-control" id="historiaAlergias" [(ngModel)]= historiaClinica.alergias
                     #historiaAlergias="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.alergias.invalid }" required>
+                                    <div class="invalid-feedback">
+                    <div>Hacen falta las alergias</div>
+                </div>
             </div>
               
                <div class="form-group">
                 <label for="historiaPeso"><b>Peso</b></label>
                 <input name="historiaPeso" type = "text"  class="form-control" id="historiaPeso" [(ngModel)]= historiaClinica.peso
                     #historiaPeso="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.peso.invalid }" required>
+                                    <div class="invalid-feedback">
+                    <div>Hace falta el peso</div>
+                </div>
             </div>
               
             <div class="form-group">
                 <label for="historiaEstatura"><b>Estatura</b></label>
                 <input name="historiaEstatura" type = "text"  class="form-control" id="historiaEstatura" [(ngModel)]= historiaClinica.estatura
                     #historiaEstatura="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.estatura.invalid }" required>
+                                    <div class="invalid-feedback">
+                    <div>Hace falta la estatura</div>
+                </div>
             </div>
               
             <div class="form-group">
                 <label for="historiaFuma"><b>Fuma</b></label>
                 <input name="historiaFumaYes" type = "radio"  class="form-control" id="historiaFuma" [(ngModel)]= historiaClinica.fuma
                     #historiaFuma="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.fuma.invalid }" required>
+                                    <div class="invalid-feedback">
+                    <div>Hace falta el estado de fumar</div>
+                </div>
             </div>
               
               
@@ -50,12 +68,18 @@
                 <label for="historiaBebe"><b>Bebe</b></label>
                 <input name="historiaBebe" type = "radio"  class="form-control" id="historiaBebe" [(ngModel)]= historiaClinica.bebe
                     #historiaBebe="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.bebe.invalid }" required>
+                                    <div class="invalid-feedback">
+                    <div>Hace falta el estado de bebe</div>
+                </div>
             </div>
               
             <div class="form-group">
                 <label for="historiaOperaciones"><b>Operaciones</b></label>
                 <input name="historiaOperaciones" type = "text"  class="form-control" id="historiaOperaciones" [(ngModel)]= historiaClinica.operaciones
                     #historiaOperaciones="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.operaciones.invalid }" required>
+                                    <div class="invalid-feedback">
+                    <div>Hacen falta las operaciones</div>
+                </div>
             </div>
                  
             <div class="row form-inline justify-content-center align-self-center">
