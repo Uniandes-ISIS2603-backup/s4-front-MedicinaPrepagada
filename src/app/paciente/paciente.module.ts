@@ -9,6 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { PacienteDetailComponent } from '../paciente/paciente-detail/paciente-detail.component';
 import {PacienteCreateComponent} from './paciente-create/paciente-create.component';
 import { PacienteTarjetascreditoComponent } from './paciente-tarjetascredito/paciente-tarjetascredito.component';
+import { PacienteCitaslaboratorioComponent } from './paciente-citaslaboratorio/paciente-citaslaboratorio.component';
+import { PacienteFacturasComponent } from './paciente-facturas/paciente-facturas.component';
+import { PacienteCitasmedicasComponent } from './paciente-citasmedicas/paciente-citasmedicas.component';
+import { PacienteHistoriasclinicasComponent } from './paciente-historiasclinicas/paciente-historiasclinicas.component';
 
 @NgModule({
   imports: [
@@ -18,9 +22,9 @@ import { PacienteTarjetascreditoComponent } from './paciente-tarjetascredito/pac
     FormsModule,
     AppRoutingModule
   ],
-    declarations: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent],
+    declarations: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent, PacienteCitaslaboratorioComponent, PacienteFacturasComponent, PacienteCitasmedicasComponent, PacienteHistoriasclinicasComponent],
   providers:[PacienteService],
-    exports: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent],
+    exports: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent, PacienteCitasmedicasComponent, PacienteFacturasComponent, PacienteCitasmedicasComponent, PacienteHistoriasclinicasComponent],
     bootstrap: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent]
 })
 export class PacienteModule { }

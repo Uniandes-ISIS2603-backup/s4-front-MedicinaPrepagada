@@ -9,6 +9,7 @@ import {environment} from '../../environments/environment';
 
 import {Paciente} from './paciente';
 import {TarjetaCredito} from '../tarjeta-credito/tarjeta-credito';
+import {} from '../ci';
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 
@@ -36,6 +37,7 @@ export class PacienteService{
     getTarjetasCreditoPaciente(pacienteId): Observable<TarjetaCredito[]>{
         return this.http.get<TarjetaCredito[]>(API_URL + pacientes + '/' + pacienteId + tarjetasCredito).catch(err => this.handleError(err));
     }
+    
     
     
     private handleError(error: any){
