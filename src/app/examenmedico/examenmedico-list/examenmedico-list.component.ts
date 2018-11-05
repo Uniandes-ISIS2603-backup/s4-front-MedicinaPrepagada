@@ -13,8 +13,24 @@ export class ExamenMedicoListComponent implements OnInit {
 
     constructor(private examenService: ExamenMedicoService) { }
     
+    /**
+    * The list of farmacias which belong to the BookStore
+    */
     examenes: ExamenMedico[];
+
+    /**
+    * Shows or hides the examenmedico-create-component
+    */
+    showCreate: boolean;
+    
+    /**
+    * The id of the farmacia that the user wants to view
+    */
     examen_id: number;
+    
+    /**
+     * the farmacia that the user views.
+     */
     selectedExamen : ExamenMedico;
         
     getExamenesMedicos(): void {
@@ -39,6 +55,17 @@ export class ExamenMedicoListComponent implements OnInit {
   ngOnInit() {
       this.getExamenesMedicos();
   }
+  
+  /**
+    * Shows or hides the create component
+    */
+    showHideCreate(): void {
+        if (this.selectedExamen) {
+            this.selectedExamen = undefined;
+            this.examen_id = undefined;
+        }
+        this.showCreate = !this.showCreate;
+    }
 
 }
 
