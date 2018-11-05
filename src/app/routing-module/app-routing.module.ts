@@ -32,6 +32,9 @@ import {OrdenMedicaDetailComponent} from '../ordenMedica/ordenMedica-detail/orde
 import {TarjetaCreditoListComponent} from '../tarjeta-credito/tarjeta-credito-list/tarjeta-credito-list.component';
 import {TarjetaCreditoDetailComponent} from '../tarjeta-credito/tarjeta-credito-detail/tarjeta-credito-detail.component';
 import {PacienteCreateComponent} from '../paciente/paciente-create/paciente-create.component';
+import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
+import {HistoriaClinicaCreateComponent} from '../historiaClinica/historiaClinica-create/historiaClinica-create.component';
+import {OrdenMedicaCreateComponent} from '../ordenMedica/ordenMedica-create/ordenMedica-create.component';
 
 
 
@@ -116,6 +119,10 @@ const routes: Routes = [
                 component : AdministradorListComponent
             },
             {
+                path:'create',
+                component: AdministradorCreateComponent
+            },
+            {
                 path: ':id',
                 component: AdministradorDetailComponent
                 
@@ -189,6 +196,10 @@ const routes: Routes = [
                 component : HistoriaClinicaListComponent
             },
             {
+                path:'create',
+                component: HistoriaClinicaCreateComponent
+            },
+            {
                 path: ':id',
                 component: HistoriaClinicaDetailComponent
                 
@@ -201,6 +212,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : OrdenMedicaListComponent
+            },
+            {
+                path:'create',
+                component: OrdenMedicaCreateComponent
             },
             {
                 path: ':id',

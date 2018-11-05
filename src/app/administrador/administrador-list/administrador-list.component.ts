@@ -25,11 +25,10 @@ export class AdministradorListComponent implements OnInit
         this.administradorService.getAdministradores()
             .subscribe(administradores => this.administradores = administradores);
     }
-
+    
   ngOnInit() 
   {
       this.getAdministradores();
   }
-
 }
 
