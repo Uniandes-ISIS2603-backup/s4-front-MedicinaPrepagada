@@ -13,6 +13,7 @@ import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {AdministradorDetailComponent} from './administrador-detail/administrador-detail.component';
+import {AdministradorCreateComponent} from './administrador-create/administrador-create.component';
 
 @NgModule({
   imports: [
@@ -22,9 +23,9 @@ import {AdministradorDetailComponent} from './administrador-detail/administrador
         CommonModule,
         FormsModule
             ],
-  declarations: [AdministradorListComponent, AdministradorDetailComponent],
+  declarations: [AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent],
   providers: [AdministradorService],
-  exports:[AdministradorListComponent, AdministradorDetailComponent],
-  bootstrap: [AdministradorListComponent, AdministradorDetailComponent]
+  exports:[AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent],
+  bootstrap: [AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent]
 })
 export class AdministradorModule { }
