@@ -5,13 +5,13 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Nombre</th>
+                    <th>Concepto</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let laboratorio of laboratorios" routerLink="/laboratorios/{{laboratorio.id}}">
-                    <td><span>{{laboratorio.id}}</span></td>
-                    <td>{{laboratorio.nombre}}</td>
+                <tr *ngFor ="let factura of facturas" routerLink="/facturas/{{factura.id}}">
+                    <td><span>{{factura.id}}</span></td>
+                    <td>{{factura.concepto}}</td>
               
                 </tr>
             </tbody>

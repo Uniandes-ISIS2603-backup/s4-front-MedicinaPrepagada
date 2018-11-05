@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ 
 import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
-
-import {Laboratorio} from './laboratorio';
 import {HttpClient} from '@angular/common/http';
-
+import {Factura} from './factura';
 const API_URL = '../../assets/';
-const laboratorios = '/laboratorio.json';
-const laboratorioDetail = '/laboratorioDetails';
+const facturas = '/factura.json';
+const facturaDetail = '/facturaDetails';
 
 @Injectable()
-export class LaboratorioService{
+export class FacturaService{
     
     /**
     * Constructor of the service
@@ -26,19 +25,20 @@ export class LaboratorioService{
     * Returns the Observable object containing the list of medicamentos retrieved from the API
     * @returns The list of medicamentos in real time
     */
-    getLaboratorios() : Observable<Laboratorio[]>{
-        return this.http.get<Laboratorio[]> (API_URL + laboratorios);
+    getFacturas() : Observable<Factura[]>{
+        return this.http.get<Factura[]> (API_URL + facturas);
     }
     /**
     * Returns the Observable object containing the laboratorio retrieved from the API
-    * @returns Laboratorio
+    * @returns Factura
     */
-    getLaboratorio(laboratorioId): Observable<Laboratorio>
+    getFactura(facturaId): Observable<Factura>
     {
-        return this.http.get<Laboratorio>(API_URL + laboratorioDetail+ '/' + laboratorioId + '.json').catch(err => this.handleError(err));
+        return this.http.get<Factura>(API_URL + facturaDetail+ '/' +facturaId + '.json').catch(err => this.handleError(err));
     }
     private handleError(error: any){
         return throwError(error.error.errorMessage);
     }
 }
+
 
