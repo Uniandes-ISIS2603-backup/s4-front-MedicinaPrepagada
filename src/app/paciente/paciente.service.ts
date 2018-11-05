@@ -8,12 +8,13 @@ import { Observable , throwError} from 'rxjs';
 import {environment} from '../../environments/environment'; 
 
 import {Paciente} from './paciente';
+import {TarjetaCredito} from '../tarjeta-credito/tarjeta-credito';
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 
 const API_URL = environment.apirURL;
 const pacientes = '/pacientes';
-const pacienteDetail = '/pacienteDetails';
+const tarjetasCredito = '/tarjetascredito';
 
 @Injectable()
 export class PacienteService{
@@ -30,6 +31,10 @@ export class PacienteService{
     
     createPaciente(paciente): Observable<Paciente>{
         return this.http.post<Paciente>(API_URL + pacientes, paciente).catch(err => this.handleError(err));
+    }
+    
+    getTarjetasCreditoPaciente(pacienteId): Observable<TarjetaCredito[]>{
+        return this.http.get<TarjetaCredito[]>(API_URL + pacientes + '/' + pacienteId + tarjetasCredito).catch(err => this.handleError(err));
     }
     
     

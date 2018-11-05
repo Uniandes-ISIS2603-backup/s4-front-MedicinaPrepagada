@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PacienteDetailComponent } from '../paciente/paciente-detail/paciente-detail.component';
 import {PacienteCreateComponent} from './paciente-create/paciente-create.component';
+import { PacienteTarjetascreditoComponent } from './paciente-tarjetascredito/paciente-tarjetascredito.component';
 
 @NgModule({
   imports: [
@@ -17,9 +18,9 @@ import {PacienteCreateComponent} from './paciente-create/paciente-create.compone
     FormsModule,
     AppRoutingModule
   ],
-    declarations: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent],
+    declarations: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent],
   providers:[PacienteService],
-    exports: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent],
+    exports: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent],
     bootstrap: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent]
 })
 export class PacienteModule { }

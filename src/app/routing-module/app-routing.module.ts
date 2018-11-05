@@ -32,6 +32,7 @@ import {OrdenMedicaDetailComponent} from '../ordenMedica/ordenMedica-detail/orde
 import {TarjetaCreditoListComponent} from '../tarjeta-credito/tarjeta-credito-list/tarjeta-credito-list.component';
 import {TarjetaCreditoDetailComponent} from '../tarjeta-credito/tarjeta-credito-detail/tarjeta-credito-detail.component';
 import {PacienteCreateComponent} from '../paciente/paciente-create/paciente-create.component';
+import {PacienteTarjetascreditoComponent} from '../paciente/paciente-tarjetascredito/paciente-tarjetascredito.component';
 
 
 
@@ -42,19 +43,21 @@ const routes: Routes = [
     {
         path: 'pacientes',
         children: [
-            {
+                        {
                 path: 'list',
                 component : PacienteListComponent
+            },
+                {
+                path: ':id',
+                component: PacienteDetailComponent,
             },
             {
                 path:'add',
                 component: PacienteCreateComponent
             },
-            {
-                path: ':id',
-                component: PacienteDetailComponent
-                
-            }
+            { path:':id/tarjetascredito',
+            component: PacienteTarjetascreditoComponent}
+            
         ]
     },
     {

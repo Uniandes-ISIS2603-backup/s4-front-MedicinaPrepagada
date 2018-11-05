@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {ActivatedRoute} from '@angular/router/';
 import {Paciente} from '../paciente';
 import {ToastrService} from 'ngx-toastr';
+import {TarjetaCredito} from '../../tarjeta-credito/tarjeta-credito';
 
 import {PacienteService} from '../paciente.service';
 
@@ -22,6 +23,8 @@ export class PacienteDetailComponent implements OnInit {
     
     paciente_id: number;
     
+    tarjetasCredito: TarjetaCredito[];
+    
     getPaciente(): void {
         this.pacienteService.getPaciente(this.paciente_id)
             .subscribe(paciente => {
@@ -31,11 +34,21 @@ export class PacienteDetailComponent implements OnInit {
             
         );
     }
+    
+    gettarjetasCreditoPaciente():void{
+        this.pacienteService.getTarjetasCreditoPaciente(this.paciente_id)
+            .subscribe(tarjetasCredito => {this.tarjetasCredito = tarjetasCredito},
+            err => {this.toastrservice.error(err,"Error")});
+            
+    }
 
   ngOnInit() {
       this.paciente_id = +this.route.snapshot.paramMap.get('id');
       this.paciente = new Paciente;
+      this.tarjetasCredito = [];
       this.getPaciente();
+      this.gettarjetasCreditoPaciente();
+      
   }
 
 }
