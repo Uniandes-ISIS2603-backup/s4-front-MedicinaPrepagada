@@ -33,6 +33,7 @@ import {TarjetaCreditoListComponent} from '../tarjeta-credito/tarjeta-credito-li
 import {TarjetaCreditoDetailComponent} from '../tarjeta-credito/tarjeta-credito-detail/tarjeta-credito-detail.component';
 import {PacienteCreateComponent} from '../paciente/paciente-create/paciente-create.component';
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
+import {HistoriaClinicaCreateComponent} from '../historiaClinica/historiaClinica-create/historiaClinica-create.component';
 
 
 
@@ -192,6 +193,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : HistoriaClinicaListComponent
+            },
+            {
+                path:'create',
+                component: HistoriaClinicaCreateComponent
             },
             {
                 path: ':id',

@@ -13,6 +13,7 @@ import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {HistoriaClinicaDetailComponent} from './historiaClinica-detail/historiaClinica-detail.component';
+import {HistoriaClinicaCreateComponent} from './historiaClinica-create/historiaClinica-create.component';
 
 @NgModule({
   imports: [
@@ -22,10 +23,10 @@ import {HistoriaClinicaDetailComponent} from './historiaClinica-detail/historiaC
         CommonModule,
         FormsModule
             ],
-  declarations: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent],
+  declarations: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent],
   providers: [HistoriaClinicaService],
-  exports:[HistoriaClinicaListComponent, HistoriaClinicaDetailComponent],
-  bootstrap: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent]
+  exports:[HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent],
+  bootstrap: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent]
 })
 export class HistoriaClinicaModule { }
 
