@@ -4,4 +4,28 @@
  * and open the template in the editor.
  */
 
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { OrdenMedicaCreateComponent } from './ordenMedica-create.component';
+
+describe('OrdenMedicaCreateComponent', () => {
+  let component: OrdenMedicaCreateComponent;
+  let fixture: ComponentFixture<OrdenMedicaCreateComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ OrdenMedicaCreateComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(OrdenMedicaCreateComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

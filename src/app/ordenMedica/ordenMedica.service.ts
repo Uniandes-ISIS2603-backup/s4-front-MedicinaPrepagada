@@ -10,9 +10,10 @@ import { Observable, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import {OrdenMedica} from './ordenMedica';
+import {environment} from '../../environments/environment';
 
-const API_URL = '../../assets/';
-const ordenesMedicas = '/ordenesMedicas.json';
+const API_URL = environment.apirURL;
+const ordenesMedicas = '/ordenesMedicas';
 const ordenMedicaDetail = '/ordenMedicaDetails';
 
 @Injectable()
@@ -27,7 +28,11 @@ export class OrdenMedicaService
     
     getOrdenMedica(ordenMedicaId): Observable<OrdenMedica>
     {
-        return this.http.get<OrdenMedica>(API_URL + ordenMedicaDetail+ '/' + ordenMedicaId + '.json').catch(err => this.handleError(err));
+        return this.http.get<OrdenMedica>(API_URL + ordenesMedicas + '/' + ordenMedicaId).catch(err => this.handleError(err));
+    }
+    
+    createOrdenMedica(ordenMedica): Observable<OrdenMedica> {
+        return this.http.post<OrdenMedica>(API_URL + ordenesMedicas, ordenMedica).catch(err => this.handleError(err));
     }
     
     private handleError(error: any)
