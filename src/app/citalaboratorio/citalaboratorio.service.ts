@@ -5,16 +5,14 @@
  */
 import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
-
-import {Laboratorio} from './laboratorio';
+import {CitaLaboratorio} from './citalaboratorio';
 import {HttpClient} from '@angular/common/http';
-
 const API_URL = '../../assets/';
-const laboratorios = '/laboratorio.json';
-const laboratorioDetail = '/laboratorioDetails';
+const citaslaboratorio = '/citaLaboratorio.json';
+const citaLabDetail = '/citaLaboratorioDetails';
 
 @Injectable()
-export class LaboratorioService{
+export class CitaLaboratorioService{
     
     /**
     * Constructor of the service
@@ -24,21 +22,22 @@ export class LaboratorioService{
     
     /**
     * Returns the Observable object containing the list of medicamentos retrieved from the API
-    * @returns The list of medicamentos in real time
+    * @returns The list of citas in real time
     */
-    getLaboratorios() : Observable<Laboratorio[]>{
-        return this.http.get<Laboratorio[]> (API_URL + laboratorios);
+    getCitasLaboratorio() : Observable<CitaLaboratorio[]>{
+        return this.http.get<CitaLaboratorio[]> (API_URL + citaslaboratorio);
     }
     /**
     * Returns the Observable object containing the laboratorio retrieved from the API
     * @returns Laboratorio
     */
-    getLaboratorio(laboratorioId): Observable<Laboratorio>
+    getCitaLaboratorio(citaLabId): Observable<CitaLaboratorio>
     {
-        return this.http.get<Laboratorio>(API_URL + laboratorioDetail+ '/' + laboratorioId + '.json').catch(err => this.handleError(err));
+        return this.http.get<CitaLaboratorio>(API_URL + citaLabDetail+ '/' +citaLabId + '.json').catch(err => this.handleError(err));
     }
-    private handleError(error: any){
+        private handleError(error: any){
         return throwError(error.error.errorMessage);
     }
+
 }
 

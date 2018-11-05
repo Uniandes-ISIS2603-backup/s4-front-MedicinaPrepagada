@@ -30,12 +30,8 @@ export class Laboratorio {
     */
     horarioDeAtencion: string;
     
-    /**
-    * longitud
-    */
-    longitud: number;
-    /**
-    * latitud
-    */
-    latitud: number;
+    latitud:number;
+    
+    longitud:number;
+    
 }

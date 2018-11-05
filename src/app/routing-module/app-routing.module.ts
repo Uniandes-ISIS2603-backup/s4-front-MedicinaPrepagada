@@ -17,6 +17,11 @@ import {ExamenMedicoListComponent} from '../examenmedico/examenmedico-list/exame
 import {ExamenMedicoDetailComponent} from '../examenmedico/examenmedico-detail/examenmedico-detail.component';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
+import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/laboratorio-detail.component';
+import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
+import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
+import {CitaLaboratorioListComponent} from '../citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
+import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio-detail/citalaboratorio-detail.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
 import {SedeDetailComponent} from '../sede/sede-detail/sede-detail.component';
@@ -103,11 +108,41 @@ const routes: Routes = [
         ]
     },
     {
+        path:'citalaboratorio',
+        children:[
+            {
+                path:'list',
+                component: CitaLaboratorioListComponent
+            },
+            {
+                path: ':id',
+                component:CitaLaboratorioDetailComponent
+            }
+        ]
+    },
+    {
         path: 'laboratorios',
         children: [
             {
                 path: 'list',
                 component : LaboratorioListComponent
+            },
+            {
+                path:':id',
+                component:LaboratorioDetailComponent
+            }
+        ]
+    },
+    {
+        path:'facturas',
+        children: [
+            {
+                path:'list',
+                component: FacturaListComponent
+            },
+            {
+                path:':id',
+                component:FacturaDetailComponent
             }
         ]
     },
