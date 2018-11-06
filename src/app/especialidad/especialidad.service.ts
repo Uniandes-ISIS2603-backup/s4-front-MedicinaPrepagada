@@ -23,11 +23,11 @@ export class EspecialidadService{
         return this.http.get<Especialidad[]> (API_URL + especialidades);
     }
     
-    getMedico(idEspecialidad): Observable<Especialidad>{
+    getEspecialidad(idEspecialidad): Observable<Especialidad>{
         return this.http.get<Especialidad>(API_URL + especialidades + '/' + idEspecialidad ).catch(err => this.handleError(err));
     }
     
-    createMedico(especialidad): Observable<Especialidad>{
+    createEspecialidad(especialidad): Observable<Especialidad>{
         return this.http.post<Especialidad>(API_URL + especialidades, especialidad).catch(err => this.handleError(err));
     }
     
