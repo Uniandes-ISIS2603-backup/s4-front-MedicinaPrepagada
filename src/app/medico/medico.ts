@@ -10,13 +10,13 @@ export class Medico {
   contrasena: string;
   tipoUsuario: string;
   documentoIdentidad: number;
-  nombre: string;
   telefono: number;
-  correo: string;
   documentoMedico: number;
+  nombre: string;
+  correo: string;
   firma: string;
   descripcion: string;
-  especialidad: string;
+//  especialidad: string;
   
 //  constructor(idMedico: number,login: string,contrasena: string,tipoUsuario:string,documentoIdentidad: number, nombre: string, telefono: number, correo: string, documentoMedico: number,firma:string, descripcion: string, especialidad: string) {
 //    this.idMedico = idMedico;

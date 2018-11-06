@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import {LaboratorioService} from '../laboratorio.service';
 import {Laboratorio} from '../laboratorio';
+
 
 @Component({
   selector: 'app-laboratorio-list',
@@ -12,11 +14,13 @@ export class LaboratorioListComponent implements OnInit {
   constructor(private laboratorioService: LaboratorioService) { }
     
     laboratorios: Laboratorio[];
-    
+    laboratorio_id: number;
+    selectedLaboratorio : Laboratorio;
     getLaboratorios(): void {
         this.laboratorioService.getLaboratorios()
             .subscribe(laboratorios => this.laboratorios = laboratorios);
     }
+ 
 
   ngOnInit() {
       this.getLaboratorios();

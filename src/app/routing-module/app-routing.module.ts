@@ -17,6 +17,11 @@ import {ExamenMedicoListComponent} from '../examenmedico/examenmedico-list/exame
 import {ExamenMedicoDetailComponent} from '../examenmedico/examenmedico-detail/examenmedico-detail.component';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
+import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/laboratorio-detail.component';
+import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
+import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
+import {CitaLaboratorioListComponent} from '../citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
+import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio-detail/citalaboratorio-detail.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
 import {SedeDetailComponent} from '../sede/sede-detail/sede-detail.component';
@@ -25,6 +30,12 @@ import {HorarioAtencionListComponent} from '../horario-atencion/horario-atencion
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
 import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
+import {EspecialidadListComponent} from '../especialidad/especialidad-list/especialidad-list.component';
+import {EspecialidadCreateComponent} from '../especialidad/especialidad-create/especialidad-create.component';
+import {EspecialidadDetailComponent} from '../especialidad/especialidad-detail/especialidad-detail.component';
+import {CitaMedicaListComponent} from '../cita-medica/cita-medica-list/cita-medica-list.component';
+import {CitaMedicaCreateComponent} from '../cita-medica/cita-medica-create/cita-medica-create.component';
+import {CitaMedicaDetailComponent} from '../cita-medica/cita-medica-detail/cita-medica-detail.component';
 import {HistoriaClinicaListComponent} from '../historiaClinica/historiaClinica-list/historiaClinica-list.component';
 import {HistoriaClinicaDetailComponent} from '../historiaClinica/historiaClinica-detail/historiaClinica-detail.component';
 import {OrdenMedicaListComponent} from '../ordenMedica/ordenMedica-list/ordenMedica-list.component';
@@ -35,6 +46,11 @@ import {PacienteCreateComponent} from '../paciente/paciente-create/paciente-crea
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {HistoriaClinicaCreateComponent} from '../historiaClinica/historiaClinica-create/historiaClinica-create.component';
 import {OrdenMedicaCreateComponent} from '../ordenMedica/ordenMedica-create/ordenMedica-create.component';
+import {PacienteTarjetascreditoComponent} from '../paciente/paciente-tarjetascredito/paciente-tarjetascredito.component';
+import {PacienteCitaslaboratorioComponent} from '../paciente/paciente-citaslaboratorio/paciente-citaslaboratorio.component';
+import {PacienteFacturasComponent} from '../paciente//paciente-facturas/paciente-facturas.component';
+import {PacienteCitasmedicasComponent} from '../paciente/paciente-citasmedicas/paciente-citasmedicas.component';
+import {PacienteHistoriasclinicasComponent} from '../paciente/paciente-historiasclinicas/paciente-historiasclinicas.component';
 
 
 
@@ -45,7 +61,7 @@ const routes: Routes = [
     {
         path: 'pacientes',
         children: [
-            {
+                        {
                 path: 'list',
                 component : PacienteListComponent
             },
@@ -53,11 +69,30 @@ const routes: Routes = [
                 path:'add',
                 component: PacienteCreateComponent
             },
-            {
+                {
                 path: ':id',
-                component: PacienteDetailComponent
-                
+                component: PacienteDetailComponent,
+            },
+            { path:':id/tarjetascredito',
+            component: PacienteTarjetascreditoComponent
+            },
+            {
+                path:':id/citaslaboratorio',
+                component: PacienteCitaslaboratorioComponent
+            },
+            {
+                path:':id/facturas',
+                component: PacienteFacturasComponent
+            },
+            {
+                path:':id/citasmedicas',
+                component: PacienteCitasmedicasComponent
+            },
+            {
+                path:':id/historiasclinicas',
+                component: PacienteHistoriasclinicasComponent
             }
+            
         ]
     },
     {
@@ -103,11 +138,41 @@ const routes: Routes = [
         ]
     },
     {
+        path:'citalaboratorio',
+        children:[
+            {
+                path:'list',
+                component: CitaLaboratorioListComponent
+            },
+            {
+                path: ':id',
+                component:CitaLaboratorioDetailComponent
+            }
+        ]
+    },
+    {
         path: 'laboratorios',
         children: [
             {
                 path: 'list',
                 component : LaboratorioListComponent
+            },
+            {
+                path:':id',
+                component:LaboratorioDetailComponent
+            }
+        ]
+    },
+    {
+        path:'facturas',
+        children: [
+            {
+                path:'list',
+                component: FacturaListComponent
+            },
+            {
+                path:':id',
+                component:FacturaDetailComponent
             }
         ]
     },
@@ -173,19 +238,37 @@ const routes: Routes = [
     {
         path: 'especialidades',
         children: [
-//            {
-//                path: 'list',
-//                component : EspecialidadListComponent
-//            },
-//            {
-//                path:'create',
-//                component: EspecialidadCreateComponent
-//            },
-//            {
-//                path: ':id',
-//                component: EspecialidadDetailComponent
-//                
-//            }
+            {
+                path: 'list',
+                component : EspecialidadListComponent
+            },
+            {
+                path:'create',
+                component: EspecialidadCreateComponent
+            },
+            {
+                path: ':nombre',
+                component: EspecialidadDetailComponent
+                
+            }
+        ]
+    },
+    {
+        path: 'citasMedicas',
+        children: [
+            {
+                path: 'list',
+                component : EspecialidadListComponent
+            },
+            {
+                path:'create',
+                component: EspecialidadCreateComponent
+            },
+            {
+                path: ':id',
+                component: EspecialidadDetailComponent
+                
+            }
         ]
     },
     {

@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="col-md-4">
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let citaMedica of citasMedicas" routerLink="/citasmedicas/{{citaMedica.idCitaMedica}}" style="cursor: pointer;">
+                    <td><span>{{citaMedica.idCitaMedica}}</span></td>
+                    <td>{{citaMedica.fecha}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</div>

@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import {TarjetaCredito} from '../tarjeta-credito/tarjeta-credito';
 
 export class Paciente{
     id: number;
@@ -26,6 +27,8 @@ export class Paciente{
     mail: string;
     
     eps: string;
+    
+    tarjetasCredito: TarjetaCredito[];
 }
 
 
