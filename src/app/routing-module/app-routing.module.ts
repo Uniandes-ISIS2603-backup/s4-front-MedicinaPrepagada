@@ -158,16 +158,34 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : EspecialidadListComponent
+            },
+            {
+                path:'create',
+                component: EspecialidadCreateComponent
+            },
+            {
+                path: ':nombre',
+                component: EspecialidadDetailComponent
+                
             }
-//            {
-//                path:'create',
-//                component: EspecialidadCreateComponent
-//            },
-//            {
-//                path: ':id',
-//                component: EspecialidadDetailComponent
-//                
-//            }
+        ]
+    },
+    {
+        path: 'citasMedicas',
+        children: [
+            {
+                path: 'list',
+                component : EspecialidadListComponent
+            },
+            {
+                path:'create',
+                component: EspecialidadCreateComponent
+            },
+            {
+                path: ':id',
+                component: EspecialidadDetailComponent
+                
+            }
         ]
     },
     {
