@@ -59,13 +59,13 @@ const routes: Routes = [
                 path: 'list',
                 component : PacienteListComponent
             },
-                {
-                path: ':id',
-                component: PacienteDetailComponent,
-            },
             {
                 path:'add',
                 component: PacienteCreateComponent
+            },
+                {
+                path: ':id',
+                component: PacienteDetailComponent,
             },
             { path:':id/tarjetascredito',
             component: PacienteTarjetascreditoComponent
