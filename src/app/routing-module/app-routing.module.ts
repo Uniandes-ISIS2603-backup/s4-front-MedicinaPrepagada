@@ -40,6 +40,11 @@ import {PacienteCreateComponent} from '../paciente/paciente-create/paciente-crea
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {HistoriaClinicaCreateComponent} from '../historiaClinica/historiaClinica-create/historiaClinica-create.component';
 import {OrdenMedicaCreateComponent} from '../ordenMedica/ordenMedica-create/ordenMedica-create.component';
+import {PacienteTarjetascreditoComponent} from '../paciente/paciente-tarjetascredito/paciente-tarjetascredito.component';
+import {PacienteCitaslaboratorioComponent} from '../paciente/paciente-citaslaboratorio/paciente-citaslaboratorio.component';
+import {PacienteFacturasComponent} from '../paciente//paciente-facturas/paciente-facturas.component';
+import {PacienteCitasmedicasComponent} from '../paciente/paciente-citasmedicas/paciente-citasmedicas.component';
+import {PacienteHistoriasclinicasComponent} from '../paciente/paciente-historiasclinicas/paciente-historiasclinicas.component';
 
 
 
@@ -50,19 +55,38 @@ const routes: Routes = [
     {
         path: 'pacientes',
         children: [
-            {
+                        {
                 path: 'list',
                 component : PacienteListComponent
+            },
+                {
+                path: ':id',
+                component: PacienteDetailComponent,
             },
             {
                 path:'add',
                 component: PacienteCreateComponent
             },
+            { path:':id/tarjetascredito',
+            component: PacienteTarjetascreditoComponent
+            },
             {
-                path: ':id',
-                component: PacienteDetailComponent
-                
+                path:':id/citaslaboratorio',
+                component: PacienteCitaslaboratorioComponent
+            },
+            {
+                path:':id/facturas',
+                component: PacienteFacturasComponent
+            },
+            {
+                path:':id/citasmedicas',
+                component: PacienteCitasmedicasComponent
+            },
+            {
+                path:':id/historiasclinicas',
+                component: PacienteHistoriasclinicasComponent
             }
+            
         ]
     },
     {
