@@ -1,3 +1,42 @@
-<p>
-  cita-medica-list works!
-</p>
+<div id="alertPanel" style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+<!--                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Create an editorial</button>-->
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let citaMedica of citasMedicas" routerLink="/citasMedicas/{{citaMedica.idCitaMedica}}" style="cursor: pointer;">
+                        <td>
+                            {{citaMedica.fecha}}
+                        </td>
+                        <td>
+                            {{citaMedica.comentarios}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-8">
+<!--            <div *ngIf="selectedMedico">
+                <app-medico-detail [medicoDetail]="selectedMedico"></app-medico-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-medico-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-medico-create>
+            </div>-->
+        </div>
+    </div>
+    <button class="btn btn-success" routerLink="/citasMedicas/create">Crear Cita Médica</button>
+</div>
+
