@@ -13,6 +13,7 @@ import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {OrdenMedicaDetailComponent} from './ordenMedica-detail/ordenMedica-detail.component';
+import {OrdenMedicaCreateComponent} from './ordenMedica-create/ordenMedica-create.component';
 
 @NgModule({
   imports: [
@@ -22,10 +23,10 @@ import {OrdenMedicaDetailComponent} from './ordenMedica-detail/ordenMedica-detai
         CommonModule,
         FormsModule
             ],
-  declarations: [OrdenMedicaListComponent, OrdenMedicaDetailComponent],
+  declarations: [OrdenMedicaListComponent, OrdenMedicaDetailComponent, OrdenMedicaCreateComponent],
   providers: [OrdenMedicaService],
-  exports:[OrdenMedicaListComponent, OrdenMedicaDetailComponent],
-  bootstrap: [OrdenMedicaListComponent, OrdenMedicaDetailComponent]
+  exports:[OrdenMedicaListComponent, OrdenMedicaDetailComponent, OrdenMedicaCreateComponent],
+  bootstrap: [OrdenMedicaListComponent, OrdenMedicaDetailComponent, OrdenMedicaCreateComponent]
 })
 export class OrdenMedicaModule { }
 

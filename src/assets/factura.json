@@ -1,0 +1,106 @@
+[{
+  "id": 1,
+  "concepto": "Automotive",
+  "id_cliente": 1,
+  "valor": 107542,
+  "fecha": "02/21/2018",
+  "pagada": false
+}, {
+  "id": 2,
+  "concepto": "Music",
+  "id_cliente": 2,
+  "valor": 65876,
+  "fecha": "10/02/2018",
+  "pagada": true
+}, {
+  "id": 3,
+  "concepto": "Kids",
+  "id_cliente": 3,
+  "valor": 292027,
+  "fecha": "01/12/2018",
+  "pagada": true
+}, {
+  "id": 4,
+  "concepto": "Clothing",
+  "id_cliente": 4,
+  "valor": 243356,
+  "fecha": "11/12/2017",
+  "pagada": false
+}, {
+  "id": 5,
+  "concepto": "Electronics",
+  "id_cliente": 5,
+  "valor": 266341,
+  "fecha": "01/05/2018",
+  "pagada": true
+}, {
+  "id": 6,
+  "concepto": "Clothing",
+  "id_cliente": 6,
+  "valor": 257627,
+  "fecha": "05/10/2018",
+  "pagada": false
+}, {
+  "id": 7,
+  "concepto": "Games",
+  "id_cliente": 7,
+  "valor": 210915,
+  "fecha": "02/25/2018",
+  "pagada": false
+}, {
+  "id": 8,
+  "concepto": "Books",
+  "id_cliente": 8,
+  "valor": 281884,
+  "fecha": "11/15/2017",
+  "pagada": false
+}, {
+  "id": 9,
+  "concepto": "Toys",
+  "id_cliente": 9,
+  "valor": 13523,
+  "fecha": "08/11/2018",
+  "pagada": false
+}, {
+  "id": 10,
+  "concepto": "Industrial",
+  "id_cliente": 10,
+  "valor": 40588,
+  "fecha": "06/23/2018",
+  "pagada": true
+}, {
+  "id": 11,
+  "concepto": "Music",
+  "id_cliente": 11,
+  "valor": 195205,
+  "fecha": "09/19/2018",
+  "pagada": true
+}, {
+  "id": 12,
+  "concepto": "Clothing",
+  "id_cliente": 12,
+  "valor": 122175,
+  "fecha": "09/14/2018",
+  "pagada": true
+}, {
+  "id": 13,
+  "concepto": "Garden",
+  "id_cliente": 13,
+  "valor": 78885,
+  "fecha": "06/14/2018",
+  "pagada": false
+}, {
+  "id": 14,
+  "concepto": "Beauty",
+  "id_cliente": 14,
+  "valor": 61786,
+  "fecha": "05/03/2018",
+  "pagada": true
+}, {
+  "id": 15,
+  "concepto": "Games",
+  "id_cliente": 15,
+  "valor": 152336,
+  "fecha": "04/13/2018",
+  "pagada": false
+}]

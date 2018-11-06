@@ -17,8 +17,16 @@ import {ExamenMedicoListComponent} from '../examenmedico/examenmedico-list/exame
 import {ExamenMedicoDetailComponent} from '../examenmedico/examenmedico-detail/examenmedico-detail.component';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
+import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/laboratorio-detail.component';
+import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
+import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
+import {CitaLaboratorioListComponent} from '../citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
+import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio-detail/citalaboratorio-detail.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
+import {SedeDetailComponent} from '../sede/sede-detail/sede-detail.component';
+import {HorarioAtencionListComponent} from '../horario-atencion/horario-atencion-list/horario-atencion-list.component';
+
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
 import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
@@ -35,6 +43,14 @@ import {OrdenMedicaDetailComponent} from '../ordenMedica/ordenMedica-detail/orde
 import {TarjetaCreditoListComponent} from '../tarjeta-credito/tarjeta-credito-list/tarjeta-credito-list.component';
 import {TarjetaCreditoDetailComponent} from '../tarjeta-credito/tarjeta-credito-detail/tarjeta-credito-detail.component';
 import {PacienteCreateComponent} from '../paciente/paciente-create/paciente-create.component';
+import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
+import {HistoriaClinicaCreateComponent} from '../historiaClinica/historiaClinica-create/historiaClinica-create.component';
+import {OrdenMedicaCreateComponent} from '../ordenMedica/ordenMedica-create/ordenMedica-create.component';
+import {PacienteTarjetascreditoComponent} from '../paciente/paciente-tarjetascredito/paciente-tarjetascredito.component';
+import {PacienteCitaslaboratorioComponent} from '../paciente/paciente-citaslaboratorio/paciente-citaslaboratorio.component';
+import {PacienteFacturasComponent} from '../paciente//paciente-facturas/paciente-facturas.component';
+import {PacienteCitasmedicasComponent} from '../paciente/paciente-citasmedicas/paciente-citasmedicas.component';
+import {PacienteHistoriasclinicasComponent} from '../paciente/paciente-historiasclinicas/paciente-historiasclinicas.component';
 
 
 
@@ -45,7 +61,7 @@ const routes: Routes = [
     {
         path: 'pacientes',
         children: [
-            {
+                        {
                 path: 'list',
                 component : PacienteListComponent
             },
@@ -53,11 +69,30 @@ const routes: Routes = [
                 path:'add',
                 component: PacienteCreateComponent
             },
-            {
+                {
                 path: ':id',
-                component: PacienteDetailComponent
-                
+                component: PacienteDetailComponent,
+            },
+            { path:':id/tarjetascredito',
+            component: PacienteTarjetascreditoComponent
+            },
+            {
+                path:':id/citaslaboratorio',
+                component: PacienteCitaslaboratorioComponent
+            },
+            {
+                path:':id/facturas',
+                component: PacienteFacturasComponent
+            },
+            {
+                path:':id/citasmedicas',
+                component: PacienteCitasmedicasComponent
+            },
+            {
+                path:':id/historiasclinicas',
+                component: PacienteHistoriasclinicasComponent
             }
+            
         ]
     },
     {
@@ -103,11 +138,41 @@ const routes: Routes = [
         ]
     },
     {
+        path:'citalaboratorio',
+        children:[
+            {
+                path:'list',
+                component: CitaLaboratorioListComponent
+            },
+            {
+                path: ':id',
+                component:CitaLaboratorioDetailComponent
+            }
+        ]
+    },
+    {
         path: 'laboratorios',
         children: [
             {
                 path: 'list',
                 component : LaboratorioListComponent
+            },
+            {
+                path:':id',
+                component:LaboratorioDetailComponent
+            }
+        ]
+    },
+    {
+        path:'facturas',
+        children: [
+            {
+                path:'list',
+                component: FacturaListComponent
+            },
+            {
+                path:':id',
+                component:FacturaDetailComponent
             }
         ]
     },
@@ -117,6 +182,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : AdministradorListComponent
+            },
+            {
+                path:'create',
+                component: AdministradorCreateComponent
             },
             {
                 path: ':id',
@@ -131,6 +200,20 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : SedeListComponent
+            },
+            {
+                path: ':id',
+                component: SedeDetailComponent
+                
+            }
+        ]
+    },
+    {
+        path: 'horariosAtencion',
+        children: [
+            {
+                path: 'list',
+                component: HorarioAtencionListComponent
             }
         ]
     },
@@ -196,6 +279,10 @@ const routes: Routes = [
                 component : HistoriaClinicaListComponent
             },
             {
+                path:'create',
+                component: HistoriaClinicaCreateComponent
+            },
+            {
                 path: ':id',
                 component: HistoriaClinicaDetailComponent
                 
@@ -208,6 +295,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : OrdenMedicaListComponent
+            },
+            {
+                path:'create',
+                component: OrdenMedicaCreateComponent
             },
             {
                 path: ':id',

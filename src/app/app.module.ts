@@ -14,7 +14,10 @@ import {FarmaciaModule} from './farmacia/farmacia.module';
 import {ExamenMedicoModule} from './examenmedico/examenmedico.module';
 
 import {SedeModule} from './sede/sede.module';
+import {HorarioAtencionModule} from './horario-atencion/horario-atencion.module';
+import {CitaLaboratorioModule} from './citalaboratorio/citalaboratorio.module';
 import {LaboratorioModule} from './laboratorio/laboratorio.module';
+import {FacturaModule} from './factura/factura.module';
 import {AdministradorModule} from './administrador/administrador.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,10 +47,13 @@ import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
     EspecialidadModule,
     CitaMedicaModule,
     LaboratorioModule,
+    CitaLaboratorioModule,
+    FacturaModule,
     MedicamentoModule,
     FarmaciaModule,
     ExamenMedicoModule,
     SedeModule,
+      HorarioAtencionModule,
     AdministradorModule,
     HistoriaClinicaModule,
     OrdenMedicaModule,

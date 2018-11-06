@@ -18,7 +18,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let sede of sedes" >
+                <tr *ngFor ="let sede of sedes" routerLink="/sedes/{{sede.id}}" >
                     <td><span id ="idSede">{{sede.id}}</span></td>
                     <td>{{sede.nombre}}</td>
                     <td>{{sede.direccion}}</td>

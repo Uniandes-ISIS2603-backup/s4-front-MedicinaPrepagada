@@ -22,6 +22,7 @@ export class PacienteDetailComponent implements OnInit {
     
     paciente_id: number;
     
+    
     getPaciente(): void {
         this.pacienteService.getPaciente(this.paciente_id)
             .subscribe(paciente => {
@@ -31,11 +32,14 @@ export class PacienteDetailComponent implements OnInit {
             
         );
     }
+    
+   
 
   ngOnInit() {
       this.paciente_id = +this.route.snapshot.paramMap.get('id');
       this.paciente = new Paciente;
       this.getPaciente();
+      
   }
 
 }

@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-	import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Injectable} from '@angular/core';
+import {Observable, throwError} from 'rxjs';
 
 import {Laboratorio} from './laboratorio';
 import {HttpClient} from '@angular/common/http';
 
 const API_URL = '../../assets/';
 const laboratorios = '/laboratorio.json';
+const laboratorioDetail = '/laboratorioDetails';
 
 @Injectable()
 export class LaboratorioService{
@@ -28,6 +28,17 @@ export class LaboratorioService{
     */
     getLaboratorios() : Observable<Laboratorio[]>{
         return this.http.get<Laboratorio[]> (API_URL + laboratorios);
+    }
+    /**
+    * Returns the Observable object containing the laboratorio retrieved from the API
+    * @returns Laboratorio
+    */
+    getLaboratorio(laboratorioId): Observable<Laboratorio>
+    {
+        return this.http.get<Laboratorio>(API_URL + laboratorioDetail+ '/' + laboratorioId + '.json').catch(err => this.handleError(err));
+    }
+    private handleError(error: any){
+        return throwError(error.error.errorMessage);
     }
 }
 
