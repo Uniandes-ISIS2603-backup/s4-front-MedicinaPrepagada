@@ -19,8 +19,8 @@
               
             <div class="form-group">
                 <label for="historiaDescripcion"><b>Descripcion</b></label>
-                <input name="historiaDescripcion" type = "text"  class="form-control" id="historiaDescripcion" [(ngModel)]= historiaClinica.descripcion
-                    #historiaDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.descripcion.invalid }" required>
+                <input name="historiaDescripcion" type = "text"  class="form-control" id="historiaDescripcion" [(ngModel)]= historiaClinica.descripcionDiagnostico
+                    #historiaDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.descripcionDiagnostico.invalid }" required>
                                     <div class="invalid-feedback">
                     <div>Hace falta la descripcion</div>
                 </div>
@@ -55,7 +55,7 @@
               
             <div class="form-group">
                 <label for="historiaFuma"><b>Fuma</b></label>
-                <input name="historiaFumaYes" type = "radio"  class="form-control" id="historiaFuma" [(ngModel)]= historiaClinica.fuma
+                <input name="historiaFumaYes" type = "text"  class="form-control" id="historiaFuma" [(ngModel)]= historiaClinica.fuma
                     #historiaFuma="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.fuma.invalid }" required>
                                     <div class="invalid-feedback">
                     <div>Hace falta el estado de fumar</div>
@@ -66,7 +66,7 @@
               
             <div class="form-group">
                 <label for="historiaBebe"><b>Bebe</b></label>
-                <input name="historiaBebe" type = "radio"  class="form-control" id="historiaBebe" [(ngModel)]= historiaClinica.bebe
+                <input name="historiaBebe" type = "text"  class="form-control" id="historiaBebe" [(ngModel)]= historiaClinica.bebe
                     #historiaBebe="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaClinica.bebe.invalid }" required>
                                     <div class="invalid-feedback">
                     <div>Hace falta el estado de bebe</div>
