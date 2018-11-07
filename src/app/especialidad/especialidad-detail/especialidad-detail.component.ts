@@ -9,7 +9,7 @@ export class EspecialidadDetailComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {)
+  ngOnInit() {}
   }
 
-}
+
