@@ -1,3 +1,19 @@
-<p>
-  especialidad-create works!
-</p>
+<div class="row">
+    <div class="col-6">
+        <h2>Crear Una especialidad</h2>
+        <form name="especialidad" (ngSubmit)="f.form.valid && createEspecialidad()" #f="ngForm" novalidate>
+            
+            <div class="form-group">
+                <label for="Nombre"><b>Nombre de la especialidad</b></label>
+                <input type="text" name="especialidadNombre" class="form-control" id="especialidadNombre" [(ngModel)] = especialidad.nombre
+                       #especialidadNombre="ngModel" [ngClass]="{'is-valid': f.submitted && especialidad.nombre.invalid}" required>     
+            </div>
+              
+            <div class=" row form-inline justify-content-center aliign-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>   
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

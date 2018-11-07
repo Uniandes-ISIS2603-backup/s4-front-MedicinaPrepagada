@@ -37,9 +37,12 @@
             </table>
         </div>
         <div class="col-md-8">
-<!--            <app-editorial-create (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"></app-editorial-create>
-            <app-editorial-edit [editorial_id]="edit_editorial_id" (cancel)="hideEditEditorial()" (update)="ngOnInit()"
-                *ngIf="showEdit"></app-editorial-edit>-->
+<!--            <div *ngIf="selectedMedico">
+                <app-medico-detail [medicoDetail]="selectedMedico"></app-medico-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-medico-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-medico-create>
+            </div>-->
         </div>
     </div>
     <button class="btn btn-success" routerLink="/medicos/create">Crear Medico</button>

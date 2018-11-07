@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Medico} from '../medico';
 import {MedicoService} from '../medico.service';
 
+
 @Component({
   selector: 'app-medico-list',
   templateUrl: './medico-list.component.html',
@@ -13,6 +14,8 @@ export class MedicoListComponent implements OnInit {
     
     medicos: Medico[];
     
+    
+    
     getMedicos(): void {
         this.medicoService.getMedicos()
             .subscribe(medicos => this.medicos = medicos);
@@ -21,5 +24,6 @@ export class MedicoListComponent implements OnInit {
   ngOnInit() {
       this.getMedicos();
   }
-
+  
+    
 }
