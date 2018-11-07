@@ -33,7 +33,7 @@ and open the template in the editor.
               
             <div class="form-group">
                 <label for="ordenValidaHasta"><b>Valida Hasta</b></label>
-                <input name="ordenValidaHasta" type = "text" readonly=”readonly”  class="form-control" id="ordenValidaHasta" [(ngModel)]= historiaClinica.validaHasta
+                <input name="ordenValidaHasta" type = "text"  class="form-control" id="ordenValidaHasta" [(ngModel)]= historiaClinica.validaHasta
                     #ordenValidaHasta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ordenMedica.validaHasta.invalid }" required>
             </div>
               
