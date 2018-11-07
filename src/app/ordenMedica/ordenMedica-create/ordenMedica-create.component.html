@@ -13,6 +13,15 @@ and open the template in the editor.
         <br>
         <form name="ordenMedica" (ngSubmit)="f.form.valid && createOrdenMedica()" #f="ngForm" novalidate>
             
+              <div class="form-group">
+                <label  for="ordenId"><b>Id</b></label>
+                <input type="text" name="ordenId" class="form-control" id="ordenId" [(ngModel)] = ordenMedica.id
+                      #ordenId="ngModel" [ngClass]="{'is-valid': f.submitted && ordenMedica.id.invalid}" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el id</div>
+                </div>
+            </div>
+              
             <div class="form-group">
                 <label  for="ordenFecha"><b>Fecha de Expedicion (DD/MM/AAAA)</b></label>
                 <input type="text" name="ordenFecha" class="form-control" id="ordenFecha" [(ngModel)] = ordenMedica.fechaExpedicion
@@ -33,8 +42,11 @@ and open the template in the editor.
               
             <div class="form-group">
                 <label for="ordenValidaHasta"><b>Valida Hasta</b></label>
-                <input name="ordenValidaHasta" type = "text"  class="form-control" id="ordenValidaHasta" [(ngModel)]= historiaClinica.validaHasta
+                <input name="ordenValidaHasta" type = "text"  class="form-control" id="ordenValidaHasta" [(ngModel)]= ordenMedica.validaHasta
                     #ordenValidaHasta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ordenMedica.validaHasta.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la validez</div>
+                </div>
             </div>
               
                <div class="form-group">
