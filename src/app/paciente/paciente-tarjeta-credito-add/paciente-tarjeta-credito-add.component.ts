@@ -12,15 +12,27 @@ import {Paciente} from '../paciente';
 })
 export class PacienteTarjetaCreditoAddComponent implements OnInit {
 
+    /**
+     * Consturcor del componente
+     */
     constructor(private pacienteService: PacienteService,
         private toastr: ToastrService,
         private route: ActivatedRoute) { }
   
+        /**
+         * id del paciente que se le asigna la tarjeta
+         */
   idPaciente: number;
   tarjetaCredito: TarjetaCredito;
   
+  /**
+   * el output que le dice al componente que cancele la creacion
+   */
   @Output() cancel = new EventEmitter();
     
+  /**
+   * el output que le dice al componente que el usuario creo el componente
+   */
   @Output() create = new EventEmitter();
   
   
@@ -37,7 +49,6 @@ export class PacienteTarjetaCreditoAddComponent implements OnInit {
                   this.toastr.error("La tarjeta de credito no fue creada", "Agregar Tarjeta Credito");
               }
               );
-        console.log(this.tarjetaCredito.numero);
   }
   
   /**
@@ -48,6 +59,9 @@ export class PacienteTarjetaCreditoAddComponent implements OnInit {
       this.cancel.emit();
   }
 
+  /**
+   * funcion que inicializa el componente
+   */
   ngOnInit() {
       this.tarjetaCredito = new TarjetaCredito;
   }

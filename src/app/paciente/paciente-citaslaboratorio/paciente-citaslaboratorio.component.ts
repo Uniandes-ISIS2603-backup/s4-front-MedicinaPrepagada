@@ -12,20 +12,36 @@ import {CitaLaboratorio} from '../../citalaboratorio/citalaboratorio';
 })
 export class PacienteCitaslaboratorioComponent implements OnInit {
 
+  /**
+   * constructor del componente
+   */
   constructor(
       private pacienteService: PacienteService,
       private route: ActivatedRoute,
       private toastr: ToastrService) { }
 
-      paciente_id: number;
-      
+    /**
+     * id del paciente
+     */
+     paciente_id: number;
+     
+    /**
+     * todas las citas de laboratorio del paciente
+     */ 
     citasLaboratorio: CitaLaboratorio[];
     
+    /**
+     * obtiene todas las citas de laboratorio del paciente
+     */
     getCitasLaboratorioPaciente():void{
         this.pacienteService.getCitasLaboratorioPaciente(this.paciente_id)
             .subscribe(citasLaboratorio => {this.citasLaboratorio = citasLaboratorio},
             err => {this.toastr.error(err, "Error")});
     }
+  
+  /**
+   * metodo para inicializar el componente
+   */
   ngOnInit() {
       this.paciente_id = +this.route.snapshot.paramMap.get('id');
       this.citasLaboratorio = [];

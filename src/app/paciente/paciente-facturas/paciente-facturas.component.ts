@@ -11,21 +11,36 @@ import {Factura} from '../../factura/factura';
 })
 export class PacienteFacturasComponent implements OnInit {
 
+  /**
+   * constructor del componente
+   */
   constructor(
       private pacienteService: PacienteService,
       private route: ActivatedRoute,
       private toastr: ToastrService) { }
       
-      paciente_id:number;
+    /**
+     * id del paciente
+     */
+    paciente_id:number;
       
+    /**
+     * Lista de todas las facturas del paciente
+     */
     facturas: Factura[];
     
+    /**
+     * obtiene todas las facturas del paciente
+     */
     getFacturasPaciente():void{
         this.pacienteService.getFacturasPaciente(this.paciente_id)
             .subscribe(facturas => {this.facturas = facturas},
             err => {this.toastr.error(err, "Error")});
     }
 
+  /**
+   * metodo para inicializar el componente
+   */
   ngOnInit() {
       this.paciente_id = +this.route.snapshot.paramMap.get('id');
       this.facturas = [];

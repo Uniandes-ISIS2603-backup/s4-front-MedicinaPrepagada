@@ -81,14 +81,14 @@ export class PacienteService{
      * crea una tarjeta de credito y la asocia con el paciente con el id dado
      */
     createTarjetaCredito(pacienteId, tarjetaCredito): Observable<TarjetaCredito>{
-        console.log(tarjetaCredito.numero);
-        
         return this.http.post<TarjetaCredito>(API_URL + pacientes + '/' + pacienteId + tarjetasCredito, tarjetaCredito).catch(err => this.handleError(err));
     }
     
     
     
-    
+    /**
+     * metodo para manejar las exceptions
+     */
     private handleError(error: any){
         return throwError(error.error.errorMessage);
     }
