@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-6">
+        <h2>Crear Una Sede</h2>
+        <form name="sede" (ngSubmit)="f.form.valid && createSede()" #f="ngForm" novalidate>
+            
+            <div class="form-group">
+                <label for="Nombre"><b>Nombre</b></label>
+                <input type="text" name="sedeNombre" class="form-control" id="sedeNombre" [(ngModel)] = sede.nombre
+                       #sedeNombre="ngModel" [ngClass]="{'is-valid': f.submitted && sede.nombre.invalid}" required>     
+            </div>
+              
+            <div class="form-group">
+                <label for="Direccion"><b>Direccion</b></label>
+                <input type="text" name="sedeDireccion" class="form-control" id="sedeDireccion" [(ngModel)] = sede.direccion
+                       #sedeDireccion="ngModel" [ngClass]="{'is-valid': f.submitted && sede.direccion.invalid}" required>     
+            </div>  
+               
+            <div class="form-group">
+                <label for="tipoSede"><b>Tipo Sede</b></label>
+                <input type="number" name="sedeTipoSede" class="form-control" id="sedeTipoSede" [(ngModel)] = sede.tipoSede
+                       #sedeTipoSede="ngModel" [ngClass]="{'is-valid':f.submitted && sede.tipoSede.invalid}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Descripcion"><b>Descripcion</b></label>
+                <input type="text" name="sedeDescripcion" class="form-control" id="sedeDescripcion" [(ngModel)] = sede.descripcion
+                       #sedeDescripcion="ngModel" [ngClass]="{'is-valid': f.submitted && sede.descripcion.invalid}" required>     
+            </div>
+             
+            <div class="form-group">
+                <label for="Longitud"><b>Longitud</b></label>
+                <input type="number" name="sedeLongitud" class="form-control" id="sedeLongitud" [(ngModel)] = sede.longitud
+                       #sedeLongitud="ngModel" [ngClass]="{'is-valid': f.submitted && sede.longitud.invalid}" required>     
+            </div>
+              
+              <div class="form-group">
+                <label for="Latitud"><b>Latitud</b></label>
+                <input type="number" name="sedeLatitud" class="form-control" id="sedeLatitud" [(ngModel)] = sede.latitud
+                       #sedeLatitud="ngModel" [ngClass]="{'is-valid': f.submitted && sede.latitud.invalid}" required>     
+            </div>
+             
+              
+            <div class="form-group">
+                <label for="Telefono"><b>Telefono</b></label>
+                <input type="number" name="sedeTelefono" class="form-control" id="sedeTelefono" [(ngModel)] = sede.telefono
+                       #sedeTelefono="ngModel" [ngClass]="{'is-valid': f.submitted && sede.telefono.invalid}" required>     
+            </div>
+              
+            <div class="form-group">
+                <label for="Correo"><b>Correo</b></label>
+                <input type="text" name="sedeCorreo" class="form-control" id="sedeCorreo" [(ngModel)] = sede.correo
+                       #sedeCorreo="ngModel" [ngClass]="{'is-valid': f.submitted && sede.correo.invalid}" required>     
+            </div>
+              
+            <div class=" row form-inline justify-content-center aliign-self-center">
+                <button type="submit" class="btn btn-primary">Crear</button>   
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
