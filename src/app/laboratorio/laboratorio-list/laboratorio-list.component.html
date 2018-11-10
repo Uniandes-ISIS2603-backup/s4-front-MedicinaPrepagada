@@ -1,7 +1,7 @@
 <div style="text-align: center"></div>
 <div class="container-fluid">
     <div class="col-md-4">
-        <table class="table table-striped">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -9,7 +9,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let laboratorio of laboratorios" routerLink="/laboratorios/{{laboratorio.id}}">
+                <tr *ngFor ="let laboratorio of laboratorios" routerLink="/laboratorios/{{laboratorio.id}}"style="cursor: pointer;">
                     <td><span>{{laboratorio.id}}</span></td>
                     <td>{{laboratorio.nombre}}</td>
               
@@ -17,4 +17,5 @@
             </tbody>
         </table>
     </div>
+     <button class="btn btn-success" routerLink="/laboratorios/add">Crear Laboratorio</button>
 </div>

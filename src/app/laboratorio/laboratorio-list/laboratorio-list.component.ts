@@ -5,7 +5,7 @@ import {Laboratorio} from '../laboratorio';
 
 
 @Component({
-  selector: 'app-laboratorio-list',
+  selector: 'app-laboratorio',
   templateUrl: './laboratorio-list.component.html',
   styleUrls: ['./laboratorio-list.component.css']
 })
@@ -14,11 +14,8 @@ export class LaboratorioListComponent implements OnInit {
   constructor(private laboratorioService: LaboratorioService) { }
     
     laboratorios: Laboratorio[];
-    laboratorio_id: number;
-    selectedLaboratorio : Laboratorio;
     getLaboratorios(): void {
-        this.laboratorioService.getLaboratorios()
-            .subscribe(laboratorios => this.laboratorios = laboratorios);
+         this.laboratorioService.getLaboratorios().subscribe(laboratorios => this.laboratorios = laboratorios);
     }
  
 

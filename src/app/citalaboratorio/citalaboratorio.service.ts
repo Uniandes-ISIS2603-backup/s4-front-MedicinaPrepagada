@@ -7,8 +7,10 @@ import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {CitaLaboratorio} from './citalaboratorio';
 import {HttpClient} from '@angular/common/http';
-const API_URL = '../../assets/';
-const citaslaboratorio = '/citaLaboratorio.json';
+import {environment} from '../../environments/environment'; 
+
+const API_URL = environment.apirURL;
+const citaslaboratorio = '/citaLaboratorio';
 const citaLabDetail = '/citaLaboratorioDetails';
 
 @Injectable()
@@ -27,13 +29,17 @@ export class CitaLaboratorioService{
     getCitasLaboratorio() : Observable<CitaLaboratorio[]>{
         return this.http.get<CitaLaboratorio[]> (API_URL + citaslaboratorio);
     }
+    
+    createCitaLaboratorio(citalaboratorio): Observable<CitaLaboratorio>{
+        return this.http.post<CitaLaboratorio>(API_URL + citaslaboratorio, citalaboratorio).catch(err => this.handleError(err));
+    }
     /**
     * Returns the Observable object containing the laboratorio retrieved from the API
     * @returns Laboratorio
     */
     getCitaLaboratorio(citaLabId): Observable<CitaLaboratorio>
     {
-        return this.http.get<CitaLaboratorio>(API_URL + citaLabDetail+ '/' +citaLabId + '.json').catch(err => this.handleError(err));
+        return this.http.get<CitaLaboratorio>(API_URL + citaslaboratorio + '/' +citaLabId ).catch(err => this.handleError(err));
     }
         private handleError(error: any){
         return throwError(error.error.errorMessage);

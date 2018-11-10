@@ -6,7 +6,7 @@
 
 export class Laboratorio {
     /**
-    * The medicamento's id
+    * The lab's id
     */
     id: number;
 
@@ -28,10 +28,16 @@ export class Laboratorio {
     /**
     * horario atencion
     */
-    horarioDeAtencion: string;
+    horarioAtencion: string;
+    /**
+     * Latitud del lab
+     */
     
     latitud:number;
     
+    /**
+     * Longitud del lab
+     */
     longitud:number;
     
 }
