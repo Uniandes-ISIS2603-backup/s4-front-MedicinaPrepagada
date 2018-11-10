@@ -51,6 +51,7 @@ import {PacienteCitaslaboratorioComponent} from '../paciente/paciente-citaslabor
 import {PacienteFacturasComponent} from '../paciente//paciente-facturas/paciente-facturas.component';
 import {PacienteCitasmedicasComponent} from '../paciente/paciente-citasmedicas/paciente-citasmedicas.component';
 import {PacienteHistoriasclinicasComponent} from '../paciente/paciente-historiasclinicas/paciente-historiasclinicas.component';
+import {PacienteTarjetaCreditoAddComponent} from '../paciente/paciente-tarjeta-credito-add/paciente-tarjeta-credito-add.component';
 
 
 
@@ -71,7 +72,10 @@ const routes: Routes = [
             },
                 {
                 path: ':id',
-                component: PacienteDetailComponent,
+                component: PacienteDetailComponent
+            },
+            { path:':id/tarjetascredito/add',
+                component: PacienteTarjetaCreditoAddComponent
             },
             { path:':id/tarjetascredito',
             component: PacienteTarjetascreditoComponent

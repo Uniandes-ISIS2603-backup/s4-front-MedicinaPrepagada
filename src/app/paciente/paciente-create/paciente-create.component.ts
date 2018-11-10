@@ -31,6 +31,7 @@ export class PacienteCreateComponent implements OnInit {
     }
     
     cancelCreation() : void{
+        this.toastr.warning('El paciente no fue creado', 'Crear paciente');
         this.cancel.emit();
     }
 
