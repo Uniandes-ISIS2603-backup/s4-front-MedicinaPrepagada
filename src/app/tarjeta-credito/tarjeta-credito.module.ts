@@ -12,9 +12,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    FormsModule 
+    FormsModule,
+    AppRoutingModule
   ],
   providers:[
       TarjetaCreditoService

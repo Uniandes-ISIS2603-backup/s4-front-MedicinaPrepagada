@@ -12,17 +12,28 @@ import {PacienteService} from '../paciente.service';
 })
 export class PacienteDetailComponent implements OnInit {
 
+    /**
+     * constructor del componente
+     */
     constructor(
         private pacienteService: PacienteService,
         private route: ActivatedRoute,
         private toastrservice: ToastrService
         ) {}
-        
+      
+    /**
+     * paciente que se mostrara
+     */  
     paciente: Paciente;
     
+    /**
+     * id del paciente
+     */
     paciente_id: number;
     
-    
+    /**
+     * obtiene el paciente
+     */
     getPaciente(): void {
         this.pacienteService.getPaciente(this.paciente_id)
             .subscribe(paciente => {
@@ -35,6 +46,9 @@ export class PacienteDetailComponent implements OnInit {
     
    
 
+  /**
+   * metodo para inicializar el componente
+   */
   ngOnInit() {
       this.paciente_id = +this.route.snapshot.paramMap.get('id');
       this.paciente = new Paciente;
