@@ -13,6 +13,7 @@ import 'rxjs/add/operator/catch';
 
 const API_URL = environment.apirURL;
 const especialidades = '/especialidad';
+const especialidadDetail = 'especialidadDetails';
 
 /**
  *El servicio que provee todo lo relacionado con especialidades

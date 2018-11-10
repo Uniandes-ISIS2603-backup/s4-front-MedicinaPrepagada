@@ -8,6 +8,8 @@
 * Esta clase representa un medico en mediSistemas. 
 * Contiene toda la información relevante a un medico.
 */
+import { Especialidad } from '../especialidad/especialidad';
+
 export class Medico {
 
 /**
@@ -66,7 +68,7 @@ export class Medico {
   descripcion: string;
   
   
-//  especialidad: string;
+  especialidad: Especialidad;
   
 //  constructor(idMedico: number,login: string,contrasena: string,tipoUsuario:string,documentoIdentidad: number, nombre: string, telefono: number, correo: string, documentoMedico: number,firma:string, descripcion: string, especialidad: string) {
 //    this.idMedico = idMedico;
