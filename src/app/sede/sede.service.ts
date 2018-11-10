@@ -25,6 +25,10 @@ export class SedeService{
     {
         return this.http.get<Sede>(API_URL + sedes+ '/' + sedeId ).catch(err => this.handleError(err));
     }
+    
+    createSede(sede): Observable<Sede>{
+        return this.http.post<Sede>(API_URL + sedes, sede).catch(err => this.handleError(err));
+    }
 
     private handleError(error: any){
         return throwError(error.error.errorMessage);

@@ -9,16 +9,31 @@ import {Paciente} from '../paciente';
 })
 export class PacienteCreateComponent implements OnInit {
 
+    /**
+     * constructor del componente
+     */
     constructor(private pacienteService: PacienteService,
                 private toastr: ToastrService
     ) { }
     
+    /**
+     * el paciente que se va a crear
+     */
     paciente: Paciente;
     
+    /**
+     * el output que le dice al componente que cancele la creacion
+     */
     @Output() cancel = new EventEmitter();
     
+    /**
+   * el output que le dice al componente que el usuario creo el componente
+   */
     @Output() create = new EventEmitter();
     
+    /**
+     * crea un paciente
+     */
     createPaciente(): void{
         this.pacienteService.createPaciente(this.paciente)
             .subscribe(() => {
@@ -30,10 +45,16 @@ export class PacienteCreateComponent implements OnInit {
         );
     }
     
+    /**
+     * cancela la creacion del paciente
+     */
     cancelCreation() : void{
+        this.toastr.warning('El paciente no fue creado', 'Crear paciente');
         this.cancel.emit();
     }
-
+  /**
+   * funcion para inicializar el componente
+   */
   ngOnInit() {
       this.paciente = new Paciente();
   }

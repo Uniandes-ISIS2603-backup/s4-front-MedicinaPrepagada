@@ -9,33 +9,28 @@ and open the template in the editor.
         <div class="col-4">
             <br>
             <div class="row justify-content-center align-self-center">
-  <!--                  <button [ngClass]="{ 'btn-success': !showCreate, 'btn-primary': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Crear un administrador</button> -->
             </div>
             <br>
             <br>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="h4">Login</th>    
+                        <th>Id</th>
+                        <th>Login</th>
+                        <th>Tipo de Usuario</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor = "let administrador of administradores"
-                         routerLink="/medicos/{{medico.idMedico}}" style="cursor: pointer;">
-                        <td> 
-                <dd>{{administrador.login}}</dd>
-                </td>
+                         routerLink="/administradores/{{administrador.id}}" style="cursor: pointer;">
+                        <td><span>{{administrador.id}}</span></td>
+                        <td><dd>{{administrador.login}}</dd></td>
+                        <td>{{administrador.tipoUsuario}}</td>
                 </tr>
                 </tbody>
             </table>
         </div>
         <div class="col-8">
- <!--            <div *ngIf="selectedAdministrador">
-                <app-administrador-detail [administradorDetail]="selectedAdministrador"></app-administrador-detail>
-            </div>
-            <div *ngIf="showCreate">
-                <app-administrador-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-administrador-create>-->
             </div>
         </div>   
         <button class="btn btn-success" routerLink="/administradores/create">Crear Administrador</button>

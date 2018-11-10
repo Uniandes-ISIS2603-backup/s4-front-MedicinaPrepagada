@@ -20,7 +20,7 @@ and open the template in the editor.
             <tbody>
                 <tr *ngFor ="let historiaClinica of historiasClinicas" routerLink="/historiasClinicas/{{historiaClinica.id}}">
                     <td><span>{{historiaClinica.id}}</span></td>
-                    <td>{{historiaClinica.descripcion}}</td>
+                    <td>{{historiaClinica.descripcionDiagnostico}}</td>
                     <td>{{historiaClinica.fecha}}</td>
                 </tr>
             </tbody>
