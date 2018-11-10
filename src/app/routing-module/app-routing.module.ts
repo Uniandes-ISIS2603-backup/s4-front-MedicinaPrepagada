@@ -245,7 +245,7 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: MedicoDetailComponent
-                
+//                runGuardsAndResolvers: 'always'
             }
         ]
     },
@@ -261,7 +261,7 @@ const routes: Routes = [
                 component: EspecialidadCreateComponent
             },
             {
-                path: ':nombre',
+                path: ':id',
                 component: EspecialidadDetailComponent
                 
             }
@@ -272,15 +272,15 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : EspecialidadListComponent
+                component : CitaMedicaListComponent
             },
             {
                 path:'create',
-                component: EspecialidadCreateComponent
+                component: CitaMedicaCreateComponent
             },
             {
                 path: ':id',
-                component: EspecialidadDetailComponent
+                component: CitaMedicaDetailComponent
                 
             }
         ]

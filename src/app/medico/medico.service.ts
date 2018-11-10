@@ -15,23 +15,46 @@ const API_URL = environment.apirURL;
 const medicos = '/medico';
 const medicoDetail = '/medicoDetails';
 
+/**
+ *El servicio que provee todo lo relacionado con medicos
+ */
 @Injectable()
 export class MedicoService{
     
+    /**
+    * Constructor del servicio
+    * @param http The HttpClient - Es necesario para realizar solicitudes
+    */
     constructor (private http: HttpClient) {}
     
+    /**
+    * Trae la lista de medicos en MediSistemas
+    * @returns la lista de medicos
+    */
     getMedicos() : Observable<Medico[]>{
         return this.http.get<Medico[]> (API_URL + medicos);
     }
     
+    /**
+    * Trae el detalle de un medico en MediSistemas
+    * @returns detalle de un medico
+    */
     getMedico(idMedico): Observable<Medico>{
         return this.http.get<Medico>(API_URL + medicos + '/' + idMedico ).catch(err => this.handleError(err));
     }
     
+    /**
+    * Crea un medico en MediSistemas
+    * @returns medico creado
+    */
     createMedico(medico): Observable<Medico>{
         return this.http.post<Medico>(API_URL + medicos, medico).catch(err => this.handleError(err));
     }
     
+    /**
+    * Trae un mensaje de error en caso de que haya un error
+    * @returns error
+    */
      private handleError(error: any){
         return throwError(error.error.errorMessage);
     }
