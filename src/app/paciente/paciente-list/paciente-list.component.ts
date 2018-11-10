@@ -9,15 +9,27 @@ import {Paciente} from '../paciente';
 })
 export class PacienteListComponent implements OnInit {
 
+    /**
+     * constructor del componente
+     */
     constructor(private pacienteService: PacienteService) { }
     
+    /**
+     * lista de todos los pacientes
+     */
     pacientes: Paciente[];
     
+    /**
+     * obtiene todos los pacientes
+     */
     getPacientes(): void {
         this.pacienteService.getPacientes()
             .subscribe(pacientes => this.pacientes = pacientes);
     }
 
+  /**
+   * metodo para inicializar el componente
+   */
   ngOnInit() {
       this.getPacientes();
   }

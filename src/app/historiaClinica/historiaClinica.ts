@@ -10,7 +10,7 @@ export class HistoriaClinica
 
     fecha: string;
     
-    descripcion: string;
+    descripcionDiagnostico: string;
     
     alergias: string; 
     

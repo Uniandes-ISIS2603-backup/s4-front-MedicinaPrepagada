@@ -18,7 +18,7 @@ export class AdministradorCreateComponent implements OnInit {
 
     constructor(
         private administradorService: AdministradorService,
-        private toastrService: ToastrService
+        private toastr: ToastrService
     ) { }
 
     administrador: Administrador;
@@ -27,15 +27,16 @@ export class AdministradorCreateComponent implements OnInit {
 
     @Output() create = new EventEmitter();
 
-     createAdministrador(): Administrador {
+     createAdministrador(): void {
        
         this.administradorService.createAdministrador(this.administrador)
-            .subscribe((administrador) => {
-                this.administrador = administrador;
+            .subscribe(() => {
                 this.create.emit();
-                this.toastrService.success("El administrador fue creado", "Creacion de administrador");                
-            });
-            return this.administrador;
+                this.toastr.success("El administrador fue creado", "Creacion de administrador");                
+           }, err =>{
+            this.toastr.error(err, "Error");
+        }
+        );
     }
 
     cancelCreation(): void {

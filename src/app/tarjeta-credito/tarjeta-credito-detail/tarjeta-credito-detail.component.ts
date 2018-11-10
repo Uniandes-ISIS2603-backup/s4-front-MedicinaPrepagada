@@ -11,20 +11,35 @@ import {ActivatedRoute} from '@angular/router/';
 })
 export class TarjetaCreditoDetailComponent implements OnInit {
 
+    /**
+     * construcotor del componente
+     */
     constructor(private tarjetaCreditoService: TarjetaCreditoService,
         private toastr: ToastrService,
         private route: ActivatedRoute,) { }
     
+    /**
+     * tarjeta
+     */
     tarjetaCredito: TarjetaCredito;
     
+    /**
+     * id de la tarjeta
+     */
     id: number;
     
+    /**
+     * obtiene la tarjeta
+     */
     getTarjetaCredito(){
         return this.tarjetaCreditoService.getTarjetaCredito(this.id)
             .subscribe(tarjetaCredito => {this.tarjetaCredito = tarjetaCredito},
             err => {this.toastr.error(err,"Error");});
     }
 
+  /**
+   * constructor del componente
+   */
   ngOnInit() {
       this.id = +this.route.snapshot.paramMap.get('id');
       this.tarjetaCredito = new TarjetaCredito;

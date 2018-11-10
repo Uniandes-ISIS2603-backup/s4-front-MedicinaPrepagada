@@ -10,7 +10,7 @@ export class Administrador
 
     login: string;
     
-    password: string;
+    contrasena: string;
     
-    permisos: string; 
+    tipoUsuario: string; 
 }

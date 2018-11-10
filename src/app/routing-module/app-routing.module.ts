@@ -25,7 +25,9 @@ import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
 import {SedeDetailComponent} from '../sede/sede-detail/sede-detail.component';
+import {SedeCreateComponent} from '../sede/sede-create/sede-create.component';
 import {HorarioAtencionListComponent} from '../horario-atencion/horario-atencion-list/horario-atencion-list.component';
+import {HorarioAtencionDetailComponent} from '../horario-atencion/horario-atencion-detail/horario-atencion-detail.component';
 
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
@@ -51,6 +53,7 @@ import {PacienteCitaslaboratorioComponent} from '../paciente/paciente-citaslabor
 import {PacienteFacturasComponent} from '../paciente//paciente-facturas/paciente-facturas.component';
 import {PacienteCitasmedicasComponent} from '../paciente/paciente-citasmedicas/paciente-citasmedicas.component';
 import {PacienteHistoriasclinicasComponent} from '../paciente/paciente-historiasclinicas/paciente-historiasclinicas.component';
+import {PacienteTarjetaCreditoAddComponent} from '../paciente/paciente-tarjeta-credito-add/paciente-tarjeta-credito-add.component';
 
 
 
@@ -71,7 +74,10 @@ const routes: Routes = [
             },
                 {
                 path: ':id',
-                component: PacienteDetailComponent,
+                component: PacienteDetailComponent
+            },
+            { path:':id/tarjetascredito/add',
+                component: PacienteTarjetaCreditoAddComponent
             },
             { path:':id/tarjetascredito',
             component: PacienteTarjetascreditoComponent
@@ -200,6 +206,9 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : SedeListComponent
+            },{
+                path: 'add',
+                component: SedeCreateComponent
             },
             {
                 path: ':id',
@@ -214,6 +223,11 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: HorarioAtencionListComponent
+            },
+            {
+                path: ':id',
+                component: HorarioAtencionDetailComponent
+                
             }
         ]
     },

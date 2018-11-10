@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import {SedeService} from './sede.service';
 import { SedeListComponent } from './sede-list/sede-list.component';
 import { SedeDetailComponent } from './sede-detail/sede-detail.component';
+import { SedeCreateComponent } from './sede-create/sede-create.component';
 
 
 
@@ -15,14 +16,15 @@ import { SedeDetailComponent } from './sede-detail/sede-detail.component';
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule,
+    
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  declarations: [SedeListComponent, SedeDetailComponent],
+  declarations: [SedeListComponent, SedeDetailComponent, SedeCreateComponent],
     providers:[SedeService],
 
-  exports: [SedeListComponent, SedeDetailComponent],
-  bootstrap: [SedeListComponent, SedeDetailComponent]
+  exports: [SedeListComponent, SedeDetailComponent, SedeCreateComponent],
+  bootstrap: [SedeListComponent, SedeDetailComponent, SedeCreateComponent]
 })
 export class SedeModule { }
