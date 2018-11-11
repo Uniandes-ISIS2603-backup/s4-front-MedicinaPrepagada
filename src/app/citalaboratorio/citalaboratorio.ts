@@ -10,7 +10,7 @@ export class CitaLaboratorio
     
     especialidad:string;
     
-    fecha:string;
+    date:string;
     
     comentarios:string;
     

@@ -9,7 +9,7 @@ export class Factura
     /**
      * Factura id
      */
-    id:number;
+    idFactura:number;
     
     /**
      * id del cliente asociado a la factura
@@ -19,7 +19,7 @@ export class Factura
     /**
      * Fecha factura
      */
-    fecha:string;
+    date:string;
     
     /**
      * Factura valor

@@ -9,12 +9,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let factura of facturas" routerLink="/facturas/{{factura.id}}">
-                    <td><span>{{factura.id}}</span></td>
+                <tr *ngFor ="let factura of facturas" routerLink="/facturas/{{factura.idFactura}}">
+                    <td><span>{{factura.idFactura}}</span></td>
                     <td>{{factura.concepto}}</td>
               
                 </tr>
             </tbody>
         </table>
     </div>
+    <button class="btn btn-success" routerLink="/facturas/add">Crear Factura</button>
 </div>
