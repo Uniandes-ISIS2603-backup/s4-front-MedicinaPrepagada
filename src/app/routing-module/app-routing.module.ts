@@ -30,6 +30,7 @@ import {SedeDetailComponent} from '../sede/sede-detail/sede-detail.component';
 import {SedeCreateComponent} from '../sede/sede-create/sede-create.component';
 import {HorarioAtencionListComponent} from '../horario-atencion/horario-atencion-list/horario-atencion-list.component';
 import {HorarioAtencionDetailComponent} from '../horario-atencion/horario-atencion-detail/horario-atencion-detail.component';
+import {HorarioAtencionCreateComponent} from '../horario-atencion/horario-atencion-create/horario-atencion-create.component';
 
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
@@ -185,7 +186,7 @@ const routes: Routes = [
             {
                 path:'add',
                 component: FacturaCreateComponent
-            }
+            },
             {
                 path:':idFactura',
                 component:FacturaDetailComponent
@@ -233,6 +234,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: HorarioAtencionListComponent
+            },
+             {
+                path: 'add',
+                 component: HorarioAtencionCreateComponent
             },
             {
                 path: ':id',

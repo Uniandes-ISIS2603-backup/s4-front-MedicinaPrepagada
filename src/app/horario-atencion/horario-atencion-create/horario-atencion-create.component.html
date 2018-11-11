@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-6">
+        <h2>Crear Una Horario de Atencion</h2>
+        <form name="horarioAtencion" (ngSubmit)="f.form.valid && createHorarioAtencion()" #f="ngForm" novalidate>
+            
+            <div class="form-group">
+                <label for="FechaInicio"><b>Fecha de Inicio</b></label>
+                <input type="text" name="horarioAtencionFechaInicio" class="form-control" id="horarioAtencionFechaInicio" [(ngModel)] = horarioAtencion.fechaInicio
+                       #horarioAtencionFechaInicio="ngModel" [ngClass]="{'is-valid': f.submitted && horarioAtencion.fechaInicio.invalid}" required>     
+            </div>
+              
+            <div class="form-group">
+                <label for="FechaFin"><b>Fecha de Fin</b></label>
+                <input type="text" name="horarioAtencionFechaFin" class="form-control" id="horarioAtencionFechaFin" [(ngModel)] = horarioAtencion.fechaFin
+                       #horarioAtencionFechaFin="ngModel" [ngClass]="{'is-valid': f.submitted && horarioAtencion.fechaFin.invalid}" required>     
+            </div>  
+                 
+            <div class=" row form-inline justify-content-center aliign-self-center">
+                <button type="submit" class="btn btn-primary">Crear</button>   
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+              
+              <div class="form-group">
+                    <label for="horarioAtencionMedico"><b>Medico</b></label>
+                    <select class="custom-select" name="horarioAtencionMedico" id="horarioAtencionMedico" [(ngModel)]="horarioAtencion.medico.idMedico"
+                        #horarioAtencionMedico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && horarioAtencionMedico.invalid }"
+                        required>
+                        <option [value]="medico.idMedico" *ngFor="let medico of medicos">{{medico.nombre}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>Falta el Medico</div>
+                    </div>
+                </div>
+              
+              
+        </form>
+    </div>
+</div>

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import {HorarioAtencionService} from './horarioAtencion.service';
 import { HorarioAtencionListComponent } from './horario-atencion-list/horario-atencion-list.component';
 import { HorarioAtencionDetailComponent } from './horario-atencion-detail/horario-atencion-detail.component';
+import { HorarioAtencionCreateComponent } from './horario-atencion-create/horario-atencion-create.component';
 
 
 
@@ -20,11 +21,11 @@ import { HorarioAtencionDetailComponent } from './horario-atencion-detail/horari
     HttpClientModule,
     FormsModule
   ],
-  declarations: [HorarioAtencionListComponent, HorarioAtencionDetailComponent],
+  declarations: [HorarioAtencionListComponent, HorarioAtencionDetailComponent, HorarioAtencionCreateComponent],
   
     providers: [HorarioAtencionService],
 
-  exports: [HorarioAtencionListComponent, HorarioAtencionDetailComponent],
-  bootstrap: [HorarioAtencionListComponent, HorarioAtencionDetailComponent]
+  exports: [HorarioAtencionListComponent, HorarioAtencionDetailComponent, HorarioAtencionCreateComponent],
+  bootstrap: [HorarioAtencionListComponent, HorarioAtencionDetailComponent, HorarioAtencionCreateComponent]
 })
 export class HorarioAtencionModule { }
