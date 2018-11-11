@@ -18,8 +18,10 @@ import {ExamenMedicoDetailComponent} from '../examenmedico/examenmedico-detail/e
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
 import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/laboratorio-detail.component';
+import {LaboratorioCreateComponent} from '../laboratorio/laboratorio-create/laboratorio-create.component';
 import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
 import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
+import {FacturaCreateComponent} from '../factura/factura-create/factura-create.component';
 import {CitaLaboratorioListComponent} from '../citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
 import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio-detail/citalaboratorio-detail.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
@@ -165,6 +167,10 @@ const routes: Routes = [
                 component : LaboratorioListComponent
             },
             {
+                path:'add',
+                component: LaboratorioCreateComponent
+            },
+            {
                 path:':id',
                 component:LaboratorioDetailComponent
             }
@@ -178,7 +184,11 @@ const routes: Routes = [
                 component: FacturaListComponent
             },
             {
-                path:':id',
+                path:'add',
+                component: FacturaCreateComponent
+            }
+            {
+                path:':idFactura',
                 component:FacturaDetailComponent
             }
         ]

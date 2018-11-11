@@ -7,6 +7,8 @@ import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FacturaDetailComponent } from './factura-detail/factura-detail.component';
+import { FacturaCreateComponent } from './factura-create/factura-create.component';
+
 
 
 
@@ -14,11 +16,11 @@ import { FacturaDetailComponent } from './factura-detail/factura-detail.componen
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  declarations: [FacturaListComponent, FacturaDetailComponent],
+  declarations: [FacturaListComponent, FacturaDetailComponent, FacturaCreateComponent],
   providers:[FacturaService],
   exports: [FacturaListComponent, FacturaDetailComponent],
   bootstrap: [FacturaListComponent, FacturaDetailComponent]

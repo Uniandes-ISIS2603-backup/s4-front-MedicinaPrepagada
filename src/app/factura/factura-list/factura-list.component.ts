@@ -13,8 +13,6 @@ export class FacturaListComponent implements OnInit {
   constructor(private facturaService: FacturaService) { }
     
     facturas: Factura[];
-    factura_id: number;
-    selectedFactura : Factura;
     getFacturas(): void {
         this.facturaService.getFacturas()
             .subscribe(facturas => this.facturas = facturas);

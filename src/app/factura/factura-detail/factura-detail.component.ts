@@ -33,7 +33,7 @@ export class FacturaDetailComponent implements OnInit {
     }
 
   ngOnInit() {
-      this.factura_id = +this.route.snapshot.paramMap.get('id');
+      this.factura_id = +this.route.snapshot.paramMap.get('idFactura');
       this.factura = new Factura;
       this.getFactura();
   }
