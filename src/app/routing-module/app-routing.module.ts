@@ -186,7 +186,7 @@ const routes: Routes = [
             {
                 path:'add',
                 component: FacturaCreateComponent
-            }
+            },
             {
                 path:':idFactura',
                 component:FacturaDetailComponent

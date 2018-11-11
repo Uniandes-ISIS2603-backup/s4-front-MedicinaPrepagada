@@ -72,7 +72,7 @@ export class MedicoCreateComponent implements OnInit {
     createMedico(): void {
             var listaEsp = this.especialidades;
         for(let esp of listaEsp){
-            if(esp.nombre = document.getElementById('medEspecialidad').value){
+            if(esp.nombre = document.getElementById('medEspecialidad').values){
                 this.atributo = esp;
             }
         }
