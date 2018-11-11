@@ -14,15 +14,57 @@
             <tr>
                 <th>Comentarios</th>
                 <th>{{citaMedica.comentarios}}</th>
-          
+            </tr>
             <tr>
+            <div>
+            <table><tr>
+                
                 <th>Paciente</th>
-                <th>{{citaMedica.paciente.nombre}}</th>
+                <th>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>{{citaMedica.pacienteAAtender.nombre}}</th>
+                    </tr>
+                    <tr>
+                        <th>Número de identificación</th>
+                        <th>{{citaMedica.pacienteAAtender.documentoIdentidad}}</th>
+                    </tr>
+                    <tr>
+                        <th>Teléfono</th>
+                        <th>{{citaMedica.pacienteAAtender.numeroContacto}}</th>
+                    </tr>
+                </th>
+            </tr>
+            </table>
+            </div>
             </tr>
             <tr>
-                <th>Horario</th>
-                <th>{{citaMedica.horario.id}}</th>
+                <div>
+            <table><tr>
+                <th>Médico</th>
+                <th>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>{{citaMedica.horarioAtencionAsignado.medico.nombre}}</th>
+                    </tr>
+                    <tr>
+                        <th>Especialidad</th>
+                        <th>{{citaMedica.horarioAtencionAsignado.medico.especialidad.nombre}}</th>
+                    </tr>
+                    <tr>
+                        <th>Teléfono</th>
+                        <th>{{citaMedica.horarioAtencionAsignado.medico.telefono}}</th>
+                    </tr>
+                    <tr>
+                        <th>Correo</th>
+                        <th>{{citaMedica.horarioAtencionAsignado.medico.correo}}</th>
+                    </tr>
+                </th>
             </tr>
+            </table>
+            </div>    
+            </tr>
+            
         </table>
     </div>
 </div>

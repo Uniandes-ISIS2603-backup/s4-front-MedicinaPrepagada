@@ -1,3 +1,50 @@
-<p>
-  cita-medica-create works!
-</p>
+<div class="row">
+    <div class="col-6">
+        <h2>Crear una cita desde administración</h2>
+        <form name="citaMedica" (ngSubmit)="f.form.valid && createCitaMedica()" #f="ngForm" novalidate>
+            
+            <div class="form-group">
+                <label for="fecha"><b>Fecha</b></label>
+                <input type="text" name="citaMedicaFecha" class="form-control" id="citaMedicaFecha" [(ngModel)] = citaMedica.fecha
+                       #citaMedicaFecha="ngModel" [ngClass]="{'is-valid': f.submitted && citaMedica.fecha.invalid}" required>       
+            </div>
+              
+            <div class="form-group">
+                <label for="comentarios"><b>Comentarios</b></label>
+                <input type="text" name="citaMedicaComentarios" class="form-control" id="citaMedicaComentarios" [(ngModel)] = citaMedica.comentarios
+                       #citaMedicaComentarios="ngModel" [ngClass]="{'is-valid': f.submitted && citaMedica.comentarios.invalid}" required>       
+            </div>
+              
+<div class="form-group">
+                    <label for="citaMedicaPaciente"><b>Paciente</b></label>
+                    <select class="custom-select" name="citaMedicaPaciente" id="citaPaciente" [(ngModel)]="citaMedica.pacienteAAtender"
+                        #citaMedicaPaciente="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaMedica.pacienteAAtender.invalid }"
+                        required>
+                        <option [value]="paciente.id" *ngFor="let paciente of pacientes">nombre: {{paciente.nombre}}, cedula: {{paciente.documentoIdentidad}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>No existe el paciente</div>
+                    </div>
+                </div>
+              
+              <div class="form-group">
+                    <label for="citaMedicaHorario"><b>Horario de atención</b></label>
+                    <select class="custom-select" name="citaMedicaHorario" id="citaHorario" [(ngModel)]="citaMedica.horarioAtencionAsignado"
+                        #citaMedicaHorario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaMedica.horarioAtencionAsignado.invalid }"
+                        required>
+                        <option [value]="horario.id" *ngFor="let horario of horariosAtencion">id: {{horario.id}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>No existe el horario</div>
+                    </div>
+                </div>
+              
+            <div class=" row form-inline justify-content-center aliign-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>   
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+

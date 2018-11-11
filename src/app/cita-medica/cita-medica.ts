@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import {HorarioAtencion} from '../horario-atencion/horarioAtencion';
 import {Paciente} from '../paciente/paciente';
+import {HorarioAtencion} from '../horario-atencion/horarioAtencion';
 
 /**
 * Esta clase representa una cita medica en mediSistemas. 
@@ -28,7 +28,9 @@ export class CitaMedica{
   comentarios: string;
   
   
-  paciente: Paciente;
-//  horario: Paciente;
+  pacienteAAtender: Paciente;
+  
+  
+  horarioAtencionAsignado: HorarioAtencion;
   
 }  
