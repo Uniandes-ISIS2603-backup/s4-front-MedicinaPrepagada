@@ -52,7 +52,7 @@ export class CitaMedicaDetailComponent implements OnInit {
  * Método llama al crear un nuevo componente
  */
   ngOnInit() {
-      this.idCita = +this.route.snapshot.paramMap.get('id');
+      this.idCita = this.route.snapshot.paramMap.get('id');
       this.citaMedica = new CitaMedica;
       this.getCitaMedica();
   }

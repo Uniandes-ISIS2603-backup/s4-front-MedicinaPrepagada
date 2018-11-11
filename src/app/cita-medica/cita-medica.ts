@@ -26,7 +26,9 @@ export class CitaMedica{
    * Comentarios de la cita medica
    */
   comentarios: string;
-//  paciente: HorarioAtencion;
+  
+  
+  paciente: Paciente;
 //  horario: Paciente;
   
 }  
