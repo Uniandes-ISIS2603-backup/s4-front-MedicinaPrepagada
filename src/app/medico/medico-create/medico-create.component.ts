@@ -72,7 +72,7 @@ export class MedicoCreateComponent implements OnInit {
     createMedico(): void {
             var listaEsp = this.especialidades;
         for(let esp of listaEsp){
-            if(esp.nombre = document.getElementById('medEspecialidad').values){
+            if(esp.nombre = document.getElementById('medEspecialidad').value){
                 this.atributo = esp;
             }
         }
@@ -111,10 +111,8 @@ export class MedicoCreateComponent implements OnInit {
     * This function will initialize the component
     */
   ngOnInit() {
-      
       this.medico = new Medico();
       this.getEspecialidades();
-      
   }
 
 }
