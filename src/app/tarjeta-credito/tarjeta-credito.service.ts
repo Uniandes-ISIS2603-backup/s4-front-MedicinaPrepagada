@@ -12,16 +12,28 @@ const tarjetasCredito = '/tarjetascredito';
 @Injectable()
 export class TarjetaCreditoService{
     
+    /**
+     * constructor del componente
+     */
     constructor(private http :HttpClient){}
     
+    /**
+     * obtiene todas las tarjetas de credito
+     */
     getTarjetasCredito(): Observable<TarjetaCredito[]>{
         return this.http.get<TarjetaCredito[]>(API_URL + tarjetasCredito).catch(err => this.handleError(err));
     }
     
+    /**
+     * obtiene la tarjeta de credito con el id dado
+     */
     getTarjetaCredito(id: number): Observable<TarjetaCredito>{
         return this.http.get<TarjetaCredito>(API_URL + tarjetasCredito + '/'+id).catch(err => this.handleError(err));
     }
     
+    /**
+     * maneja lso errores
+     */
     handleError(error:any){
         return throwError(error.error.message);
     }

@@ -27,11 +27,17 @@
                        #medicoNombre="ngModel" [ngClass]="{'is-valid': f.submitted && medico.nombre.invalid}" required>
             </div>
               
-<!--            <div class="form-group">
-                <label  for="Especialidad"><b>Especialidad</b></label>
-                <input type="text" name="medicoEspecialidad" class="form-control" id="medicoEspecialidad" [(ngModel)] = medico.especialidad
-                      #medicoEspecialidad="ngModel" [ngClass]="{'is-valid': f.submitted && medico.especialidad.invalid}" required>
-            </div>-->
+<div class="form-group">
+                    <label for="medicoEspecialidad"><b>Especialidad</b></label>
+                    <select class="custom-select" name="medicoEspecialidad" id="medEspecialidad" [(ngModel)]="medico.especialidad"
+                        #medicoEspecialidad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && medicoEspecialidad.invalid }"
+                        required>
+                        <option [value]="especialidad.nombre" *ngFor="let especialidad of especialidades">{{especialidad.nombre}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>No existe la especialidad</div>
+                    </div>
+                </div>
               
             <div class="form-group">
                 <label for="Descripcion"><b>Descripción</b></label>
@@ -42,13 +48,13 @@
             <div class="form-group">
                 <label for="telefono"><b>Número Telefónico</b></label>
                 <input type="number" name="telefono" class="form-control" id="medicoTelefono" [(ngModel)] = medico.telefono
-                       #medicoDocumentoIdentidad="ngModel" [ngClass]="{'is-valid': f.submitted && medico.telefono.invalid}" required>
+                       #medicoTelefono="ngModel" [ngClass]="{'is-valid': f.submitted && medico.telefono.invalid}" required>
             </div>
               
             <div class="form-group">
                 <label for="Correo"><b>Correo electrónico</b></label>
                 <input type="text" name="medicoMail" class="form-control" id="medicoMail" [(ngModel)] = medico.correo
-                       #medicoMail="ngModel" [ngClass]="{'is-valid': f.submitted && medico.mail.invalid}" required> 
+                       #medicoCorreo="ngModel" [ngClass]="{'is-valid': f.submitted && medico.correo.invalid}" required> 
             </div>
               
             <div class="form-group">
@@ -68,6 +74,8 @@
                 <input type="text" name="tipo" class="form-control" id="medicoTipo" [(ngModel)] = medico.tipoUsuario
                        #medicoTipoUsuario="ngModel" [ngClass]="{'is-valid': f.submitted && medico.tipoUsuario.invalid}" required>
             </div>
+            
+            
               
             <div class=" row form-inline justify-content-center aliign-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>   

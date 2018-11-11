@@ -6,13 +6,28 @@
 
 
 export class TarjetaCredito{
+    /**
+     * numero de la tarjeta de credito
+     */
     numero: number;
     
+    /**
+     * nombre en la tarjeta
+     */
     nombreEnTarjeta: string;
     
+    /**
+     * codigo de seguridad en la tarjeta
+     */
     codigoSeguridad: number;
     
+    /**
+     * fecha de expiracion de la tarjeta
+     */
     fechaExpiracion: string;
     
+    /**
+     * franquicia de la tarjeta ej. Visa
+     */
     franquicia: string;
 }
