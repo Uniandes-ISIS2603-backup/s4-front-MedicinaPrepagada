@@ -60,4 +60,4 @@ export class EspecialidadDetailComponent implements OnInit {
       this.getEspecialidad();
   }
 
-
+}

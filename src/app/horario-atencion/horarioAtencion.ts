@@ -1,3 +1,4 @@
+import {Medico} from '../medico/medico';
 
 export class HorarioAtencion
 {
@@ -16,8 +17,12 @@ export class HorarioAtencion
     */
     fechaFin: string;
     
-    
+    /**
+     * Medico del horario de Atencion
+     * 
+     */
       
+     medico: Medico;
     
     
     

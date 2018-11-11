@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import {HorarioAtencion} from '../horario-atencion/horario-atencion';
+import {HorarioAtencion} from '../horario-atencion/horarioAtencion';
 import {Paciente} from '../paciente/paciente';
 
 /**

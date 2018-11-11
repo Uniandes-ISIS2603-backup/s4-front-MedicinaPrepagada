@@ -18,8 +18,10 @@ import {ExamenMedicoDetailComponent} from '../examenmedico/examenmedico-detail/e
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
 import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/laboratorio-detail.component';
+import {LaboratorioCreateComponent} from '../laboratorio/laboratorio-create/laboratorio-create.component';
 import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
 import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
+import {FacturaCreateComponent} from '../factura/factura-create/factura-create.component';
 import {CitaLaboratorioListComponent} from '../citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
 import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio-detail/citalaboratorio-detail.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
@@ -28,6 +30,7 @@ import {SedeDetailComponent} from '../sede/sede-detail/sede-detail.component';
 import {SedeCreateComponent} from '../sede/sede-create/sede-create.component';
 import {HorarioAtencionListComponent} from '../horario-atencion/horario-atencion-list/horario-atencion-list.component';
 import {HorarioAtencionDetailComponent} from '../horario-atencion/horario-atencion-detail/horario-atencion-detail.component';
+import {HorarioAtencionCreateComponent} from '../horario-atencion/horario-atencion-create/horario-atencion-create.component';
 
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
@@ -164,6 +167,10 @@ const routes: Routes = [
                 component : LaboratorioListComponent
             },
             {
+                path:'add',
+                component: LaboratorioCreateComponent
+            },
+            {
                 path:':id',
                 component:LaboratorioDetailComponent
             }
@@ -177,7 +184,11 @@ const routes: Routes = [
                 component: FacturaListComponent
             },
             {
-                path:':id',
+                path:'add',
+                component: FacturaCreateComponent
+            },
+            {
+                path:':idFactura',
                 component:FacturaDetailComponent
             }
         ]
@@ -223,6 +234,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: HorarioAtencionListComponent
+            },
+             {
+                path: 'add',
+                 component: HorarioAtencionCreateComponent
             },
             {
                 path: ':id',

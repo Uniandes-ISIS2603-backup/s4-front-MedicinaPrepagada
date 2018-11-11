@@ -29,6 +29,10 @@ export class HorarioAtencionService{
     {
         return this.http.get<HorarioAtencion>(API_URL + horariosAtencion+ '/' + horarioAtencionId ).catch(err => this.handleError(err));
     }
+    
+    createHorarioAtencion(horarioAtencion): Observable<HorarioAtencion>{
+        return this.http.post<HorarioAtencion>(API_URL + horariosAtencion, horarioAtencion).catch(err => this.handleError(err));
+    }
 
     private handleError(error: any){
         return throwError(error.error.errorMessage);

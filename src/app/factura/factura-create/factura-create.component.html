@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear una factura</h2>
+        <br>
+        <form name="factura" (ngSubmit)="f.form.valid && createFactura()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="facturaConcepto"><b>Concepto</b></label>
+                <input type="text" name="facturaConcepto" class="form-control" id="facturaConcepto" [(ngModel)]="factura.concepto"
+                    #facturaConcepto="ngModel" [ngClass]="{ 'is-invalid': f.submitted && facturaConcepto.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el concepto por el cual se genera la factura</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="facturaValor"><b>Valor</b></label>
+                <input type="text" name="facturaValor" class="form-control" id="facturaValor" [(ngModel)]="factura.valor"
+                    #facturaValor="ngModel" [ngClass]="{ 'is-invalid': f.submitted && facturaValor.invalid }"
+                    required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el valor de la factura</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="facturaDate"><b>Fecha</b></label>
+                <input type="text" name="facturaDate" class="form-control" id="facturaDate" [(ngModel)]="factura.date"
+                    #facturaDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && facturaDate.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la fecha de la factura</div>
+                </div>
+            </div>
+              
+            <div class="form-group">
+                <label for="facturaPagada"><b>Pagada(0 para no pagada, 1 para pagada.)</b></label>
+                <input type="text" name="facturaPagada" class="form-control" id="facturaPagada" [(ngModel)]="factura.pagada"
+                    #facturaPagada="ngModel" [ngClass]="{ 'is-invalid': f.submitted && facturaPagada.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la informacion acerca del pago</div>
+                </div>
+            </div>
+              
+              <div class="form-group">
+                <label for="facturaPaciente"><b>Paciente Id</b></label>
+                <input type="number" name="facturaPaciente" class="form-control" id="facturaPaciente" [(ngModel)]="factura.idCliente"
+                    #facturaPaciente="ngModel" [ngClass]="{ 'is-invalid': f.submitted && facturaPaciente.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la identificacion del paciente</div>
+                </div>
+            </div>
+              
+            
+              
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Crear</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
+
+
