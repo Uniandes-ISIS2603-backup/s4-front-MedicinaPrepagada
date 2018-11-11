@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/filter';
+
 import {FarmaciaService} from '../farmacia.service';
 import {Farmacia} from '../farmacia';
 import {FarmaciaDetail} from '../farmacia-detail';
@@ -13,9 +16,9 @@ export class FarmaciaListComponent implements OnInit {
 
     constructor(private farmaciaService: FarmaciaService) { }
    /**
-    * The list of farmacias which belong to the BookStore
+    * The list of farmacias
     */
-    farmacias: Farmacia[];
+   @Input() farmacias: Farmacia[];
 
     /**
     * Shows or hides the farmacia-create-component
@@ -31,10 +34,7 @@ export class FarmaciaListComponent implements OnInit {
      * the farmacia that the user views.
      */
     selectedFarmacia : Farmacia;
-    
-    
-    
-    
+   
     getFarmacias(): void {
         this.farmaciaService.getFarmacias()
             .subscribe(farmacias => this.farmacias = farmacias);
@@ -67,8 +67,6 @@ export class FarmaciaListComponent implements OnInit {
         }
         this.showCreate = !this.showCreate;
     }
-
-
 }
 
 

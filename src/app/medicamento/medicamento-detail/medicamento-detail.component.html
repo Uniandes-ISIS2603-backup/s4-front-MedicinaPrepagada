@@ -6,6 +6,7 @@
                         <th>Elaborado Por</th>
                         <th>Cantidad</th>
                         <th>Costo</th>
+                        <th>Farmacias</th>
                     </tr>
                    </thead>
                    <tbody>
@@ -14,7 +15,12 @@
                            <td>{{medicamentoDetail.elaboradoPor}}</td>
                            <td>{{medicamentoDetail.cantidad}}</td>
                            <td>{{medicamentoDetail.costo}}</td>
+                           <td>
+                        <div *ngFor = "let farmacia of medicamentoDetail.farmacias">
+                            <dd class="caption" routerLink="/medicamentos/{{medicamentoDetail.id}}">{{farmacia.nombre}}</dd>
+                        </div>
+                           </td>
                        </tr>
             </tbody>
             </table>
-                        
+
