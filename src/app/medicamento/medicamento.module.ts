@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MedicamentoDetailComponent } from './medicamento-detail/medicamento-detail.component';
 import { MedicamentoCreateComponent } from './medicamento-create/medicamento-create.component';
+import {FarmaciaModule} from '../farmacia/farmacia.module';
+
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { MedicamentoCreateComponent } from './medicamento-create/medicamento-cre
     CommonModule,
     BrowserModule,
     AppRoutingModule,
+    FarmaciaModule,
     HttpClientModule,
     FormsModule
   ],
