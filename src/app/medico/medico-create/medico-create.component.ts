@@ -72,10 +72,11 @@ export class MedicoCreateComponent implements OnInit {
     createMedico(): void {
             var listaEsp = this.especialidades;
         for(let esp of listaEsp){
-            if(esp.nombre = document.getElementById('medEspecialidad').values){
+            if(esp.nombre = (document.getElementById('medEspecialidad') as HTMLInputElement).value){
                 this.atributo = esp;
             }
         }
+        
             var medico_create = {
                 idMedico: this.medico.idMedico,
                 login: this.medico.login,
