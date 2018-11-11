@@ -100,15 +100,16 @@ export class CitaMedicaCreateComponent implements OnInit {
             var listaPacientes = this.pacientes;
             var listaHorarios = this.horariosAtencion;
             for(let pacient of listaPacientes){
-                if(pacient.id = document.getElementById('citaPaciente').value){
+                if(pacient.id = +(document.getElementById('citaPaciente') as HTMLInputElement).value){
                     this.atributoPaciente = pacient;
                 }
             }
             for(let hora of listaHorarios){
-                if(hora.id = document.getElementById('citaHorario').value){
+                if(hora.id = +(document.getElementById('citaHorario') as HTMLInputElement).value){
                     this.atributoHorario = hora;
                 }
             }
+            console.log(this.atributoPaciente);
             var cita_create = {
                 idCitaMedica: this.citaMedica.idCitaMedica,
                 fecha: this.citaMedica.fecha,
