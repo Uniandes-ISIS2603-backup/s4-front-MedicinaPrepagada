@@ -1,0 +1,28 @@
+
+  <div style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Edificio</th>
+                    <th>Numero de Oficina</th>
+                    <th>Especialidad</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let consultorio of sedeConsultorios" >
+                    <td><span id ="idConsultorio">{{consultorio.id}}</span></td>
+                    <td>{{consultorio.edificio}}</td>
+                    <td>{{consultorio.nOficina}}</td>
+                    <td>{{consultorio.especialidad.nombre}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button>Crear Consultorio (todavia no sirvo)</button>
+</div>
