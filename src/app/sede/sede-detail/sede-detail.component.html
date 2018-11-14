@@ -1,43 +1,52 @@
 
-<div class="col-md-12">
-    <div class="container-fluid">
-        <table>
-            <tr>
-                <th>Id</th>
-                <th>{{sede.id}}</th>
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <th>{{sede.nombre}}</th>
-            </tr>
-            <tr>
-                <th>Direccion</th>
-                <th>{{sede.direccion}}</th>
-            </tr>
-            <tr>
-                <th>Tipo de Sede</th>
-                <th>{{sede.tipoSede}}</th>
-            </tr>
-             <tr>
-                <th>Descripcion</th>
-                <th>{{sede.descripcion}}</th>
-            </tr>
-             <tr>
-                <th>Longitud</th>
-                <th>{{sede.longitud}}</th>
-            </tr>
-            <tr>
-                <th>Latitud</th>
-                <th>{{sede.latitud}}</th>
-            </tr>
-            <tr>
-                <th>Telefono</th>
-                <th>{{sede.telefono}}</th>
-            </tr>
-            <tr>
-                <th>Correo</th>
-                <th>{{sede.correo}}</th>
-            </tr>
-        </table>
+<div class="panel panel-default"> 
+    <div>
+        <div class="border margin">
+            <p class="h3 p-3">{{sedeDetail.nombre}}</p> 
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumb">
+                        <img class="img-fluid" src="{{sedeDetail.image}}"/>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <dl>  
+                        <hr>
+                        <dt> Tipo de Sede</dt>
+                        <dd>{{sedeDetail.tipoSede}}</dd>
+                        <hr>
+                        <dt> Direccion</dt>
+                        <dd>{{sedeDetail.direccion}}</dd>
+                        <hr>
+                        <dt> Telefono</dt>
+                        <dd>{{sedeDetail.telefono}}</dd>
+                        <hr>
+                        <dt> Correo</dt>
+                        <dd>{{sedeDetail.correo}}</dd>
+                        <hr>                                                                        
+                        <dt> Descripcion</dt>
+                        <dd>{{sedeDetail.descripcion}}</dd>
+                        
+                        
+                        
+                    </dl>
+                    <div >
+                        <div class="row">
+                            <div class="col-md-3">
+
+                             <button [ngClass]="{ 'btn-success': !showConsultorios, 'btn-primary': showConsultorios }" type="button" class="btn"
+                    (click)="showHideConsultorios()">Consultorios</button>   
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div *ngIf="showConsultorios">
+                <app-sede-consultorio [sedeConsultorios]="sedeDetail.consultorios"></app-sede-consultorio>
+                        </div>
+
+            </div>
+        </div>
     </div>
 </div>
+            </div>

@@ -6,9 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import {SedeService} from './sede.service';
+
 import { SedeListComponent } from './sede-list/sede-list.component';
 import { SedeDetailComponent } from './sede-detail/sede-detail.component';
 import { SedeCreateComponent } from './sede-create/sede-create.component';
+import { SedeConsultorioComponent } from './sede-consultorio/sede-consultorio.component';
 
 
 
@@ -21,10 +23,10 @@ import { SedeCreateComponent } from './sede-create/sede-create.component';
     FormsModule,
     AppRoutingModule
   ],
-  declarations: [SedeListComponent, SedeDetailComponent, SedeCreateComponent],
+  declarations: [SedeListComponent, SedeDetailComponent, SedeCreateComponent, SedeConsultorioComponent],
     providers:[SedeService],
 
-  exports: [SedeListComponent, SedeDetailComponent, SedeCreateComponent],
-  bootstrap: [SedeListComponent, SedeDetailComponent, SedeCreateComponent]
+  exports: [SedeListComponent, SedeDetailComponent, SedeCreateComponent,SedeConsultorioComponent],
+  bootstrap: [SedeListComponent, SedeDetailComponent, SedeCreateComponent,SedeConsultorioComponent]
 })
 export class SedeModule { }
