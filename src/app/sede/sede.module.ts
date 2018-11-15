@@ -11,6 +11,8 @@ import { SedeListComponent } from './sede-list/sede-list.component';
 import { SedeDetailComponent } from './sede-detail/sede-detail.component';
 import { SedeCreateComponent } from './sede-create/sede-create.component';
 import { SedeConsultorioComponent } from './sede-consultorio/sede-consultorio.component';
+import { SedeAddConsultorioComponent } from './sede-add-consultorio/sede-add-consultorio.component';
+import { SedeEditComponent } from './sede-edit/sede-edit.component';
 
 
 
@@ -23,7 +25,7 @@ import { SedeConsultorioComponent } from './sede-consultorio/sede-consultorio.co
     FormsModule,
     AppRoutingModule
   ],
-  declarations: [SedeListComponent, SedeDetailComponent, SedeCreateComponent, SedeConsultorioComponent],
+  declarations: [SedeListComponent, SedeDetailComponent, SedeCreateComponent, SedeConsultorioComponent, SedeAddConsultorioComponent, SedeEditComponent],
     providers:[SedeService],
 
   exports: [SedeListComponent, SedeDetailComponent, SedeCreateComponent,SedeConsultorioComponent],
