@@ -46,6 +46,24 @@ export class MedicamentoService {
     createMedicamento(medicamento): Observable<Medicamento> {
         return this.http.post<Medicamento>(API_URL + medicamentos, medicamento);
     }
+    
+     /**
+    * Updates an medicamento
+    * @param medicamento The medicamento's information updated
+    * @returns The confirmation that the medicamento was updated
+    */
+    updateMedicamento(medicamento): Observable<MedicamentoDetail> {
+        return this.http.put<MedicamentoDetail>(API_URL + medicamentos + '/' + medicamento.id, medicamento);
+    }
+    
+    /**
+    * Deletes an medicamento from the BookStore
+    * @param medicamentoId The id of the medicamento
+    * @returns The confirmation that the medicamento was deleted
+    */
+    deleteMedicamento(medicamentoId): Observable<boolean> {
+        return this.http.delete<boolean>(API_URL + medicamentos + '/' + medicamentoId);
+    }
 }
 
 

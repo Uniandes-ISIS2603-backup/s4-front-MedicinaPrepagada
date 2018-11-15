@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-6">
+        <h2>Crear Un consultorio</h2>
+        <form name="consultorio" (ngSubmit)="consultorioForm.form.valid && postConsultorio(consultorioForm)" #consultorioForm="ngForm" novalidate>
+            
+            <div class="form-group">
+                <label for="consultorioEdificio"><b>Edificio</b></label>
+                <input type="text" name="consultorioEdificio" class="form-control" id="consultorioEdificio" [(ngModel)] = consultorio.edificio
+                       #consultorioEdificio="ngModel" [ngClass]="{'is-valid': consultorioForm.submitted && consultorioEdificio.invalid}" required>   
+                       
+                       <div class="invalid-feedback">
+                            <div>Falta el edificio</div>
+                        </div>                       
+            </div>
+              
+            
+               
+            <div class="form-group">
+                <label for="consultorioNumOficina"><b>Numero de Oficina</b></label>
+                <input type="number" name="consultorioNumOficina" class="form-control" id="consultorioNumOficina" [(ngModel)] = consultorio.nOficina
+                       #consultorioNumOficina="ngModel" [ngClass]="{'is-valid': consultorioForm.submitted && consultorioNumOficina.invalid}" required>
+                       
+                    <div class="invalid-feedback">
+                            <div>Falta el numero de oficina</div>
+                        </div>    
+            </div>
+            
+            <div class="form-group">
+                    <label for="consultorioEspecialidad"><b>Especialidad</b></label>
+                    <select class="custom-select" name="consultorioEspecialidad" id="consultorioEspecialidad" [(ngModel)]="consultorio.especialidad.nombre"
+                        #consultorioEspecialidad="ngModel" [ngClass]="{ 'is-invalid': consultorioForm.submitted && consultorioEspecialidad.invalid }"
+                        required>
+                        <option [value]="especialidad.nombre" *ngFor="let especialidad of especialidades">{{especialidad.nombre}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>Falta la especialidad</div>
+                    </div>
+                </div>
+              
+              
+            <div class=" row form-inline justify-content-center aliign-self-center">
+                <button type="submit" class="btn btn-primary">Crear</button>   
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

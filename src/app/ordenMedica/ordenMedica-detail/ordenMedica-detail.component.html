@@ -28,6 +28,9 @@ and open the template in the editor.
                 <th>Firma Medico</th>
                 <th>{{ordenMedica.firmaMedico}}</th>
             </tr>
+                             <td>
+                    <button class="btn btn-danger" (click)="deleteOrdenMedica(ordenMedica.id)"><span class="fa fa-trash"></span></button>
+                </td>
         </table>
     </div>
 </div>

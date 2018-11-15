@@ -39,6 +39,9 @@
                         <td style="cursor: pointer;"> 
                 <dd>{{examen.nombre}}</dd>
                 </td>
+                <td >
+                    <button class="btn btn-primary" (click)="showHideEdit(examen.id)"><span class="fa fa-pencil"></span></button>
+                </td>
                 </tr>
                 </tbody>
             </table>
@@ -49,6 +52,9 @@
             </div>
             <div *ngIf="showCreate">
                 <app-examenmedico-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-examenmedico-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-examenmedico-edit [examen_id]="examen_edit_id" (cancel)="showHideEdit(examen_edit_id)" (update)="updateExamenMedico()"></app-examenmedico-edit>
             </div>
         </div>   
     </div>

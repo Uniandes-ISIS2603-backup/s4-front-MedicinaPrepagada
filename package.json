@@ -11,7 +11,7 @@
     "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -w -s"
   },
   "private": true,
-  "dependencies": {
+  "dependencies": {"ngx-modal-dialog          ||":"3.0.0    ||",
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",

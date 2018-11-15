@@ -46,6 +46,24 @@ export class FarmaciaService {
     createFarmacia(farmacia): Observable<Farmacia> {
         return this.http.post<Farmacia>(API_URL + farmacias, farmacia);
     }
+    
+     /**
+    * Updates an farmacia
+    * @param farmacia The farmacia's information updated
+    * @returns The confirmation that the farmacia was updated
+    */
+    updateFarmacia(farmacia): Observable<FarmaciaDetail> {
+        return this.http.put<FarmaciaDetail>(API_URL + farmacias + '/' + farmacia.id, farmacia);
+    }
+    
+    /**
+    * Deletes an farmacia
+    * @param farmaciaId The id of the farmacia
+    * @returns The confirmation that the farmacia was deleted
+    */
+    deleteFarmacia(farmaciaId): Observable<boolean> {
+        return this.http.delete<boolean>(API_URL + farmacias + '/' + farmaciaId);
+    }
 }
 
 

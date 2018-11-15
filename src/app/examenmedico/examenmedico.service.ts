@@ -46,6 +46,24 @@ export class ExamenMedicoService {
     createExamenMedico(examen): Observable<ExamenMedico> {
         return this.http.post<ExamenMedico>(API_URL + examenes, examen);
     }
+    
+       /**
+    * Updates an examenMedico
+    * @param examenMedico The examenMedico's information updated
+    * @returns The confirmation that the examenMedico was updated
+    */
+    updateExamenMedico(examenMedico): Observable<ExamenMedicoDetail> {
+        return this.http.put<ExamenMedicoDetail>(API_URL + examenes + '/' + examenMedico.id, examenMedico);
+    }
+    
+    /**
+    * Deletes an examenMedico from the BookStore
+    * @param examenMedicoId The id of the examenMedico
+    * @returns The confirmation that the examenMedico was deleted
+    */
+    deleteExamenMedico(examenMedicoId): Observable<boolean> {
+        return this.http.delete<boolean>(API_URL + examenes + '/' + examenMedicoId);
+    }
 }
 
 

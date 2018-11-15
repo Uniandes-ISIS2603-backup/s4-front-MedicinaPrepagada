@@ -50,6 +50,14 @@ export class SedeService{
         return this.http.post<Sede>(API_URL + sedes, sede).catch(err => this.handleError(err));
     }
 
+        /**
+    * Updates an sede
+    * @param sede The sede's information updated
+    * @returns The confirmation that the sede was updated
+    */
+    updateSede(sede): Observable<SedeDetail> {
+        return this.http.put<SedeDetail>(API_URL + sedes + '/' + sede.id, sede);
+    }
 
         /**
     * Creates a consultorio

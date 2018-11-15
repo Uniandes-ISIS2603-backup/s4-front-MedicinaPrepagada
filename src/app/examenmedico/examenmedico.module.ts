@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ExamenMedicoDetailComponent } from './examenmedico-detail/examenmedico-detail.component';
 import { ExamenMedicoCreateComponent } from './examenmedico-create/examenmedico-create.component';
+import { ExamenMedicoEditComponent } from './examenmedico-edit/examenmedico-edit.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { ExamenMedicoCreateComponent } from './examenmedico-create/examenmedico-
     HttpClientModule,
     FormsModule
   ],
-  declarations: [ExamenMedicoListComponent, ExamenMedicoDetailComponent, ExamenMedicoCreateComponent],
+  declarations: [ExamenMedicoListComponent, ExamenMedicoDetailComponent, ExamenMedicoCreateComponent, ExamenMedicoEditComponent],
   providers:[ExamenMedicoService],
   exports: [ExamenMedicoListComponent],
   bootstrap: [ExamenMedicoListComponent]
