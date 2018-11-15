@@ -33,6 +33,11 @@ export class SedeCreateComponent implements OnInit {
         );
     }
     
+        /**
+    * Emits the signal to tell the parent component that the
+    * user no longer wants to create an sede
+    */
+    
     cancelCreation() : void{
         this.cancel.emit();
     }

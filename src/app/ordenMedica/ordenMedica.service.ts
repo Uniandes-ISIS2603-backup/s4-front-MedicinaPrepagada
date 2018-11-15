@@ -35,6 +35,14 @@ export class OrdenMedicaService
         return this.http.post<OrdenMedica>(API_URL + ordenesMedicas, ordenMedica).catch(err => this.handleError(err));
     }
     
+    updateEditorial(ordenMedica): Observable<OrdenMedica> {
+        return this.http.put<OrdenMedica>(API_URL + ordenesMedicas + '/' + ordenMedica.id, ordenMedica);
+    }
+    
+    deleteEditorial(editorialId): Observable<OrdenMedica> {
+        return this.http.delete<OrdenMedica>(API_URL + ordenesMedicas + '/' + editorialId);
+    }
+    
     private handleError(error: any)
         {
         return throwError(error.error.errorMessage);

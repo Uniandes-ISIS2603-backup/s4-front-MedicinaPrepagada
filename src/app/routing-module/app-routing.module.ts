@@ -31,6 +31,8 @@ import {SedeCreateComponent} from '../sede/sede-create/sede-create.component';
 import {HorarioAtencionListComponent} from '../horario-atencion/horario-atencion-list/horario-atencion-list.component';
 import {HorarioAtencionDetailComponent} from '../horario-atencion/horario-atencion-detail/horario-atencion-detail.component';
 import {HorarioAtencionCreateComponent} from '../horario-atencion/horario-atencion-create/horario-atencion-create.component';
+import {SedeAddConsultorioComponent} from '../sede/sede-add-consultorio/sede-add-consultorio.component';
+
 
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
@@ -57,7 +59,7 @@ import {PacienteFacturasComponent} from '../paciente//paciente-facturas/paciente
 import {PacienteCitasmedicasComponent} from '../paciente/paciente-citasmedicas/paciente-citasmedicas.component';
 import {PacienteHistoriasclinicasComponent} from '../paciente/paciente-historiasclinicas/paciente-historiasclinicas.component';
 import {PacienteTarjetaCreditoAddComponent} from '../paciente/paciente-tarjeta-credito-add/paciente-tarjeta-credito-add.component';
-
+import {PacienteEditComponent} from '../paciente/paciente-edit/paciente-edit.component';
 
 
 
@@ -79,7 +81,12 @@ const routes: Routes = [
                 path: ':id',
                 component: PacienteDetailComponent
             },
-            { path:':id/tarjetascredito/add',
+            {
+              path: ':id/edit',
+              component: PacienteEditComponent  
+            },
+            { 
+                path:':id/tarjetascredito/add',
                 component: PacienteTarjetaCreditoAddComponent
             },
             { path:':id/tarjetascredito',
@@ -224,6 +231,11 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: SedeDetailComponent
+                
+            },
+            {
+                path: ':id/consultorios/add',
+                component: SedeAddConsultorioComponent
                 
             }
         ]

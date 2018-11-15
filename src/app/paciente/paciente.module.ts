@@ -14,6 +14,7 @@ import { PacienteFacturasComponent } from './paciente-facturas/paciente-facturas
 import { PacienteCitasmedicasComponent } from './paciente-citasmedicas/paciente-citasmedicas.component';
 import { PacienteHistoriasclinicasComponent } from './paciente-historiasclinicas/paciente-historiasclinicas.component';
 import { PacienteTarjetaCreditoAddComponent } from '../paciente/paciente-tarjeta-credito-add/paciente-tarjeta-credito-add.component';
+import { PacienteEditComponent } from '../paciente/paciente-edit/paciente-edit.component';
 
 @NgModule({
   imports: [
@@ -23,9 +24,9 @@ import { PacienteTarjetaCreditoAddComponent } from '../paciente/paciente-tarjeta
     FormsModule,
     AppRoutingModule
   ],
-    declarations: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent, PacienteCitaslaboratorioComponent, PacienteFacturasComponent, PacienteCitasmedicasComponent, PacienteHistoriasclinicasComponent, PacienteTarjetaCreditoAddComponent],
+    declarations: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent, PacienteCitaslaboratorioComponent, PacienteFacturasComponent, PacienteCitasmedicasComponent, PacienteHistoriasclinicasComponent, PacienteTarjetaCreditoAddComponent, PacienteEditComponent],
   providers:[PacienteService],
-    exports: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent, PacienteCitasmedicasComponent, PacienteFacturasComponent, PacienteCitasmedicasComponent, PacienteHistoriasclinicasComponent, PacienteTarjetaCreditoAddComponent],
+    exports: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent, PacienteCitasmedicasComponent, PacienteFacturasComponent, PacienteCitasmedicasComponent, PacienteHistoriasclinicasComponent, PacienteTarjetaCreditoAddComponent, PacienteEditComponent],
     bootstrap: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent]
 })
 export class PacienteModule { }

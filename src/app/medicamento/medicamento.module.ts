@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MedicamentoDetailComponent } from './medicamento-detail/medicamento-detail.component';
 import { MedicamentoCreateComponent } from './medicamento-create/medicamento-create.component';
 import {FarmaciaModule} from '../farmacia/farmacia.module';
+import { MedicamentoEditComponent } from './medicamento-edit/medicamento-edit.component';
 
 
 
@@ -21,7 +22,7 @@ import {FarmaciaModule} from '../farmacia/farmacia.module';
     HttpClientModule,
     FormsModule
   ],
-  declarations: [MedicamentoListComponent, MedicamentoDetailComponent, MedicamentoCreateComponent],
+  declarations: [MedicamentoListComponent, MedicamentoDetailComponent, MedicamentoCreateComponent, MedicamentoEditComponent],
   providers:[MedicamentoService],
   exports: [MedicamentoListComponent]
 })

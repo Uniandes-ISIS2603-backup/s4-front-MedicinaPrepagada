@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-6">
+        <h2>Editar Paciente</h2>
+        <form name="paciente" (ngSubmit)="f.form.valid && editPaciente()" #f="ngForm" novalidate>
+            
+            <div class="form-group">
+                <label for="Login"><b>Usuario</b></label>
+                <input type="text" name="pacienteLogin" class="form-control" id="pacienteLogin" [(ngModel)] = paciente.login
+                       #pacienteLogin="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.login.invalid}" required>     
+            </div>
+               
+            <div class="form-group">
+                <label for="contrasena"><b>Constrseña</b></label>
+                <input type="text" name="pacienteContrasena" class="form-control" id="pacienteContrasena" [(ngModel)] = paciente.contrasena
+                       #pacienteContrasena="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.contrasena.invalid}" required>       
+            </div>
+              
+            <div class="form-group">
+                <label for="tipoUsuario"><b>Tipo Usuario</b></label>
+                <input type="text" name="pacienteTipoUsuario" class="form-control" id="pacienteTipoUsuario" [(ngModel)] = paciente.tipoUsuario
+                       #pacienteTipoUsuario="ngModel" [ngClass]="{'is-valid':f.submitted && paciente.tipoUsuario.invalid}" required>
+            </div>
+              
+            <div class="form-group">
+                <label for="documentoIdentidad"><b>Numero Documento Identidad</b></label>
+                <input type="number" name="pacienteDocumentoIdentidda" class="form-control" id="pacienteDocumentoidentidad" [(ngModel)]= paciente.documentoIdentidad
+                       #pacienteDocumentoIdentidad="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.documentoIdentidad.invalid}" requireds>
+            </div>
+            
+            <div class="form-group">
+                <label for="Nomre"><b>Nombre</b></label>
+                <input type="text" name="pacienteNombre" class="form-control" id="pacienteNombre" [(ngModel)] = paciente.nombre
+                       #pacienteNombre="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.nombre.invalid}" required>
+            </div>
+              
+            <div class="form-group">
+                <label  for="FechaNcimiento"><b>Fecha Nacimiento (DD/MM/AAAA)</b></label>
+                <input type="text" name="pacienteFechanacimiento" class="form-control" id="pacienteFechaNacimiento" [(ngModel)] = paciente.fechaNacimiento
+                      #pacienteFechaNacimiento="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.fechaNacimiento.invalid}" required>
+            </div>
+              
+            <div class="form-group">
+                <label for="Dureccion"><b>Dirección</b></label>
+                <input type="text" name="pacienteDireccion" class="form-control" id="pacienteDireccion" [(ngModel)] = paciente.direccion
+                       #pacienteDireccion="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.direccion.invalid}" required>
+            </div>
+              
+            <div class="form-group">
+                <label for="NumeroContacto"><b>Numero Contacto</b></label>
+                <input type="number" name="pacienteNumeroContacto" class="form-control" id="pacienteNumeroContacto" [(ngModel)] = paciente.numeroContacto
+                       #pacienteDireccion="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.numeroContacto.invalid}" required>
+            </div>
+              
+            <div class="form-group">
+                <label for="Mail"><b>Mail</b></label>
+                <input type="text" name="pacienteMail" class="form-control" id="pacienteMail" [(ngModel)] = paciente.mail
+                       #pacienteMail="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.mail.invalid}" required> 
+            </div>
+              
+            <div class="form-group">
+                <label for="Eps"><b>EPS</b></label>
+                <input type="text" name="pacienteEps" class="form-control" id="pacienteMail" [(ngModel)] = paciente.eps
+                       #pacienteEps="ngModel" [ngClass]="{'is-valid': f.submitted && paciente.eps.invalid}" required>
+            </div>
+              
+            <div class=" row form-inline justify-content-center aliign-self-center">
+                <button type="submit" class="btn btn-primary" (click)="editPaciente()">Editar</button>   
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
