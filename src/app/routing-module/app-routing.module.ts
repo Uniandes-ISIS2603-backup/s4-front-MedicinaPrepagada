@@ -59,7 +59,7 @@ import {PacienteFacturasComponent} from '../paciente//paciente-facturas/paciente
 import {PacienteCitasmedicasComponent} from '../paciente/paciente-citasmedicas/paciente-citasmedicas.component';
 import {PacienteHistoriasclinicasComponent} from '../paciente/paciente-historiasclinicas/paciente-historiasclinicas.component';
 import {PacienteTarjetaCreditoAddComponent} from '../paciente/paciente-tarjeta-credito-add/paciente-tarjeta-credito-add.component';
-
+import {PacienteEditComponent} from '../paciente/paciente-edit/paciente-edit.component';
 
 
 
@@ -81,7 +81,12 @@ const routes: Routes = [
                 path: ':id',
                 component: PacienteDetailComponent
             },
-            { path:':id/tarjetascredito/add',
+            {
+              path: ':id/edit',
+              component: PacienteEditComponent  
+            },
+            { 
+                path:':id/tarjetascredito/add',
                 component: PacienteTarjetaCreditoAddComponent
             },
             { path:':id/tarjetascredito',

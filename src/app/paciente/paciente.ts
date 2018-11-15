@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 import {TarjetaCredito} from '../tarjeta-credito/tarjeta-credito';
+import {CitaMedica} from '../cita-medica/cita-medica';
+import {CitaLaboratorio} from '../citalaboratorio/citalaboratorio';
+import {Factura} from '../factura/factura';
+import {HistoriaClinica} from '../historiaClinica/historiaClinica';
 
 export class Paciente{
     /**
@@ -65,6 +69,28 @@ export class Paciente{
      * tarjetas de credito del paciente
      */
     tarjetasCredito: TarjetaCredito[];
+    
+    /**
+     * citas medicas del paciente
+     */
+    citasMedicas: CitaMedica[];
+    
+    /**
+     * citas laboratoriio del paciente
+     */
+    citasLaboratorio: CitaLaboratorio[];
+    
+    /**
+     * facturas del paciente
+     */
+    facturas: Factura[];
+    
+    /**
+     * historias clinicas del paciente
+     */
+    historiasClinicas: HistoriaClinica[];
+    
+    
 }
 
 
