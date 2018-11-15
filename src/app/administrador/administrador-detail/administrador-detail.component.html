@@ -20,6 +20,9 @@ and open the template in the editor.
                 <th>Tipo de Usuario</th>
                 <th>{{administrador.tipoUsuario}}</th>
             </tr>
+             <td>
+                        <button class="btn btn-danger" (click)="deleteAdministrador(administrador.id)"><span class="fa fa-trash"></span></button>
+             </td>
         </table>
     </div>
 </div>

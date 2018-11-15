@@ -34,6 +34,15 @@ export class HistoriaClinicaService
         return this.http.post<HistoriaClinica>(API_URL + historiasClinicas, historiaClinica).catch(err => this.handleError(err));
     }
     
+    updateHistoriaClinica(historiaClinica): Observable<HistoriaClinica> {
+        return this.http.put<HistoriaClinica>(API_URL + historiasClinicas + '/' + historiaClinica.id, historiaClinica);
+    }
+    
+    deleteHistoriaClinica(historiaClinicaId): Observable<HistoriaClinica> 
+    {
+        return this.http.delete<HistoriaClinica>(API_URL + historiasClinicas + '/' + historiaClinicaId);
+    }
+    
     private handleError(error: any)
         {
         return throwError(error.error.errorMessage);
