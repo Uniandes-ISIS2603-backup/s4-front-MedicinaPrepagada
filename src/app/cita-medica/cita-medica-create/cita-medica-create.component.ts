@@ -114,8 +114,8 @@ export class CitaMedicaCreateComponent implements OnInit {
                 idCitaMedica: this.citaMedica.idCitaMedica,
                 fecha: this.citaMedica.fecha,
                 comentarios: this.citaMedica.comentarios,
-                horarioAtencionAsignado: this.citaMedica.horarioAtencionAsignado,
-                pacienteAAtender: this.citaMedica.pacienteAAtender
+                horarioAtencionAsignado: this.atributoHorario,
+                pacienteAAtender: this.atributoPaciente
             };    
             this.citaMedicaService.createCitaMedica(cita_create)
                 .subscribe(citaMedica => {
