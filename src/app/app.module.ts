@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './routing-module/app-routing.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -61,7 +62,8 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
     FormsModule,
     BrowserAnimationsModule,
       ToastrModule.forRoot(),
-      ModalDialogModule.forRoot()
+      ModalDialogModule.forRoot(),
+      NgbModule
     
   ],
   bootstrap: [AppComponent]
