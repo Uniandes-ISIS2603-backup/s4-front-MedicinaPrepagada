@@ -26,13 +26,15 @@ and open the template in the editor.
                         <td><span>{{administrador.id}}</span></td>
                         <td><dd>{{administrador.login}}</dd></td>
                         <td>{{administrador.tipoUsuario}}</td>
+                        
+                        <td >
+                            <button class="btn btn-primary" routerLink="/administradores/update"><span class="fa fa-pencil"></span></button>
+                        </td>
                     </tr>
-                    
                 </tbody>
             </table>
         </div>
         <div class="col-8">
             </div>
-        </div>   
         <button class="btn btn-success" routerLink="/administradores/create">Crear Administrador</button>
     </div>
