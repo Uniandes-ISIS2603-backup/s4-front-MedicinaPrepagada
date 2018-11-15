@@ -1,4 +1,7 @@
 import { Component, OnInit, Input, } from '@angular/core';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
+
+
 import { Consultorio } from '../consultorio';
 
 
@@ -12,8 +15,9 @@ export class SedeConsultorioComponent implements OnInit {
   @Input() sedeConsultorios : Consultorio [];
 
 
+    sede_id: number;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
     
   /**
      * The function called when a consultorio is posted to update the consultorios
@@ -25,6 +29,8 @@ export class SedeConsultorioComponent implements OnInit {
   
 
   ngOnInit() {
+            this.sede_id = +this.route.snapshot.paramMap.get('id');
+
   }
 
 }
