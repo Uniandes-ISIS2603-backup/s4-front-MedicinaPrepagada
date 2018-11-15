@@ -69,5 +69,8 @@
            
         </div>
     </div>
-    <button type="button" class="btn btn-outline-info" routerLink="/pacientes/{{paciente.id}}/edit">Editar</button>
+    <div class="row">
+        <button type="button" class="btn btn-outline-info" routerLink="/pacientes/{{paciente.id}}/edit">Editar</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deletePaciente()">Eliminar</button>
+    </div>
 </div>

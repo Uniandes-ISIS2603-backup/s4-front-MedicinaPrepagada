@@ -30,7 +30,7 @@ import {HistoriaClinicaModule} from './historiaClinica/historiaClinica.module';
 import {OrdenMedicaModule} from './ordenMedica/ordenMedica.module';
 
 import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
-
+import { ModalDialogModule } from 'ngx-modal-dialog';
 
 
 @NgModule({
@@ -60,7 +60,8 @@ import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
     TarjetaCreditoModule,
     FormsModule,
     BrowserAnimationsModule,
-      ToastrModule.forRoot() 
+      ToastrModule.forRoot(),
+      ModalDialogModule.forRoot()
     
   ],
   bootstrap: [AppComponent]
