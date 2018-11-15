@@ -1,12 +1,11 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, Input } from '@angular/core';
+//import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog'; 
 
 import {MedicamentoService} from '../medicamento.service';
 import { ToastrService } from 'ngx-toastr';
 
 import {Medicamento} from '../medicamento';
 import {MedicamentoDetail} from '../medicamento-detail';
-
-
 
 @Component({
   selector: 'app-medicamento',
@@ -17,12 +16,14 @@ export class MedicamentoListComponent implements OnInit {
 
     constructor(
         private medicamentoService: MedicamentoService,
-         private toastrService: ToastrService) { }
+//        private modalDialogService: ModalDialogService,
+//        private viewRef: ViewContainerRef,
+        private toastrService: ToastrService) { }
     
     /**
     * The list of medicamentos which belong to the BookStore
     */
-    medicamentos: Medicamento[];
+    @Input() medicamentos: Medicamento[];
 
     /**
     * Shows or hides the medicamento-create-component
