@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {AdministradorDetailComponent} from './administrador-detail/administrador-detail.component';
 import {AdministradorCreateComponent} from './administrador-create/administrador-create.component';
+import {AdministradorEditComponent} from './administrador-edit/administrador-edit.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import {AdministradorCreateComponent} from './administrador-create/administrador
         CommonModule,
         FormsModule
             ],
-  declarations: [AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent],
+  declarations: [AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent, AdministradorEditComponent],
   providers: [AdministradorService],
   exports:[AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent],
   bootstrap: [AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent]

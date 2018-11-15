@@ -22,6 +22,10 @@ and open the template in the editor.
                     <td><span>{{ordenMedica.id}}</span></td>
                     <td>{{ordenMedica.comentarios}}</td>
                     <td >{{ordenMedica.fechaExpedicion}}</td>
+                    
+                    <td >
+                        <button class="btn btn-primary" (click)="showHideEdit(ordenMedica.id)"><span class="fa fa-pencil"></span></button>
+                    </td>
                 </tr>
 
             </tbody>
