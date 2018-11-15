@@ -13,7 +13,7 @@ import {CitaLaboratorio} from '../citalaboratorio/citalaboratorio';
 import {Factura} from '../factura/factura';
 import {CitaMedica} from '../cita-medica/cita-medica';
 import {HistoriaClinica} from '../historiaClinica//historiaClinica';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 
 const API_URL = environment.apirURL;
@@ -26,6 +26,10 @@ const historiasClinicas = '/historiasclinicas';
 
 @Injectable()
 export class PacienteService{
+    
+    headers = new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+    });
     
     constructor (private http: HttpClient) {}
     
@@ -82,6 +86,10 @@ export class PacienteService{
      */
     createTarjetaCredito(pacienteId, tarjetaCredito): Observable<TarjetaCredito>{
         return this.http.post<TarjetaCredito>(API_URL + pacientes + '/' + pacienteId + tarjetasCredito, tarjetaCredito).catch(err => this.handleError(err));
+    }
+    
+    updatePaciente(paciente):Observable<Boolean>{
+        return this.http.put<Boolean>(API_URL + pacientes, paciente).catch(err => this.handleError(err));
     }
     
     
