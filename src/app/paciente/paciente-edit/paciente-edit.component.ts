@@ -135,11 +135,6 @@ export class PacienteEditComponent implements OnInit, OnChanges {
       this.facturas = [];
       this.historiasClinicas = [];
       this.getPaciente();
-      this.getTarjetasCredito();
-      this.getCitasMedicas();
-      this.getCitasLab();
-      this.getFacturas();
-      this.getHistoriasClinicas();
   }
   
     ngOnChanges(){
