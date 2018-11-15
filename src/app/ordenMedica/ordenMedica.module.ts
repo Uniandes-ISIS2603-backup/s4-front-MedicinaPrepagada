@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {OrdenMedicaDetailComponent} from './ordenMedica-detail/ordenMedica-detail.component';
 import {OrdenMedicaCreateComponent} from './ordenMedica-create/ordenMedica-create.component';
+import {OrdenMedicaEditComponent} from './ordenMedica-edit/ordenMedica-edit.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import {OrdenMedicaCreateComponent} from './ordenMedica-create/ordenMedica-creat
         CommonModule,
         FormsModule
             ],
-  declarations: [OrdenMedicaListComponent, OrdenMedicaDetailComponent, OrdenMedicaCreateComponent],
+  declarations: [OrdenMedicaListComponent, OrdenMedicaDetailComponent, OrdenMedicaCreateComponent, OrdenMedicaEditComponent],
   providers: [OrdenMedicaService],
   exports:[OrdenMedicaListComponent, OrdenMedicaDetailComponent, OrdenMedicaCreateComponent],
   bootstrap: [OrdenMedicaListComponent, OrdenMedicaDetailComponent, OrdenMedicaCreateComponent]

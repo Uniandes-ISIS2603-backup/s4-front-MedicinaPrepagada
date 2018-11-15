@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Editar Orden Medica</h2>
+        <br>
+        <form name="ordenMedica" (ngSubmit)="f.form.valid && updateOrdenMedica()" #f="ngForm" novalidate>
+            
+              <div class="form-group">
+                <label  for="ordenId"><b>Id</b></label>
+                <input type="text" name="ordenId" class="form-control" id="ordenId" [(ngModel)] = ordenMedica.id
+                      #ordenId="ngModel" [ngClass]="{'is-valid': f.submitted && ordenMedica.id.invalid}" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el id</div>
+                </div>
+            </div>
+              
+            <div class="form-group">
+                <label  for="ordenFecha"><b>Fecha de Expedicion (DD/MM/AAAA)</b></label>
+                <input type="text" name="ordenFecha" class="form-control" id="ordenFecha" [(ngModel)] = ordenMedica.fechaExpedicion
+                      #ordenFecha="ngModel" [ngClass]="{'is-valid': f.submitted && ordenMedica.fechaExpedicion.invalid}" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la fecha de expedicion</div>
+                </div>
+            </div>
+              
+            <div class="form-group">
+                <label for="ordenComentarios"><b>Comentarios</b></label>
+                <input name="ordenComentarios" type = "text"  class="form-control" id="ordenComentarios" [(ngModel)]= ordenMedica.comentarios
+                    #ordenComentarios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ordenMedica.comentarios.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el comentario</div>
+                </div>
+            </div>
+              
+            <div class="form-group">
+                <label for="ordenValidaHasta"><b>Valida Hasta</b></label>
+                <input name="ordenValidaHasta" type = "text"  class="form-control" id="ordenValidaHasta" [(ngModel)]= ordenMedica.validaHasta
+                    #ordenValidaHasta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ordenMedica.validaHasta.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la validez</div>
+                </div>
+            </div>
+              
+               <div class="form-group">
+                <label for="ordenFirmaMedico"><b>Firma Medico</b></label>
+                <input name="ordenFirmaMedico" type = "text"  class="form-control" id="ordenFirmaMedico" [(ngModel)]= ordenMedica.firmaMedico
+                    #ordenFirmaMedico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ordenMedica.firmaMedico.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la firma del medico</div>
+                </div>
+            </div>
+              
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Editar</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
+

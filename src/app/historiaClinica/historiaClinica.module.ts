@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {HistoriaClinicaDetailComponent} from './historiaClinica-detail/historiaClinica-detail.component';
 import {HistoriaClinicaCreateComponent} from './historiaClinica-create/historiaClinica-create.component';
+import {HistoriaClinicaEditComponent} from './historiaClinica-edit/historiaClinica-edit.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import {HistoriaClinicaCreateComponent} from './historiaClinica-create/historiaC
         CommonModule,
         FormsModule
             ],
-  declarations: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent],
+  declarations: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent, HistoriaClinicaEditComponent],
   providers: [HistoriaClinicaService],
   exports:[HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent],
   bootstrap: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent]
