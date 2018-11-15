@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Edit an medicamento</h2>
+        <br>
+        <form name="medicamento" (ngSubmit)="f.form.valid && editExamenMedico()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="examenCosto"><b>Costo</b></label>
+                <input type="text" name="examenCosto" class="form-control" id="examenCosto" [(ngModel)]="examen.costo"
+                    #examenCosto="ngModel" [ngClass]="{ 'is-invalid': f.submitted && examenCosto.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el costo del examen</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="examenRecomendaciones"><b>Recomendaciones</b></label>
+                <input type="text" name="examenRecomendaciones" class="form-control" id="examenRecomendaciones" [(ngModel)]="examen.recomendaciones"
+                    #examenRecomendaciones="ngModel" [ngClass]="{ 'is-invalid': f.submitted && examenRecomendaciones.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hacen falta las recomendaciones del examen</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

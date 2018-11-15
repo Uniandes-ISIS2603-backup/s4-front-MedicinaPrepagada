@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FarmaciaDetailComponent } from './farmacia-detail/farmacia-detail.component';
 import { FarmaciaCreateComponent } from './farmacia-create/farmacia-create.component';
+import { FarmaciaEditComponent } from './farmacia-edit/farmacia-edit.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { FarmaciaCreateComponent } from './farmacia-create/farmacia-create.compo
     HttpClientModule,
     FormsModule
   ],
-  declarations: [FarmaciaListComponent, FarmaciaDetailComponent, FarmaciaCreateComponent],
+  declarations: [FarmaciaListComponent, FarmaciaDetailComponent, FarmaciaCreateComponent, FarmaciaEditComponent],
   providers:[FarmaciaService],
   exports: [FarmaciaListComponent],
   bootstrap: [FarmaciaListComponent]
