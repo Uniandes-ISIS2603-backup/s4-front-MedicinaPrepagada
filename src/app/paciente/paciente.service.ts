@@ -88,8 +88,19 @@ export class PacienteService{
         return this.http.post<TarjetaCredito>(API_URL + pacientes + '/' + pacienteId + tarjetasCredito, tarjetaCredito).catch(err => this.handleError(err));
     }
     
+    /**
+     * actualiza el paciente que llega por param en la base de datos
+     */
     updatePaciente(paciente):Observable<Boolean>{
         return this.http.put<Boolean>(API_URL + pacientes, paciente).catch(err => this.handleError(err));
+    }
+    
+    /**
+     * elimina el paciente con el id que llega por param
+     */
+    deletePaciente(pacienteId):Observable<Boolean>{
+        return this.http.delete<Boolean>(API_URL + pacientes + '/' + pacienteId).catch(err => this.handleError(err));
+
     }
     
     

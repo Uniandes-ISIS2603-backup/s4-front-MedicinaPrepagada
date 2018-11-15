@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule, ViewRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {PacienteService} from './paciente.service';
 import { PacienteListComponent } from '../paciente/paciente-list/paciente-list.component';
@@ -25,7 +25,7 @@ import { PacienteEditComponent } from '../paciente/paciente-edit/paciente-edit.c
     AppRoutingModule
   ],
     declarations: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent, PacienteCitaslaboratorioComponent, PacienteFacturasComponent, PacienteCitasmedicasComponent, PacienteHistoriasclinicasComponent, PacienteTarjetaCreditoAddComponent, PacienteEditComponent],
-  providers:[PacienteService],
+    providers: [PacienteService],
     exports: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent, PacienteTarjetascreditoComponent, PacienteCitasmedicasComponent, PacienteFacturasComponent, PacienteCitasmedicasComponent, PacienteHistoriasclinicasComponent, PacienteTarjetaCreditoAddComponent, PacienteEditComponent],
     bootstrap: [PacienteListComponent, PacienteDetailComponent, PacienteCreateComponent]
 })

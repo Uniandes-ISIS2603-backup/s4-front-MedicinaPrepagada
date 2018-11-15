@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, ViewContainerRef } from '@angular/core';
 import {ActivatedRoute} from '@angular/router/';
 import {Paciente} from '../paciente';
 import {ToastrService} from 'ngx-toastr';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 
 import {PacienteService} from '../paciente.service';
 
@@ -18,7 +19,9 @@ export class PacienteDetailComponent implements OnInit {
     constructor(
         private pacienteService: PacienteService,
         private route: ActivatedRoute,
-        private toastrservice: ToastrService
+        private toastrservice: ToastrService,
+        private modalDialog: ModalDialogService,
+        private viewRef: ViewContainerRef
         ) {}
       
     /**
@@ -42,6 +45,37 @@ export class PacienteDetailComponent implements OnInit {
             }
             
         );
+    }
+    
+    /**
+     * elimina el paciente mostrado
+     */
+    deletePaciente():void{
+        this.modalDialog.openDialog(this.viewRef,{
+            title:'Eliminar Paciente',
+            childComponent: SimpleModalComponent,
+            data:{
+                text:'Esta seguro de que desea eliminar el paciente'
+            },
+            actionButtons:[
+                {
+                    text:'Si',
+                    buttonClass:'btn btn-danger',
+                    onAction:()=>{
+                        this.pacienteService.deletePaciente(this.paciente_id)
+                            .subscribe(() => {}, err =>{
+                                this.toastrservice.error(err, "Error");
+                        });
+                        return true;
+                    },
+                    
+                },
+                {
+                    text:'Cancelar',
+                    onAction: () => true
+                }
+            ]
+        });
     }
     
    
