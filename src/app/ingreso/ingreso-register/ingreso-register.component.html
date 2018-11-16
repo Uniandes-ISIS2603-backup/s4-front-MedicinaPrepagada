@@ -13,15 +13,15 @@ and open the template in the editor.
         <br>
         <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="username"><b>Username</b></label>
+                <label for="username"><b>Usuario</b></label>
                 <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.username" required>
             </div>
             <div class="form-group">
-                <label for="password"><b>Password</b></label>
+                <label for="password"><b>Contraseña</b></label>
                 <input type="text" name="password" class="form-control" id="password" [(ngModel)]="user.password" required>
             </div>
             <div class="form-group">
-                <label for="role"><b>Role</b></label>
+                <label for="role"><b>Tipo de Usuario</b></label>
                 <select class="custom-select" name="role" id="role" [(ngModel)]="user.role" required>
                     <option [value]="role" *ngFor="let role of roles">{{role}}</option>
                 </select>

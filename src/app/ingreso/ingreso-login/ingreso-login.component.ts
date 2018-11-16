@@ -18,7 +18,6 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit 
     {
 
-
     constructor(
         private toasteservice: ToastrService,
         private ingresoService: IngresoService) { }
@@ -29,11 +28,11 @@ export class LoginComponent implements OnInit
 
     login(): void {
         this.ingresoService.login(this.user.role);
-        this.toasteservice.success('Logged in')
+        this.toasteservice.success('Ha ingresado a su cuenta')
     }
     
         ngOnInit() {
         this.user = new User();
-        this.roles = ['Administrator', 'Client'];
+        this.roles = ['Administrador', 'Paciente', 'Medico'];
     }
 }
