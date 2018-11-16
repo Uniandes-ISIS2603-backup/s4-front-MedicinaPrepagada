@@ -57,9 +57,10 @@
     <li>
         <a class ="nav-link active" routerLink="/facturas/list">Facturas</a>
     </li>
-    <li>
-        <a class ="nav-link active" routerLink="/login">Login</a>
-    </li>
+      
+
+
+    
     
    <li class=""nav nav-item active>
         <div class="row">
@@ -76,13 +77,28 @@
         <button class="dropdown-item"routerLink="/tarjetascredito/list"> Tarjetas de Credito</button>
         
       </div>
+
     </div>
   </div>
 </div>
-   
+       
+             <div class="navbar-nav ml-auto flex-column">
+            <div class="flex-row" *ngxPermissionsOnly="['VISITANTE']">
+                <div class="form-inline">
+                    <li class="right-space"><a id="signup-navbar-item" routerLink="/register"><span class="fa fa-user"></span>
+                                Registrarse</a></li>
+                    <li><a id="login-navbar-item" routerLink="/login"><span class="fa fa-sign-in"></span>Login</a></li>
+                </div>
+            </div>
+            <div class="flex-row" *ngxPermissionsOnly="['PACIENTE', 'ADMIN', 'MEDICO']">
+                <div class="form-inline">
+                        <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
+                </div>
+            </div>
+        </div>
   </ul>
 </nav> 
-  </div>
+       </div>
 
 <div>
 <ngb-carousel align = center class = "container">
@@ -113,11 +129,8 @@
 <div class="list">
     <router-outlet></router-outlet>
 </div>
-<div class="flex-row" *ngxPermissionsOnly="['PACIENTE', 'ADMIN', 'MEDICO']">
-    <div class="form-inline">
-        <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
-    </div>
-</div>
+
+
 
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
