@@ -32,6 +32,7 @@ import {OrdenMedicaModule} from './ordenMedica/ordenMedica.module';
 
 import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import {IngresoModule} from './ingreso/ingreso.module';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
     MedicamentoModule,
     FarmaciaModule,
     ExamenMedicoModule,
+    IngresoModule, 
     SedeModule,
       HorarioAtencionModule,
     AdministradorModule,

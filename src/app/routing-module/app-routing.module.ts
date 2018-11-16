@@ -63,6 +63,9 @@ import {PacienteEditComponent} from '../paciente/paciente-edit/paciente-edit.com
 import {AdministradorEditComponent} from '../administrador/administrador-edit/administrador-edit.component';
 import {HistoriaClinicaEditComponent} from '../historiaClinica/historiaClinica-edit/historiaClinica-edit.component';
 import {OrdenMedicaEditComponent} from '../ordenMedica/ordenMedica-edit/ordenMedica-edit.component';
+import {LoginComponent} from '../ingreso/ingreso-login/ingreso-login.component';
+import {RegisterComponent} from '../ingreso/ingreso-register/ingreso-register.component';
+
 
 
 
@@ -375,7 +378,10 @@ const routes: Routes = [
                 component: TarjetaCreditoDetailComponent
             }
         ]
-    }
+    }, 
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+
     
 ]
 

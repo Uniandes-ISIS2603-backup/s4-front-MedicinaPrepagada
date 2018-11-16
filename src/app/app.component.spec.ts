@@ -11,6 +11,9 @@ import {AdministradorListComponent} from './administrador/administrador-list/adm
 import {HistoriaClinicaListComponent} from './historiaClinica/historiaClinica-list/historiaClinica-list.component';
 import {OrdenMedicaListComponent} from './ordenMedica/ordenMedica-list/ordenMedica-list.component';
 import {CitaLaboratorioListComponent} from './citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
+import {LoginComponent} from './ingreso/ingreso-login/ingreso-login.component';
+import {RegisterComponent} from './ingreso/ingreso-register/ingreso-register.component';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -27,7 +30,9 @@ describe('AppComponent', () => {
         MedicoListComponent,
         HistoriaClinicaListComponent,
         OrdenMedicaListComponent,
-        CitaLaboratorioListComponent
+        CitaLaboratorioListComponent, 
+        LoginComponent, 
+        RegisterComponent
         
       ],
     }).compileComponents();
