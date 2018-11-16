@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import { ToastrService } from 'ngx-toastr';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog'; 
+
 
 import {FarmaciaService} from '../farmacia.service';
 import {Farmacia} from '../farmacia';
@@ -15,9 +17,10 @@ import {FarmaciaDetail} from '../farmacia-detail';
 })
 export class FarmaciaListComponent implements OnInit {
 
-    constructor(private farmaciaService: FarmaciaService,
-//        private modalDialogService: ModalDialogService,
-//        private viewRef: ViewContainerRef,
+    constructor(
+        private farmaciaService: FarmaciaService,
+        private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef,
         private toastrService: ToastrService) { }
    /**
     * The list of farmacias
@@ -84,32 +87,32 @@ export class FarmaciaListComponent implements OnInit {
         this.showEdit = false;
     }
 
-//    /**
-//    * Deletes an farmacia
-//    */
-//    deleteFarmacia(farmaciaId): void {
-//        this.modalDialogService.openDialog(this.viewRef, {
-//            title: 'Delete an farmacia',
-//            childComponent: SimpleModalComponent,
-//            data: {text: 'Are you sure your want to delete this farmacia from the BookStore?'},
-//            actionButtons: [
-//                {
-//                    text: 'Yes',
-//                    buttonClass: 'btn btn-danger',
-//                    onAction: () => {
-//                        this.farmaciaService.deleteFarmacia(farmaciaId).subscribe(() => {
-//                            this.toastrService.error("The farmacia was successfully deleted", "Farmacia deleted");
-//                            this.ngOnInit();
-//                        }, err => {
-//                            this.toastrService.error(err, "Error");
-//                        });
-//                        return true;
-//                    }
-//                },
-//                {text: 'No', onAction: () => true}
-//            ]
-//        });
-//    }
+    /**
+    * Deletes an farmacia
+    */
+    deleteFarmacia(farmaciaId): void {
+        this.modalDialogService.openDialog(this.viewRef, {
+            title: 'Eliminar una farmacia',
+            childComponent: SimpleModalComponent,
+            data: {text: '¿Está seguro que quiere eliminar esta farmacia de la base de datos de Medisistemas?'},
+            actionButtons: [
+                {
+                    text: 'Si',
+                    buttonClass: 'btn btn-danger',
+                    onAction: () => {
+                        this.farmaciaService.deleteFarmacia(farmaciaId).subscribe(() => {
+                            this.toastrService.error("La farmacia fue eliminada exitosamente", "Farmacia eliminada");
+                            this.ngOnInit();
+                        }, err => {
+                            this.toastrService.error(err, "Error");
+                        });
+                        return true;
+                    }
+                },
+                {text: 'No', onAction: () => true}
+            ]
+        });
+    }
 
 
 

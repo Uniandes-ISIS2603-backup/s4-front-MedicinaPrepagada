@@ -61,7 +61,7 @@ export class FarmaciaEditComponent implements OnInit, OnChanges {
         this.farmaciaService.updateFarmacia(this.farmacia)
             .subscribe(() => {
                 this.update.emit();
-                this.toastrService.success("The farmacia's information was updated", "Farmacia edition");
+                this.toastrService.success("La información de la farmacia fue actualizada", "Editar farmacia");
             });
     }
 
