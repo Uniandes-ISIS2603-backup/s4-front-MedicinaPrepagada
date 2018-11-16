@@ -63,6 +63,10 @@ import {PacienteEditComponent} from '../paciente/paciente-edit/paciente-edit.com
 import {AdministradorEditComponent} from '../administrador/administrador-edit/administrador-edit.component';
 import {HistoriaClinicaEditComponent} from '../historiaClinica/historiaClinica-edit/historiaClinica-edit.component';
 import {OrdenMedicaEditComponent} from '../ordenMedica/ordenMedica-edit/ordenMedica-edit.component';
+import {LoginComponent} from '../ingreso/ingreso-login/ingreso-login.component';
+import {RegisterComponent} from '../ingreso/ingreso-register/ingreso-register.component';
+import {NgxPermissionsGuard} from 'ngx-permissions';
+
 
 
 
@@ -74,15 +78,33 @@ const routes: Routes = [
         children: [
                         {
                 path: 'list',
-                component : PacienteListComponent
+                component : PacienteListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO']
+                    }
+                }
             },
             {
                 path:'add',
-                component: PacienteCreateComponent
+                component: PacienteCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO']
+                    }
+                }
             },
                 {
                 path: ':id',
-                component: PacienteDetailComponent
+                component: PacienteDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO']
+                    }
+                }
             },
             {
               path: ':id/edit',
@@ -375,7 +397,10 @@ const routes: Routes = [
                 component: TarjetaCreditoDetailComponent
             }
         ]
-    }
+    }, 
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+
     
 ]
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IngresoService } from './ingreso/ingreso.service';
 
 @Component({
   selector: 'app-root',
@@ -6,11 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    
   title: string;
+ 
   
   ngOnInit() : void {
       this.title = "Medisistemas";
+      this.ingresoService.start();
   }
   
-  constructor() {}
+  constructor( private ingresoService: IngresoService)  {   }
+  
+  logout(): void {
+        this.ingresoService.logout()
+    }
 }
