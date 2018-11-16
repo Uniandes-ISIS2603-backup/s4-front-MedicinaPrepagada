@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
  
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-/*import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';*/
-import {ToastrService} from 'ngx-toastr';
+import { Component, OnInit } from '@angular/core';
 import {AdministradorService} from '../administrador.service';
 import {Administrador} from '../administrador';
 
@@ -19,10 +17,7 @@ import {Administrador} from '../administrador';
 export class AdministradorListComponent implements OnInit 
 {
     constructor(
-    private administradorService: AdministradorService,
-    /*private modalDialogService: ModalDialogService,*/
-    private viewRef: ViewContainerRef,
-    private toastrService: ToastrService) {}
+    private administradorService: AdministradorService) {}
     
     administradores: Administrador[];
     
@@ -33,30 +28,6 @@ export class AdministradorListComponent implements OnInit
         this.administradorService.getAdministradores()
             .subscribe(administradores => this.administradores = administradores);
     }
-    
-    /*deleteAdministrador(admi_id): void {
-        this.modalDialogService.openDialog(this.viewRef, {
-            title: 'Eliminar un administrador',
-            childComponent: SimpleModalComponent,
-            data: {text: 'Está seguro que desea eliminar este administrador?'},
-            actionButtons: [
-                {
-                    text: 'Si',
-                    buttonClass: 'btn btn-danger',
-                    onAction: () => {
-                        this.administradorService.deleteAdministrador(admi_id).subscribe(() => {
-                            this.toastrService.error("El administrador fue eliminado exitosamente", "Administrador eliminado");
-                            this.ngOnInit();
-                        }, err => {
-                            this.toastrService.error(err, "Error");
-                        });
-                        return true;
-                    }
-                },
-                {text: 'No', onAction: () => true}
-            ]
-        });
-    }*/
     
   ngOnInit() 
   {

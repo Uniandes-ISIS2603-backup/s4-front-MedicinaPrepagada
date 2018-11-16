@@ -5,10 +5,11 @@
  */
 
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewContainerRef } from '@angular/core';
 import {ActivatedRoute} from '@angular/router/';
 import {Administrador} from '../administrador';
 import {ToastrService} from 'ngx-toastr';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 
 import {AdministradorService} from '../administrador.service';
 
@@ -22,7 +23,10 @@ export class AdministradorDetailComponent implements OnInit {
     constructor(
         private administradorService: AdministradorService,
         private route: ActivatedRoute,
-        private toastrservice: ToastrService
+        private toastrservice: ToastrService,
+        private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef
+
         ) {}
         
     administrador: Administrador;
@@ -37,6 +41,30 @@ export class AdministradorDetailComponent implements OnInit {
             }
             
         );
+    }
+    
+    deleteAdministrador(admi_id): void {
+        this.modalDialogService.openDialog(this.viewRef, {
+            title: 'Eliminar un administrador',
+            childComponent: SimpleModalComponent,
+            data: {text: 'Está seguro que desea eliminar este administrador?'},
+            actionButtons: [
+                {
+                    text: 'Si',
+                    buttonClass: 'btn btn-danger',
+                    onAction: () => {
+                        this.administradorService.deleteAdministrador(admi_id).subscribe(() => {
+                            this.toastrservice.error("El administrador fue eliminado exitosamente", "Administrador eliminado");
+                            this.ngOnInit();
+                        }, err => {
+                            this.toastrservice.error(err, "Error");
+                        });
+                        return true;
+                    }
+                },
+                {text: 'No', onAction: () => true}
+            ]
+        });
     }
 
   ngOnInit() {
