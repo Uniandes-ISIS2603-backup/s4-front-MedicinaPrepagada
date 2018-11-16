@@ -61,7 +61,7 @@ export class ExamenMedicoEditComponent implements OnInit, OnChanges {
         this.examenService.updateExamenMedico(this.examen)
             .subscribe(() => {
                 this.update.emit();
-                this.toastrService.success("The examen's information was updated", "ExamenMedico edition");
+                this.toastrService.success("La información del examen fue actualizada", "Edición de examen médico");
             });
     }
 

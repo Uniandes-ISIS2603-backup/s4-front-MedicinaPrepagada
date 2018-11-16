@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, Input } from '@angular/core';
 import {ExamenMedicoService} from '../examenmedico.service';
 import {ExamenMedicoDetail} from '../examenmedico-detail';
+import { ToastrService } from 'ngx-toastr';
+
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog'; 
 
 import {ExamenMedico} from '../examenmedico';
 
@@ -11,12 +14,16 @@ import {ExamenMedico} from '../examenmedico';
 })
 export class ExamenMedicoListComponent implements OnInit {
 
-    constructor(private examenService: ExamenMedicoService) { }
+    constructor(
+        private examenService: ExamenMedicoService,
+        private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef,
+        private toastrService: ToastrService) { }
     
     /**
     * The list of examenes 
     */
-    examenes: ExamenMedico[];
+    @Input() examenes: ExamenMedico[];
 
     /**
     * Shows or hides the examenmedico-create-component
@@ -80,32 +87,32 @@ export class ExamenMedicoListComponent implements OnInit {
         this.showEdit = false;
     }
 
-//    /**
-//    * Deletes an medicamento
-//    */
-//    deleteMedicamento(medicamentoId): void {
-//        this.modalDialogService.openDialog(this.viewRef, {
-//            title: 'Delete an medicamento',
-//            childComponent: SimpleModalComponent,
-//            data: {text: 'Are you sure your want to delete this medicamento from the BookStore?'},
-//            actionButtons: [
-//                {
-//                    text: 'Yes',
-//                    buttonClass: 'btn btn-danger',
-//                    onAction: () => {
-//                        this.medicamentoService.deleteMedicamento(medicamentoId).subscribe(() => {
-//                            this.toastrService.error("The medicamento was successfully deleted", "Medicamento deleted");
-//                            this.ngOnInit();
-//                        }, err => {
-//                            this.toastrService.error(err, "Error");
-//                        });
-//                        return true;
-//                    }
-//                },
-//                {text: 'No', onAction: () => true}
-//            ]
-//        });
-//    }
+    /**
+    * Deletes an examen
+    */
+    deleteExamenMedico(examenId): void {
+        this.modalDialogService.openDialog(this.viewRef, {
+            title: 'Eliminar un examen médico',
+            childComponent: SimpleModalComponent,
+            data: {text: '¿Está seguro que quiere eliminar este examen médico de la base de datos de Medisistemas?'},
+            actionButtons: [
+                {
+                    text: 'Si',
+                    buttonClass: 'btn btn-danger',
+                    onAction: () => {
+                        this.examenService.deleteExamenMedico(examenId).subscribe(() => {
+                            this.toastrService.error("El examen fue eliminado exitosamente", "Examen médico eliminado");
+                            this.ngOnInit();
+                        }, err => {
+                            this.toastrService.error(err, "Error");
+                        });
+                        return true;
+                    }
+                },
+                {text: 'No', onAction: () => true}
+            ]
+        });
+    }
 
 
 
