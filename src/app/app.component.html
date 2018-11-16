@@ -13,7 +13,14 @@
   <div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <!-- Navbar content -->
-  <a class="navbar-brand" routerLink="/">Medisistemas</a>
+  
+ <a class="navbar-brand" routerLink="/">
+            <div class="form-inline">
+                <img id="logo" [src]="'http://www.brandemia.org/sites/default/files/sites/default/files/logo_m_facebook.jpg'" class="center-block" height = 80px width = 80px>
+                <h2 class="mainTitle">Medisistemas</h2>
+            </div>
+        </a>
+<!--  <a class="navbar-brand" routerLink="/">Medisistemas</a>-->
   <ul class="navbar-nav">
      
    
@@ -77,21 +84,21 @@
 <div>
 <ngb-carousel align = center class = "container">
   <ng-template ngbSlide>
-    <img [src]="'https://www.colmedica.com/PublishingImages/Propuestas%20de%20valor/Pago_de_Facturas.jpg'" width = 100% height=500px alt="Random first slide">
+    <img [src]="'https://www.colmedica.com/PublishingImages/Propuestas%20de%20valor/Pago_de_Facturas.jpg'" width = 100% height=370px alt="Random first slide">
     <div class="carousel-caption">
       <h3>Pide tu cita médica</h3>
       <p>Aquí puedes pedir una cita médica en la sede que prefieras, fácil y sin filas.</p>
     </div>
   </ng-template>
   <ng-template ngbSlide>
-    <img [src]="'https://www.colmedica.com/PublishingImages/Propuesta%20unica%20de%20valor/medicina_prepagada.jpg'" width = 100% height=500px  alt="Random second slide">
+    <img [src]="'https://www.colmedica.com/PublishingImages/Propuesta%20unica%20de%20valor/medicina_prepagada.jpg'" width = 100% height=370px  alt="Random second slide">
     <div class="carousel-caption">
       <h3 id ="segundo">Cuidamos a tu familia</h3>
       <p id = "segundo">Nuestra pasión es cuidarte a ti y a los tuyos.</p>
     </div>
   </ng-template>
   <ng-template ngbSlide>
-    <img [src]="'https://www.epssanitas.com/usuarios/documents/9441058/9705667/banner_vasectomia.jpg/abb769c0-2d75-4cfb-b6fe-e3f29a81a635?t=1539963482034'" width = 1500px height=500px alt="Random third slide">
+    <img [src]="'https://www.epssanitas.com/usuarios/documents/9441058/9705667/banner_vasectomia.jpg/abb769c0-2d75-4cfb-b6fe-e3f29a81a635?t=1539963482034'" width = 1500px height=370px alt="Random third slide">
     <div class="carousel-caption" color = "white">
       <h3>Queremos que seas feliz</h3>
       <p>Nuestro compromiso es brindarte el mejor servicio</p>
