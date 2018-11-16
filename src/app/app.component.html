@@ -113,6 +113,11 @@
 <div class="list">
     <router-outlet></router-outlet>
 </div>
+<div class="flex-row" *ngxPermissionsOnly="['PACIENTE', 'ADMIN', 'MEDICO']">
+    <div class="form-inline">
+        <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
+    </div>
+</div>
 
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
