@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 import { AlertService, UserService } from '../services/ind';
 
 @Component({
-    templateUrl: 'register.component.html'
+    selector: 'app-ingreso-register',
+    templateUrl: 'ingreso-register.component.html',
+    styleUrls: ['./ingreso-register.component.css']
 })
 
 export class RegisterComponent {
