@@ -5,9 +5,9 @@
  */
 
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { AlertService, UserService } from '../services/ind';
+import { IngresoService } from '../ingreso.service';
+import { User } from '../ingreso';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-ingreso-register',
@@ -16,25 +16,23 @@ import { AlertService, UserService } from '../services/ind';
 })
 
 export class RegisterComponent {
-    model: any = {};
-    loading = false;
 
     constructor(
-        private router: Router,
-        private userService: UserService,
-        private alertService: AlertService) { }
+        private userService: IngresoService,
+        private toastrService: ToastrService) { }
 
-    register() {
-        this.loading = true;
-        this.userService.create(this.model)
-            .subscribe(
-                data => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
-                },
-                error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                });
+    user: User;
+
+    roles: String[];
+    
+    register() : void {
+        this.userService.login(this.user.role);
+        this.toastrService.success('Se ha registrado exitosamente')
+    }
+    
+    ngOnInit() 
+    {
+        this.user = new User();
+        this.roles = ['Administrator', 'Client'];
     }
 }

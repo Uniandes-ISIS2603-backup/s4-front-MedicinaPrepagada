@@ -12,6 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {IngresoService} from './ingreso.service';
 
 
 @NgModule({
@@ -23,9 +24,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule
   ],
   declarations: [LoginComponent, RegisterComponent],
-  providers:[LoginComponent, RegisterComponent],
-  exports: [LoginComponent, RegisterComponent],
-  bootstrap: [LoginComponent, RegisterComponent]
+  providers:[IngresoService],
+  bootstrap: [LoginComponent]
 })
 export class IngresoModule { }
 

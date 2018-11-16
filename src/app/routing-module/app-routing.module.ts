@@ -65,6 +65,7 @@ import {HistoriaClinicaEditComponent} from '../historiaClinica/historiaClinica-e
 import {OrdenMedicaEditComponent} from '../ordenMedica/ordenMedica-edit/ordenMedica-edit.component';
 import {LoginComponent} from '../ingreso/ingreso-login/ingreso-login.component';
 import {RegisterComponent} from '../ingreso/ingreso-register/ingreso-register.component';
+import {NgxPermissionsGuard} from 'ngx-permissions';
 
 
 

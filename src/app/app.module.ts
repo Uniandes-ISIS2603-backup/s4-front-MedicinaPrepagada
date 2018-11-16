@@ -33,6 +33,7 @@ import {OrdenMedicaModule} from './ordenMedica/ordenMedica.module';
 import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
 import { ModalDialogModule } from 'ngx-modal-dialog';
 import {IngresoModule} from './ingreso/ingreso.module';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import {IngresoModule} from './ingreso/ingreso.module';
     OrdenMedicaModule,
     TarjetaCreditoModule,
     FormsModule,
+    NgxPermissionsModule.forRoot(),
     BrowserAnimationsModule,
       ToastrModule.forRoot(),
       ModalDialogModule.forRoot(),

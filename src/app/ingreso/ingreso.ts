@@ -4,11 +4,10 @@
  * and open the template in the editor.
  */
 
-export class User {
-    id: number;
+export class User 
+{
     username: string;
     password: string;
-    firstName: string;
-    lastName: string;
+    role: string;
 }
 
