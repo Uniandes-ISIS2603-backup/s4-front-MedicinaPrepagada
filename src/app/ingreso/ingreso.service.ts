@@ -67,7 +67,7 @@ export class IngresoService {
         } else {
             this.setPacienteRole()
         }
-        this.router.navigateByUrl('/books/list');
+        this.router.navigateByUrl('/administradores/list');
     }
 
     /**

@@ -37,7 +37,7 @@
     </li>
      
     <li class=""nav nav-item active>
-        <a class ="nav-link active" routerLink="/administradores/list">Administradores</a>   
+        <a class ="nav-link active" *ngxPermissionsOnly="['ADMIN']" routerLink="/administradores/list">Administradores</a>   
     </li>
     
      <li>
