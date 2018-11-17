@@ -44,5 +44,5 @@ export class Sede {
     */
     correo: string;
   
-
+    image: string;
 }

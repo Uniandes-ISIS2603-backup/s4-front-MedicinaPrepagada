@@ -8,7 +8,7 @@ export class Consultorio
     
     edificio: string;
     
-    nOficina: number;
+    NOficina: number;
     
     sede: Sede;
     

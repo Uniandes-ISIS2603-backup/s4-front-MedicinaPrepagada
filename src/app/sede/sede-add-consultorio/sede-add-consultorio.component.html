@@ -12,13 +12,11 @@
                             <div>Falta el edificio</div>
                         </div>                       
             </div>
-              
-            
-               
+                             
             <div class="form-group">
                 <label for="consultorioNumOficina"><b>Numero de Oficina</b></label>
-                <input type="number" name="consultorioNumOficina" class="form-control" id="consultorioNumOficina" [(ngModel)] = consultorio.nOficina
-                       #consultorioNumOficina="ngModel" [ngClass]="{'is-valid': consultorioForm.submitted && consultorioNumOficina.invalid}" required>
+                <input type="number" name="consultorioNOficina" class="form-control" id="consultorioNOficina" [(ngModel)] = consultorio.NOficina
+                       #consultorioNOficina="ngModel" [ngClass]="{'is-valid': consultorioForm.submitted && consultorioNOficina.invalid}" required>
                        
                     <div class="invalid-feedback">
                             <div>Falta el numero de oficina</div>
