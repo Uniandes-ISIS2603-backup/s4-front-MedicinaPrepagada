@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+//import { Router, ActivatedRoute } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 
@@ -43,7 +43,7 @@ export class MedicoEditComponent implements OnInit {
     /**
     * Updates the information of the author
     */
-    editMedico(): void {
+    updateMedico(): void {
         this.medicoService.updateMedico(this.medico)
             .subscribe(() => {
                 this.toastr.success("The medico's information was updated", "Medico edition");
@@ -64,7 +64,7 @@ export class MedicoEditComponent implements OnInit {
   }
   
   /**
-    * This function will be called when the user chooses another sede to edit
+    * This function will be called when the user chooses another medico to edit
     */
     ngOnChanges() {
         this.ngOnInit();
