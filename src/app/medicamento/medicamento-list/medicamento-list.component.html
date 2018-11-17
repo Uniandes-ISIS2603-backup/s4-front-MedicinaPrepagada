@@ -16,11 +16,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor = "let medicamento of medicamentos"
-                        (click)="onSelected(medicamento.id)">
-                        <td style="cursor: pointer;"> 
+                    <tr *ngFor = "let medicamento of medicamentos" (click)="onSelected(medicamento.id)"
+                        style="cursor: pointer;">
+                        
                 <dd>{{medicamento.nombre}}</dd>
-                </td>
+                
                 <td >
                     <button class="btn btn-primary" (click)="showHideEdit(medicamento.id)"><span class="fa fa-pencil"></span></button>
                 </td>

@@ -1,0 +1,20 @@
+<<div style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ubicacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let farmacia of farmacias" routerLink="/farmacias/{{farmacia.id}}">
+                    <td><span>{{farmacia.nombre}}</span></td>
+                    <td>{{farmacia.ubicacion}}</td>
+              
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

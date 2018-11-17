@@ -10,6 +10,7 @@ import { MedicamentoDetailComponent } from './medicamento-detail/medicamento-det
 import { MedicamentoCreateComponent } from './medicamento-create/medicamento-create.component';
 import {FarmaciaModule} from '../farmacia/farmacia.module';
 import { MedicamentoEditComponent } from './medicamento-edit/medicamento-edit.component';
+import { MedicamentoFarmaciaComponent } from './medicamento-farmacia/medicamento-farmacia.component';
 
 
 
@@ -22,7 +23,7 @@ import { MedicamentoEditComponent } from './medicamento-edit/medicamento-edit.co
     HttpClientModule,
     FormsModule
   ],
-  declarations: [MedicamentoListComponent, MedicamentoDetailComponent, MedicamentoCreateComponent, MedicamentoEditComponent],
+  declarations: [MedicamentoListComponent, MedicamentoDetailComponent, MedicamentoCreateComponent, MedicamentoEditComponent, MedicamentoFarmaciaComponent],
   providers:[MedicamentoService],
   exports: [MedicamentoListComponent]
 })
