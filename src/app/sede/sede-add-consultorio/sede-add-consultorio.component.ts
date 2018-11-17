@@ -1,4 +1,7 @@
 import { Component, OnInit, Input, OnChanges, EventEmitter, Output } from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+
+
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 
@@ -19,7 +22,9 @@ import {Especialidad} from '../../especialidad/especialidad';
 export class SedeAddConsultorioComponent implements OnInit {
 
   constructor(private sedeService: SedeService, private especialidadService: EspecialidadService,
-                private toastr: ToastrService) { }
+                private toastr: ToastrService,
+                private router: Router,
+                private route: ActivatedRoute) { }
 
 
 
@@ -27,7 +32,9 @@ export class SedeAddConsultorioComponent implements OnInit {
        /**
     * The sedes's id
     */
-    @Input() sede: Sede;
+     sede: Sede;
+    
+    sede_id:number;
     
     especialidades: Especialidad [];
     
@@ -36,6 +43,7 @@ export class SedeAddConsultorioComponent implements OnInit {
     * The consultorio to post
     */
     consultorio: Consultorio;
+    
     
     @Output() cancel = new EventEmitter();
     
@@ -60,7 +68,7 @@ export class SedeAddConsultorioComponent implements OnInit {
     */
     postConsultorio(consultorioForm: NgForm): Consultorio {
         this.consultorio.sede = this.sede;
-        this.sedeService.createConsultorio(this.sede.id,this.consultorio)
+        this.sedeService.createConsultorio(this.sede_id,this.consultorio)
             .subscribe(() => {
                 consultorioForm.resetForm();
                 this.create.emit();
@@ -80,6 +88,9 @@ export class SedeAddConsultorioComponent implements OnInit {
       this.consultorio = new Consultorio();
       this.consultorio.especialidad = new Especialidad();
       this.getEspecialidades();
+      this.sede_id = +this.route.snapshot.paramMap.get('id');
+      this.sede = new Sede();
+      this.sede.id = this.sede_id;
            
   }
 

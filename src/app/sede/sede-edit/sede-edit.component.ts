@@ -1,5 +1,11 @@
-import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, Output, EventEmitter, ViewChild} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+import {NgbTypeahead} from '@ng-bootstrap/ng-bootstrap';
+import {Observable, Subject, merge} from 'rxjs';
+import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
+
 import { ToastrService } from 'ngx-toastr';
+
 
 
 import {SedeService} from '../sede.service';
@@ -25,53 +31,56 @@ export class SedeEditComponent implements OnInit {
     */
     
   constructor(private sedeService: SedeService,
-                private toastr: ToastrService) { }
+                private toastr: ToastrService,
+                
+        private router: Router,
+        private route: ActivatedRoute) { }
                 
            /**
-    * The sede id as received from the parent component
+    * The sede wich will be updated
     */
-    @Input() sede: SedeDetail;
+     sede: SedeDetail;
+     
+     /**
+      * the id of the sede 
+      */
+     sede_id: number;
 
-    /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an sede
-    */
-    @Output() cancel = new EventEmitter();
 
-    /**
-    * The output which tells the parent component
-    * that the user updated a new sede
+
+       /**
+    * Retrieves the information of the sede which will be updated
     */
-    @Output() update = new EventEmitter();
-         
+    getSede(): void {
+        this.sedeService.getSedeDetail(this.sede_id).subscribe(sede => {           
+            this.sede = sede;
+        });
+    }
+      
     /**
     * Updates the information of the author
     */
-    editAuthor(): void {
+    editSede(): void {
         this.sedeService.updateSede(this.sede)
             .subscribe(() => {
-                this.toastr.success("The sede's information was updated", "Sede edition");
+                this.router.navigate(['/sedes/' + this.sede.id]);
+                this.toastr.success("La sede fue actualizada exitosamente", "Sede edition");
             });
-        this.update.emit();
     }
 
      /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to update an sede
+    * Cancela la edicion e informa al usuario
     */
     cancelEdition(): void {
-        this.cancel.emit();
-    }
+        this.toastr.warning('La sede no fue editada', 'Sede edition');
+        this.router.navigate(['/sedes/' + + this.sede.id]);    }
     
     
   ngOnInit() {
+      this.sede_id = +this.route.snapshot.paramMap.get('id');
+        this.getSede();
   }
   
-   /**
-    * This function will be called when the user chooses another sede to edit
-    */
-    ngOnChanges() {
-        this.ngOnInit();
-    }
+  
 
 }

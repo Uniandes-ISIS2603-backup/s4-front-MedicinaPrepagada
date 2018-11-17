@@ -6,6 +6,7 @@ import 'rxjs/add/operator/catch';
 import { Sede } from './sede';
 import { SedeDetail } from './sede-detail';
 import { Consultorio } from './consultorio';
+import { ConsultorioDetail } from './consultorio-detail';
 
 
 import {environment} from '../../environments/environment'; 
@@ -41,6 +42,7 @@ export class SedeService{
         return this.http.get<SedeDetail>(API_URL + sedes+ '/' + sedeId ).catch(err => this.handleError(err));
     }
     
+    
     /**
     * Creates a new sede
     * @param sede The new sede
@@ -58,6 +60,16 @@ export class SedeService{
     updateSede(sede): Observable<SedeDetail> {
         return this.http.put<SedeDetail>(API_URL + sedes + '/' + sede.id, sede);
     }
+    
+        /**
+    * Deletes a sede
+    * @param sedeId The sede's id
+    * @returns True if the sede was deleted, false otherwise
+    */
+    deleteSede(sedeId): Observable<SedeDetail> {
+        return this.http.delete<SedeDetail>(API_URL + sedes + '/' + sedeId);
+    }
+    
 
         /**
     * Creates a consultorio
@@ -67,6 +79,12 @@ export class SedeService{
     createConsultorio(sedeId, consultorio): Observable<Consultorio> {
         return this.http.post<Consultorio>(API_URL + sedes + '/' + sedeId + consultorios, consultorio);
     }
+    
+    getConsultorioDetail(sedeId, consultorioId): Observable<ConsultorioDetail>
+    {
+        return this.http.get<ConsultorioDetail>(API_URL + sedes + '/' + sedeId + '/' + consultorios + '/' + consultorioId ).catch(err => this.handleError(err));
+    }
+    
     
     private handleError(error: any){
         return throwError(error.error.errorMessage);

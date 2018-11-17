@@ -6,7 +6,6 @@ export class SedeDetail extends Sede
 {
     consultorios: Consultorio[];
     
-    image: string;
 }
 
 

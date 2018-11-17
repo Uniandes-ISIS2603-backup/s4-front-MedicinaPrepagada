@@ -1,7 +1,11 @@
 import {Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Router} from '@angular/router';
+
 import { ToastrService } from 'ngx-toastr';
 
 import {SedeService} from '../sede.service';
+
+
 import {Sede} from '../sede';
 
 
@@ -13,24 +17,24 @@ import {Sede} from '../sede';
 export class SedeCreateComponent implements OnInit {
 
   constructor(private sedeService: SedeService,
-                private toastr: ToastrService
+                private toastr: ToastrService,
+                private router: Router
     ) { }
     
     sede: Sede;
     
-    @Output() cancel = new EventEmitter();
     
-    @Output() create = new EventEmitter();
     
-    createSede(): void{
+    createSede(): Sede{
         this.sedeService.createSede(this.sede)
-            .subscribe(() => {
-                this.create.emit();
+            .subscribe(sede => {
+                this.sede.id = sede.id;
+                this.router.navigate(['/sedes/' + sede.id]);
                 this.toastr.success("El sede fue creado", "Creacion Sede");      
         }, err =>{
-            this.toastr.error(err, "Error");
-        }
-        );
+            this.toastr.error(err, "No fue posible crear la sede");
+        });
+        return this.sede;
     }
     
         /**
@@ -38,8 +42,10 @@ export class SedeCreateComponent implements OnInit {
     * user no longer wants to create an sede
     */
     
-    cancelCreation() : void{
-        this.cancel.emit();
+    cancelCreation() : void{        
+        this.toastr.warning('La sede no fue creada', 'Sede creation');
+
+        this.router.navigate(['/sedes/list']);
     }
 
   ngOnInit() {

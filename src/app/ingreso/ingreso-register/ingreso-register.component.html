@@ -11,7 +11,7 @@ and open the template in the editor.
         <br>
         <h2 class="text-center">Registro</h2>
         <br>
-        <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
+        <form name="sign-up" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="username"><b>Usuario</b></label>
                 <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.username" required>
@@ -27,7 +27,7 @@ and open the template in the editor.
                 </select>
             </div>
             <div class="justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary"> Registrarse</button>
+                <button type="submit" class="btn btn-primary"> Registrarse </button>
             </div>
         </form>
     </div>
