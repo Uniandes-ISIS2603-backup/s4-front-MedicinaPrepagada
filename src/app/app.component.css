@@ -11,6 +11,27 @@ p{
   margin: auto;
 }
 
+#sel
+{
+/*    font-family: 'Roboto', sans-serif;*/
+    color : white;
+    font-size: 1.3em;
+}
+
 #segundo{
     color: white;
+        font-size: 1.3em;
+
+}
+
+#segundodos{
+    color: white;
+}
+#sel:hover { 
+    background-color: white;
+    color: blue;
+}
+#segundo:hover { 
+    background-color: white;
+    color: blue;
 }
