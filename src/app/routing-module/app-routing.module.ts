@@ -69,7 +69,7 @@ import {LoginComponent} from '../ingreso/ingreso-login/ingreso-login.component';
 import {RegisterComponent} from '../ingreso/ingreso-register/ingreso-register.component';
 import {NgxPermissionsGuard} from 'ngx-permissions';
 
-
+import {MedicamentoFarmaciaComponent} from '../medicamento/medicamento-farmacia/medicamento-farmacia.component';
 
 
 
@@ -148,6 +148,11 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: MedicamentoDetailComponent
+                
+            },
+            {
+                path: ':id/farmacias',
+                component: MedicamentoFarmaciaComponent
                 
             }
         ]

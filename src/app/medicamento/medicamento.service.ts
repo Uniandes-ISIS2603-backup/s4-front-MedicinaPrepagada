@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Medicamento } from './medicamento';
 import { MedicamentoDetail } from './medicamento-detail';
+import { Observable , throwError} from 'rxjs';
+
+import { Farmacia } from '../farmacia/farmacia';
+import 'rxjs/add/operator/catch';
+
+
 
 import {environment} from '../../environments/environment'; 
 
 
 const API_URL = "http://localhost:8080/s4_MedicinaPrepagada-api/api";
 const medicamentos = '/medicamentos';
+const farmacias = '/farmacias';
+
 /**
 * The service provider for everything related to medicamentos
 */
@@ -63,6 +70,20 @@ export class MedicamentoService {
     */
     deleteMedicamento(medicamentoId): Observable<boolean> {
         return this.http.delete<boolean>(API_URL + medicamentos + '/' + medicamentoId);
+    }
+    
+    /**
+     * da las farmacias del medicamento con el id dado
+     */
+    getFarmaciasMedicamento(medicamentoId): Observable<Farmacia[]>{
+        return this.http.get<Farmacia[]>(API_URL + medicamentos + '/' + medicamentoId + farmacias).catch(err => this.handleError(err));
+    }
+    
+     /**
+     * metodo para manejar las exceptions
+     */
+    private handleError(error: any){
+        return throwError(error.error.errorMessage);
     }
 }
 
