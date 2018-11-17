@@ -1,12 +1,31 @@
 
 <div class="panel panel-default"> 
     <div>
+
         <div class="border margin">
+            <button class="btn btn-primary text-center" (click)="volver()"><span class="fa fa-reply"></span>Volver</button>
+
             <p class="h3 p-3">{{sedeDetail.nombre}}</p> 
             <div class="row">
+                              
+
                 <div class="col-md-4">
-                    <div class="thumb">
-                        <img class="img-fluid" src="{{sedeDetail.image}}"/>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="thumb">
+                                 <img class="img-fluid" src="{{sedeDetail.image}}"/>
+                            </div>
+                        </div>                                               
+                    </div>
+                    <div>
+                        <br>
+                        <div class="row justify-content-center align-self-center">
+                            <button class="btn btn-primary text-center" routerLink="/sedes/{{sedeDetail.id}}/edit">Editar</button>
+                            <div class="divider"></div>
+                            <button class="btn btn-danger text-center" (click)="deleteSede()"><span class="fa fa-trash"></span></button>
+
+                        </div>
+                        <br>
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -33,7 +52,10 @@
                     <div >
                         <div class="row">
                             <div class="col-md-3">
-
+                             
+                             <button class="btn btn-success" routerLink="/sedes/{{sedeDetail.id}}/consultorios/add">Crear Consultorio (todavia no sirvo)</button>
+   
+                                
                              <button [ngClass]="{ 'btn-success': !showConsultorios, 'btn-primary': showConsultorios }" type="button" class="btn"
                     (click)="showHideConsultorios()">Consultorios</button>   
                             </div>
