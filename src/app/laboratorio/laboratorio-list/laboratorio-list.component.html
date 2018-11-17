@@ -1,7 +1,9 @@
+
 <div style="text-align: center"></div>
 <div class="container-fluid">
     <div class="col-md-4">
-        <table class="table table-hover">
+        <h1> Laboratorios </h1> 
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -9,13 +11,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let laboratorio of laboratorios" routerLink="/laboratorios/{{laboratorio.id}}"style="cursor: pointer;">
+                <tr *ngFor ="let laboratorio of laboratorios" routerLink="/laboratorios/{{laboratorio.id}}">
                     <td><span>{{laboratorio.id}}</span></td>
                     <td>{{laboratorio.nombre}}</td>
-              
+          
+                    
+                    <td >
+                        <button class="btn btn-primary" routerLink="/laboratorios/update"><span class="fa fa-pencil"></span></button>
+                    </td>
                 </tr>
+
             </tbody>
         </table>
     </div>
-     <button class="btn btn-success" routerLink="/laboratorios/add">Crear Laboratorio</button>
+        <button class="btn btn-success" routerLink="/laboratorios/create">Crear Laboratorio</button>
 </div>

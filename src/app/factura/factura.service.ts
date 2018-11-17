@@ -34,6 +34,9 @@ export class FacturaService{
     createFactura(factura): Observable<Factura>{
         return this.http.post<Factura>(API_URL + facturas, factura).catch(err => this.handleError(err));
     }
+    updateFactura(factura): Observable<Factura> {
+        return this.http.put<Factura>(API_URL + factura + '/' + factura.id, factura);
+    }
     /**
     * Returns the Observable object containing the laboratorio retrieved from the API
     * @returns Factura
