@@ -20,34 +20,34 @@ export class IngresoService {
         this.permissionsService.loadPermissions(['edit_author_permission', 'delete_author_permission', 'leave_review']);
         const role = localStorage.getItem('role');
         if (!role) {
-            this.setVisitanteRole();
+            this.setVisitanteRol();
         } else if (role === 'ADMIN') {
-            this.setAdministratorRole();
+            this.setAdministradorRol();
         } else if (role === 'PACIENTE') {
-            this.setPacienteRole();
+            this.setPacienteRol();
         } else {
-            this.setMedicoRole();
+            this.setMedicoRol();
         }
     }
 
-    setVisitanteRole (): void {
+    setVisitanteRol (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('VISITANTE', ['']);
     }
 
-    setPacienteRole (): void {
+    setPacienteRol (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('PACIENTE', ['leave_review']);
         localStorage.setItem('role', 'PACIENTE');
     }
     
-     setMedicoRole (): void {
+     setMedicoRol (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('MEDICO', ['leave_review']);
         localStorage.setItem('role', 'MEDICO');
     }
 
-    setAdministratorRole (): void {
+    setAdministradorRol (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('ADMIN', ['edit_author_permission', 'delete_author_permission']);
         localStorage.setItem('role', 'ADMIN');
@@ -61,11 +61,19 @@ export class IngresoService {
      * Logs the user in with the desired role
      * @param role The desired role to set to the user
      */
-    login (role): void {
-        if (role === 'Administrator') {
-            this.setAdministratorRole();
-        } else {
-            this.setPacienteRole()
+    login (rol): void 
+    {
+        if (rol === 'Administrador') 
+        {
+            this.setAdministradorRol();
+        } 
+        else if( rol === 'Paciente' ) 
+        {
+            this.setPacienteRol(); 
+        } 
+        else
+        {
+            this.setMedicoRol(); 
         }
         this.router.navigateByUrl('/administradores/list');
     }
@@ -75,7 +83,7 @@ export class IngresoService {
      */
     logout (): void {
         this.roleService.flushRoles();
-        this.setVisitanteRole();
+        this.setVisitanteRol();
         localStorage.removeItem('role');
         this.router.navigateByUrl('/');
     }
