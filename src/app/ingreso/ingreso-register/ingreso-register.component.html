@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <br>
+        <h2 class="text-center">Registro</h2>
+        <br>
+        <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="username"><b>Usuario</b></label>
+                <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.username" required>
+            </div>
+            <div class="form-group">
+                <label for="password"><b>Contraseña</b></label>
+                <input type="text" name="password" class="form-control" id="password" [(ngModel)]="user.password" required>
+            </div>
+            <div class="form-group">
+                <label for="role"><b>Tipo de Usuario</b></label>
+                <select class="custom-select" name="role" id="role" [(ngModel)]="user.role" required>
+                    <option [value]="role" *ngFor="let role of roles">{{role}}</option>
+                </select>
+            </div>
+            <div class="justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary"> Registrarse</button>
+            </div>
+        </form>
+    </div>
+</div>

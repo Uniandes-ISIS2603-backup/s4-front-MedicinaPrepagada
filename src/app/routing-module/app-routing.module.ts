@@ -60,7 +60,14 @@ import {PacienteCitasmedicasComponent} from '../paciente/paciente-citasmedicas/p
 import {PacienteHistoriasclinicasComponent} from '../paciente/paciente-historiasclinicas/paciente-historiasclinicas.component';
 import {PacienteTarjetaCreditoAddComponent} from '../paciente/paciente-tarjeta-credito-add/paciente-tarjeta-credito-add.component';
 import {PacienteEditComponent} from '../paciente/paciente-edit/paciente-edit.component';
+import {AdministradorEditComponent} from '../administrador/administrador-edit/administrador-edit.component';
+import {HistoriaClinicaEditComponent} from '../historiaClinica/historiaClinica-edit/historiaClinica-edit.component';
+import {OrdenMedicaEditComponent} from '../ordenMedica/ordenMedica-edit/ordenMedica-edit.component';
+import {LoginComponent} from '../ingreso/ingreso-login/ingreso-login.component';
+import {RegisterComponent} from '../ingreso/ingreso-register/ingreso-register.component';
+import {NgxPermissionsGuard} from 'ngx-permissions';
 
+import {MedicamentoFarmaciaComponent} from '../medicamento/medicamento-farmacia/medicamento-farmacia.component';
 
 
 
@@ -71,15 +78,33 @@ const routes: Routes = [
         children: [
                         {
                 path: 'list',
-                component : PacienteListComponent
+                component : PacienteListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO']
+                    }
+                }
             },
             {
                 path:'add',
-                component: PacienteCreateComponent
+                component: PacienteCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO']
+                    }
+                }
             },
                 {
                 path: ':id',
-                component: PacienteDetailComponent
+                component: PacienteDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO']
+                    }
+                }
             },
             {
               path: ':id/edit',
@@ -121,6 +146,11 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: MedicamentoDetailComponent
+                
+            },
+            {
+                path: ':id/farmacias',
+                component: MedicamentoFarmaciaComponent
                 
             }
         ]
@@ -211,6 +241,10 @@ const routes: Routes = [
                 path:'create',
                 component: AdministradorCreateComponent
             },
+            {
+                path:'update',
+                component: AdministradorEditComponent
+            },            
             {
                 path: ':id',
                 component: AdministradorDetailComponent
@@ -324,6 +358,10 @@ const routes: Routes = [
                 component: HistoriaClinicaCreateComponent
             },
             {
+                path:'update',
+                component: HistoriaClinicaEditComponent
+            },    
+            {
                 path: ':id',
                 component: HistoriaClinicaDetailComponent
                 
@@ -341,6 +379,10 @@ const routes: Routes = [
                 path:'create',
                 component: OrdenMedicaCreateComponent
             },
+            {
+                path:'update',
+                component: OrdenMedicaEditComponent
+            },    
             {
                 path: ':id',
                 component: OrdenMedicaDetailComponent
@@ -360,7 +402,10 @@ const routes: Routes = [
                 component: TarjetaCreditoDetailComponent
             }
         ]
-    }
+    }, 
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+
     
 ]
 

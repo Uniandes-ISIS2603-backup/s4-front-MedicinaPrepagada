@@ -10,6 +10,8 @@ import {environment} from '../../environments/environment';
 
 const API_URL = "http://localhost:8080/s4_MedicinaPrepagada-api/api";
 const medicamentos = '/medicamentos';
+const farmacias = '/farmacias';
+
 /**
 * The service provider for everything related to medicamentos
 */
@@ -63,6 +65,13 @@ export class MedicamentoService {
     */
     deleteMedicamento(medicamentoId): Observable<boolean> {
         return this.http.delete<boolean>(API_URL + medicamentos + '/' + medicamentoId);
+    }
+    
+    /**
+     * da las farmacias del medicamento con el id dado
+     */
+    getFarmaciasMedicamento(medicamentoId): Observable<Farmacia[]>{
+        return this.http.get<Farmacia[]>(API_URL + medicamentos + '/' + medicamentoId + farmacias).catch(err => this.handleError(err));
     }
 }
 

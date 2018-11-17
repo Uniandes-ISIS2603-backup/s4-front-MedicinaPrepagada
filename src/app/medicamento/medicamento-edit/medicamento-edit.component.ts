@@ -61,7 +61,7 @@ export class MedicamentoEditComponent implements OnInit, OnChanges {
         this.medicamentoService.updateMedicamento(this.medicamento)
             .subscribe(() => {
                 this.update.emit();
-                this.toastrService.success("The medicamento's information was updated", "Medicamento edition");
+                this.toastrService.success("La información del medicamento fue actualizada exitosamente", "Edición de medicamento");
             });
     }
 

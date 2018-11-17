@@ -8,10 +8,11 @@ and open the template in the editor.
     <div class="row">
         <div class="col-4">
             <br>
-            <div class="row justify-content-center align-self-center">
+            <!--<div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']"z> -->
             </div>
             <br>
             <br>
+                    <h1> Administradores </h1> 
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -26,13 +27,15 @@ and open the template in the editor.
                         <td><span>{{administrador.id}}</span></td>
                         <td><dd>{{administrador.login}}</dd></td>
                         <td>{{administrador.tipoUsuario}}</td>
+                        
+                        <td >
+                            <button class="btn btn-primary" routerLink="/administradores/update"><span class="fa fa-pencil"></span></button>
+                        </td>
                     </tr>
-                    
                 </tbody>
             </table>
         </div>
         <div class="col-8">
             </div>
-        </div>   
         <button class="btn btn-success" routerLink="/administradores/create">Crear Administrador</button>
     </div>

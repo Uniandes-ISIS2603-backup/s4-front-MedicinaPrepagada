@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './routing-module/app-routing.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -30,7 +31,9 @@ import {HistoriaClinicaModule} from './historiaClinica/historiaClinica.module';
 import {OrdenMedicaModule} from './ordenMedica/ordenMedica.module';
 
 import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
-
+import { ModalDialogModule } from 'ngx-modal-dialog';
+import {IngresoModule} from './ingreso/ingreso.module';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 
 @NgModule({
@@ -52,6 +55,7 @@ import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
     MedicamentoModule,
     FarmaciaModule,
     ExamenMedicoModule,
+    IngresoModule, 
     SedeModule,
       HorarioAtencionModule,
     AdministradorModule,
@@ -59,8 +63,11 @@ import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
     OrdenMedicaModule,
     TarjetaCreditoModule,
     FormsModule,
+    NgxPermissionsModule.forRoot(),
     BrowserAnimationsModule,
-      ToastrModule.forRoot() 
+      ToastrModule.forRoot(),
+      ModalDialogModule.forRoot(),
+      NgbModule
     
   ],
   bootstrap: [AppComponent]

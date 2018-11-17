@@ -39,6 +39,7 @@ export class AdministradorEditComponent implements OnInit, OnChanges
     updateAdministrador(): void {
         this.admiService.updateAdministrador(this.admi)
             .subscribe(() => {
+                this.update.emit();
                 this.toastrService.success("Se ha modificado exitosamente", "Administrador modificado");
             });
         this.update.emit();

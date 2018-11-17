@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-import { Component, OnInit, Input } from '@angular/core';
-import {ActivatedRoute} from '@angular/router/';
+import { Component, OnInit, Input, ViewContainerRef } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router/';
 import {HistoriaClinica} from '../historiaClinica';
 import {ToastrService} from 'ngx-toastr';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 
 import {HistoriaClinicaService} from '../historiaClinica.service';
 
@@ -21,7 +22,10 @@ export class HistoriaClinicaDetailComponent implements OnInit {
     constructor(
         private historiaClinicaService: HistoriaClinicaService,
         private route: ActivatedRoute,
-        private toastrservice: ToastrService
+        private toastrservice: ToastrService,
+        private modalDialogService: ModalDialogService,
+        private router: Router,
+        private viewRef: ViewContainerRef
         ) {}
         
     historiaClinica: HistoriaClinica;
@@ -37,6 +41,30 @@ export class HistoriaClinicaDetailComponent implements OnInit {
             }
             
         );
+    }
+    
+    deleteHistoriaClinica(): void {
+        this.modalDialogService.openDialog(this.viewRef, {
+            title: 'Borrar una historia clinica',
+            childComponent: SimpleModalComponent,
+            data: {text: 'Está seguro que desea eliminar esta historia clinica?'},
+            actionButtons: [
+                {
+                    text: 'Si',
+                    buttonClass: 'btn btn-danger',
+                    onAction: () => {
+                        this.historiaClinicaService.deleteHistoriaClinica(this.historiaClinica_id).subscribe(historiaClinicabook => {
+                            this.toastrservice.success("Historia Clinica  ", "Eliminada exitosamente");
+                            this.router.navigate(['historiasClinicas/list']);
+                        }, err => {
+                            this.toastrservice.error(err, "Error");
+                        });
+                        return true;
+                    }
+                },
+                {text: 'No', onAction: () => true}
+            ]
+        });
     }
 
   ngOnInit() {

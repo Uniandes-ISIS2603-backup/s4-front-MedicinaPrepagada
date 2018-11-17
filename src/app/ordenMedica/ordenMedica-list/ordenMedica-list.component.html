@@ -9,6 +9,7 @@ and open the template in the editor.
 <div style="text-align: center"></div>
 <div class="container-fluid">
     <div class="col-md-4">
+        <h1> Ordenes Medicas </h1> 
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -22,6 +23,10 @@ and open the template in the editor.
                     <td><span>{{ordenMedica.id}}</span></td>
                     <td>{{ordenMedica.comentarios}}</td>
                     <td >{{ordenMedica.fechaExpedicion}}</td>
+                    
+                    <td >
+                        <button class="btn btn-primary" routerLink="/ordenesMedicas/update"><span class="fa fa-pencil"></span></button>
+                    </td>
                 </tr>
 
             </tbody>
