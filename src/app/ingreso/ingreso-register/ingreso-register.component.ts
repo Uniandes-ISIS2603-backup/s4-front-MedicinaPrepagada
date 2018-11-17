@@ -33,6 +33,6 @@ export class RegisterComponent {
     ngOnInit() 
     {
         this.user = new User();
-        this.roles = ['Administrator', 'Client'];
+        this.roles = ['Administrador', 'Paciente', 'Medico'];
     }
 }

@@ -80,33 +80,16 @@ const routes: Routes = [
         children: [
                         {
                 path: 'list',
-                component : PacienteListComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO']
-                    }
-                }
+                component : PacienteListComponent
+
             },
             {
                 path:'add',
-                component: PacienteCreateComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO']
-                    }
-                }
+                component: PacienteCreateComponent
             },
                 {
                 path: ':id',
-                component: PacienteDetailComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO']
-                    }
-                }
+                component: PacienteDetailComponent
             },
             {
               path: ':id/edit',
