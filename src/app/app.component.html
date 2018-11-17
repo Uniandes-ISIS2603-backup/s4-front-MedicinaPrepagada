@@ -17,7 +17,7 @@
  <a class="navbar-brand" routerLink="/">
             <div class="form-inline">
                 <img id="logo" [src]="'http://www.brandemia.org/sites/default/files/sites/default/files/logo_m_facebook.jpg'" class="center-block" height = 80px width = 80px>
-                <h2 class="mainTitle">Medisistemas</h2>
+                <h2  class="display-4">Medisistemas</h2>
             </div>
         </a>
 <!--  <a class="navbar-brand" routerLink="/">Medisistemas</a>-->
@@ -25,42 +25,38 @@
      
    
     <li class=""nav nav-item active>
-        <a class="nav-link active" routerLink="/pacientes/list"> Pacientes <span class="sr-only">(current)</span></a>
+        <button class="btn btn-outline-primary" routerLink="/pacientes/list" id = "sel"> Pacientes </button>
     </li>
     
     <li class=""nav nav-item active>
-        <a class ="nav-link active" routerLink="/medicos/list">Medicos</a>
+        <button class="btn btn-outline-primary" routerLink="/medicos/list" id = "sel"><span class="fa fa-user-md"></span>Medicos</button>
     </li>
       
     <li class=""nav nav-item active>
-        <a class ="nav-link active" routerLink="/citasMedicas/list">Citas Médicas </a>
+        <button class="btn btn-outline-primary" routerLink="/citasMedicas/list" id = "sel"><span class="fa fa-stethoscope"></span>Citas Médicas </button>
     </li>
      
-    <li class=""nav nav-item active>
-        <a class ="nav-link active" *ngxPermissionsOnly="['ADMIN']" routerLink="/administradores/list">Administradores</a>   
+     <li class=""nav nav-item active>
+        <button class="btn btn-outline-primary" *ngxPermissionsOnly="['ADMIN']" routerLink="/administradores/list" id="sel">Administradores</button>   
     </li>
     
      <li>
-        <a class ="nav-link active" routerLink="/horariosAtencion/list">Horarios</a>
+        <button class="btn btn-outline-primary" routerLink="/horariosAtencion/list" id = "sel">Horarios</button>
     </li>
      
     <li>
-        <a class ="nav-link active" routerLink="/historiasClinicas/list">Historias Clinicas</a>   
+        <button class="btn btn-outline-primary" routerLink="/historiasClinicas/list" id = "sel">Historias Clinicas</button>   
     </li>
     <li>
-        <a class ="nav-link active" routerLink="/ordenesMedicas/list">Ordenes</a>   
+        <button class="btn btn-outline-primary" routerLink="/ordenesMedicas/list" id = "sel">Ordenes</button>   
     </li>
     
      <li>
-        <a class ="nav-link active" routerLink="/citalaboratorio/list"> Citas Laboratorio</a>
+        <button class="btn btn-outline-primary" routerLink="/citalaboratorio/list" id = "sel"> Citas Laboratorio</button>
     </li>
     <li>
-        <a class ="nav-link active" routerLink="/facturas/list">Facturas</a>
+        <button class="btn btn-outline-primary" routerLink="/facturas/list" id = "sel">Facturas</button>
     </li>
-      
-
-
-    
     
    <li class=""nav nav-item active>
         <div class="row">
@@ -77,28 +73,27 @@
         <button class="dropdown-item"routerLink="/tarjetascredito/list"> Tarjetas de Credito</button>
         
       </div>
-
     </div>
   </div>
 </div>
-       
-             <div class="navbar-nav ml-auto flex-column">
-            <div class="flex-row" *ngxPermissionsOnly="['VISITANTE']">
-                <div class="form-inline">
-                    <li class="right-space"><a id="signup-navbar-item" routerLink="/register"><span class="fa fa-user"></span>
-                                Registrarse</a></li>
-                    <li><a id="login-navbar-item" routerLink="/login"><span class="fa fa-sign-in"></span>Login</a></li>
-                </div>
-            </div>
-            <div class="flex-row" *ngxPermissionsOnly="['PACIENTE', 'ADMIN', 'MEDICO']">
-                <div class="form-inline">
-                        <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
-                </div>
-            </div>
-        </div>
+   
   </ul>
+<div class="navbar-nav ml-auto flex-column">
+                <div class="flex-row" >
+                    <div class="form-inline">
+                        <li class="right-space" id="segundo"><a id="signup-navbar-item" ><span class="fa fa-user"></span>
+                                Sign Up</a></li>
+                        <li id="segundo"><a id="login-navbar-item" ><span class="fa fa-sign-in"></span>Login</a></li>
+                    </div>
+                </div>
+                <div class="flex-row" >
+                    <div class="form-inline">
+                        <li id="segundo"><a id="logout-navbar-item" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
+                    </div>
+                </div>
+            </div>
 </nav> 
-       </div>
+  </div>
 
 <div>
 <ngb-carousel align = center class = "container">
@@ -112,8 +107,8 @@
   <ng-template ngbSlide>
     <img [src]="'https://www.colmedica.com/PublishingImages/Propuesta%20unica%20de%20valor/medicina_prepagada.jpg'" width = 100% height=370px  alt="Random second slide">
     <div class="carousel-caption">
-      <h3 id ="segundo">Cuidamos a tu familia</h3>
-      <p id = "segundo">Nuestra pasión es cuidarte a ti y a los tuyos.</p>
+      <h3 id ="segundodos">Cuidamos a tu familia</h3>
+      <p id = "segundodos">Nuestra pasión es cuidarte a ti y a los tuyos.</p>
     </div>
   </ng-template>
   <ng-template ngbSlide>
@@ -129,8 +124,28 @@
 <div class="list">
     <router-outlet></router-outlet>
 </div>
+      
+<!--      <div style="background-color: #009999 !important" class="jumbotron jumbotron-fluid">-->
+  <div style="background-color: #009999 !important" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">¿Emergencias a deshoras?</h1>
+    <p class="lead">Pronto podrás contar con nuestro único servicio de videollamadas con médicos, a cualquier hora.</p>
+    <div class="embed-responsive embed-responsive-16by9">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/j6pMB0JUdag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+  </div>
+</div>
 
-
+<div>
+<footer class="footer bg-light" id="footer">
+        <div class="container">
+            <p class="navbar-text text-center">
+                <span id="footer-text">© Proyecto Desarrollo de SW
+                    en Equipos</span>
+            </p>
+        </div>
+    </footer>
+</div>
 
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
