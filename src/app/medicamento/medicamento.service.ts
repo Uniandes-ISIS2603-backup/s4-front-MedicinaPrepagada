@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Medicamento } from './medicamento';
 import { MedicamentoDetail } from './medicamento-detail';
+import { Observable , throwError} from 'rxjs';
+
+import { Farmacia } from '../farmacia/farmacia';
+import 'rxjs/add/operator/catch';
+
+
 
 import {environment} from '../../environments/environment'; 
 
@@ -72,6 +77,13 @@ export class MedicamentoService {
      */
     getFarmaciasMedicamento(medicamentoId): Observable<Farmacia[]>{
         return this.http.get<Farmacia[]>(API_URL + medicamentos + '/' + medicamentoId + farmacias).catch(err => this.handleError(err));
+    }
+    
+     /**
+     * metodo para manejar las exceptions
+     */
+    private handleError(error: any){
+        return throwError(error.error.errorMessage);
     }
 }
 
