@@ -51,6 +51,15 @@ export class MedicoService{
         return this.http.post<Medico>(API_URL + medicos, medico).catch(err => this.handleError(err));
     }
     
+   /**
+    * Updates an medico
+    * @param medico The medico's information updated
+    * @returns The confirmation that the medico was updated
+    */
+    updateMedico(medico): Observable<Medico> {
+        return this.http.put<Medico>(API_URL + medicos + '/' + medico.id, medico).catch(err => this.handleError(err));
+    }
+    
     /**
     * Trae un mensaje de error en caso de que haya un error
     * @returns error

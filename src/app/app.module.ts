@@ -30,14 +30,12 @@ import {HistoriaClinicaModule} from './historiaClinica/historiaClinica.module';
 import {OrdenMedicaModule} from './ordenMedica/ordenMedica.module';
 
 import {TarjetaCreditoModule} from './tarjeta-credito/tarjeta-credito.module';
-import { CitaMedicaEditComponent } from './cita-medica-edit/cita-medica-edit.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CitaMedicaEditComponent,
   ],
   imports: [
     BrowserModule,
