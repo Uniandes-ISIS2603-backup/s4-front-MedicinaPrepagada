@@ -8,11 +8,15 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgxRolesService, NgxPermissionsService} from 'ngx-permissions'
 import 'rxjs/add/operator/catch';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class IngresoService {
 
-    constructor (private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService) { }
+    constructor (private router: Router,
+                 private roleService: NgxRolesService,
+                 private permissionsService: NgxPermissionsService,
+                 private toastrService: ToastrService) { }
 
     start (): void {
         this.permissionsService.flushPermissions();
@@ -75,7 +79,7 @@ export class IngresoService {
         {
             this.setMedicoRol(); 
         }
-        this.router.navigateByUrl('/administradores/list');
+        this.router.navigateByUrl('/citasMedicas/list');
     }
 
     /**
@@ -86,5 +90,6 @@ export class IngresoService {
         this.setVisitanteRol();
         localStorage.removeItem('role');
         this.router.navigateByUrl('/');
+        this.toastrService.success('Ha salido de su cuenta exitosamente')
     }
 }
