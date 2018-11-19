@@ -39,6 +39,7 @@ import {ConsultorioDetailComponent} from '../sede/consultorio-detail/consultorio
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
 import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
+import {MedicoEditComponent} from '../medico/medico-edit/medico-edit.component';
 import {EspecialidadListComponent} from '../especialidad/especialidad-list/especialidad-list.component';
 import {EspecialidadCreateComponent} from '../especialidad/especialidad-create/especialidad-create.component';
 import {EspecialidadDetailComponent} from '../especialidad/especialidad-detail/especialidad-detail.component';
@@ -301,6 +302,10 @@ const routes: Routes = [
                 path: ':id',
                 component: MedicoDetailComponent
 //                runGuardsAndResolvers: 'always'
+            },
+            {
+              path: ':id/edit',
+              component: MedicoEditComponent  
             }
         ]
     },

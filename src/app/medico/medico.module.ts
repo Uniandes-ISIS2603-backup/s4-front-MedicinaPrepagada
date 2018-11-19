@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
 import { MedicoCreateComponent } from './medico-create/medico-create.component';
+import { MedicoEditComponent } from './medico-edit/medico-edit.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { MedicoCreateComponent } from './medico-create/medico-create.component';
     HttpClientModule,
     FormsModule
   ],
-  declarations: [MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent],
+  declarations: [MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent, MedicoEditComponent],
   providers:[MedicoService],
   exports:[MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent],
   bootstrap: [MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent]
