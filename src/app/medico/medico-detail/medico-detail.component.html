@@ -1,5 +1,12 @@
 <div class="container-fluid row">
-    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="row justify-content-center align-self-center">
+                            <button class="btn btn-primary text-center" routerLink="/medicos/{{medico.idMedico}}/edit">Editar</button>
+                            <div class="divider"></div>
+<!--                            <button class="btn btn-danger text-center" (click)="deleteSede()"><span class="fa fa-trash"></span></button>-->
+
+                        </div>
+    </div>
 <div class="col-md-8">
     <div class="container-fluid">
         <table class="table table-striped">
@@ -36,6 +43,10 @@
             <tr>
                 <th>Firma</th>
                 <th>{{medico.firma}}</th>
+            </tr>
+            <tr>
+                <th>Especialidad</th>
+                <th>{{medico.especialidad.nombre}}</th>
             </tr>
             <tr>
                 <th>Descripcion</th>

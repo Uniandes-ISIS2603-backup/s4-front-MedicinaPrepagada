@@ -1,9 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {ActivatedRoute} from '@angular/router/';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router/';
+//import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {Medico} from '../medico';
 import {ToastrService} from 'ngx-toastr';
 
 import {MedicoService} from '../medico.service';
+import {EspecialidadService} from '../especialidad.service';
+import {Especialidad} from '../especialidad';
 
 @Component({
   selector: 'app-medico-detail',
@@ -47,6 +50,7 @@ export class MedicoDetailComponent implements OnInit {
             }
             
         );
+        
     }
 
 /**
@@ -54,7 +58,7 @@ export class MedicoDetailComponent implements OnInit {
  */
   ngOnInit() {
       this.idMed = +this.route.snapshot.paramMap.get('id');
-      this.medico = new Medico;
+//      this.medico = new Medico;
       this.getMedico();
   }
 

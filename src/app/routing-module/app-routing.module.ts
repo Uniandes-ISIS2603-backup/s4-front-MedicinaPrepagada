@@ -303,10 +303,10 @@ const routes: Routes = [
                 component: MedicoDetailComponent
 //                runGuardsAndResolvers: 'always'
             },
-//            {
-//              path: ':id/edit',
-//              component: PacienteEditComponent  
-//            }
+            {
+              path: ':id/edit',
+              component: MedicoEditComponent  
+            }
         ]
     },
     {

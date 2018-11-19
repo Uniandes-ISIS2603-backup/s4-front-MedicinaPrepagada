@@ -57,7 +57,7 @@ export class MedicoService{
     * @returns The confirmation that the medico was updated
     */
     updateMedico(medico): Observable<Medico> {
-        return this.http.put<Medico>(API_URL + medicos + '/' + medico.id, medico).catch(err => this.handleError(err));
+        return this.http.put<Medico>(API_URL + medicos + '/' + medico.idMedico, medico).catch(err => this.handleError(err));
     }
     
     /**
