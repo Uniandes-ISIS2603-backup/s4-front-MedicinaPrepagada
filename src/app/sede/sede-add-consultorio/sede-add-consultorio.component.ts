@@ -60,6 +60,13 @@ export class SedeAddConsultorioComponent implements OnInit {
             });
     }
     
+    getSede (): void {
+        
+        this.sedeService.getSedeDetail(this.sede_id).subscribe(sede =>
+        {
+            this.sede=sede
+        })
+    }
     
     
          /**
@@ -90,7 +97,9 @@ export class SedeAddConsultorioComponent implements OnInit {
       this.getEspecialidades();
       this.sede_id = +this.route.snapshot.paramMap.get('id');
       this.sede = new Sede();
+      
       this.sede.id = this.sede_id;
+      this.getSede()
            
   }
 
