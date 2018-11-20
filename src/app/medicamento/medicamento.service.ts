@@ -79,6 +79,13 @@ export class MedicamentoService {
         return this.http.get<Farmacia[]>(API_URL + medicamentos + '/' + medicamentoId + farmacias).catch(err => this.handleError(err));
     }
     
+    /**
+     * crea una tarjeta de credito y la asocia con el paciente con el id dado
+     */
+    addFarmacia(medicamentoId, farmaciaId): Observable<Farmacia>{
+        return this.http.post<Farmacia>(API_URL + medicamentos + '/' + medicamentoId + farmacias + '/' + farmaciaId).catch(err => this.handleError(err));
+    }
+    
      /**
      * metodo para manejar las exceptions
      */

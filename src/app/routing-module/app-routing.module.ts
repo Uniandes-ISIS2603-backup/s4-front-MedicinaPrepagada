@@ -11,6 +11,7 @@ import {PacienteListComponent} from '../paciente/paciente-list/paciente-list.com
 import {PacienteDetailComponent} from '../paciente/paciente-detail/paciente-detail.component';
 import {MedicamentoListComponent} from '../medicamento/medicamento-list/medicamento-list.component';
 import {MedicamentoDetailComponent} from '../medicamento/medicamento-detail/medicamento-detail.component';
+
 import {FarmaciaListComponent} from '../farmacia/farmacia-list/farmacia-list.component';
 import {FarmaciaDetailComponent} from '../farmacia/farmacia-detail/farmacia-detail.component';
 import {ExamenMedicoListComponent} from '../examenmedico/examenmedico-list/examenmedico-list.component';
@@ -71,6 +72,8 @@ import {RegisterComponent} from '../ingreso/ingreso-register/ingreso-register.co
 import {NgxPermissionsGuard} from 'ngx-permissions';
 
 import {MedicamentoFarmaciaComponent} from '../medicamento/medicamento-farmacia/medicamento-farmacia.component';
+import {MedicamentoFarmaciaAddComponent} from '../medicamento/medicamento-farmacia-add/medicamento-farmacia-add.component';
+
 
 
 
@@ -138,6 +141,10 @@ const routes: Routes = [
                 path: ':id/farmacias',
                 component: MedicamentoFarmaciaComponent
                 
+            },
+            { 
+                path:':id/farmacias/add',
+                component: MedicamentoFarmaciaAddComponent
             }
         ]
     },
