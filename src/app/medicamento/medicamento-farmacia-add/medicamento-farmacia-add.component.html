@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-7">
+        <h2>Agregar una farmacia a un medicamento</h2>
+        <!--<form (ngSubmit)="f.form.valid &&  addFarmacia()" #f="ngForm" novalidate>-->
+        <form name="farmacia" (ngSubmit)= "f.form.valid && addFarmacia()" #f="ngForm" novalidate>
+            
+            <div class="form-group">
+                <label for="farmaciaId"><b>Identificador de la farmacia</b></label>
+                <input type="number" name="farmaciaId" class="form-control" id="farmaciaId" [(ngModel)] = "farmacia.id"
+                       #farmaciaId="ngModel" [ngClass]="{'is-valid': f.submitted && farmaciaId.invalid }" required>
+            </div>
+            
+            <div class=" row form-inline justify-content-center aliign-self-center">
+                <button type="submit" class="btn btn-primary">Agregar</button>   
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelAdd()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
