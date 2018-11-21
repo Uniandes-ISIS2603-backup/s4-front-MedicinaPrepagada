@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.5",
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
@@ -36,8 +37,8 @@
     "ngx-bootstrap": "^3.0.1",
     "ngx-cookie-service": "^1.0.10",
     "ngx-modal-dialog": "^3.0.0",
-    "ngx-permissions": "^6.0.2",
     "ngx-pagination": "^3.2.0",
+    "ngx-permissions": "^6.0.2",
     "ngx-toastr": "^9.0.2",
     "octicons": "^7.1.0",
     "popper.js": "^1.14.3",

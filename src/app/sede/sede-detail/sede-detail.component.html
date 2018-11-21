@@ -7,11 +7,11 @@
 
             <p class="h3 p-3">{{sedeDetail.nombre}}</p> 
             <div class="row">
-                              
+                             
 
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <div class="row">
-                        <div class="col-md-12 text-center">
+                        <div class="col-md-3 text-center">
                             <div class="thumb">
                                  <img class="img-fluid" src="{{sedeDetail.image}}"/>
                             </div>
@@ -49,7 +49,14 @@
                         
                         
                     </dl>
-                    <div >
+                    </div>
+                    <div class="col-md-5">
+                    <agm-map [latitude]="lat" [longitude]="lng">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                    </div>
+               
+                        <div>
                         <div class="row">
                             <div class="col-md-3">
                              
@@ -67,8 +74,10 @@
                 <app-sede-consultorio [sedeConsultorios]="sedeDetail.consultorios"></app-sede-consultorio>
                         </div>
 
-            </div>
+            
         </div>
     </div>
 </div>
             </div>
+
+
