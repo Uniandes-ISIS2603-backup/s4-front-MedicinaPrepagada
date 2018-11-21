@@ -23,9 +23,7 @@ export class Farmacia {
     * El telefono de la farmacia
     */
     telefono: number;
-    
-   
-
+  
 }
 
 

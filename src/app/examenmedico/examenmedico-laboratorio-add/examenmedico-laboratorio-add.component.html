@@ -1,13 +1,13 @@
 <div class="row">
     <div class="col-7">
-        <h2>Agregar una farmacia a un medicamento</h2>
+        <h2>Agregar una laboratorio a un examen médico</h2>
         <!--<form (ngSubmit)="f.form.valid &&  addFarmacia()" #f="ngForm" novalidate>-->
-        <form name="farmacia" (ngSubmit)= "f.form.valid && addFarmacia()" #f="ngForm" novalidate>
+        <form name="laboratorio" (ngSubmit)= "f.form.valid && addLaboratorio()" #f="ngForm" novalidate>
             
             <div class="form-group">
-                <label for="farmaciaId"><b>Identificador de la farmacia</b></label>
-                <input type="number" name="farmaciaId" class="form-control" id="farmaciaId" [(ngModel)] = "farmacia.id"
-                       #farmaciaId="ngModel" [ngClass]="{'is-valid': f.submitted && farmaciaId.invalid }" required>
+                <label for="laboratorioId"><b>Identificador del laboratorio</b></label>
+                <input type="number" name="laboratorioId" class="form-control" id="laboratorioId" [(ngModel)] = "laboratorio.id"
+                       #laboratorioId="ngModel" [ngClass]="{'is-valid': f.submitted && laboratorioId.invalid }" required>
             </div>
             
             <div class=" row form-inline justify-content-center aliign-self-center">

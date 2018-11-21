@@ -26,7 +26,7 @@ export class MedicamentoFarmaciaComponent implements OnInit {
      medicamento_id: number;
      
     /**
-     * todas las citas de laboratorio del medicamento
+     * todas las farmacias del medicamento
      */ 
     farmacias: Farmacia[];
     
