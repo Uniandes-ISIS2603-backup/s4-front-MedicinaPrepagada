@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewContainerRef, Input } from '@angular/core';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog'; 
 import {LaboratorioService} from '../laboratorio.service';
 import {Laboratorio} from '../laboratorio';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,13 +12,18 @@ import {Laboratorio} from '../laboratorio';
 })
 export class LaboratorioListComponent implements OnInit {
 
-  constructor(private laboratorioService: LaboratorioService) { }
+  constructor(
+        private laboratorioService: LaboratorioService) { }
     
     laboratorios: Laboratorio[];
+    
+    
     getLaboratorios(): void {
          this.laboratorioService.getLaboratorios().subscribe(laboratorios => this.laboratorios = laboratorios);
     }
  
+  
+   
 
   ngOnInit() {
       this.getLaboratorios();

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { LaboratorioDetailComponent } from './laboratorio-detail/laboratorio-detail.component';
 import { LaboratorioCreateComponent } from './laboratorio-create/laboratorio-create.component';
 import { AppRoutingModule } from '../routing-module/app-routing.module';
+import { LaboratorioEditComponent } from './laboratorio-edit/laboratorio-edit.component';
 
 @NgModule({
   imports: [
@@ -17,9 +18,9 @@ import { AppRoutingModule } from '../routing-module/app-routing.module';
     FormsModule,
     AppRoutingModule
   ],
-  declarations: [LaboratorioListComponent, LaboratorioDetailComponent, LaboratorioCreateComponent],
+  declarations: [LaboratorioListComponent, LaboratorioDetailComponent, LaboratorioCreateComponent, LaboratorioEditComponent],
   providers:[LaboratorioService],
-  exports: [LaboratorioListComponent, LaboratorioDetailComponent],
-  bootstrap: [LaboratorioListComponent, LaboratorioDetailComponent]
+  exports: [LaboratorioListComponent, LaboratorioDetailComponent, LaboratorioEditComponent],
+  bootstrap: [LaboratorioListComponent, LaboratorioDetailComponent, LaboratorioEditComponent]
 })
 export class LaboratorioModule { }

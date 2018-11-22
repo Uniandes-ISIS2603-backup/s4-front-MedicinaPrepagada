@@ -34,6 +34,18 @@ export class LaboratorioService{
     createLaboratorio(laboratorio): Observable<Laboratorio>{
         return this.http.post<Laboratorio>(API_URL + laboratorios, laboratorio).catch(err => this.handleError(err));
     }
+    
+    updateLaboratorio(laboratorio): Observable<Laboratorio> {
+        return this.http.put<Laboratorio>(API_URL + laboratorios + '/' + laboratorio.id, laboratorio);
+    }
+    /**
+    * Deletes an lab
+    * @param labId The id of the lab
+    * @returns The confirmation that the lab was deleted
+    */
+    deleteLaboratorio(laboratorioId): Observable<Laboratorio> {
+        return this.http.delete<Laboratorio>(API_URL + laboratorios + '/' + laboratorioId);
+    }
     /**
     * Returns the Observable object containing the laboratorio retrieved from the API
     * @returns Laboratorio

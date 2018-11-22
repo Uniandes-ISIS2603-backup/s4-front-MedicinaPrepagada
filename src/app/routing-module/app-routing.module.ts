@@ -21,9 +21,12 @@ import {AdministradorListComponent} from '../administrador/administrador-list/ad
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
 import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/laboratorio-detail.component';
 import {LaboratorioCreateComponent} from '../laboratorio/laboratorio-create/laboratorio-create.component';
+import {LaboratorioEditComponent} from '../laboratorio/laboratorio-edit/laboratorio-edit.component';
 import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
 import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
 import {FacturaCreateComponent} from '../factura/factura-create/factura-create.component';
+import {FacturaEditComponent} from '../factura/factura-edit/factura-edit.component';
+
 import {CitaLaboratorioListComponent} from '../citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
 import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio-detail/citalaboratorio-detail.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
@@ -208,12 +211,16 @@ const routes: Routes = [
                 component : LaboratorioListComponent
             },
             {
-                path:'add',
+                path:'create',
                 component: LaboratorioCreateComponent
             },
             {
                 path:':id',
                 component:LaboratorioDetailComponent
+            },
+            {
+                path:':id/update',
+                component:LaboratorioEditComponent
             }
         ]
     },
@@ -227,6 +234,10 @@ const routes: Routes = [
             {
                 path:'add',
                 component: FacturaCreateComponent
+            },
+            {
+                path:'update',
+                component: FacturaEditComponent
             },
             {
                 path:':idFactura',
