@@ -82,9 +82,27 @@ export class SedeService{
     
     getConsultorioDetail(sedeId, consultorioId): Observable<ConsultorioDetail>
     {
-        return this.http.get<ConsultorioDetail>(API_URL + sedes + '/' + sedeId + '/' + consultorios + '/' + consultorioId ).catch(err => this.handleError(err));
+        return this.http.get<ConsultorioDetail>(API_URL + sedes + '/' + sedeId  + consultorios + '/' + consultorioId ).catch(err => this.handleError(err));
     }
     
+    
+        /**
+    * Updates an sede
+    * @param sede The sede's information updated
+    * @returns The confirmation that the sede was updated
+    */
+    updateConsultorio(sedeId, consultorio): Observable<ConsultorioDetail> {
+        return this.http.put<ConsultorioDetail>(API_URL + sedes + '/' + sedeId + consultorios +'/' + consultorio.id, consultorio);
+    }
+    
+           /**
+    * Deletes a consultorio
+    * @param sedeId The sede's id
+    * @returns True if the sede was deleted, false otherwise
+    */
+    deleteConsultorio(sedeId, consultorioId): Observable<ConsultorioDetail> {
+        return this.http.delete<ConsultorioDetail>(API_URL + sedes + '/' + sedeId + consultorios + '/' + consultorioId);
+    }
     
     private handleError(error: any){
         return throwError(error.error.errorMessage);

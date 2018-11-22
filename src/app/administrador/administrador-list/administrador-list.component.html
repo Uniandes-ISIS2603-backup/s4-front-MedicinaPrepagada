@@ -23,7 +23,7 @@ and open the template in the editor.
                 </thead>
                 <tbody>
                     <tr *ngFor = "let administrador of administradores"
-                         routerLink="/administradores/{{administrador.id}}" style="cursor: pointer;">
+                         routerLink="/administradores/{{administrador.id}}" style="cursor: pointer;" >
                         <td><span>{{administrador.id}}</span></td>
                         <td><dd>{{administrador.login}}</dd></td>
                         <td>{{administrador.tipoUsuario}}</td>

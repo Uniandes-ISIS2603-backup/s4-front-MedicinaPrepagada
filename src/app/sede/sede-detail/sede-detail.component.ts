@@ -169,6 +169,8 @@ export class SedeDetailComponent implements OnInit {
       this.sedeDetail = new SedeDetail();
       this.getSedeDetail();
       this.getOtherSedes();
+      this.lat = this.sedeDetail.latitud;
+      this.lng = this.sedeDetail.longitud;
       console.log(this.lat)
   }
   

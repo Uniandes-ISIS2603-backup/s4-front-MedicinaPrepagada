@@ -39,6 +39,7 @@ import {HorarioAtencionCreateComponent} from '../horario-atencion/horario-atenci
 import {SedeAddConsultorioComponent} from '../sede/sede-add-consultorio/sede-add-consultorio.component';
 import {SedeEditComponent} from '../sede/sede-edit/sede-edit.component';
 import {ConsultorioDetailComponent} from '../sede/consultorio-detail/consultorio-detail.component';
+import {ConsultorioEditComponent} from '../sede/consultorio-edit/consultorio-edit.component';
 
 
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
@@ -292,8 +293,12 @@ const routes: Routes = [
                 component: SedeAddConsultorioComponent
                 
             },{
-                path: ':id/consultorios/list/:idConsultorio',
+                path: ':id/consultorios/:idConsultorio',
                 component: ConsultorioDetailComponent
+                
+            },{
+                path: ':id/consultorios/update/:idConsultorio',
+                component: ConsultorioEditComponent
                 
             }
         ]
