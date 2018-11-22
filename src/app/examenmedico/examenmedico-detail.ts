@@ -1,4 +1,5 @@
 import { ExamenMedico } from './examenmedico';
+import { Laboratorio } from '../laboratorio/laboratorio';
 
 /**
 * This class represents a examen medico
@@ -6,10 +7,7 @@ import { ExamenMedico } from './examenmedico';
 */
 export class ExamenMedicoDetail extends ExamenMedico{
     
-    /**
-    * Recomendaciones para realizar el examen medico
-    */
-    recomendaciones: string;
+    laboratorios: Laboratorio[];
 }
 
 

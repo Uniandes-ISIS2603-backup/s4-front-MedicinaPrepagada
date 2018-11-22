@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable , throwError} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { ExamenMedico } from './examenmedico';
 import { ExamenMedicoDetail } from './examenmedico-detail';
+import { Laboratorio } from '../laboratorio/laboratorio';
+import 'rxjs/add/operator/catch';
 
 import {environment} from '../../environments/environment'; 
 
-
 const API_URL = "http://localhost:8080/s4_MedicinaPrepagada-api/api";
 const examenes = '/examenesMedicos';
+const laboratorios = '/laboratorios';
+
 /**
 * The service provider for everything related to examenes medicos
 */
@@ -64,10 +67,27 @@ export class ExamenMedicoService {
     deleteExamenMedico(examenMedicoId): Observable<boolean> {
         return this.http.delete<boolean>(API_URL + examenes + '/' + examenMedicoId);
     }
+    
+    /**
+     * da los laboratorios del examen con el id dado
+     */
+    getLaboratoriosExamen(examenId): Observable<Laboratorio[]>{
+        return this.http.get<Laboratorio[]>(API_URL + examenes + '/' + examenId + laboratorios).catch(err => this.handleError(err));
+    }
+    
+    /**
+     * asocia un laboratorio existente con un examen
+     */
+    addLaboratorio(examenId, laboratorioId): Observable<Laboratorio>{
+        return this.http.post<Laboratorio>(API_URL + examenes + '/' + examenId + laboratorios + '/' + laboratorioId, examenId).catch(err => this.handleError(err));
+    }
+    
+     /**
+     * metodo para manejar las exceptions
+     */
+    private handleError(error: any){
+        return throwError(error.error.errorMessage);
+    }
 }
-
-
-
-
 
 
