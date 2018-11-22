@@ -11,6 +11,7 @@ import { MedicamentoCreateComponent } from './medicamento-create/medicamento-cre
 import {FarmaciaModule} from '../farmacia/farmacia.module';
 import { MedicamentoEditComponent } from './medicamento-edit/medicamento-edit.component';
 import { MedicamentoFarmaciaComponent } from './medicamento-farmacia/medicamento-farmacia.component';
+import { MedicamentoFarmaciaAddComponent } from './medicamento-farmacia-add/medicamento-farmacia-add.component';
 
 
 
@@ -23,7 +24,7 @@ import { MedicamentoFarmaciaComponent } from './medicamento-farmacia/medicamento
     HttpClientModule,
     FormsModule
   ],
-  declarations: [MedicamentoListComponent, MedicamentoDetailComponent, MedicamentoCreateComponent, MedicamentoEditComponent, MedicamentoFarmaciaComponent],
+  declarations: [MedicamentoListComponent, MedicamentoDetailComponent, MedicamentoCreateComponent, MedicamentoEditComponent, MedicamentoFarmaciaComponent, MedicamentoFarmaciaAddComponent],
   providers:[MedicamentoService],
   exports: [MedicamentoListComponent]
 })

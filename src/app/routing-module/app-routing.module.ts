@@ -11,10 +11,12 @@ import {PacienteListComponent} from '../paciente/paciente-list/paciente-list.com
 import {PacienteDetailComponent} from '../paciente/paciente-detail/paciente-detail.component';
 import {MedicamentoListComponent} from '../medicamento/medicamento-list/medicamento-list.component';
 import {MedicamentoDetailComponent} from '../medicamento/medicamento-detail/medicamento-detail.component';
+
 import {FarmaciaListComponent} from '../farmacia/farmacia-list/farmacia-list.component';
 import {FarmaciaDetailComponent} from '../farmacia/farmacia-detail/farmacia-detail.component';
 import {ExamenMedicoListComponent} from '../examenmedico/examenmedico-list/examenmedico-list.component';
 import {ExamenMedicoDetailComponent} from '../examenmedico/examenmedico-detail/examenmedico-detail.component';
+import {ExamenMedicoLaboratorioComponent } from '../examenmedico/examenmedico-laboratorio/examenmedico-laboratorio.component';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
 import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/laboratorio-detail.component';
@@ -42,6 +44,7 @@ import {ConsultorioDetailComponent} from '../sede/consultorio-detail/consultorio
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
 import {MedicoCreateComponent} from '../medico/medico-create/medico-create.component';
 import {MedicoDetailComponent} from '../medico/medico-detail/medico-detail.component';
+import {MedicoEditComponent} from '../medico/medico-edit/medico-edit.component';
 import {EspecialidadListComponent} from '../especialidad/especialidad-list/especialidad-list.component';
 import {EspecialidadCreateComponent} from '../especialidad/especialidad-create/especialidad-create.component';
 import {EspecialidadDetailComponent} from '../especialidad/especialidad-detail/especialidad-detail.component';
@@ -73,6 +76,9 @@ import {RegisterComponent} from '../ingreso/ingreso-register/ingreso-register.co
 import {NgxPermissionsGuard} from 'ngx-permissions';
 
 import {MedicamentoFarmaciaComponent} from '../medicamento/medicamento-farmacia/medicamento-farmacia.component';
+import {MedicamentoFarmaciaAddComponent} from '../medicamento/medicamento-farmacia-add/medicamento-farmacia-add.component';
+import {ExamenMedicoLaboratorioAddComponent} from '../examenmedico/examenmedico-laboratorio-add/examenmedico-laboratorio-add.component';
+
 
 
 
@@ -140,6 +146,10 @@ const routes: Routes = [
                 path: ':id/farmacias',
                 component: MedicamentoFarmaciaComponent
                 
+            },
+            { 
+                path:':id/farmacias/add',
+                component: MedicamentoFarmaciaAddComponent
             }
         ]
     },
@@ -168,6 +178,15 @@ const routes: Routes = [
                 path: ':id',
                 component: ExamenMedicoDetailComponent
                 
+            },
+            {
+                path: ':id/laboratorios',
+                component: ExamenMedicoLaboratorioComponent
+                
+            },
+            { 
+                path:':id/laboratorios/add',
+                component: ExamenMedicoLaboratorioAddComponent
             }
         ]
     },
@@ -312,6 +331,10 @@ const routes: Routes = [
                 path: ':id',
                 component: MedicoDetailComponent
 //                runGuardsAndResolvers: 'always'
+            },
+            {
+              path: ':id/edit',
+              component: MedicoEditComponent  
             }
         ]
     },
