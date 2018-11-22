@@ -9,6 +9,7 @@ import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angula
 import {AdministradorService} from '../administrador.service';
 import {ToastrService} from 'ngx-toastr';
 import { Administrador } from '../administrador';
+import {ActivatedRoute} from '@angular/router/';
 
 @Component({
     selector: 'app-administrador-edit',
@@ -18,40 +19,54 @@ import { Administrador } from '../administrador';
 
 export class AdministradorEditComponent implements OnInit, OnChanges 
 {
-
     constructor(
        
         private admiService: AdministradorService,
         private toastrService: ToastrService,
+        private route: ActivatedRoute
     ) {}
 
+    @Input() admi_id;
     admi: Administrador; 
     @Output() cancel = new EventEmitter();
     @Output() update = new EventEmitter();
     
     getAdministrador(): void {
-        this.admiService.getAdministrador(this.admi)
+        this.admiService.getAdministrador(this.admi_id)
             .subscribe(admi => {
                 this.admi = admi;
             });
     }
 
-    updateAdministrador(): void {
-        this.admiService.updateAdministrador(this.admi)
+    editAdministrador(): void 
+    {
+        var admi_edit =
+        {
+          id: this.admi.id,
+          login: this.admi.login,
+          contrasena: this.admi.contrasena,
+          tipoUsuario: this.admi.tipoUsuario
+        }
+        console.log(admi_edit);
+        this.admiService.updateAdministrador(admi_edit)
             .subscribe(() => {
-                this.update.emit();
                 this.toastrService.success("Se ha modificado exitosamente", "Administrador modificado");
-            });
-        this.update.emit();
-    }
+      }, err =>{
+          this.toastrService.error(err, "Error");
+      });
+  }
 
-    cancelEdition(): void {
+    cancelEdition(): void 
+    {
         this.cancel.emit();
     }
 
-    ngOnInit() {
-        this.admi = new Administrador( ); 
-        this.getAdministrador(); 
+    ngOnInit() 
+    {
+        this.admi_id = + this.route.snapshot.paramMap.get('id');
+
+        this.getAdministrador();
+                this.admi = new Administrador;
     }
 
     ngOnChanges() {

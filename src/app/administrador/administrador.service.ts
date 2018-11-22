@@ -34,15 +34,16 @@ export class AdministradorService
         return this.http.post<Administrador>(API_URL + administradores, administrador).catch(err => this.handleError(err));
     }
     
-    deleteAdministrador(administradorId): Observable<boolean> {
-        return this.http.delete<boolean>(API_URL + administradores + '/' + administradorId);
+    deleteAdministrador(administradorId): Observable<Boolean> {
+        return this.http.delete<Boolean>(API_URL + administradores + '/' + administradorId);
     }
     
-    updateAdministrador(administrador): Observable<Administrador> {
-        return this.http.put<Administrador>(API_URL + administradores + '/' + administrador.id, administrador);
+    updateAdministrador(administrador): Observable<Boolean> {
+        return this.http.put<Boolean>(API_URL + administradores , administrador).catch(err => this.handleError(err));;
     }
     
-    private handleError(error: any){
+    private handleError(error: any)
+    {
         return throwError(error.error.errorMessage);
     }
 }
