@@ -192,15 +192,16 @@ const routes: Routes = [
                 component : LaboratorioListComponent
             },
             {
-                path:'add',
+                path:'create',
                 component: LaboratorioCreateComponent
-            },{
-                path:'update',
-                component: LaboratorioEditComponent
-            }, 
+            },
             {
                 path:':id',
                 component:LaboratorioDetailComponent
+            },
+            {
+                path:':id/update',
+                component:LaboratorioEditComponent
             }
         ]
     },

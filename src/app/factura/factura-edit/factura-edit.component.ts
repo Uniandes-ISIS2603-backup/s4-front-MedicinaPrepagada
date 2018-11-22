@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
-
+import {ActivatedRoute} from '@angular/router/';
 import {FacturaService} from '../factura.service';
 import {ToastrService} from 'ngx-toastr';
 import { Factura } from '../factura';
@@ -14,35 +14,44 @@ export class FacturaEditComponent implements OnInit, OnChanges{
        
         private facturaService: FacturaService,
         private toastrService: ToastrService,
+        private route: ActivatedRoute
     ) {}
 
     factura: Factura; 
+    @Input() factura_id:number;
     
     @Output() cancel = new EventEmitter();
     @Output() update = new EventEmitter();
     
-    getFactura(): void {
-        this.facturaService.getFactura(this.factura)
-            .subscribe(factura => {
-                this.factura = factura;
-            });
-    }
+    getFactura():void{
+      this.facturaService.getFactura(this.factura_id)
+          .subscribe(factura => {this.factura = factura;
+          },
+          err=>{
+              this.toastrService.error(err, "Error");
+          });
+  }
 
-    updateFactura(): void {
-        this.facturaService.updateFactura(this.factura)
-            .subscribe(() => {
-                this.update.emit();
-                this.toastrService.success("Se ha modificado exitosamente", "Factura modificada");
-            });
-        this.update.emit();
-    }
+    updateFactura():void{
+      var factura_edit={
+          pagada: this.factura.pagada
+          
+      }
+      console.log(factura_edit);
+      this.facturaService.updateFactura(factura_edit)
+          .subscribe(() => {
+              this.toastrService.success("La informacion de la factura fue actualizada", "Editar Factura");
+      }, err =>{
+          this.toastrService.error(err, "Error");
+      });
+  }
 
     cancelEdition(): void {
         this.cancel.emit();
     }
 
     ngOnInit() {
-        this.factura = new Factura( ); 
+        this.factura_id = +this.route.snapshot.paramMap.get('id'); 
         this.getFactura();  
     }
 

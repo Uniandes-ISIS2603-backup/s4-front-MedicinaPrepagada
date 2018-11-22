@@ -7,9 +7,9 @@
         <form name="factura" (ngSubmit)="f.form.valid && updateFactura()" #f="ngForm" novalidate>
              
               <div class="form-group">
-                <label for="facturaPagado"><b>Pagado</b></label>
-                <input name="facturaPagado" type = "number"  class="form-control" id="facturaPagado" [(ngModel)]=factura.pagado
-                    #facturaPagado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && factura.pagado.invalid }" required>
+                <label for="facturaPagada"><b>Pagado</b></label>
+                <input type = "number" name="facturaPagada" class="form-control" id="facturaPagada" [(ngModel)]= factura.pagada
+                    #facturaPagada="ngModel" [ngClass]="{ 'is-invalid': f.submitted && factura.pagada.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el estado</div>
                 </div>

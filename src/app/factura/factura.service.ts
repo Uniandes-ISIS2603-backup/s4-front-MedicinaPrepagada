@@ -8,11 +8,11 @@ import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-
+import {Paciente} from '../paciente/paciente';
 import {Factura} from './factura';
 const API_URL = environment.apirURL;
 const facturas = '/facturas';
-
+const pacientes = '/pacientes';
 
 @Injectable()
 export class FacturaService{
@@ -35,8 +35,9 @@ export class FacturaService{
         return this.http.post<Factura>(API_URL + facturas, factura).catch(err => this.handleError(err));
     }
     updateFactura(factura): Observable<Factura> {
-        return this.http.put<Factura>(API_URL + factura + '/' + factura.id, factura);
+        return this.http.put<Factura>(API_URL + facturas + '/' + factura.id, factura);
     }
+    
     /**
     * Returns the Observable object containing the laboratorio retrieved from the API
     * @returns Factura

@@ -30,6 +30,7 @@
                 <th>{{laboratorio.longitud}}</th>
             </tr>
              <td>
+                  <button type="button" class="btn btn-primary" routerLink="/laboratorios/{{laboratorio.id}}/update"><span class="fa fa-pencil"></span></button>
                     <button class="btn btn-danger" (click)="deleteLaboratorio(laboratorio.id)"><span class="fa fa-trash"></span></button>
              </td>
         </table>

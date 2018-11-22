@@ -37,14 +37,14 @@ and open the template in the editor.
                 <input name="laboratorioTelefono" type = "text"  class="form-control" id="laboratorioTelefono" [(ngModel)]= laboratorio.telefono
                     #laboratorioTelefono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && laboratorio.telefono.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>Hace falta la telefono</div>
+                    <div>Hace falta el telefono</div>
                 </div>
             </div>
               
                <div class="form-group">
-                <label for="laboratorioHorarioAtencion"><b>Horario de Atencion</b></label>
-                <input name="laboratorioHorarioAtencion" type = "text"  class="form-control" id="laboratorioHorarioDeAtencion" [(ngModel)]= laboratorio.horarioDeAtencion
-                    #laboratorioHorarioAtencion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && laboratorio.horarioDeAtencion.invalid }" required>
+                <label for="laboratorioHorarioDeAtencion"><b>Horario de Atencion</b></label>
+                <input name="laboratorioHorarioDeAtencion" type = "text"  class="form-control" id="laboratorioHorarioDeAtencion" [(ngModel)]= laboratorio.horarioDeAtencion
+                    #laboratorioHorarioDeAtencion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && laboratorio.horarioDeAtencion.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el horario</div>
                 </div>
