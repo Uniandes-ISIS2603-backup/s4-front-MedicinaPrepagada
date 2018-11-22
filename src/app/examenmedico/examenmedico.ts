@@ -18,9 +18,10 @@ export class ExamenMedico {
     */
     costo: number;
     
-    
-    
-    
+    /**
+    * Recomendaciones para realizar el examen medico
+    */
+    recomendaciones: string;
 }
 
 

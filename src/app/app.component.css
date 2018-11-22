@@ -27,11 +27,37 @@ p{
 #segundodos{
     color: white;
 }
-#sel:hover { 
+
+#segundo:hover { 
     background-color: white;
     color: blue;
 }
-#segundo:hover { 
-    background-color: white;
+
+
+
+ #sel{
+  display:inline-block;
+  position:relative;
+  margin:0.1em;  padding:0.5em;
+  cursor:pointer;
+  z-index:0;
+  
+
+}
+#sel:before {
+  content: "";
+  position: absolute;
+  z-index:-1;
+  top: 0;  left: 0;  right: 0;  bottom: 0;
+  background: white;
+  color:blue;
+  transform: scaleY(0);
+  transform-origin: 0 100%;
+  transition: transform 0.25s ease;
+}
+#sel:hover:before{transform: scaleY(1);
+color:blue;}
+
+#sel:hover { 
     color: blue;
 }

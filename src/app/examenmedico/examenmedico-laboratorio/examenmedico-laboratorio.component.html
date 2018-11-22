@@ -1,0 +1,25 @@
+<<div style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="col-md-6">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ubicacion</th>
+                    <th>Telefono</th>
+                    <th>Horario de atención</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let laboratorio of laboratorios" routerLink="/laboratorios/{{laboratorio.id}}">
+                    <td><span>{{laboratorio.nombre}}</span></td>
+                    <td>{{laboratorio.direccion}}</td>
+                    <td>{{laboratorio.telefono}}</td>
+                    <td>{{laboratorio.horarioAtencion}}</td>
+              
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-success" routerLink="/examenesMedicos/{{examen_id}}/laboratorios/add">Agregar laboratorios</button> 
+    </div>
+</div>
