@@ -13,6 +13,7 @@ import {SedeService} from '../sede.service';
 import {Consultorio} from '../consultorio';
 import {ConsultorioDetail} from '../consultorio-detail';
 
+
 @Component({
   selector: 'app-consultorio-detail',
   templateUrl: './consultorio-detail.component.html',
@@ -30,6 +31,7 @@ export class ConsultorioDetailComponent implements OnInit {
     consultorio_id: number;
   
     sede_id: number;
+    
   
     getConsultorioDetail(): void {
         this.sedeService.getConsultorioDetail(this.sede_id, this.consultorio_id)
@@ -38,13 +40,17 @@ export class ConsultorioDetailComponent implements OnInit {
                 this.toastrservice.error(err, "error");
                 }          
              );
+             
         }
+      
+          
+    
 
         /**
          * falta modificar para que retorne al detail
          */
          volver (): void {
-        this.router.navigate(['sedes/list']);
+             this.router.navigate(['sedes/' + this.sede_id]);
     }
     
             
@@ -54,6 +60,7 @@ export class ConsultorioDetailComponent implements OnInit {
       this.consultorio_id = +this.route.snapshot.paramMap.get('idConsultorio');
       this.consultorioDetail = new ConsultorioDetail();
       this.getConsultorioDetail();
+      
       
   }
 
