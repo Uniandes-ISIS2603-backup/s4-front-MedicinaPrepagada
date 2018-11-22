@@ -3,7 +3,6 @@ import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 
-
 import {SedeService} from '../sede.service';
 
 
@@ -63,7 +62,9 @@ export class SedeDetailComponent implements OnInit {
     */
     navigationSubscription;
   
-        
+     lat:number;
+     
+     lng:number;
         
         
  /**
@@ -87,7 +88,9 @@ export class SedeDetailComponent implements OnInit {
         getSedeDetail(): void {
         this.sedeService.getSedeDetail(this.sede_id)
             .subscribe(sedeDetail => {
-            this.sedeDetail = sedeDetail}, err => {
+            this.sedeDetail = sedeDetail,
+                this.lat = sedeDetail.latitud,
+                this.lng = sedeDetail.longitud}, err => {
                 this.toastrservice.error(err, "error");
                 }          
              );
@@ -166,6 +169,7 @@ export class SedeDetailComponent implements OnInit {
       this.sedeDetail = new SedeDetail();
       this.getSedeDetail();
       this.getOtherSedes();
+      console.log(this.lat)
   }
   
   /**
