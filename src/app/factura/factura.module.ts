@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FacturaDetailComponent } from './factura-detail/factura-detail.component';
 import { FacturaCreateComponent } from './factura-create/factura-create.component';
+import { FacturaEditComponent } from './factura-edit/factura-edit.component';
+
 
 
 
@@ -20,9 +22,9 @@ import { FacturaCreateComponent } from './factura-create/factura-create.componen
     FormsModule,
     AppRoutingModule
   ],
-  declarations: [FacturaListComponent, FacturaDetailComponent, FacturaCreateComponent],
+  declarations: [FacturaListComponent, FacturaDetailComponent, FacturaCreateComponent, FacturaEditComponent],
   providers:[FacturaService],
-  exports: [FacturaListComponent, FacturaDetailComponent],
-  bootstrap: [FacturaListComponent, FacturaDetailComponent]
+  exports: [FacturaListComponent, FacturaDetailComponent, FacturaEditComponent],
+  bootstrap: [FacturaListComponent, FacturaDetailComponent,  FacturaEditComponent]
 })
 export class FacturaModule { }

@@ -36,6 +36,7 @@ import {IngresoModule} from './ingreso/ingreso.module';
 import {NgxPermissionsModule} from 'ngx-permissions';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

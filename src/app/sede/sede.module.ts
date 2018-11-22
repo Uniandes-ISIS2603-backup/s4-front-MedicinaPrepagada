@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {AgmCoreModule} from '@agm/core'
 
 import {SedeService} from './sede.service';
 
@@ -25,6 +26,9 @@ import { ConsultorioEditComponent } from './consultorio-edit/consultorio-edit.co
     
     HttpClientModule,
     FormsModule,
+      AgmCoreModule.forRoot({
+          apiKey:'AIzaSyB6e8rof-WUMtAZd2ZfEmm1OBDQmjMDYUE'
+      }),
     AppRoutingModule
   ],
   declarations: [SedeListComponent, SedeDetailComponent, SedeCreateComponent, SedeConsultorioComponent, SedeAddConsultorioComponent, SedeEditComponent, ConsultorioDetailComponent, ConsultorioEditComponent],
