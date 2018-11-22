@@ -5,8 +5,8 @@ import {Medico} from '../medico';
 import {ToastrService} from 'ngx-toastr';
 
 import {MedicoService} from '../medico.service';
-import {EspecialidadService} from '../especialidad.service';
-import {Especialidad} from '../especialidad';
+import {EspecialidadService} from '../../especialidad/especialidad.service';
+import {Especialidad} from '../../especialidad/especialidad';
 
 @Component({
   selector: 'app-medico-detail',
