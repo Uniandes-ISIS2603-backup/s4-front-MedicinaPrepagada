@@ -12,7 +12,7 @@ import { Administrador } from '../administrador';
 import {ActivatedRoute} from '@angular/router/';
 
 @Component({
-    selector: 'app-administrador-edit',
+    selector: 'app-administrador',
     templateUrl: './administrador-edit.component.html',
     styleUrls: ['./administrador-edit.component.css']
 })
@@ -50,6 +50,7 @@ export class AdministradorEditComponent implements OnInit, OnChanges
         console.log(admi_edit);
         this.admiService.updateAdministrador(admi_edit)
             .subscribe(() => {
+                this.update.emit();
                 this.toastrService.success("Se ha modificado exitosamente", "Administrador modificado");
       }, err =>{
           this.toastrService.error(err, "Error");
@@ -64,9 +65,9 @@ export class AdministradorEditComponent implements OnInit, OnChanges
     ngOnInit() 
     {
         this.admi_id = + this.route.snapshot.paramMap.get('id');
-
+        console.log(this.admi_id);
+        this.admi = new Administrador;
         this.getAdministrador();
-                this.admi = new Administrador;
     }
 
     ngOnChanges() {

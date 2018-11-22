@@ -6,7 +6,7 @@
 
 import {Injectable} from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {environment} from '../../environments/environment'; 
 
 import {Administrador} from './administrador';
@@ -14,10 +14,15 @@ import {Administrador} from './administrador';
 const API_URL = environment.apirURL;
 const administradores = '/administradores';
 const administradorDetail = '/administradorDetails';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AdministradorService
 {    
+    headers = new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+    });
+    
     constructor (private http: HttpClient) {}
     
     getAdministradores() : Observable<Administrador[]>
