@@ -18,7 +18,7 @@ and open the template in the editor.
                 <label  for="historiaFecha"><b>Fecha (DD/MM/AAAA)</b></label>
                 <input type="text" name="historiaFecha" class="form-control" id="historiaFecha" [(ngModel)] = historiaClinica.fecha
                       #historiaFecha="ngModel" [ngClass]="{'is-valid': f.submitted && historiaClinica.fecha.invalid}" required>
-                                      <div class="invalid-feedback">
+                <div class="invalid-feedback">
                     <div>Hace falta la fecha</div>
                 </div>
             </div>

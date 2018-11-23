@@ -14,7 +14,7 @@ and open the template in the editor.
         <form name="administrador" (ngSubmit)="f.form.valid && editAdministrador()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="administradorLogin"><b>Login</b></label>
-                <input type="text" name="administradorLogin" class="form-control" id="administradorLogin" [(ngModel)]= administrador.login
+                <input type="text" name="administradorLogin" readonly="readonly" class="form-control" id="administradorLogin" [(ngModel)]= administrador.login
                     #administradorLogin="ngModel" [ngClass]="{ 'is-invalid': f.submitted && administrador.login.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el login</div>
@@ -32,7 +32,7 @@ and open the template in the editor.
            
             <div class="form-group">
                 <label for="administradorTipoUsuario"><b>Tipo de Usuario</b></label>
-                <input name="administradorTipoUsuario" type = "text" class="form-control" id="administradorTipoUsuario" [(ngModel)]= administrador.tipoUsuario
+                <input name="administradorTipoUsuario" readonly="readonly" type = "text" class="form-control" id="administradorTipoUsuario" [(ngModel)]= administrador.tipoUsuario
                     #administradorTipoUsuario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && administrador.tipoUsuario.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el tipo de usuario</div>

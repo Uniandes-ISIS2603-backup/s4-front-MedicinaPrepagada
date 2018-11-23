@@ -15,7 +15,7 @@ and open the template in the editor.
             
               <div class="form-group">
                 <label  for="ordenId"><b>Id</b></label>
-                <input type="text" name="ordenId" class="form-control" id="ordenId" [(ngModel)] = ordenMedica.id
+                <input type="text" name="ordenId" readonly="readonly" class="form-control" id="ordenId" [(ngModel)] = ordenMedica.id
                       #ordenId="ngModel" [ngClass]="{'is-valid': f.submitted && ordenMedica.id.invalid}" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el id</div>
@@ -24,7 +24,7 @@ and open the template in the editor.
               
             <div class="form-group">
                 <label  for="ordenFecha"><b>Fecha de Expedicion (DD/MM/AAAA)</b></label>
-                <input type="text" name="ordenFecha" class="form-control" id="ordenFecha" [(ngModel)] = ordenMedica.fechaExpedicion
+                <input type="text" name="ordenFecha" readonly="readonly" class="form-control" id="ordenFecha" [(ngModel)] = ordenMedica.fechaExpedicion
                       #ordenFecha="ngModel" [ngClass]="{'is-valid': f.submitted && ordenMedica.fechaExpedicion.invalid}" required>
                 <div class="invalid-feedback">
                     <div>Hace falta la fecha de expedicion</div>
@@ -51,7 +51,7 @@ and open the template in the editor.
               
                <div class="form-group">
                 <label for="ordenFirmaMedico"><b>Firma Medico</b></label>
-                <input name="ordenFirmaMedico" type = "text"  class="form-control" id="ordenFirmaMedico" [(ngModel)]= ordenMedica.firmaMedico
+                <input name="ordenFirmaMedico" type = "text" readonly="readonly"  class="form-control" id="ordenFirmaMedico" [(ngModel)]= ordenMedica.firmaMedico
                     #ordenFirmaMedico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ordenMedica.firmaMedico.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta la firma del medico</div>
