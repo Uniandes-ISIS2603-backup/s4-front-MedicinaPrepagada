@@ -8,6 +8,7 @@ import {Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import {HistoriaClinicaService} from '../historiaClinica.service';
 import {HistoriaClinica} from '../historiaClinica';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-historiaClinica-create',
@@ -17,7 +18,8 @@ import {HistoriaClinica} from '../historiaClinica';
 export class HistoriaClinicaCreateComponent implements OnInit {
 
     constructor(private historiaClinicaService: HistoriaClinicaService,
-                private toastr: ToastrService
+                private toastr: ToastrService, 
+                private router: Router
     ) { }
     
     historiaClinica: HistoriaClinica;
@@ -31,7 +33,8 @@ export class HistoriaClinicaCreateComponent implements OnInit {
         this.historiaClinicaService.createHistoriaClinica(this.historiaClinica)
             .subscribe(() => {
                 this.create.emit();
-                this.toastr.success("La historia clinica fue creada", "Creacion Historia Clinica");      
+                this.toastr.success("La historia clinica fue creada", "Creacion Historia Clinica");  
+                this.router.navigate(['historiasClinicas/list']);    
         }, err =>{
             this.toastr.error(err, "Error");
         }

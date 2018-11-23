@@ -85,6 +85,7 @@ export class IngresoService {
     /**
      * Logs the user out
      */
+     
     logout (): void {
         this.roleService.flushRoles();
         this.setVisitanteRol();

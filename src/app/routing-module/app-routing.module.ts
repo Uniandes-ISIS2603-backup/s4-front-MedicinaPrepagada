@@ -256,15 +256,15 @@ const routes: Routes = [
             {
                 path:'create',
                 component: AdministradorCreateComponent
-            },
-            {
-                path:'update',
-                component: AdministradorEditComponent
-            },            
+            },          
             {
                 path: ':id',
                 component: AdministradorDetailComponent
                 
+            },
+            {
+                path: ':id/edit',
+                component: AdministradorEditComponent
             }
         ]
     },
