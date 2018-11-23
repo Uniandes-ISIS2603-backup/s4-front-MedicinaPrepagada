@@ -391,13 +391,13 @@ const routes: Routes = [
                 component: HistoriaClinicaCreateComponent
             },
             {
-                path:'update',
-                component: HistoriaClinicaEditComponent
-            },    
-            {
                 path: ':id',
                 component: HistoriaClinicaDetailComponent
                 
+            },
+            {
+                path: ':id/edit',
+                component: HistoriaClinicaEditComponent
             }
         ]
     },
