@@ -35,7 +35,7 @@ export class OrdenMedicaService
         return this.http.post<OrdenMedica>(API_URL + ordenesMedicas, ordenMedica).catch(err => this.handleError(err));
     }
     
-    updateOrdenMedica(ordenMedica): Observable<OrdenMedica> {
+    updateOrdenMedica(ordenMedica, ordenMedicaId ): Observable<OrdenMedica> {
         return this.http.put<OrdenMedica>(API_URL + ordenesMedicas + '/' + ordenMedica.id, ordenMedica);
     }
     

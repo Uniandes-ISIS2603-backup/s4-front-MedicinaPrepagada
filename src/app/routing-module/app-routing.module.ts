@@ -411,15 +411,15 @@ const routes: Routes = [
             {
                 path:'create',
                 component: OrdenMedicaCreateComponent
-            },
-            {
-                path:'update',
-                component: OrdenMedicaEditComponent
-            },    
+            },   
             {
                 path: ':id',
                 component: OrdenMedicaDetailComponent
                 
+            },
+            {
+                path: ':id/edit',
+                component: OrdenMedicaEditComponent
             }
         ]
     },

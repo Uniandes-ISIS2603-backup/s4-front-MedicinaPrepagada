@@ -7,6 +7,7 @@ and open the template in the editor.
 
 <h1 id = "texto"> Orden Medica </h1> 
         <table class ="table">
+            <button class="btn btn-primary text-center" (click)="volver()"><span class="fa fa-reply"></span>Volver</button>
             <tr>
                 <th>Id</th>
                 <th>{{ordenMedica.id}}</th>
@@ -27,8 +28,11 @@ and open the template in the editor.
                 <th>Firma Medico</th>
                 <th>{{ordenMedica.firmaMedico}}</th>
             </tr>
-                             <td>
+                <td>
                     <button class="btn btn-danger" (click)="deleteOrdenMedica(ordenMedica.id)"><span class="fa fa-trash"></span></button>
+                </td>
+                <td >
+                    <button type="button" class="btn btn-outline-info" routerLink="/ordenesMedicas/{{ordenMedica.id}}/edit">Editar</button>         
                 </td>
         </table>
 
