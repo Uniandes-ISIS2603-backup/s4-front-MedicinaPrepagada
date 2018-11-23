@@ -256,15 +256,15 @@ const routes: Routes = [
             {
                 path:'create',
                 component: AdministradorCreateComponent
-            },
-            {
-                path:'update',
-                component: AdministradorEditComponent
-            },            
+            },          
             {
                 path: ':id',
                 component: AdministradorDetailComponent
                 
+            },
+            {
+                path: ':id/edit',
+                component: AdministradorEditComponent
             }
         ]
     },
@@ -391,13 +391,13 @@ const routes: Routes = [
                 component: HistoriaClinicaCreateComponent
             },
             {
-                path:'update',
-                component: HistoriaClinicaEditComponent
-            },    
-            {
                 path: ':id',
                 component: HistoriaClinicaDetailComponent
                 
+            },
+            {
+                path: ':id/edit',
+                component: HistoriaClinicaEditComponent
             }
         ]
     },
@@ -411,15 +411,15 @@ const routes: Routes = [
             {
                 path:'create',
                 component: OrdenMedicaCreateComponent
-            },
-            {
-                path:'update',
-                component: OrdenMedicaEditComponent
-            },    
+            },   
             {
                 path: ':id',
                 component: OrdenMedicaDetailComponent
                 
+            },
+            {
+                path: ':id/edit',
+                component: OrdenMedicaEditComponent
             }
         ]
     },

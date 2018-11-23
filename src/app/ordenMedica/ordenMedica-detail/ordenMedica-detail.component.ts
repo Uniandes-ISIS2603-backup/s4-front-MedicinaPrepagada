@@ -68,6 +68,11 @@ export class OrdenMedicaDetailComponent implements OnInit {
             ]
         });
     }
+    
+    volver (): void 
+    {
+        this.router.navigate(['ordenesMedicas/list']);
+    }
 
   ngOnInit() {
       this.ordenMedica_id = +this.route.snapshot.paramMap.get('id');

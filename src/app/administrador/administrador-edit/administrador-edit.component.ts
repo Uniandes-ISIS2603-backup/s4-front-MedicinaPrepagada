@@ -9,7 +9,7 @@ import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angula
 import {AdministradorService} from '../administrador.service';
 import {ToastrService} from 'ngx-toastr';
 import { Administrador } from '../administrador';
-import {ActivatedRoute} from '@angular/router/';
+import {ActivatedRoute, Router} from '@angular/router/';
 
 @Component({
     selector: 'app-administrador-edit',
@@ -23,34 +23,36 @@ export class AdministradorEditComponent implements OnInit, OnChanges
        
         private admiService: AdministradorService,
         private toastrService: ToastrService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private router: Router   
     ) {}
 
     @Input() admi_id;
-    admi: Administrador; 
+    administrador: Administrador; 
     @Output() cancel = new EventEmitter();
     @Output() update = new EventEmitter();
     
     getAdministrador(): void {
         this.admiService.getAdministrador(this.admi_id)
             .subscribe(admi => {
-                this.admi = admi;
-            });
+                this.administrador = admi;
+            }, err =>  {this.toastrService.error(err, "Error"); })
     }
 
     editAdministrador(): void 
     {
         var admi_edit =
         {
-          id: this.admi.id,
-          login: this.admi.login,
-          contrasena: this.admi.contrasena,
-          tipoUsuario: this.admi.tipoUsuario
+          login: this.administrador.login,
+          contrasena: this.administrador.contrasena,
+          tipoUsuario: this.administrador.tipoUsuario
         }
         console.log(admi_edit);
-        this.admiService.updateAdministrador(admi_edit)
+        this.admiService.updateAdministrador(admi_edit, this.admi_id)
             .subscribe(() => {
+                this.update.emit();
                 this.toastrService.success("Se ha modificado exitosamente", "Administrador modificado");
+                this.router.navigate(['/administradores/' + this.admi_id]);
       }, err =>{
           this.toastrService.error(err, "Error");
       });
@@ -58,15 +60,17 @@ export class AdministradorEditComponent implements OnInit, OnChanges
 
     cancelEdition(): void 
     {
+        this.toastrService.warning('El administrador no fue editado', 'Editar Administrador');
+        this.router.navigate(['/administradores/' + this.admi_id]);
         this.cancel.emit();
     }
 
     ngOnInit() 
     {
         this.admi_id = + this.route.snapshot.paramMap.get('id');
-
+        console.log(this.admi_id);
+        this.administrador = new Administrador( ); 
         this.getAdministrador();
-                this.admi = new Administrador;
     }
 
     ngOnChanges() {

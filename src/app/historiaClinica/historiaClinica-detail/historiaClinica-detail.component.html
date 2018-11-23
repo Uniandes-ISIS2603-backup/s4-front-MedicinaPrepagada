@@ -7,6 +7,7 @@ and open the template in the editor.
 
 <h1 id = "texto"> Historia Clinica </h1> 
         <table class ="table">
+            <button class="btn btn-primary text-center" (click)="volver()"><span class="fa fa-reply"></span>Volver</button>
             <tr>
                 <th>Id</th>
                 <th>{{historiaClinica.id}}</th>
@@ -45,6 +46,9 @@ and open the template in the editor.
             </tr>
                 <td>
                     <button class="btn btn-danger" (click)="deleteHistoriaClinica(historiaClinica.id)"><span class="fa fa-trash"></span></button>
+                </td>
+                <td >
+                        <button type="button" class="btn btn-outline-info" routerLink="/historiasClinicas/{{historiaClinica.id}}/edit">Editar</button>         
                 </td>
         </table>
 

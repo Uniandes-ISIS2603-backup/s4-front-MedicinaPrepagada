@@ -8,6 +8,7 @@ import {Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import {OrdenMedicaService} from '../ordenMedica.service';
 import {OrdenMedica} from '../ordenMedica';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-ordenMedica-create',
@@ -17,7 +18,8 @@ import {OrdenMedica} from '../ordenMedica';
 export class OrdenMedicaCreateComponent implements OnInit {
 
     constructor(private ordenMedicaService: OrdenMedicaService,
-                private toastr: ToastrService
+                private toastr: ToastrService, 
+                private router: Router
     ) { }
     
     ordenMedica: OrdenMedica;
@@ -31,7 +33,8 @@ export class OrdenMedicaCreateComponent implements OnInit {
         this.ordenMedicaService.createOrdenMedica(this.ordenMedica)
             .subscribe(() => {
                 this.create.emit();
-                this.toastr.success("La orden medica fue creada", "Creacion Orden Medica ");      
+                this.toastr.success("La orden medica fue creada", "Creacion Orden Medica ");  
+                this.router.navigate(['ordenesMedicas/list']);    
         }, err =>{
             this.toastr.error(err, "Error");
         }
