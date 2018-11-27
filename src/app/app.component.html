@@ -25,7 +25,7 @@
      
    
     <li class=""nav nav-item active>
-        <button class="btn btn-outline-primary" routerLink="/pacientes/list" id = "sel"><span class="fa fa-users"></span> Pacientes </button>
+        <button class="btn btn-outline-primary" *ngxPermissionsOnly="['ADMIN','MEDICO']" routerLink="/pacientes/list" id = "sel"><span class="fa fa-users"></span> Pacientes </button>
     </li>
     
     <li class=""nav nav-item active>
@@ -37,7 +37,7 @@
     </li>
       
     <li class=""nav nav-item active>
-        <button class="btn btn-outline-primary" routerLink="/citasMedicas/list" id = "sel"><span class="fa fa-stethoscope"></span> Citas Médicas </button>
+        <button class="btn btn-outline-primary" *ngxPermissionsOnly="['ADMIN','MEDICO','PACIENTE']" routerLink="/citasMedicas/list" id = "sel"><span class="fa fa-stethoscope"></span> Citas Médicas </button>
     </li>
      
      <li class=""nav nav-item active>
@@ -45,7 +45,7 @@
     </li>
     
      <li>
-        <button class="btn btn-outline-primary" routerLink="/citalaboratorio/list" id = "sel"><span class="fa fa-calendar-check-o"></span>  Citas Laboratorio</button>
+        <button class="btn btn-outline-primary" *ngxPermissionsOnly="['ADMIN','MEDICO','PACIENTE']"  routerLink="/citalaboratorio/list" id = "sel"><span class="fa fa-calendar-check-o"></span>  Citas Laboratorio</button>
     </li>
     
     

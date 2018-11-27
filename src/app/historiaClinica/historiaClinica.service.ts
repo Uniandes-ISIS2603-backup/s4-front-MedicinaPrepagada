@@ -10,10 +10,12 @@ import { HttpClient } from '@angular/common/http';
 import {environment} from '../../environments/environment'; 
 
 import {HistoriaClinica} from './historiaClinica';
+import {OrdenMedica} from '../ordenMedica/ordenMedica';
 
 const API_URL = environment.apirURL;
 const historiasClinicas = '/historiasClinicas';
-const historiaClinicaDetail = '/historiaClinicaDetails';
+const ordenesMedicas = '/ordenMedica'
+
 
 @Injectable()
 export class HistoriaClinicaService
@@ -41,6 +43,10 @@ export class HistoriaClinicaService
     deleteHistoriaClinica(historiaClinicaId): Observable<HistoriaClinica> 
     {
         return this.http.delete<HistoriaClinica>(API_URL + historiasClinicas + '/' + historiaClinicaId);
+    }
+    
+    getOrdenesHistoriaClinica(historiaClinicaId): Observable<OrdenMedica[]>{
+        return this.http.get<OrdenMedica[]>(API_URL + historiasClinicas + '/' + historiaClinicaId + ordenesMedicas).catch(err => this.handleError(err));
     }
     
     private handleError(error: any)

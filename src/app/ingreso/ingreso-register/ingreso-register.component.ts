@@ -25,7 +25,8 @@ export class RegisterComponent {
 
     roles: String[];
     
-    register() : void {
+    register() : void 
+    {
         this.userService.login(this.user.role);
         this.toastrService.success('Se ha registrado exitosamente')
     }
