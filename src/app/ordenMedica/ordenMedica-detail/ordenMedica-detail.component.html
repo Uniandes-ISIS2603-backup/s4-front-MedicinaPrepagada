@@ -32,7 +32,13 @@ and open the template in the editor.
                     <button class="btn btn-danger" (click)="deleteOrdenMedica(ordenMedica.id)"><span class="fa fa-trash"></span></button>
                 </td>
                 <td >
-                    <button type="button" class="btn btn-outline-info" routerLink="/ordenesMedicas/{{ordenMedica.id}}/edit">Editar</button>         
+                    <button type="button" class="btn btn-primary" routerLink="/ordenesMedicas/{{ordenMedica.id}}/edit">Editar</button>         
+                </td>
+                <td >
+                    <button type="button" class="btn btn-warning" routerLink="/examenesMedicos/list">Examenes medicos</button>         
+                </td>
+                <td >
+                    <button type="button" class="btn btn-warning" routerLink="/medicamentos/list">Medicamentos</button>         
                 </td>
         </table>
 

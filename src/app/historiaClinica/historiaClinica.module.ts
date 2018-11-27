@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import {HistoriaClinicaDetailComponent} from './historiaClinica-detail/historiaClinica-detail.component';
 import {HistoriaClinicaCreateComponent} from './historiaClinica-create/historiaClinica-create.component';
 import {HistoriaClinicaEditComponent} from './historiaClinica-edit/historiaClinica-edit.component';
+import {HistoriasOrdenMedicaComponent} from './historiaClinica-ordenesmedicas/historiaClinica-ordenesmedicas.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import {HistoriaClinicaEditComponent} from './historiaClinica-edit/historiaClini
         CommonModule,
         FormsModule
             ],
-  declarations: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent, HistoriaClinicaEditComponent],
+  declarations: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent, HistoriaClinicaEditComponent, HistoriasOrdenMedicaComponent],
   providers: [HistoriaClinicaService],
   exports:[HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent],
   bootstrap: [HistoriaClinicaListComponent, HistoriaClinicaDetailComponent, HistoriaClinicaCreateComponent]
