@@ -18,7 +18,7 @@ export class FacturaEditComponent implements OnInit, OnChanges{
     ) {}
 
     factura: Factura; 
-    @Input() factura_id:number;
+    factura_id:number;
     
     @Output() cancel = new EventEmitter();
     @Output() update = new EventEmitter();
@@ -34,7 +34,12 @@ export class FacturaEditComponent implements OnInit, OnChanges{
 
     updateFactura():void{
       var factura_edit={
-          pagada: this.factura.pagada
+          idFactura: this.factura.idFactura,
+          concepto: this.factura.concepto,
+          date: this.factura.date,
+          idCliente: this.factura.idCliente,
+          pagada: this.factura.pagada,
+          valor:this.factura.valor
           
       }
       console.log(factura_edit);
@@ -51,7 +56,8 @@ export class FacturaEditComponent implements OnInit, OnChanges{
     }
 
     ngOnInit() {
-        this.factura_id = +this.route.snapshot.paramMap.get('id'); 
+        this.factura_id = +this.route.snapshot.paramMap.get('idFactura'); 
+        this.factura = new Factura();
         this.getFactura();  
     }
 

@@ -6,25 +6,25 @@
         <br>
         <form name="citaLaboratorio" (ngSubmit)="f.form.valid && createCitaLaboratorio()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="laboratorioNombre"><b>Nombre</b></label>
-                <input type="text" name="laboratorioNombre" class="form-control" id="laboratorioNombre" [(ngModel)]="laboratorio.nombre"
-                    #laboratorioNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && laboratorioNombre.invalid }" required>
+                <label for="citaLaboratorioFecha"><b>Fecha</b></label>
+                <input type="text" name="citaLaboratorioFecha" class="form-control" id="citaLaboratorioFecha" [(ngModel)]="citaLaboratorio.fecha"
+                    #citaLaboratorioFecha="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLaboratorioFecha.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>Hace falta el nombre del laboratorio</div>
+                    <div>Hace falta la fecha de la cita</div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="laboratorioDireccion"><b>Direccion</b></label>
-                <input name="laboratorioDireccion" class="form-control" id="laboratorioDireccion" [(ngModel)]="laboratorio.direccion"
-                    #laboratorioDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && laboratorioDireccion.invalid }"
+                <label for="citaLaboratorioEspecialidad"><b>Especialidad</b></label>
+                <input name="citaLaboratorioEspecialidad" class="form-control" id="citaLaboratorioEspecialidad" [(ngModel)]="citaLaboratorio.especialidad"
+                    #citaLaboratorioEspecialidad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLaboratorioEspecialidad.invalid }"
                     required>
                 <div class="invalid-feedback">
-                    <div>Hace falta la direccion del laboratorio</div>
+                    <div>Hace falta la especialidad de la cita</div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="laboratorioTelefono"><b>Telefono</b></label>
-                <input type="text" name="laboratorioTelefono" class="form-control" id="laboratorioTelefono" [(ngModel)]="laboratorio.telefono"
+                <label for="citaLaboratorioComentario"><b>Comentarios</b></label>
+                <input type="text" name="citaLaboratorioComentario" class="form-control" id="citaLaboratorioComentario" [(ngModel)]="citaLaboratorio.comenentario"
                     #laboratorioTelefono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && laboratorioTelefono.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el telefono del laboratorio</div>
@@ -32,31 +32,25 @@
             </div>
               
             <div class="form-group">
-                <label for="laboratorioHorarioDeAtencion"><b>Horario de atencion</b></label>
-                <input type="text" name="laboratorioHorarioDeAtencion" class="form-control" id="laboratorioHorarioDeAtencion" [(ngModel)]="laboratorio.horarioDeAtencion"
-                    #laboratorioHorarioDeAtencion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && laboratorioHorarioDeAtencion.invalid }" required>
+                <label for="citaLaboratorioRecomendacion"><b>Recomendaciones</b></label>
+                <input type="text" name="citaLaboratorioRecomendacion" class="form-control" id="citaLaboratorioRecomendacion" [(ngModel)]="citaLaboratorio.recomendacion"
+                    #citaLaboratorioRecomendacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLaboratorioRecomendacion.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>Hace falta el horario de atencion del laboratorio</div>
+                    <div>Hace falta las recomendaciones </div>
                 </div>
             </div>
               
               <div class="form-group">
-                <label for="laboratorioLatitud"><b>Latitud</b></label>
-                <input type="text" name="laboratorioLatitud" class="form-control" id="laboratorioLatitud" [(ngModel)]="laboratorio.latitud"
-                    #laboratorioLatitud="ngModel" [ngClass]="{ 'is-invalid': f.submitted && laboratorioLatitud.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Hace falta la latitud del laboratorio</div>
+                    <label for="citaLaboratorioLaboratorios"><b>Laboratorios</b></label>
+                    <select class="custom-select" name="citaLaboratorioLaboratorios" id="citaLaboratorio" [(ngModel)]="citaLaboratorio.laboratorio"
+                        #citaLaboratorioLaboratorios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLaboratorio.laboratorio.invalid }"
+                        required>
+                        <option [value]="laboratorio.id" *ngFor="let laboratorio of laboratorios">id: {{laboratorio.id}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>No existe el laboratorio</div>
+                    </div>
                 </div>
-            </div>
-              
-              <div class="form-group">
-                <label for="laboratorioLongitud"><b>Longitud</b></label>
-                <input type="text" name="laboratorioLongitud" class="form-control" id="laboratorioLongitud" [(ngModel)]="laboratorio.longitud"
-                    #laboratorioLongitud="ngModel" [ngClass]="{ 'is-invalid': f.submitted && laboratorioLongitud.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Hace falta la longitud del laboratorio</div>
-                </div>
-            </div>
               
             
               

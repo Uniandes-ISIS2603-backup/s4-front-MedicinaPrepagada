@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router/';
 import {CitaLaboratorio} from '../citalaboratorio';
 import {ToastrService} from 'ngx-toastr';
 import {CitaLaboratorioService} from '../citalaboratorio.service';
+import {Laboratorio} from '../../laboratorio/laboratorio';
 
 @Component({
   selector: 'app-citalaboratorio-detail',
@@ -18,7 +19,7 @@ export class CitaLaboratorioDetailComponent implements OnInit {
         ) {}
         
     citaLaboratorio: CitaLaboratorio;
-    
+    laboratorio:Laboratorio;
     citaLaboratorio_id: number;
     
     getCitaLaboratorio(): void 
@@ -31,10 +32,24 @@ export class CitaLaboratorioDetailComponent implements OnInit {
             
         );
     }
+    
+    getLaboratorioFromCita ():void
+    {
+        this.citaLabService.getLaboratorioFromCita(this.citaLaboratorio_id)
+            .subscribe(laboratorio => {
+                this.laboratorio = laboratorio}, err => {
+                    this.toastrservice.error(err, "error");
+            }
+            
+        );
+    }
+    
 
   ngOnInit() {
       this.citaLaboratorio_id = +this.route.snapshot.paramMap.get('id');
       this.citaLaboratorio = new CitaLaboratorio;
+      this.laboratorio = new Laboratorio;
+      this.getLaboratorioFromCita();
       this.getCitaLaboratorio();
   }
 

@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <table class="table table-bordered">
             <tr>
-                <th>Id</th>
+                <th>Cita id</th>
                 <th>{{citaLaboratorio.id}}</th>
             </tr>
             <tr>
@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <th>Fecha</th>
-                <th>{{citaLaboratorio.date}}</th>
+                <th>{{citaLaboratorio.fecha}}</th>
             </tr>
             <tr>
                 <th>Comentarios</th>
@@ -21,14 +21,16 @@
                 <th>Recomendaciones</th>
                 <th>{{citaLaboratorio.recomendaciones}}</th>
             </tr>
-             <tr>
-                <th>Id Paciente</th>
-                <th>{{citaLaboratorio.idPaciente}}</th>
+            <tr>
+                <th>Nombre laboratorio</th>
+                <th>{{laboratorio.nombre}}</th>
             </tr>
             <tr>
-                <th>Id Laboratorio</th>
-                <th>{{citaLaboratorio.idLaboratorio}}</th>
+                <th>Direccion laboratorio</th>
+                <th>{{laboratorio.direccion}}</th>
             </tr>
+            
         </table>
+        <button type="button" class="btn btn-primary" routerLink="/laboratorios/{{laboratorio.id}}">Ver laboratorio</button> 
     </div>
 </div>

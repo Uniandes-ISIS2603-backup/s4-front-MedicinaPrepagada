@@ -7,11 +7,43 @@
         <form name="factura" (ngSubmit)="f.form.valid && updateFactura()" #f="ngForm" novalidate>
              
               <div class="form-group">
-                <label for="facturaPagada"><b>Pagado</b></label>
-                <input type = "number" name="facturaPagada" class="form-control" id="facturaPagada" [(ngModel)]= factura.pagada
-                    #facturaPagada="ngModel" [ngClass]="{ 'is-invalid': f.submitted && factura.pagada.invalid }" required>
+                <label  for="facturaConcepto"><b>Concepto</b></label>
+                <input type="text" name="facturaConcepto" class="form-control" id="facturaConcepto" [(ngModel)] = factura.concepto
+                      #facturaConcepto="ngModel" [ngClass]="{'is-valid': f.submitted && factura.concepto.invalid}" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el concepto</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label  for="facturaDate"><b>Fecha</b></label>
+                <input type="text" name="facturaDate" class="form-control" id="facturaDate" [(ngModel)] = factura.date
+                      #facturaDate="ngModel" [ngClass]="{'is-valid': f.submitted && factura.date.invalid}" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la fecha</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label  for="facturaPaciente"><b>Paciente</b></label>
+                <input type="text" name="facturaPaciente" class="form-control" id="facturaPaciente" [(ngModel)] = factura.idCliente
+                      #facturaPaciente="ngModel" [ngClass]="{'is-valid': f.submitted && factura.idCliente.invalid}" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el id del paciente</div>
+                </div>
+            </div>
+              <div class="form-group">
+                <label  for="facturaPagada"><b>Estado</b></label>
+                <input type="text" name="facturaPagada" class="form-control" id="facturaPagada" [(ngModel)] = factura.pagada
+                      #facturaPagada="ngModel" [ngClass]="{'is-valid': f.submitted && factura.pagada.invalid}" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el estado</div>
+                </div>
+            </div>  
+            <div class="form-group">
+                <label  for="facturaValor"><b>Valor</b></label>
+                <input type="text" name="facturaValor" class="form-control" id="facturaValor" [(ngModel)] = factura.valor
+                      #facturaValor="ngModel" [ngClass]="{'is-valid': f.submitted && factura.valor.invalid}" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el valor</div>
                 </div>
             </div>
               

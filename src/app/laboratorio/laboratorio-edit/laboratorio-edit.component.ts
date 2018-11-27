@@ -1,5 +1,4 @@
 import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
-
 import {LaboratorioService} from '../laboratorio.service';
 import {ToastrService} from 'ngx-toastr';
 import {ActivatedRoute} from '@angular/router/';
@@ -59,6 +58,7 @@ export class LaboratorioEditComponent implements OnInit, OnChanges{
 
     ngOnInit() {
         this.laboratorio_id = +this.route.snapshot.paramMap.get('id'); 
+        this.laboratorio = new Laboratorio();
         this.getLaboratorio();  
     }
 

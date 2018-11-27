@@ -18,7 +18,7 @@
                 <th>{{laboratorio.telefono}}</th>
             </tr>
              <tr>
-                <th>Horario de atencion</th>
+                <th>Horario</th>
                 <th>{{laboratorio.horarioAtencion}}</th>
             </tr>
              <tr>
@@ -31,7 +31,7 @@
             </tr>
              <td>
                   <button type="button" class="btn btn-primary" routerLink="/laboratorios/{{laboratorio.id}}/update"><span class="fa fa-pencil"></span></button>
-                    <button class="btn btn-danger" (click)="deleteLaboratorio(laboratorio.id)"><span class="fa fa-trash"></span></button>
+                    <button class="btn btn-danger" (click)="deleteLaboratorio(laboratorio.id)" routerLink="/laboratorios/list"><span class="fa fa-trash"></span></button>
              </td>
         </table>
     </div>

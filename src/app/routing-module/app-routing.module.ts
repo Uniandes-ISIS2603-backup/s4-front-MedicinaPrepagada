@@ -237,12 +237,12 @@ const routes: Routes = [
                 component: FacturaCreateComponent
             },
             {
-                path:'update',
-                component: FacturaEditComponent
-            },
-            {
                 path:':idFactura',
                 component:FacturaDetailComponent
+            },
+            {
+                path:':idFactura/update',
+                component:FacturaEditComponent
             }
         ]
     },
