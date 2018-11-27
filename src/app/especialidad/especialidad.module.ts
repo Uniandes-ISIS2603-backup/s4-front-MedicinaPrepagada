@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EspecialidadEditComponent } from './especialidad-edit/especialidad-edit.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  declarations: [EspecialidadCreateComponent, EspecialidadListComponent, EspecialidadDetailComponent],
+  declarations: [EspecialidadCreateComponent, EspecialidadListComponent, EspecialidadDetailComponent, EspecialidadEditComponent],
   providers:[EspecialidadService],
   exports:[EspecialidadListComponent, EspecialidadDetailComponent, EspecialidadCreateComponent],
   bootstrap: [EspecialidadListComponent, EspecialidadDetailComponent, EspecialidadCreateComponent]

@@ -49,6 +49,7 @@ import {MedicoEditComponent} from '../medico/medico-edit/medico-edit.component';
 import {EspecialidadListComponent} from '../especialidad/especialidad-list/especialidad-list.component';
 import {EspecialidadCreateComponent} from '../especialidad/especialidad-create/especialidad-create.component';
 import {EspecialidadDetailComponent} from '../especialidad/especialidad-detail/especialidad-detail.component';
+import {EspecialidadEditComponent} from '../especialidad/especialidad-edit/especialidad-edit.component';
 import {CitaMedicaListComponent} from '../cita-medica/cita-medica-list/cita-medica-list.component';
 import {CitaMedicaCreateComponent} from '../cita-medica/cita-medica-create/cita-medica-create.component';
 import {CitaMedicaDetailComponent} from '../cita-medica/cita-medica-detail/cita-medica-detail.component';
@@ -358,6 +359,10 @@ const routes: Routes = [
                 path: ':id',
                 component: EspecialidadDetailComponent
                 
+            },
+            {
+              path: ':id/edit',
+              component: EspecialidadEditComponent  
             }
         ]
     },
