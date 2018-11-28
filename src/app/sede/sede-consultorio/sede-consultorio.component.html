@@ -15,13 +15,13 @@
             </thead>
             <tbody>
                 <tr *ngFor="let consultorio of sedeConsultorios" 
-                    routerLink="/sedes/{{sede.id}}/consultorios/{{consultorio.id}}"  >
-                    <td><span id ="idConsultorio">{{consultorio.id}}</span></td>
-                    <td>{{consultorio.edificio}}</td>
-                    <td>{{consultorio.nOficina}}</td>
-                    <td>{{consultorio.especialidad.nombre}}</td>
+                    >
+                    <td   routerLink="/sedes/{{sede.id}}/consultorios/{{consultorio.id}}"><span id ="idConsultorio">{{consultorio.id}}</span></td>
+                    <td   routerLink="/sedes/{{sede.id}}/consultorios/{{consultorio.id}}">{{consultorio.edificio}}</td>
+                    <td routerLink="/sedes/{{sede.id}}/consultorios/{{consultorio.id}}">{{consultorio.NOficina}}</td>
+                    <td routerLink="/sedes/{{sede.id}}/consultorios/{{consultorio.id}}">{{consultorio.especialidad.nombre}}</td>
                     <td >
-                    <button class="btn btn-primary" routerLink= "{{consultorio.sede.id}}/consultorios/update/{{consultorio.id}}"><span class="fa fa-pencil"></span></button>
+                    <button class="btn btn-primary" routerLink= "/sedes/{{sede.id}}/consultorios/update/{{consultorio.id}}"><span class="fa fa-pencil"></span></button>
                 </td>
                 <td >
                     <button class="btn btn-danger" (click)="deleteConsultorio(consultorio.id)"><span class="fa fa-trash"></span> elimnarrrr</button>

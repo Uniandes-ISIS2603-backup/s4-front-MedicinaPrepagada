@@ -278,11 +278,7 @@ const routes: Routes = [
                 path: 'add',
                 component: SedeCreateComponent
             },
-            {
-                path: ':id',
-                component: SedeDetailComponent
-                
-            },
+           
             {
                 path: ':id/edit',
                 component: SedeEditComponent
@@ -293,12 +289,17 @@ const routes: Routes = [
                 component: SedeAddConsultorioComponent
                 
             },{
+                path: ':id/consultorios/update/:idConsultorio',
+                component: ConsultorioEditComponent
+                
+            }, 
+            {
                 path: ':id/consultorios/:idConsultorio',
                 component: ConsultorioDetailComponent
                 
             },{
-                path: ':id/consultorios/update/:idConsultorio',
-                component: ConsultorioEditComponent
+                path: ':id',
+                component: SedeDetailComponent
                 
             }
         ]
