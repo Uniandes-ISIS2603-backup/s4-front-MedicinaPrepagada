@@ -1,4 +1,5 @@
 import {Medico} from '../medico/medico';
+import {Consultorio} from '../sede/consultorio';
 
 export class HorarioAtencion
 {
@@ -24,6 +25,7 @@ export class HorarioAtencion
       
      medico: Medico;
     
+     consultorio:Consultorio;
     
     
     
