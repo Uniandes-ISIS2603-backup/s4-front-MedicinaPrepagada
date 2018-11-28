@@ -52,7 +52,7 @@ export class CitaMedicaService{
     }
     
     /**
-    * Trae un mensaje de error en caso de que haya un error
+    * Trae un mensaje de error en caso de que haya un erro
     * @returns error
     */
      private handleError(error: any){
