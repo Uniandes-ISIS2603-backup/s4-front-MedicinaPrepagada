@@ -8,6 +8,7 @@ import { Observable , throwError} from 'rxjs';
 import {environment} from '../../environments/environment'; 
 
 import {CitaMedica} from './cita-medica';
+import {PacienteBase} from '../paciente/pacienteBase'
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 
@@ -68,11 +69,18 @@ export class CitaMedicaService{
 //    }
     
     /**
+     * elimina el medico con el id que llega por param
+     */
+    deleteCitaMedica(citaId):Observable<Boolean>{
+        return this.http.delete<Boolean>(API_URL + citasMedicas + '/' + citaId).catch(err => this.handleError(err));
+    }
+    
+    /**
     * Trae la lista de citas medicas en MediSistemas
     * @returns la lista de citas medicas
     */
     getPacientes() : Observable<PacienteBase[]>{
-        return this.http.get<PacienteBase[]> (API_URL + '/pacientes/base');
+        return this.http.get<PacienteBase[]> (API_URL + '/pacientes/Base');
     }
 }
 

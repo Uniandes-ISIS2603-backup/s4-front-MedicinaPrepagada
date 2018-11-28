@@ -53,6 +53,7 @@ import {EspecialidadEditComponent} from '../especialidad/especialidad-edit/espec
 import {CitaMedicaListComponent} from '../cita-medica/cita-medica-list/cita-medica-list.component';
 import {CitaMedicaCreateComponent} from '../cita-medica/cita-medica-create/cita-medica-create.component';
 import {CitaMedicaDetailComponent} from '../cita-medica/cita-medica-detail/cita-medica-detail.component';
+import {CitaMedicaEditComponent} from '../cita-medica/cita-medica-edit/cita-medica-edit.component';
 import {HistoriaClinicaListComponent} from '../historiaClinica/historiaClinica-list/historiaClinica-list.component';
 import {HistoriaClinicaDetailComponent} from '../historiaClinica/historiaClinica-detail/historiaClinica-detail.component';
 import {OrdenMedicaListComponent} from '../ordenMedica/ordenMedica-list/ordenMedica-list.component';
@@ -381,6 +382,10 @@ const routes: Routes = [
                 path: ':id',
                 component: CitaMedicaDetailComponent
                 
+            },
+            {
+              path: ':id/edit',
+              component: CitaMedicaEditComponent  
             }
         ]
     },
