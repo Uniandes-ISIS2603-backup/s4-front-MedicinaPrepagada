@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router/';
+import {Component, OnInit, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router/';
 import {ToastrService} from 'ngx-toastr';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+
 import {MedicamentoService} from '../medicamento.service';
+
+import {Medicamento} from '../medicamento';
+import {MedicamentoDetail} from '../medicamento-detail';
+import {MedicamentoListComponent} from '../medicamento-list/medicamento-list.component';
 
 import {Farmacia} from '../../farmacia/farmacia';
 
@@ -18,13 +24,16 @@ export class MedicamentoFarmaciaComponent implements OnInit {
   constructor(
       private medicamentoService: MedicamentoService,
       private route: ActivatedRoute,
-      private toastr: ToastrService) { }
+      private toastr: ToastrService,
+      private router: Router
+      
+      ) {}
 
     /**
      * id del medicamento
      */
      medicamento_id: number;
-     
+          
     /**
      * todas las farmacias del medicamento
      */ 
@@ -48,5 +57,8 @@ export class MedicamentoFarmaciaComponent implements OnInit {
       this.getFarmaciasMedicamento();
   }
 
+volver (): void {
+        this.router.navigate(['medicamentos/list']);
+    }
 
 }

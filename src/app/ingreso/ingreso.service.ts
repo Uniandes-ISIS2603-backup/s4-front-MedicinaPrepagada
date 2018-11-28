@@ -6,9 +6,15 @@
 
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
+import {environment} from '../../environments/environment'; 
 import {NgxRolesService, NgxPermissionsService} from 'ngx-permissions'
 import 'rxjs/add/operator/catch';
 import { ToastrService } from 'ngx-toastr';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable , throwError} from 'rxjs';
+import {Usuario} from './usuario';
+
+const API_URL = environment.apirURL;
 
 @Injectable()
 export class IngresoService {
@@ -16,7 +22,8 @@ export class IngresoService {
     constructor (private router: Router,
                  private roleService: NgxRolesService,
                  private permissionsService: NgxPermissionsService,
-                 private toastrService: ToastrService) { }
+                 private toastrService: ToastrService,
+                 private http: HttpClient) { }
 
     start (): void {
         this.permissionsService.flushPermissions();
@@ -60,6 +67,10 @@ export class IngresoService {
     printRole (): void {
         console.log(this.roleService.getRoles());
     }
+    
+    getCredencialesUsuario(login){
+        return this.http.get<Usuario>(API_URL + '/usuarios/' + login).catch(err => this.handleError(err));
+    }
 
     /**
      * Logs the user in with the desired role
@@ -92,5 +103,12 @@ export class IngresoService {
         localStorage.removeItem('role');
         this.router.navigateByUrl('/');
         this.toastrService.success('Ha salido de su cuenta exitosamente')
+    }
+    
+    /**
+     * metodo para manejar las exceptions
+     */
+    private handleError(error: any){
+        return throwError(error.error.errorMessage);
     }
 }

@@ -48,7 +48,6 @@
         <button class="btn btn-outline-primary" routerLink="/citalaboratorio/list" id = "sel"><span class="fa fa-calendar-check-o"></span>  Citas Laboratorio</button>
     </li>
     
-    
    <li class=""nav nav-item active>
         <div class="row">
   <div class="col">
@@ -115,9 +114,41 @@
 </ngb-carousel>
 </div>
   
+      <hr/>
 <div class="list">
     <router-outlet></router-outlet>
 </div>
+      
+      <hr/>
+      <div id = "holi">
+      <ngb-accordion #acc="ngbAccordion" id="acco">
+  <ngb-panel id="toggle-1">
+      <ng-template ngbPanelTitle>
+      <span id = "acc"> Nuestra misión </span>
+    </ng-template>
+    <ng-template ngbPanelContent id ="par" >
+       Medisistemas Medicina Prepagada es una de las empresas de salud más reconocidas de la capital, la cual se estima tiene una población de afiliados de 
+      más de 2.300.000 personas, y cuenta con más de 400 médicos de diferentes especialidades ubicados en más de 45 clínicas y hospitales en toda 
+      de la capital. Somos una compañía de aseguramiento, prestación, administración y promoción de la salud que ofrece las mejores combinaciones de 
+      coberturas, servicios y soluciones, basada en el conocimiento de las necesidades de nuestros clientes y prestadores.
+La empresa, con un equipo humano altamente calificado y motivado, se focaliza en aumentar permanentemente su valor a través de la excelencia en el 
+desempeño, lo que la diferencia por su calidad y servicio al cliente.
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="toggle-2">
+      <ng-template ngbPanelTitle>
+      <span id = "acc"> Nuestra visión </span>
+    </ng-template>
+    <ng-template ngbPanelContent id ="par">
+     Aspiramos a convertirnos en la empresa líder del sector salud por nuestra atención médica integral de alta calidad, por ser culturalmente relevantes 
+     en las comunidades en las que brindamos servicios y por tener el equipo de profesionales idóneos y con un profundo sentido humano que siempre estarán 
+     aplicados a la realización de programas de salud centrados en el paciente y su familia.
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+
+<hr/>
+      </div>
       
 <!--      <div style="background-color: #009999 !important" class="jumbotron jumbotron-fluid">-->
   <div style="background-color: #E7E7E7 !important" class="jumbotron jumbotron-fluid">

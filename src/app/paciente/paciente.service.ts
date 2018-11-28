@@ -27,9 +27,9 @@ const historiasClinicas = '/historiasclinicas';
 @Injectable()
 export class PacienteService{
     
-    headers = new HttpHeaders({
-        'Access-Control-Allow-Origin': '*'
-    });
+//    headers = new HttpHeaders({
+//        'Access-Control-Allow-Origin': '*'
+//    });
     
     constructor (private http: HttpClient) {}
     

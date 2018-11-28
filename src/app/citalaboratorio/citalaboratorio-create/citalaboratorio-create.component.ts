@@ -2,6 +2,8 @@ import {Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import {CitaLaboratorioService} from '../citalaboratorio.service';
 import {CitaLaboratorio} from '../citalaboratorio';
+import {Laboratorio} from '../../laboratorio/laboratorio';
+import {LaboratorioService} from '../../laboratorio/laboratorio.service';
 @Component({
   selector: 'app-citalaboratorio-create',
   templateUrl: './citalaboratorio-create.component.html',
@@ -10,15 +12,26 @@ import {CitaLaboratorio} from '../citalaboratorio';
 export class CitaLaboratorioCreateComponent implements OnInit {
 
     constructor(private citaLabService: CitaLaboratorioService,
+                private labService: LaboratorioService,
                 private toastr: ToastrService
     ) { }
     
     citaLab: CitaLaboratorio;
     
+    laboratorios: Laboratorio [];
+    
     @Output() cancel = new EventEmitter();
     
     @Output() create = new EventEmitter();
     
+    getLaboratorios (): void {
+        
+        this.labService.getLaboratorios()
+            .subscribe(laboratorios=> {this.laboratorios = laboratorios}
+            , err => {
+                this.toastr.error(err, 'Error');
+            })
+    }
     createCitaLaboratorio(): void{
         this.citaLabService.createCitaLaboratorio(this.citaLab)
             .subscribe(() => {
@@ -29,6 +42,7 @@ export class CitaLaboratorioCreateComponent implements OnInit {
         }
         );
     }
+    
     
     cancelCreation() : void{
         this.cancel.emit();
