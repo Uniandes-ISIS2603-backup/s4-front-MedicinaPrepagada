@@ -17,20 +17,35 @@ import { ToastrService } from 'ngx-toastr';
 
 export class RegisterComponent {
 
+   /**
+   * Constructor de RegisterComponent
+   */ 
     constructor(
         private userService: IngresoService,
         private toastrService: ToastrService) { }
 
+   /**
+   * Atributo que modela un usuario
+   */ 
     user: Usuario;
 
+   /**
+   * Lista de roles
+   */ 
     roles: String[];
     
+    /**
+   * Metodo para registrarse en el sistema
+   */ 
     register() : void 
     {
         this.userService.login(this.user.tipoUsuario);
         this.toastrService.success('Se ha registrado exitosamente')
     }
     
+    /**
+   * Metodo para inicializar el componente
+   */ 
     ngOnInit() 
     {
         this.user = new Usuario();

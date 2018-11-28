@@ -19,6 +19,9 @@ import {HistoriaClinicaService} from '../historiaClinica.service';
 })
 export class HistoriaClinicaDetailComponent implements OnInit {
 
+    /**
+     * Contructor de HistoriaClinicaDetailComponent
+    */
     constructor(
         private historiaClinicaService: HistoriaClinicaService,
         private route: ActivatedRoute,
@@ -28,10 +31,19 @@ export class HistoriaClinicaDetailComponent implements OnInit {
         private viewRef: ViewContainerRef
         ) {}
         
+    /**
+     * Atributo de tipo HistoriaClinica
+    */
     historiaClinica: HistoriaClinica;
     
+    /**
+     * Identificador de la HistoriaClinica
+    */
     historiaClinica_id: number;
     
+    /**
+     * Metodo para obenter una historia clinica con el identificador dado
+    */
     getHistoriaClinica(): void 
         {
         this.historiaClinicaService.getHistoriaClinica(this.historiaClinica_id)
@@ -43,6 +55,9 @@ export class HistoriaClinicaDetailComponent implements OnInit {
         );
     }
     
+    /**
+     * Metodo para eliminar una historia clinica
+    */
     deleteHistoriaClinica(): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Borrar una historia clinica',
@@ -67,15 +82,21 @@ export class HistoriaClinicaDetailComponent implements OnInit {
         });
     }
     
+    /**
+     * Metodo para volver a la lista de historias clinicas
+    */
      volver (): void 
     {
         this.router.navigate(['historiasClinicas/list']);
     }
 
-  ngOnInit() {
+    /**
+     * Metodo para inicializar el componente
+    */
+    ngOnInit() {
       this.historiaClinica_id = +this.route.snapshot.paramMap.get('id');
       this.historiaClinica = new HistoriaClinica;
       this.getHistoriaClinica();
-  }
+    }
 
 }

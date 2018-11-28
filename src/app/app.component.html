@@ -74,14 +74,13 @@
 <div class="navbar-nav ml-auto flex-column">
                 <div class="flex-row" *ngxPermissionsOnly="['VISITANTE']">
                     <div class="form-inline">
-                        <li class="right-space" id="segundo"><a id="signup-navbar-item" routerLink="/register" ><span class="fa fa-user"></span>
-                                Registrarse</a></li>
-                        <li id="segundo"><a id="login-navbar-item" routerLink="/login" ><span class="fa fa-sign-in"></span>Login</a></li>
+                        <button type="button" class="btn btn-warning" routerLink="/register" >Registrarse</button>         
+                        <button type="button" class="btn btn-warning" routerLink="/login" >Login</button>        
                     </div>
                 </div>
                 <div class="flex-row" *ngxPermissionsOnly="['PACIENTE', 'ADMIN', 'MEDICO']">
                     <div class="form-inline">
-                        <li id="segundo"><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
+                        <button type="button" class="btn btn-warning" (click)="logout()" >Logout</button>  
                     </div>
                 </div>
             </div>
