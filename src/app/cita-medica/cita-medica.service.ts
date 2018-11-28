@@ -21,11 +21,11 @@ const citaMedicaDetail = '/citaMedicaDetails';
  */
 @Injectable()
 export class CitaMedicaService{
-    
+
     headers = new HttpHeaders({
         'Access-Control-Allow-Origin': '*'
     });
-    
+
     /**
     * Constructor del servicio
     * @param http The HttpClient - Es necesario para realizar solicitudes
@@ -57,6 +57,7 @@ export class CitaMedicaService{
     }
     
     /**
+
     * Trae un mensaje de error en caso de que haya un error
     * @returns error
     */
