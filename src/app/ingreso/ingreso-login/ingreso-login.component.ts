@@ -6,7 +6,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { IngresoService } from '../ingreso.service';
-import { User } from '../ingreso';
+import {Usuario} from '../usuario';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -22,17 +22,38 @@ export class LoginComponent implements OnInit
         private toasteservice: ToastrService,
         private ingresoService: IngresoService) { }
         
-    user: User;
+    user: Usuario;
+    
+    usuario: Usuario;
 
     roles: String[];
 
     login(): void {
-        this.ingresoService.login(this.user.role);
-        this.toasteservice.success('Ha ingresado a su cuenta')
+        console.log(this.user.login);
+        console.log(this.user.contrasena);
+        this.getCredenciales();        
     }
     
+    getCredenciales():void{
+        this.ingresoService.getCredencialesUsuario(this.user.login).toPromise().then(usuario => {this.usuario = usuario;
+            this.performLogin();});
+    }
+    
+    performLogin():void{
+                if(this.user.contrasena != this.usuario.contrasena){
+            this.toasteservice.error("La contraseña es incorrecta");
+            console.log('mala contrasena')
+        }else{
+            this.ingresoService.login(this.usuario.tipoUsuario);
+            this.toasteservice.success('Ha ingresado a su cuenta')    
+        }
+    }
+    
+    
         ngOnInit() {
-        this.user = new User();
-        this.roles = ['Administrador', 'Paciente', 'Medico'];
+            this.user = new Usuario();
+            this.roles = ['Administrador', 'Paciente', 'Medico'];
+            this.usuario = new Usuario();
+            
     }
 }
