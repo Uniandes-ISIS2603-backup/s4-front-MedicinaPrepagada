@@ -8,6 +8,7 @@ import {Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import {HistoriaClinicaService} from '../historiaClinica.service';
 import {HistoriaClinica} from '../historiaClinica';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-historiaClinica-create',
@@ -16,35 +17,59 @@ import {HistoriaClinica} from '../historiaClinica';
 })
 export class HistoriaClinicaCreateComponent implements OnInit {
 
+    /**
+     * Contructor de HistoriaClinicaCreateComponent
+    */
     constructor(private historiaClinicaService: HistoriaClinicaService,
-                private toastr: ToastrService
+                private toastr: ToastrService, 
+                private router: Router
     ) { }
     
+    /**
+     * Atributo de tipo HistoriaClinica
+    */
     historiaClinica: HistoriaClinica;
     
+    /**
+     * Output para cancelar la creacion de una historia clinica
+    */
     @Output() cancel = new EventEmitter();
     
+    /**
+     * Output para crear una histria clinica
+    */
     @Output() create = new EventEmitter();
     
+    
+    /**
+     * Metodo para crear una HistoriaClinica
+    */
     createHistoriaClinica(): void
         {
         this.historiaClinicaService.createHistoriaClinica(this.historiaClinica)
             .subscribe(() => {
                 this.create.emit();
-                this.toastr.success("La historia clinica fue creada", "Creacion Historia Clinica");      
+                this.toastr.success("La historia clinica fue creada", "Creacion Historia Clinica");  
+                this.router.navigate(['historiasClinicas/list']);    
         }, err =>{
             this.toastr.error(err, "Error");
         }
         );
     }
     
+    /**
+     * Metodo para cancelar la creacion de una historia clinica
+    */
     cancelCreation() : void{
         this.cancel.emit();
     }
 
-  ngOnInit() {
+    /**
+     * Metodo para inicializar el componente
+    */
+    ngOnInit() {
       this.historiaClinica = new HistoriaClinica();
-  }
+    }
 
 }
 

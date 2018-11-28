@@ -21,6 +21,9 @@ import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 })
 export class OrdenMedicaDetailComponent implements OnInit {
 
+   /**
+   * Constructor de OrdenMedicaDetailComponent
+   */  
     constructor(
         private ordenMedicaService: OrdenMedicaService,
         private route: ActivatedRoute,
@@ -30,10 +33,19 @@ export class OrdenMedicaDetailComponent implements OnInit {
         private toastrservice: ToastrService
         ) {}
         
+    /**
+   * Atributo de tipo orden medica
+   */      
     ordenMedica: OrdenMedica;
     
+    /**
+   * Atributo que modela el identificador de la orden medica
+   */  
     ordenMedica_id: number;
     
+    /**
+   * Metodo para obtener una orden medica segun el identificador dado
+   */  
     getOrdenMedica(): void 
         {
         this.ordenMedicaService.getOrdenMedica(this.ordenMedica_id)
@@ -45,6 +57,9 @@ export class OrdenMedicaDetailComponent implements OnInit {
         );
     }
     
+    /**
+   * Metodo para eliminar una orden medica
+   */  
     deleteOrdenMedica(): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Borrar una orden medica',
@@ -68,11 +83,22 @@ export class OrdenMedicaDetailComponent implements OnInit {
             ]
         });
     }
+    
+    /**
+   * Metodo para volver a la lista de ordenes medicas
+   */  
+    volver (): void 
+    {
+        this.router.navigate(['ordenesMedicas/list']);
+    }
 
-  ngOnInit() {
+   /**
+   * Metodo para inicializar el componente
+   */  
+    ngOnInit() {
       this.ordenMedica_id = +this.route.snapshot.paramMap.get('id');
       this.ordenMedica = new OrdenMedica;
       this.getOrdenMedica();
-  }
+    }
 
 }

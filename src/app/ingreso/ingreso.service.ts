@@ -6,18 +6,31 @@
 
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
+import {environment} from '../../environments/environment'; 
 import {NgxRolesService, NgxPermissionsService} from 'ngx-permissions'
 import 'rxjs/add/operator/catch';
 import { ToastrService } from 'ngx-toastr';
+import {HttpClient} from '@angular/common/http';
+import {throwError} from 'rxjs';
+import {Usuario} from './usuario';
+
+const API_URL = environment.apirURL;
 
 @Injectable()
 export class IngresoService {
 
+    /**
+   * Constructor de IngresoService
+   */ 
     constructor (private router: Router,
                  private roleService: NgxRolesService,
                  private permissionsService: NgxPermissionsService,
-                 private toastrService: ToastrService) { }
+                 private toastrService: ToastrService,
+                 private http: HttpClient) { }
 
+     /**
+   * Metodo para iniciar el ingreso y asignar rol al usuario
+   */            
     start (): void {
         this.permissionsService.flushPermissions();
         this.roleService.flushRoles();
@@ -34,36 +47,57 @@ export class IngresoService {
         }
     }
 
+    /**
+   * Metodo para asignar el rol de visitante
+   */
     setVisitanteRol (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('VISITANTE', ['']);
     }
 
+   /**
+   * Metodo para asignar el rol de paciente
+   */
     setPacienteRol (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('PACIENTE', ['leave_review']);
         localStorage.setItem('role', 'PACIENTE');
     }
     
+   /**
+   * Metodo para asignar el rol de medico
+   */
      setMedicoRol (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('MEDICO', ['leave_review']);
         localStorage.setItem('role', 'MEDICO');
     }
 
+  /**
+   * Metodo para asignar el rol de administrador
+   */
     setAdministradorRol (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('ADMIN', ['edit_author_permission', 'delete_author_permission']);
         localStorage.setItem('role', 'ADMIN');
     }
 
+  /**
+   * Metodo para imprimir el rol en consola
+   */
     printRole (): void {
         console.log(this.roleService.getRoles());
     }
+    
+   /**
+   * Metodo para obtener las credenciales del usuario
+   */
+    getCredencialesUsuario(login){
+        return this.http.get<Usuario>(API_URL + '/usuarios/' + login).catch(err => this.handleError(err));
+    }
 
     /**
-     * Logs the user in with the desired role
-     * @param role The desired role to set to the user
+     * Metodo para asignar rol dependiendo del tipo de usuario seleccionado
      */
     login (rol): void 
     {
@@ -83,13 +117,21 @@ export class IngresoService {
     }
 
     /**
-     * Logs the user out
+     * Metodo para salir de la cuenta o hacer Logout
      */
+     
     logout (): void {
         this.roleService.flushRoles();
         this.setVisitanteRol();
         localStorage.removeItem('role');
         this.router.navigateByUrl('/');
         this.toastrService.success('Ha salido de su cuenta exitosamente')
+    }
+    
+    /**
+     * metodo para manejar las exceptions
+     */
+    private handleError(error: any){
+        return throwError(error.error.errorMessage);
     }
 }

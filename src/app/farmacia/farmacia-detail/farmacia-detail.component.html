@@ -1,12 +1,10 @@
 <h1 id = "texto"> Farmacia: {{farmaciaDetail.nombre}}</h1> 
             <table class ="table">
-                   <thead class ="thead-dark">
+                   <thead class ="thead-light">
                     <tr>
-                        <th>Ubicacion</th>
-                        <th>Telefono</th>
+                        <th>Ubicación</th>
+                        <th>Teléfono</th>
                         <th>Correo</th>
-                        <th>Latitud</th>
-                        <th>Longitud</th>
                     </tr>
                    </thead>
                    <tbody>
@@ -14,10 +12,14 @@
                            <td>{{farmaciaDetail.ubicacion}}</td>
                            <td>{{farmaciaDetail.telefono}}</td>
                            <td>{{farmaciaDetail.correo}}</td>
-                           <td>{{farmaciaDetail.latitud}}</td>
-                           <td>{{farmaciaDetail.longitud}}</td>
 
                        </tr>
             </tbody>
             </table>
+
+                    <div class="col-md-6">
+                    <agm-map [latitude]=farmaciaDetail.latitud [longitude]=farmaciaDetail.longitud [zoom]=16>
+                        <agm-marker [latitude]=farmaciaDetail.latitud [longitude]=farmaciaDetail.longitud></agm-marker>
+                    </agm-map>
+                    </div>
                       

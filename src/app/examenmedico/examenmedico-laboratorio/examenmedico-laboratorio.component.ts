@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router/';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router/';
 import {ToastrService} from 'ngx-toastr';
 import {ExamenMedicoService} from '../examenmedico.service';
 import {Laboratorio} from '../../laboratorio/laboratorio';
@@ -17,7 +17,8 @@ export class ExamenMedicoLaboratorioComponent implements OnInit {
   constructor(
       private examenService: ExamenMedicoService,
       private route: ActivatedRoute,
-      private toastr: ToastrService) { }
+      private toastr: ToastrService,
+      private router: Router) { }
 
     /**
      * id del examen
@@ -47,6 +48,8 @@ export class ExamenMedicoLaboratorioComponent implements OnInit {
       this.getLaboratoriosExamen();
   }
 
-
+volver (): void {
+        this.router.navigate(['examenesMedicos/list']);
+    }
 
 }

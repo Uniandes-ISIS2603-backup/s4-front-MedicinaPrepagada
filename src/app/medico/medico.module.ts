@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MedicoDetailComponent } from './medico-detail/medico-detail.component';
 import { MedicoCreateComponent } from './medico-create/medico-create.component';
 import { MedicoEditComponent } from './medico-edit/medico-edit.component';
+import { MedicoDeleteComponent } from './medico-delete/medico-delete.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { MedicoEditComponent } from './medico-edit/medico-edit.component';
     HttpClientModule,
     FormsModule
   ],
-  declarations: [MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent, MedicoEditComponent],
+  declarations: [MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent, MedicoEditComponent, MedicoDeleteComponent],
   providers:[MedicoService],
   exports:[MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent],
   bootstrap: [MedicoListComponent, MedicoDetailComponent, MedicoCreateComponent]

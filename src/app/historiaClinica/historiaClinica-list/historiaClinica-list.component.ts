@@ -17,19 +17,31 @@ import {HistoriaClinica} from '../historiaClinica';
 
 export class HistoriaClinicaListComponent implements OnInit 
 {
+    /**
+     * Constructor de HistoriaClinicaListComponent
+     */
     constructor(private historiaClinicaService: HistoriaClinicaService) { }
     
+    /**
+     * Lista de historias clinicas
+     */
     historiasClinicas: HistoriaClinica[];
     
+    /**
+     * Metodo para obtener todas las historias clincias
+     */
     getHistoriasClinicas(): void 
     {
         this.historiaClinicaService.getHistoriasClinicas()
             .subscribe(historiasClinicas => this.historiasClinicas = historiasClinicas);
     }
 
-  ngOnInit() 
-  {
-      this.getHistoriasClinicas();
-  }
+    /**
+     * Metodo para inicialziar la componente
+     */
+    ngOnInit() 
+    {
+        this.getHistoriasClinicas();
+    }
 
 }

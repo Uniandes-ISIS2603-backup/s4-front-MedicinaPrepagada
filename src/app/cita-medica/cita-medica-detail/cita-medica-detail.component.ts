@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewContainerRef } from '@angular/core';
 import {ActivatedRoute} from '@angular/router/';
 import {CitaMedica} from '../cita-medica';
 import {ToastrService} from 'ngx-toastr';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 
 import {CitaMedicaService} from '../cita-medica.service';
 
@@ -22,7 +23,9 @@ export class CitaMedicaDetailComponent implements OnInit {
   constructor(
         private citaMedicaService: CitaMedicaService,
         private route: ActivatedRoute,
-        private toastrservice: ToastrService
+        private toastrservice: ToastrService,
+        private modalDialog: ModalDialogService,
+        private viewRef: ViewContainerRef
         ) {}
         
         /**
@@ -46,6 +49,37 @@ export class CitaMedicaDetailComponent implements OnInit {
             }
             
         );
+    }
+    
+    /**
+     * elimina el medico mostrado
+     */
+    deleteCitaMedica():void{
+        this.modalDialog.openDialog(this.viewRef,{
+            title:'Eliminar Cita',
+            childComponent: SimpleModalComponent,
+            data:{
+                text:'Esta seguro de que desea cancelar la cita'
+            },
+            actionButtons:[
+                {
+                    text:'Si',
+                    buttonClass:'btn btn-danger',
+                    onAction:()=>{
+                        this.citaMedicaService.deleteCitaMedica(this.idCita)
+                            .subscribe(() => {}, err =>{
+                                this.toastrservice.error(err, "Error");
+                        });
+                        return true;
+                    },
+                    
+                },
+                {
+                    text:'Cancelar',
+                    onAction: () => true
+                }
+            ]
+        });
     }
 
 /**

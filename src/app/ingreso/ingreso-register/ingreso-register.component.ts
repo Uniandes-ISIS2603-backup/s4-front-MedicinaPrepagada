@@ -6,7 +6,7 @@
 
 import { Component } from '@angular/core';
 import { IngresoService } from '../ingreso.service';
-import { User } from '../ingreso';
+import {Usuario} from '../usuario';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -17,22 +17,38 @@ import { ToastrService } from 'ngx-toastr';
 
 export class RegisterComponent {
 
+   /**
+   * Constructor de RegisterComponent
+   */ 
     constructor(
         private userService: IngresoService,
         private toastrService: ToastrService) { }
 
-    user: User;
+   /**
+   * Atributo que modela un usuario
+   */ 
+    user: Usuario;
 
+   /**
+   * Lista de roles
+   */ 
     roles: String[];
     
-    register() : void {
-        this.userService.login(this.user.role);
+    /**
+   * Metodo para registrarse en el sistema
+   */ 
+    register() : void 
+    {
+        this.userService.login(this.user.tipoUsuario);
         this.toastrService.success('Se ha registrado exitosamente')
     }
     
+    /**
+   * Metodo para inicializar el componente
+   */ 
     ngOnInit() 
     {
-        this.user = new User();
+        this.user = new Usuario();
         this.roles = ['Administrador', 'Paciente', 'Medico'];
     }
 }

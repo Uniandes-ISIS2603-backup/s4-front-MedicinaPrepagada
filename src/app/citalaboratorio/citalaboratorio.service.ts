@@ -7,11 +7,11 @@ import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {CitaLaboratorio} from './citalaboratorio';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../environments/environment'; 
+import {environment} from '../../environments/environment';
+import {Laboratorio} from '../laboratorio/laboratorio';
 
 const API_URL = environment.apirURL;
 const citaslaboratorio = '/citaLaboratorio';
-const citaLabDetail = '/citaLaboratorioDetails';
 
 @Injectable()
 export class CitaLaboratorioService{
@@ -28,6 +28,11 @@ export class CitaLaboratorioService{
     */
     getCitasLaboratorio() : Observable<CitaLaboratorio[]>{
         return this.http.get<CitaLaboratorio[]> (API_URL + citaslaboratorio);
+    }
+    
+    getLaboratorioFromCita (citaLabId): Observable<Laboratorio>
+    {
+        return this.http.get<Laboratorio>(API_URL + citaslaboratorio + '/' +citaLabId+ '/laboratorio' ).catch(err => this.handleError(err));
     }
     
     createCitaLaboratorio(citalaboratorio): Observable<CitaLaboratorio>{
