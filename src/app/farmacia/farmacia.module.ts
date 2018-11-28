@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { FarmaciaDetailComponent } from './farmacia-detail/farmacia-detail.component';
 import { FarmaciaCreateComponent } from './farmacia-create/farmacia-create.component';
 import { FarmaciaEditComponent } from './farmacia-edit/farmacia-edit.component';
+import {AgmCoreModule} from '@agm/core'
+
 
 @NgModule({
   imports: [
@@ -16,7 +18,10 @@ import { FarmaciaEditComponent } from './farmacia-edit/farmacia-edit.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+      AgmCoreModule.forRoot({
+          apiKey:'AIzaSyB6e8rof-WUMtAZd2ZfEmm1OBDQmjMDYUE'
+      })
   ],
   declarations: [FarmaciaListComponent, FarmaciaDetailComponent, FarmaciaCreateComponent, FarmaciaEditComponent],
   providers:[FarmaciaService],

@@ -1,6 +1,6 @@
 import {Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {MedicamentoService} from '../medicamento.service';
-import {ActivatedRoute} from '@angular/router/';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router/';
 import {ToastrService} from 'ngx-toastr';
 import {Farmacia} from '../../farmacia/farmacia';
 import {Medicamento} from '../medicamento';
@@ -17,7 +17,8 @@ export class MedicamentoFarmaciaAddComponent implements OnInit {
      */
     constructor(private medicamentoService: MedicamentoService,
         private toastr: ToastrService,
-        private route: ActivatedRoute) { }
+        private route: ActivatedRoute,
+        private router: Router) { }
   
   /**
    * id del medicamento al que se le va a añadir la farmacia
@@ -54,15 +55,18 @@ export class MedicamentoFarmaciaAddComponent implements OnInit {
               }, err =>{
                   this.toastr.error("La farmacia no fue agregada", "Agregar farmacia");
               }
-              );
+              )
+                      this.router.navigate(['medicamentos/list']);
+;
   }
   
   /**
    * cancela la agregación de la farmacia.
    */
   cancelAdd(): void{
-      this.toastr.warning("La farmacia no fue agregada", "Agregar farmacia");
       this.cancel.emit();
+      this.toastr.warning("La farmacia no fue agregada", "Agregar farmacia");
+      this.router.navigate(['medicamentos/list']) ;
   }
 
   /**
