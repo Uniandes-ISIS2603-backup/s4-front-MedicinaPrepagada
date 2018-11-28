@@ -1,9 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit, Input, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 import { FarmaciaService } from '../farmacia.service';
 import { Farmacia } from '../farmacia';
 import { FarmaciaDetail } from '../farmacia-detail';
+
 @Component({
   selector: 'app-farmacia-detail',
   templateUrl: './farmacia-detail.component.html',
@@ -19,8 +21,17 @@ export class FarmaciaDetailComponent implements OnInit {
     */
     constructor(
         private farmaciaService: FarmaciaService,
-        private route: ActivatedRoute
-    ) { }
+        private route: ActivatedRoute,
+        private router: Router,
+        private toastrservice: ToastrService
+
+    ) {//This is added so we can refresh the view when one of the sedes in
+        //the "Other sedes" list is clicked
+        this.navigationSubscription = this.router.events.subscribe((e: any) => {
+            if (e instanceof NavigationEnd) {
+                this.ngOnInit();
+            }
+        }); }
 
       /**
     * The farmacia
@@ -34,6 +45,18 @@ export class FarmaciaDetailComponent implements OnInit {
     */
     farmacia_id: number;
 
+
+/**
+    * The suscription which helps to know when a new sede
+    * needs to be loaded
+    */
+    navigationSubscription;
+  
+     lat:number;
+     
+     lng:number;
+        
+     
     /**
     * The method which retrieves the books of an farmacia
     */
@@ -52,6 +75,8 @@ export class FarmaciaDetailComponent implements OnInit {
         this.farmacia_id = +this.route.snapshot.paramMap.get('id');
         this.farmaciaDetail = new FarmaciaDetail();
         this.getFarmaciaDetail();
+        this.lat = this.farmaciaDetail.latitud;
+        this.lng = this.farmaciaDetail.longitud;
     }
 
 }

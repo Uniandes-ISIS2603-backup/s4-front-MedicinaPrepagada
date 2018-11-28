@@ -12,6 +12,7 @@ import {FarmaciaModule} from '../farmacia/farmacia.module';
 import { MedicamentoEditComponent } from './medicamento-edit/medicamento-edit.component';
 import { MedicamentoFarmaciaComponent } from './medicamento-farmacia/medicamento-farmacia.component';
 import { MedicamentoFarmaciaAddComponent } from './medicamento-farmacia-add/medicamento-farmacia-add.component';
+import {AgmCoreModule} from '@agm/core'
 
 
 
@@ -22,7 +23,10 @@ import { MedicamentoFarmaciaAddComponent } from './medicamento-farmacia-add/medi
     AppRoutingModule,
     FarmaciaModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+          apiKey:'AIzaSyB6e8rof-WUMtAZd2ZfEmm1OBDQmjMDYUE'
+      })
   ],
   declarations: [MedicamentoListComponent, MedicamentoDetailComponent, MedicamentoCreateComponent, MedicamentoEditComponent, MedicamentoFarmaciaComponent, MedicamentoFarmaciaAddComponent],
   providers:[MedicamentoService],

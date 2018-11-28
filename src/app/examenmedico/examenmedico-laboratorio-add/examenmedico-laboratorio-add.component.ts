@@ -1,6 +1,6 @@
 import {Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {ExamenMedicoService} from '../examenmedico.service';
-import {ActivatedRoute} from '@angular/router/';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router/';
 import {ToastrService} from 'ngx-toastr';
 import {Laboratorio} from '../../laboratorio/laboratorio';
 import {ExamenMedico} from '../examenmedico';
@@ -17,7 +17,8 @@ export class ExamenMedicoLaboratorioAddComponent implements OnInit {
      */
     constructor(private examenService: ExamenMedicoService,
         private toastr: ToastrService,
-        private route: ActivatedRoute) { }
+        private route: ActivatedRoute,
+        private router: Router) { }
   
   /**
    * id del examen al que se le va a añadir el laboratorio
@@ -54,7 +55,7 @@ export class ExamenMedicoLaboratorioAddComponent implements OnInit {
               }, err =>{
                   this.toastr.error("El laboratorio no fue agregado", "Agregar laboratorio");
               }
-              );
+              ); this.router.navigate(['examenesMedicos/list']);
   }
   
   /**
@@ -63,6 +64,7 @@ export class ExamenMedicoLaboratorioAddComponent implements OnInit {
   cancelAdd(): void{
       this.toastr.warning("El laboratorio no fue agregado", "Agregar laboratorio");
       this.cancel.emit();
+      this.router.navigate(['examenesMedicos/list']);
   }
 
   /**
