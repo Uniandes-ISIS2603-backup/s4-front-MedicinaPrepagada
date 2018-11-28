@@ -6,17 +6,20 @@
  
 import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-
+import {Paciente} from '../paciente/paciente';
 import {Factura} from './factura';
 const API_URL = environment.apirURL;
 const facturas = '/facturas';
-
+const pacientes = '/pacientes';
 
 @Injectable()
 export class FacturaService{
     
+    headers = new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+    });
     /**
     * Constructor of the service
     * @param http The HttpClient - This is necessary in order to perform requests
@@ -34,6 +37,10 @@ export class FacturaService{
     createFactura(factura): Observable<Factura>{
         return this.http.post<Factura>(API_URL + facturas, factura).catch(err => this.handleError(err));
     }
+    updateFactura(factura): Observable<Factura> {
+        return this.http.put<Factura>(API_URL + facturas + '/' + factura.idFactura, factura);
+    }
+    
     /**
     * Returns the Observable object containing the laboratorio retrieved from the API
     * @returns Factura

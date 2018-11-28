@@ -8,7 +8,8 @@ import { Observable , throwError} from 'rxjs';
 import {environment} from '../../environments/environment'; 
 
 import {CitaMedica} from './cita-medica';
-import {HttpClient} from '@angular/common/http';
+import {PacienteBase} from '../paciente/pacienteBase'
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 
 const API_URL = environment.apirURL;
@@ -20,7 +21,11 @@ const citaMedicaDetail = '/citaMedicaDetails';
  */
 @Injectable()
 export class CitaMedicaService{
-    
+
+    headers = new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+    });
+
     /**
     * Constructor del servicio
     * @param http The HttpClient - Es necesario para realizar solicitudes
@@ -52,7 +57,8 @@ export class CitaMedicaService{
     }
     
     /**
-    * Trae un mensaje de error en caso de que haya un erro
+
+    * Trae un mensaje de error en caso de que haya un error
     * @returns error
     */
      private handleError(error: any){
@@ -62,6 +68,21 @@ export class CitaMedicaService{
 //    getTarjetasCreditoPaciente(pacienteId): Observable<TarjetaCredito[]>{
 //        return this.http.get<TarjetaCredito[]>(API_URL + pacientes + '/' + pacienteId + tarjetasCredito).catch(err => this.handleError(err));
 //    }
+    
+    /**
+     * elimina el medico con el id que llega por param
+     */
+    deleteCitaMedica(citaId):Observable<Boolean>{
+        return this.http.delete<Boolean>(API_URL + citasMedicas + '/' + citaId).catch(err => this.handleError(err));
+    }
+    
+    /**
+    * Trae la lista de citas medicas en MediSistemas
+    * @returns la lista de citas medicas
+    */
+    getPacientes() : Observable<PacienteBase[]>{
+        return this.http.get<PacienteBase[]> (API_URL + '/pacientes/Base');
+    }
 }
 
 

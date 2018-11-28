@@ -8,8 +8,6 @@ import { Observable , throwError} from 'rxjs';
 import { Farmacia } from '../farmacia/farmacia';
 import 'rxjs/add/operator/catch';
 
-
-
 import {environment} from '../../environments/environment'; 
 
 
@@ -77,6 +75,13 @@ export class MedicamentoService {
      */
     getFarmaciasMedicamento(medicamentoId): Observable<Farmacia[]>{
         return this.http.get<Farmacia[]>(API_URL + medicamentos + '/' + medicamentoId + farmacias).catch(err => this.handleError(err));
+    }
+    
+    /**
+     * asocia una farmacia existente con un medicamento
+     */
+    addFarmacia(medicamentoId, farmaciaId): Observable<Farmacia>{
+        return this.http.post<Farmacia>(API_URL + medicamentos + '/' + medicamentoId + farmacias + '/' + farmaciaId, medicamentoId).catch(err => this.handleError(err));
     }
     
      /**

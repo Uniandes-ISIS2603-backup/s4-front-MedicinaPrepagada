@@ -66,6 +66,11 @@ export class HistoriaClinicaDetailComponent implements OnInit {
             ]
         });
     }
+    
+     volver (): void 
+    {
+        this.router.navigate(['historiasClinicas/list']);
+    }
 
   ngOnInit() {
       this.historiaClinica_id = +this.route.snapshot.paramMap.get('id');

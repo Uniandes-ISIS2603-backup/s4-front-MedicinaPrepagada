@@ -27,11 +27,66 @@ p{
 #segundodos{
     color: white;
 }
-#sel:hover { 
-    background-color: white;
-    color: blue;
-}
+
 #segundo:hover { 
     background-color: white;
     color: blue;
+}
+
+
+
+ #sel{
+  display:inline-block;
+  position:relative;
+  margin:0.1em;  padding:0.5em;
+  cursor:pointer;
+  z-index:0;
+  
+
+}
+#sel:before {
+  content: "";
+  position: absolute;
+  z-index:-1;
+  top: 0;  left: 0;  right: 0;  bottom: 0;
+  background: white;
+  color:blue;
+  transform: scaleY(0);
+  transform-origin: 0 100%;
+  transition: transform 0.25s ease;
+}
+#sel:hover:before{transform: scaleY(1);
+color:blue;}
+
+#sel:hover { 
+    color: blue;
+}
+
+#acc{
+    font-size: 1.85em;
+         font-family: 'Roboto', sans-serif;
+}
+
+#par{
+    font-size: 1.55em;
+         font-family: 'Roboto', sans-serif;
+}
+
+.ngb-accordion{
+    padding: 25px;
+    width: 70%;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+#holi
+{
+    padding-right: 150px;
+    padding-left: 150px;
 }

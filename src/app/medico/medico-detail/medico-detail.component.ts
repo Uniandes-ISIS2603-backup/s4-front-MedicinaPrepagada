@@ -1,12 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input , ViewContainerRef } from '@angular/core';
 import {ActivatedRoute, Router, NavigationEnd} from '@angular/router/';
 //import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {Medico} from '../medico';
 import {ToastrService} from 'ngx-toastr';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 
 import {MedicoService} from '../medico.service';
-import {EspecialidadService} from '../especialidad.service';
-import {Especialidad} from '../especialidad';
+import {EspecialidadService} from '../../especialidad/especialidad.service';
+import {Especialidad} from '../../especialidad/especialidad';
 
 @Component({
   selector: 'app-medico-detail',
@@ -26,7 +27,9 @@ export class MedicoDetailComponent implements OnInit {
   constructor(
         private medicoService: MedicoService,
         private route: ActivatedRoute,
-        private toastrservice: ToastrService
+        private toastrservice: ToastrService,
+        private modalDialog: ModalDialogService,
+        private viewRef: ViewContainerRef
         ) {}
         
         /**
@@ -51,6 +54,37 @@ export class MedicoDetailComponent implements OnInit {
             
         );
         
+    }
+    
+    /**
+     * elimina el medico mostrado
+     */
+    deleteMedico():void{
+        this.modalDialog.openDialog(this.viewRef,{
+            title:'Eliminar Medico',
+            childComponent: SimpleModalComponent,
+            data:{
+                text:'Esta seguro de que desea eliminar el médico'
+            },
+            actionButtons:[
+                {
+                    text:'Si',
+                    buttonClass:'btn btn-danger',
+                    onAction:()=>{
+                        this.medicoService.deleteMedico(this.idMed)
+                            .subscribe(() => {}, err =>{
+                                this.toastrservice.error(err, "Error");
+                        });
+                        return true;
+                    },
+                    
+                },
+                {
+                    text:'Cancelar',
+                    onAction: () => true
+                }
+            ]
+        });
     }
 
 /**

@@ -52,6 +52,22 @@ export class EspecialidadService{
     }
     
     /**
+     * elimina el medico con el id que llega por param
+     */
+    deleteEspecialidad(nombre):Observable<Boolean>{
+        return this.http.delete<Boolean>(API_URL + especialidades + '/' + nombre).catch(err => this.handleError(err));
+    }
+    
+    /**
+    * Updates an especialidad
+    * @param medico The especialidad's information updated
+    * @returns The confirmation that the especialidad was updated
+    */
+    updateEspecialidad(especialidad, nombre): Observable<Especialidad> {
+        return this.http.put<Especialidad>(API_URL + especialidades + '/' + nombre, especialidad).catch(err => this.handleError(err));
+    }
+    
+    /**
     * Trae un mensaje de error en caso de que haya un error
     * @returns error
     */

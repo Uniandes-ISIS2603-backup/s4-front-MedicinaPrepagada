@@ -1,16 +1,26 @@
 <h1 id = "texto"> Examen Medico: {{examenDetail.nombre}}</h1> 
             <table class ="table">
-                   <thead class ="thead-dark">
+                   <thead class ="thead-light">
                     <tr>
                         <th>Costo</th>
                         <th>Recomendaciones</th>
+                        <th>Laboratorios</th>
                     </tr>
                    </thead>
                    <tbody>
                        <tr>
                            <td>{{examenDetail.costo}}</td>
                            <td>{{examenDetail.recomendaciones}}</td>
+                           <td>
+                        <div *ngFor = "let laboratorio of examenDetail.laboratorios">
+                            <dd class="caption" routerLink="/examenesMedicos/{{examenDetail.id}}">{{laboratorio.nombre}}</dd>
+                        </div>
+                           </td>
                        </tr>
             </tbody>
             </table>
+
+<div >
+        <button type="button" class="btn btn-outline-info" routerLink="/examenesMedicos/{{examenDetail.id}}/laboratorios">Laboratorios</button>
+    </div>
                       

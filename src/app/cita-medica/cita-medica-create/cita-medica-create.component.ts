@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import {CitaMedicaService} from '../cita-medica.service';
 import {CitaMedica} from '../cita-medica';
 import {PacienteService} from '../../paciente/paciente.service'
-import { Paciente } from '../../paciente/paciente';
+import { PacienteBase } from '../../paciente/pacienteBase';
 import {HorarioAtencionService} from '../../horario-atencion/horarioAtencion.service'
 import { HorarioAtencion } from '../../horario-atencion/horarioAtencion';
 
@@ -37,7 +37,7 @@ export class CitaMedicaCreateComponent implements OnInit {
   /**
    * Pacientes disponibles
    */
-  pacientes: Paciente[];
+  pacientes: PacienteBase[];
   
   /**
    * Horarios de atención disponibles
@@ -47,7 +47,7 @@ export class CitaMedicaCreateComponent implements OnInit {
   /**
    * atributo paciente seleccionado para el médico a crear
    */
-  atributoPaciente: Paciente;
+  pacienteAAtender: PacienteBase;
   
   /**
    * atributo especialidad seleccionado para el médico a crear
@@ -72,13 +72,14 @@ export class CitaMedicaCreateComponent implements OnInit {
      * Obtiene las especialidades disponibles para crear un médico
      */
     getPacientes(): void {
-        this.pacienteService.getPacientes()
+        this.citaMedicaService.getPacientes()
             .subscribe(pacientes => {
                 this.pacientes = pacientes;
             }, err => {
                 this.toastrService.error(err, 'Error');
             });
     }
+    
     
     /**
      * Obtiene las especialidades disponibles para crear un médico
@@ -101,7 +102,7 @@ export class CitaMedicaCreateComponent implements OnInit {
             var listaHorarios = this.horariosAtencion;
             for(let pacient of listaPacientes){
                 if(pacient.id = +(document.getElementById('citaPaciente') as HTMLInputElement).value){
-                    this.atributoPaciente = pacient;
+                    this.pacienteAAtender = pacient;
                 }
             }
             for(let hora of listaHorarios){
@@ -109,13 +110,13 @@ export class CitaMedicaCreateComponent implements OnInit {
                     this.atributoHorario = hora;
                 }
             }
-            console.log(this.atributoPaciente);
+            console.log(this.pacienteAAtender);
             var cita_create = {
                 idCitaMedica: this.citaMedica.idCitaMedica,
                 fecha: this.citaMedica.fecha,
                 comentarios: this.citaMedica.comentarios,
                 horarioAtencionAsignado: this.atributoHorario,
-                pacienteAAtender: this.atributoPaciente
+                pacienteAAtender: this.pacienteAAtender
             };    
             this.citaMedicaService.createCitaMedica(cita_create)
                 .subscribe(citaMedica => {
@@ -140,6 +141,8 @@ export class CitaMedicaCreateComponent implements OnInit {
     */
   ngOnInit() {
       this.citaMedica = new CitaMedica();
+      this.pacientes = [];
+      this.horariosAtencion = [];
       this.getPacientes();
       this.getHorariosAtencion();
   }

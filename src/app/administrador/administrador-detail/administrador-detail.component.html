@@ -7,6 +7,7 @@ and open the template in the editor.
 
 <h1 id = "texto"> Administrador</h1> 
         <table class ="table">
+            <button class="btn btn-primary text-center" (click)="volver()"><span class="fa fa-reply"></span>Volver</button>
             <tr>
                 <th>Login</th>
                 <th>{{administrador.login}}</th>
@@ -22,4 +23,8 @@ and open the template in the editor.
              <td>
                         <button class="btn btn-danger" (click)="deleteAdministrador(administrador.id)"><span class="fa fa-trash"></span></button>
              </td>
+               
+            <td >
+                        <button type="button" class="btn btn-primary" routerLink="/administradores/{{administrador.id}}/edit">Editar</button>         
+            </td>
         </table>

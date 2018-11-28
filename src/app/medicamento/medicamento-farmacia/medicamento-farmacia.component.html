@@ -1,4 +1,4 @@
-<<div style="text-align: center"></div>
+<div style="text-align: center"></div>
 <div class="container-fluid">
     <div class="col-md-4">
         <table class="table table-striped">
@@ -6,15 +6,21 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Ubicacion</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor ="let farmacia of farmacias" routerLink="/farmacias/{{farmacia.id}}">
                     <td><span>{{farmacia.nombre}}</span></td>
                     <td>{{farmacia.ubicacion}}</td>
+                    <td>{{farmacia.telefono}}</td>                    
+                    <td>{{farmacia.correo}}</td>
               
                 </tr>
             </tbody>
         </table>
+        <button class="btn btn-primary text-center" (click)="volver()"><span class="fa fa-reply"></span>Volver</button>
+        <button class="btn btn-success" routerLink="/medicamentos/{{medicamento_id}}/farmacias/add">Agregar farmacia</button> 
     </div>
 </div>

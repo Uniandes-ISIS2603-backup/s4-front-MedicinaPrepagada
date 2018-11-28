@@ -11,17 +11,22 @@ import {PacienteListComponent} from '../paciente/paciente-list/paciente-list.com
 import {PacienteDetailComponent} from '../paciente/paciente-detail/paciente-detail.component';
 import {MedicamentoListComponent} from '../medicamento/medicamento-list/medicamento-list.component';
 import {MedicamentoDetailComponent} from '../medicamento/medicamento-detail/medicamento-detail.component';
+
 import {FarmaciaListComponent} from '../farmacia/farmacia-list/farmacia-list.component';
 import {FarmaciaDetailComponent} from '../farmacia/farmacia-detail/farmacia-detail.component';
 import {ExamenMedicoListComponent} from '../examenmedico/examenmedico-list/examenmedico-list.component';
 import {ExamenMedicoDetailComponent} from '../examenmedico/examenmedico-detail/examenmedico-detail.component';
+import {ExamenMedicoLaboratorioComponent } from '../examenmedico/examenmedico-laboratorio/examenmedico-laboratorio.component';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {LaboratorioListComponent} from '../laboratorio/laboratorio-list/laboratorio-list.component';
 import {LaboratorioDetailComponent} from '../laboratorio/laboratorio-detail/laboratorio-detail.component';
 import {LaboratorioCreateComponent} from '../laboratorio/laboratorio-create/laboratorio-create.component';
+import {LaboratorioEditComponent} from '../laboratorio/laboratorio-edit/laboratorio-edit.component';
 import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
 import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
 import {FacturaCreateComponent} from '../factura/factura-create/factura-create.component';
+import {FacturaEditComponent} from '../factura/factura-edit/factura-edit.component';
+
 import {CitaLaboratorioListComponent} from '../citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
 import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio-detail/citalaboratorio-detail.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
@@ -34,6 +39,7 @@ import {HorarioAtencionCreateComponent} from '../horario-atencion/horario-atenci
 import {SedeAddConsultorioComponent} from '../sede/sede-add-consultorio/sede-add-consultorio.component';
 import {SedeEditComponent} from '../sede/sede-edit/sede-edit.component';
 import {ConsultorioDetailComponent} from '../sede/consultorio-detail/consultorio-detail.component';
+import {ConsultorioEditComponent} from '../sede/consultorio-edit/consultorio-edit.component';
 
 
 import {MedicoListComponent} from '../medico/medico-list/medico-list.component';
@@ -43,9 +49,11 @@ import {MedicoEditComponent} from '../medico/medico-edit/medico-edit.component';
 import {EspecialidadListComponent} from '../especialidad/especialidad-list/especialidad-list.component';
 import {EspecialidadCreateComponent} from '../especialidad/especialidad-create/especialidad-create.component';
 import {EspecialidadDetailComponent} from '../especialidad/especialidad-detail/especialidad-detail.component';
+import {EspecialidadEditComponent} from '../especialidad/especialidad-edit/especialidad-edit.component';
 import {CitaMedicaListComponent} from '../cita-medica/cita-medica-list/cita-medica-list.component';
 import {CitaMedicaCreateComponent} from '../cita-medica/cita-medica-create/cita-medica-create.component';
 import {CitaMedicaDetailComponent} from '../cita-medica/cita-medica-detail/cita-medica-detail.component';
+import {CitaMedicaEditComponent} from '../cita-medica/cita-medica-edit/cita-medica-edit.component';
 import {HistoriaClinicaListComponent} from '../historiaClinica/historiaClinica-list/historiaClinica-list.component';
 import {HistoriaClinicaDetailComponent} from '../historiaClinica/historiaClinica-detail/historiaClinica-detail.component';
 import {OrdenMedicaListComponent} from '../ordenMedica/ordenMedica-list/ordenMedica-list.component';
@@ -71,6 +79,10 @@ import {RegisterComponent} from '../ingreso/ingreso-register/ingreso-register.co
 import {NgxPermissionsGuard} from 'ngx-permissions';
 
 import {MedicamentoFarmaciaComponent} from '../medicamento/medicamento-farmacia/medicamento-farmacia.component';
+import {MedicamentoFarmaciaAddComponent} from '../medicamento/medicamento-farmacia-add/medicamento-farmacia-add.component';
+import {ExamenMedicoLaboratorioAddComponent} from '../examenmedico/examenmedico-laboratorio-add/examenmedico-laboratorio-add.component';
+import {HistoriasOrdenMedicaComponent} from '../historiaClinica/historiaClinica-ordenesmedicas/historiaClinica-ordenesmedicas.component';
+
 
 
 
@@ -81,31 +93,73 @@ const routes: Routes = [
         children: [
                         {
                 path: 'list',
-                component : PacienteListComponent
+                component : PacienteListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO' ]
+                    }
+                }
 
             },
             {
                 path:'add',
-                component: PacienteCreateComponent
+                component: PacienteCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO']
+                    }
+                }
             },
                 {
                 path: ':id',
-                component: PacienteDetailComponent
+                component: PacienteDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO','PACIENTE' ]
+                    }
+                }
             },
             {
               path: ':id/edit',
-              component: PacienteEditComponent  
+              component: PacienteEditComponent,
+              canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO' ]
+                    }
+                }  
             },
             { 
                 path:':id/tarjetascredito/add',
-                component: PacienteTarjetaCreditoAddComponent
+                component: PacienteTarjetaCreditoAddComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
             },
             { path:':id/tarjetascredito',
-            component: PacienteTarjetascreditoComponent
+            component: PacienteTarjetascreditoComponent,
+            canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },
             {
                 path:':id/citaslaboratorio',
-                component: PacienteCitaslaboratorioComponent
+                component: PacienteCitaslaboratorioComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO' ]
+                    }
+                }
             },
             {
                 path:':id/facturas',
@@ -138,6 +192,10 @@ const routes: Routes = [
                 path: ':id/farmacias',
                 component: MedicamentoFarmaciaComponent
                 
+            },
+            { 
+                path:':id/farmacias/add',
+                component: MedicamentoFarmaciaAddComponent
             }
         ]
     },
@@ -166,6 +224,15 @@ const routes: Routes = [
                 path: ':id',
                 component: ExamenMedicoDetailComponent
                 
+            },
+            {
+                path: ':id/laboratorios',
+                component: ExamenMedicoLaboratorioComponent
+                
+            },
+            { 
+                path:':id/laboratorios/add',
+                component: ExamenMedicoLaboratorioAddComponent
             }
         ]
     },
@@ -190,12 +257,16 @@ const routes: Routes = [
                 component : LaboratorioListComponent
             },
             {
-                path:'add',
+                path:'create',
                 component: LaboratorioCreateComponent
             },
             {
                 path:':id',
                 component:LaboratorioDetailComponent
+            },
+            {
+                path:':id/update',
+                component:LaboratorioEditComponent
             }
         ]
     },
@@ -213,6 +284,10 @@ const routes: Routes = [
             {
                 path:':idFactura',
                 component:FacturaDetailComponent
+            },
+            {
+                path:':idFactura/update',
+                component:FacturaEditComponent
             }
         ]
     },
@@ -221,20 +296,44 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : AdministradorListComponent
+                component : AdministradorListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
             },
             {
                 path:'create',
-                component: AdministradorCreateComponent
-            },
-            {
-                path:'update',
-                component: AdministradorEditComponent
-            },            
+                component: AdministradorCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
+            },          
             {
                 path: ':id',
-                component: AdministradorDetailComponent
+                component: AdministradorDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
                 
+            },
+            {
+                path: ':id/edit',
+                component: AdministradorEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
             }
         ]
     },
@@ -263,8 +362,12 @@ const routes: Routes = [
                 component: SedeAddConsultorioComponent
                 
             },{
-                path: ':id/consultorios/list/:idConsultorio',
+                path: ':id/consultorios/:idConsultorio',
                 component: ConsultorioDetailComponent
+                
+            },{
+                path: ':id/consultorios/update/:idConsultorio',
+                component: ConsultorioEditComponent
                 
             }
         ]
@@ -324,6 +427,10 @@ const routes: Routes = [
                 path: ':id',
                 component: EspecialidadDetailComponent
                 
+            },
+            {
+              path: ':id/edit',
+              component: EspecialidadEditComponent  
             }
         ]
     },
@@ -342,6 +449,10 @@ const routes: Routes = [
                 path: ':id',
                 component: CitaMedicaDetailComponent
                 
+            },
+            {
+              path: ':id/edit',
+              component: CitaMedicaEditComponent  
             }
         ]
     },
@@ -357,14 +468,19 @@ const routes: Routes = [
                 component: HistoriaClinicaCreateComponent
             },
             {
-                path:'update',
-                component: HistoriaClinicaEditComponent
-            },    
-            {
                 path: ':id',
                 component: HistoriaClinicaDetailComponent
                 
+            },
+            {
+                path: ':id/edit',
+                component: HistoriaClinicaEditComponent
+            },
+            {
+                path:':id/historiasclinicas',
+                component: HistoriasOrdenMedicaComponent
             }
+            
         ]
     },
     {
@@ -377,15 +493,15 @@ const routes: Routes = [
             {
                 path:'create',
                 component: OrdenMedicaCreateComponent
-            },
-            {
-                path:'update',
-                component: OrdenMedicaEditComponent
-            },    
+            },   
             {
                 path: ':id',
                 component: OrdenMedicaDetailComponent
                 
+            },
+            {
+                path: ':id/edit',
+                component: OrdenMedicaEditComponent
             }
         ]
     },

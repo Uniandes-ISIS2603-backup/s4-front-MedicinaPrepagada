@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="container-fluid">
-        <table>
+        <table class="table table-bordered">
             <tr>
                 <th>Id</th>
                 <th>{{factura.idFactura}}</th>
@@ -25,6 +25,12 @@
                 <th>Pagada</th>
                 <th>{{factura.pagada}}</th>
             </tr>
+            
+             <td>
+                 <button type="button" class="btn btn-primary" routerLink="/facturas/{{factura.idFactura}}/update"><span class="fa fa-pencil"></span></button>
+                  <button type="button" class="btn btn-primary" routerLink="/pacientes/{{factura.idCliente}}"><span class="fa fa-user"></span></button>
+                 
+             </td>
         </table>
     </div>
 </div>

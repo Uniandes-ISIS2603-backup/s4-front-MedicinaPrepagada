@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { AdministradorService } from '../administrador.service';
 import { Administrador } from '../administrador';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-administrador-create',
@@ -18,7 +19,8 @@ export class AdministradorCreateComponent implements OnInit {
 
     constructor(
         private administradorService: AdministradorService,
-        private toastr: ToastrService
+        private toastr: ToastrService, 
+        private router: Router
     ) { }
 
     administrador: Administrador;
@@ -32,7 +34,8 @@ export class AdministradorCreateComponent implements OnInit {
         this.administradorService.createAdministrador(this.administrador)
             .subscribe(() => {
                 this.create.emit();
-                this.toastr.success("El administrador fue creado", "Creacion de administrador");                
+                this.toastr.success("El administrador fue creado", "Creacion de administrador"); 
+                this.router.navigateByUrl('/administradores/list');               
            }, err =>{
             this.toastr.error(err, "Error");
         }

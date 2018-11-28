@@ -6,7 +6,7 @@
 
 
 import { Component, OnInit, Input, ViewContainerRef } from '@angular/core';
-import {ActivatedRoute} from '@angular/router/';
+import {ActivatedRoute, Router} from '@angular/router/';
 import {Administrador} from '../administrador';
 import {ToastrService} from 'ngx-toastr';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
@@ -25,7 +25,8 @@ export class AdministradorDetailComponent implements OnInit {
         private route: ActivatedRoute,
         private toastrservice: ToastrService,
         private modalDialogService: ModalDialogService,
-        private viewRef: ViewContainerRef
+        private viewRef: ViewContainerRef, 
+        private router: Router
 
         ) {}
         
@@ -54,8 +55,8 @@ export class AdministradorDetailComponent implements OnInit {
                     buttonClass: 'btn btn-danger',
                     onAction: () => {
                         this.administradorService.deleteAdministrador(admi_id).subscribe(() => {
-                            this.toastrservice.error("El administrador fue eliminado exitosamente", "Administrador eliminado");
-                            this.ngOnInit();
+                            this.toastrservice.success("El administrador fue eliminado exitosamente", "Administrador eliminado");
+                            this.router.navigateByUrl('/administradores/list');     
                         }, err => {
                             this.toastrservice.error(err, "Error");
                         });
@@ -65,6 +66,11 @@ export class AdministradorDetailComponent implements OnInit {
                 {text: 'No', onAction: () => true}
             ]
         });
+    }
+    
+    volver (): void 
+    {
+        this.router.navigate(['administradores/list']);
     }
 
   ngOnInit() {
