@@ -17,10 +17,10 @@
               
 <div class="form-group">
                     <label for="citaMedicaPaciente"><b>Paciente</b></label>
-                    <select class="custom-select" name="citaMedicaPaciente" id="citaPaciente" [(ngModel)]="citaMedica.pacienteAAtender"
-                        #citaMedicaPaciente="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaMedica.pacienteAAtender.invalid }"
+                    <select class="custom-select" name="citaMedicaPaciente" id="citaPaciente" [(ngModel)]="idPaciente"
+                        #citaMedicaPaciente="ngModel" [ngClass]="{ 'is-invalid': f.submitted && idPaciente.invalid }"
                         required>
-                        <option [value]="paciente.id" *ngFor="let paciente of pacientes">nombre: {{paciente.nombre}}, cedula: {{paciente.documentoIdentidad}}</option>
+                        <option [value]="paciente.id" *ngFor="let paciente of pacientes">nombre: {{paciente.nombre}}, cedula: {{paciente.documentoIdentidad}}, id: {{paciente.id}}</option>
                     </select>
                     <div class="invalid-feedback">
                         <div>No existe el paciente</div>
@@ -29,8 +29,8 @@
               
               <div class="form-group">
                     <label for="citaMedicaHorario"><b>Horario de atención</b></label>
-                    <select class="custom-select" name="citaMedicaHorario" id="citaHorario" [(ngModel)]="citaMedica.horarioAtencionAsignado"
-                        #citaMedicaHorario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaMedica.horarioAtencionAsignado.invalid }"
+                    <select class="custom-select" name="citaMedicaHorario" id="citaHorario" [(ngModel)]="idHorario"
+                        #citaMedicaHorario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && idHorario.invalid }"
                         required>
                         <option [value]="horario.id" *ngFor="let horario of horariosAtencion">id: {{horario.id}}</option>
                     </select>
