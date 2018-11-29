@@ -29,8 +29,12 @@
                 <th>Direccion laboratorio</th>
                 <th>{{laboratorio.direccion}}</th>
             </tr>
-            
-        </table>
+            <td>
+       
+        <button type="button" class="btn btn-primary" routerLink="/citalaboratorio/{{citaLaboratorio.id}}/update"><span class="fa fa-pencil"></span></button>
         <button type="button" class="btn btn-primary" routerLink="/laboratorios/{{laboratorio.id}}">Ver laboratorio</button> 
+        <button class="btn btn-danger" (click)="deleteCitaLaboratorio(citaLaboratorio.id)" ><span class="fa fa-trash"></span></button>
+            </td>
+        </table>
     </div>
 </div>

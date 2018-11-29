@@ -35,12 +35,23 @@ export class CitaLaboratorioService{
         return this.http.get<Laboratorio>(API_URL + citaslaboratorio + '/' +citaLabId+ '/laboratorio' ).catch(err => this.handleError(err));
     }
     
+    updateCitaLaboratorio(citaLaboratorio): Observable<CitaLaboratorio> {
+        return this.http.put<CitaLaboratorio>(API_URL + citaslaboratorio + '/' + citaLaboratorio.id, citaLaboratorio);
+    }
     createCitaLaboratorio(citalaboratorio): Observable<CitaLaboratorio>{
         return this.http.post<CitaLaboratorio>(API_URL + citaslaboratorio, citalaboratorio).catch(err => this.handleError(err));
     }
     /**
-    * Returns the Observable object containing the laboratorio retrieved from the API
-    * @returns Laboratorio
+    * Deletes an citalab
+    * @param citalabId The id of the citalab
+    * @returns The confirmation that the citalab was deleted
+    */
+    deleteCitaLaboratorio(citaLaboratorioId): Observable<CitaLaboratorio> {
+        return this.http.delete<CitaLaboratorio>(API_URL + citaslaboratorio + '/' + citaLaboratorioId);
+    }
+    /**
+    * Returns the Observable object containing the cita laboratorio retrieved from the API
+    * @returns CitaLaboratorio
     */
     getCitaLaboratorio(citaLabId): Observable<CitaLaboratorio>
     {

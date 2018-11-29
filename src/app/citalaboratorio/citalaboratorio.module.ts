@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CitaLaboratorioDetailComponent } from './citalaboratorio-detail/citalaboratorio-detail.component';
 import { CitaLaboratorioCreateComponent } from './citalaboratorio-create/citalaboratorio-create.component';
+import { CitaLaboratorioEditComponent } from './citalaboratorio-edit/citalaboratorio-edit.component';
 
 
 @NgModule({
@@ -18,9 +19,9 @@ import { CitaLaboratorioCreateComponent } from './citalaboratorio-create/citalab
     FormsModule,
     AppRoutingModule
   ],
-  declarations: [CitaLaboratorioListComponent, CitaLaboratorioDetailComponent, CitaLaboratorioCreateComponent],
+  declarations: [CitaLaboratorioListComponent, CitaLaboratorioDetailComponent, CitaLaboratorioCreateComponent, CitaLaboratorioEditComponent],
   providers:[CitaLaboratorioService],
-  exports: [CitaLaboratorioListComponent, CitaLaboratorioDetailComponent],
-  bootstrap: [CitaLaboratorioListComponent, CitaLaboratorioDetailComponent]
+  exports: [CitaLaboratorioListComponent, CitaLaboratorioDetailComponent, CitaLaboratorioCreateComponent, CitaLaboratorioEditComponent],
+  bootstrap: [CitaLaboratorioListComponent, CitaLaboratorioDetailComponent, CitaLaboratorioCreateComponent, CitaLaboratorioEditComponent]
 })
 export class CitaLaboratorioModule { }
