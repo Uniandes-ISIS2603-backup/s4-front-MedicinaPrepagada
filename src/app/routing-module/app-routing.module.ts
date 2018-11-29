@@ -230,7 +230,7 @@ const routes: Routes = [
                  canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN' ]
+                        only: ['ADMIN', 'MEDICO' ]
                     }
                 }
             }
@@ -298,7 +298,7 @@ const routes: Routes = [
                  canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN' ]
+                        only: ['ADMIN', 'MEDICO' ]
                     }
                 }
             }
