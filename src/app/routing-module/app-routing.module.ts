@@ -73,6 +73,7 @@ import {PacienteCitasmedicasComponent} from '../paciente/paciente-citasmedicas/p
 import {PacienteHistoriasclinicasComponent} from '../paciente/paciente-historiasclinicas/paciente-historiasclinicas.component';
 import {PacienteTarjetaCreditoAddComponent} from '../paciente/paciente-tarjeta-credito-add/paciente-tarjeta-credito-add.component';
 import {PacienteEditComponent} from '../paciente/paciente-edit/paciente-edit.component';
+import {PacienteCitaMedicaCreateComponent} from '../paciente/paciente-cita-medica-create/paciente-cita-medica-create.component';
 import {AdministradorEditComponent} from '../administrador/administrador-edit/administrador-edit.component';
 import {HistoriaClinicaEditComponent} from '../historiaClinica/historiaClinica-edit/historiaClinica-edit.component';
 import {OrdenMedicaEditComponent} from '../ordenMedica/ordenMedica-edit/ordenMedica-edit.component';
@@ -114,16 +115,6 @@ const routes: Routes = [
                     }
                 }
             },
-                {
-                path: ':id',
-                component: PacienteDetailComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO','PACIENTE' ]
-                    }
-                }
-            },
             {
               path: ':id/edit',
               component: PacienteEditComponent,
@@ -137,6 +128,16 @@ const routes: Routes = [
             { 
                 path:':id/tarjetascredito/add',
                 component: PacienteTarjetaCreditoAddComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'PACIENTE']
+                    }
+                }
+            },
+            {
+               path:':id/citasmedicas/add',
+                component: PacienteCitaMedicaCreateComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
@@ -190,6 +191,16 @@ const routes: Routes = [
                 data: {
                     permissions: {
                         only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
+            },
+                {
+                path: ':id',
+                component: PacienteDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO','PACIENTE' ]
                     }
                 }
             }
