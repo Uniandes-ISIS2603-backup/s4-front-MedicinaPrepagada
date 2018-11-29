@@ -1,36 +1,39 @@
+
 <div class="col-md-12">
     <div class="container-fluid">
-        <table class="table table-bordered">
+        <table class="table table-striped">
             <tr>
                 <th>Id</th>
-                <th>{{factura.idFactura}}</th>
+                <th class="font-weight-light">{{factura.idFactura}}</th>
             </tr>
             <tr>
                 <th>Id del paciente</th>
-                <th>{{factura.idCliente}}</th>
+                <th class="font-weight-light">{{factura.idCliente}}</th>
             </tr>
             <tr>
                 <th>Fecha</th>
-                <th>{{factura.date}}</th>
+                <th class="font-weight-light">{{factura.date}}</th>
             </tr>
             <tr>
                 <th>Valor</th>
-                <th>{{factura.valor}}</th>
+                <th class="font-weight-light">{{factura.valor}}</th>
             </tr>
              <tr>
                 <th>Concepto</th>
-                <th>{{factura.concepto}}</th>
+                <th class="font-weight-light">{{factura.concepto}}</th>
             </tr>
              <tr>
                 <th>Pagada</th>
-                <th>{{factura.pagada}}</th>
+                <th class="font-weight-light">{{factura.pagada}}</th>
             </tr>
             
              <td>
                  <button type="button" class="btn btn-primary" routerLink="/facturas/{{factura.idFactura}}/update"><span class="fa fa-pencil"></span></button>
-                  <button type="button" class="btn btn-primary" routerLink="/pacientes/{{factura.idCliente}}"><span class="fa fa-user"></span></button>
+                  <button type="button" class="btn btn-default" routerLink="/pacientes/{{factura.idCliente}}"><span class="fa fa-user"></span> Ver Paciente</button>
                  
              </td>
         </table>
     </div>
 </div>
+
+

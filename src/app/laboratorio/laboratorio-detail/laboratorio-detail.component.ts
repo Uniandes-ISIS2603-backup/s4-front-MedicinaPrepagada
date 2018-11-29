@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewContainerRef  } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {LaboratorioService} from '../laboratorio.service';
 import {Laboratorio} from '../laboratorio';
@@ -20,7 +20,13 @@ export class LaboratorioDetailComponent implements OnInit {
         private router: Router,
         private viewRef: ViewContainerRef,
         private toastrservice: ToastrService
-        ) {}
+        ){//This is added so we can refresh the view when one of the sedes in
+        //the "Other sedes" list is clicked
+        this.navigationSubscription = this.router.events.subscribe((e: any) => {
+            if (e instanceof NavigationEnd) {
+                this.ngOnInit();
+            }
+        }); }
     
     /**
     * The lab's id
@@ -28,6 +34,11 @@ export class LaboratorioDetailComponent implements OnInit {
     laboratorio_id: number;
     
     laboratorio: Laboratorio;
+    
+    navigationSubscription;
+    lat:number;
+     
+    lng:number;
    /**
     * The method which retrieves info of a lab
     */
@@ -74,6 +85,8 @@ export class LaboratorioDetailComponent implements OnInit {
         this.laboratorio_id = +this.route.snapshot.paramMap.get('id');
       this.laboratorio = new Laboratorio;
       this.getLaboratorio();
+      this.lat = this.laboratorio.latitud;
+      this.lng = this.laboratorio.longitud;
     }
 
 }

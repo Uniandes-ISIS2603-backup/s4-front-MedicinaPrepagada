@@ -29,6 +29,8 @@ import {FacturaEditComponent} from '../factura/factura-edit/factura-edit.compone
 
 import {CitaLaboratorioListComponent} from '../citalaboratorio/citalaboratorio-list/citalaboratorio-list.component';
 import {CitaLaboratorioDetailComponent} from '../citalaboratorio/citalaboratorio-detail/citalaboratorio-detail.component';
+import {CitaLaboratorioCreateComponent} from '../citalaboratorio/citalaboratorio-create/citalaboratorio-create.component';
+import {CitaLaboratorioEditComponent} from '../citalaboratorio/citalaboratorio-edit/citalaboratorio-edit.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {SedeListComponent} from '../sede/sede-list/sede-list.component';
 import {SedeDetailComponent} from '../sede/sede-detail/sede-detail.component';
@@ -331,12 +333,27 @@ const routes: Routes = [
                 }
             },
             {
+                path:'create',
+                component: CitaLaboratorioCreateComponent
+            },
+            {
                 path: ':id',
                 component:CitaLaboratorioDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
+            },
+            {
+                path:':id/update',
+                component:CitaLaboratorioEditComponent,
                  canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
                         only: ['ADMIN','MEDICO', 'PACIENTE' ]
+
                     }
                 }
             }
@@ -347,8 +364,13 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : LaboratorioListComponent
-                
+                component : LaboratorioListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path:'create',

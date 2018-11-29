@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Editar Cita Laboratorio</h2>
+        <br>
+        <form name="citaLaboratorio" (ngSubmit)="f.form.valid && updateCitaLaboratorio()" #f="ngForm" novalidate>
+           
+              
+            <div class="form-group">
+                <label  for="citaLaboratorioEspecialidad"><b>Especialidad</b></label>
+                <input type="text" name="citaLaboratorioEspecialidad" class="form-control" id="citaLaboratorioEspecialidad" [(ngModel)] = citaLaboratorio.especialidad
+                      #citaLaboratorioEspecialidad="ngModel" [ngClass]="{'is-valid': f.submitted && citaLaboratorio.especialidad.invalid}" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la especialidad</div>
+                </div>
+            </div>
+              
+            <div class="form-group">
+                <label for="citaLaboratorioFecha"><b>Fecha</b></label>
+                <input name="citaLaboratorioFecha" type = "text"  class="form-control" id="citaLaboratorioFecha" [(ngModel)]= citaLaboratorio.fecha
+                    #citaLaboratorioFecha="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLaboratorio.fecha.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la fecha</div>
+                </div>
+            </div>
+              
+            <div class="form-group">
+                <label for="citaLaboratorioComentarios"><b>Comentarios</b></label>
+                <input name="citaLaboratorioComentarios" type = "text"  class="form-control" id="citaLaboratorioComentarios" [(ngModel)]= citaLaboratorio.comentarios
+                    #citaLaboratorioComentarios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLaboratorio.comentarios.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hacen falta los comentarios</div>
+                </div>
+            </div>
+              
+               <div class="form-group">
+                <label for="citaLaboratorioRecomendaciones"><b>Recomendaciones</b></label>
+                <input name="citaLaboratorioRecomendaciones" type = "text"  class="form-control" id="citaLaboratorioRecomendaciones" [(ngModel)]= citaLaboratorio.recomendaciones
+                    #citaLaboratorioRecomendaciones="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLaboratorio.recomendaciones.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hacen falta las recomendaciones</div>
+                </div>
+            </div>
+              <div class="form-group">
+                    <label for="citaLaboratorioLaboratorios"><b>Laboratorios</b></label>
+                    <select class="custom-select" name="citaLaboratorioLaboratorios" id="citaLaboratorio" [(ngModel)]="citaLaboratorio.laboratorio"
+                        #citaLaboratorioLaboratorios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLaboratorio.laboratorio.invalid }"
+                        required>
+                        <option [value]="laboratorio.id" *ngFor="let laboratorio of laboratorios">id: {{laboratorio.id}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>No existe el laboratorio</div>
+                    </div>
+                </div>
+              
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Editar</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

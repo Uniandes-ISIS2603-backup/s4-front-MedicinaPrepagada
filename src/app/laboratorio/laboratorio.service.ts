@@ -58,4 +58,3 @@ export class LaboratorioService{
         return throwError(error.error.errorMessage);
     }
 }
-
