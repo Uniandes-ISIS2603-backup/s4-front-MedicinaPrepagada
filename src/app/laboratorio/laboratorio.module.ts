@@ -9,6 +9,7 @@ import { LaboratorioDetailComponent } from './laboratorio-detail/laboratorio-det
 import { LaboratorioCreateComponent } from './laboratorio-create/laboratorio-create.component';
 import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { LaboratorioEditComponent } from './laboratorio-edit/laboratorio-edit.component';
+import {AgmCoreModule} from '@agm/core'
 
 @NgModule({
   imports: [
@@ -16,7 +17,10 @@ import { LaboratorioEditComponent } from './laboratorio-edit/laboratorio-edit.co
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+          apiKey:'AIzaSyB6e8rof-WUMtAZd2ZfEmm1OBDQmjMDYUE'
+      })
   ],
   declarations: [LaboratorioListComponent, LaboratorioDetailComponent, LaboratorioCreateComponent, LaboratorioEditComponent],
   providers:[LaboratorioService],

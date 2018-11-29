@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import {LaboratorioService} from '../laboratorio.service';
 import {ToastrService} from 'ngx-toastr';
-import {ActivatedRoute} from '@angular/router/';
+import {ActivatedRoute, Router} from '@angular/router/';
 import { Laboratorio } from '../laboratorio';
 @Component({
   selector: 'app-laboratorio-edit',
@@ -14,7 +14,8 @@ export class LaboratorioEditComponent implements OnInit, OnChanges{
        
         private laboratorioService: LaboratorioService,
         private toastrService: ToastrService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private router:Router
     ) {}
 
     laboratorio: Laboratorio; 
@@ -53,7 +54,9 @@ export class LaboratorioEditComponent implements OnInit, OnChanges{
   }
 
     cancelEdition(): void {
-        this.cancel.emit();
+       this.toastrService.warning('El laboratorio no fue editado', 'Laboratorio edit');
+
+        this.router.navigate(['/laboratorios/list']);
     }
 
     ngOnInit() {

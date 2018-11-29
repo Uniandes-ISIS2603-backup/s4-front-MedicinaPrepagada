@@ -320,12 +320,27 @@ const routes: Routes = [
                 }
             },
             {
+                path:'create',
+                component: CitaLaboratorioCreateComponent
+            },
+            {
                 path: ':id',
                 component:CitaLaboratorioDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
+            },
+            {
+                path:':id/update',
+                component:CitaLaboratorioEditComponent,
                  canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
                         only: ['ADMIN','MEDICO', 'PACIENTE' ]
+
                     }
                 }
             }
@@ -336,8 +351,13 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : LaboratorioListComponent
-                
+                component : LaboratorioListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path:'create',

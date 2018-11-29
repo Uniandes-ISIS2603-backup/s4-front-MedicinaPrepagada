@@ -1,38 +1,43 @@
 <div class="col-md-12">
     <div class="container-fluid">
-        <table>
+        <table class ="table-striped">
             <tr>
                 <th>Id</th>
-                <th>{{laboratorio.id}}</th>
+                <th class="font-weight-light">{{laboratorio.id}}</th>
             </tr>
             <tr>
                 <th>Nombre</th>
-                <th>{{laboratorio.nombre}}</th>
+                <th class="font-weight-light">{{laboratorio.nombre}}</th>
             </tr>
             <tr>
                 <th>Direccion</th>
-                <th>{{laboratorio.direccion}}</th>
+                <th class="font-weight-light">{{laboratorio.direccion}}</th>
             </tr>
             <tr>
                 <th>Telefono</th>
-                <th>{{laboratorio.telefono}}</th>
+                <th class="font-weight-light">{{laboratorio.telefono}}</th>
             </tr>
              <tr>
-                <th>Horario</th>
-                <th>{{laboratorio.horarioAtencion}}</th>
+                <th>Horario de atencion</th>
+                <th class="font-weight-light">{{laboratorio.horarioAtencion}}</th>
             </tr>
              <tr>
-                <th>latitud</th>
-                <th>{{laboratorio.latitud}}</th>
+                <th>Latitud</th>
+                <th class="font-weight-light">{{laboratorio.latitud}}</th>
             </tr>
             <tr>
-                <th>longitud</th>
-                <th>{{laboratorio.longitud}}</th>
+                <th>Longitud</th>
+                <th class="font-weight-light">{{laboratorio.longitud}}</th>
             </tr>
              <td>
                   <button type="button" class="btn btn-primary" routerLink="/laboratorios/{{laboratorio.id}}/update"><span class="fa fa-pencil"></span></button>
-                    <button class="btn btn-danger" (click)="deleteLaboratorio(laboratorio.id)" routerLink="/laboratorios/list"><span class="fa fa-trash"></span></button>
+                    <button class="btn btn-danger" (click)="deleteLaboratorio(laboratorio.id)"><span class="fa fa-trash"></span></button>
              </td>
         </table>
+        <div class="col-md-6">
+                    <agm-map [latitude]=laboratorio.latitud [longitude]=laboratorio.longitud [zoom]=16>
+                    <agm-marker [latitude]=laboratorio.latitud [longitude]=laboratorio.longitud></agm-marker>
+                    </agm-map>
+                    </div>
     </div>
 </div>
