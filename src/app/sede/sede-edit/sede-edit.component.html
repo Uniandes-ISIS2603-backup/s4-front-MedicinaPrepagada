@@ -10,6 +10,11 @@
                 <input type="text" name="sedeNombre" class="form-control" id="sedeNombre" [(ngModel)] = sede.nombre
                        #sedeNombre="ngModel" [ngClass]="{'is-valid': f.submitted && sede.nombre.invalid}" required>     
             </div>
+              <div class="form-group">
+                <label for="imagen"><b>Imagen </b></label>
+                <input type="text" name="sedeImagen" class="form-control" id="sedeImagen" [(ngModel)] = sede.imagen
+                       #sedeImagen="ngModel" [ngClass]="{'is-valid': f.submitted && sede.imagen.invalid}" required>     
+            </div>
               
             <div class="form-group">
                 <label for="Direccion"><b>Direccion</b></label>

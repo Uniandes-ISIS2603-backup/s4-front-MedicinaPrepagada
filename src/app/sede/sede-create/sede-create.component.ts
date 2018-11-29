@@ -24,7 +24,9 @@ export class SedeCreateComponent implements OnInit {
     sede: Sede;
     
     
-    
+    /**
+     * Metodo que crea una nueva sede
+     */
     createSede(): Sede{
         this.sedeService.createSede(this.sede)
             .subscribe(sede => {
