@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import {CitaMedicaService} from '../cita-medica.service';
 import {CitaMedica} from '../cita-medica';
 import {PacienteService} from '../../paciente/paciente.service'
-import { PacienteBase } from '../../paciente/pacienteBase';
+import { Paciente } from '../../paciente/paciente';
 import {HorarioAtencionService} from '../../horario-atencion/horarioAtencion.service'
 import { HorarioAtencion } from '../../horario-atencion/horarioAtencion';
 
@@ -37,7 +37,7 @@ export class CitaMedicaCreateComponent implements OnInit {
   /**
    * Pacientes disponibles
    */
-  pacientes: PacienteBase[];
+  pacientes: Paciente[];
   
   /**
    * Horarios de atención disponibles
@@ -47,12 +47,12 @@ export class CitaMedicaCreateComponent implements OnInit {
   /**
    * atributo paciente seleccionado para el médico a crear
    */
-  pacienteAAtender: PacienteBase;
+  idPaciente: number;
   
   /**
    * atributo especialidad seleccionado para el médico a crear
    */
-  atributoHorario: HorarioAtencion;
+  idHorario: number;
     
   
   /**
@@ -72,14 +72,15 @@ export class CitaMedicaCreateComponent implements OnInit {
      * Obtiene las especialidades disponibles para crear un médico
      */
     getPacientes(): void {
-        this.citaMedicaService.getPacientes()
+        this.pacienteService.getPacientes()
             .subscribe(pacientes => {
                 this.pacientes = pacientes;
+                console.log(this.pacientes);
             }, err => {
                 this.toastrService.error(err, 'Error');
             });
+        
     }
-    
     
     /**
      * Obtiene las especialidades disponibles para crear un médico
@@ -98,34 +99,14 @@ export class CitaMedicaCreateComponent implements OnInit {
      * Crea una nueva cita médica
      */
     createCitaMedica(): void {
-            var listaPacientes = this.pacientes;
-            var listaHorarios = this.horariosAtencion;
-            for(let pacient of listaPacientes){
-                if(pacient.id = +(document.getElementById('citaPaciente') as HTMLInputElement).value){
-                    this.pacienteAAtender = pacient;
-                }
-            }
-            for(let hora of listaHorarios){
-                if(hora.id = +(document.getElementById('citaHorario') as HTMLInputElement).value){
-                    this.atributoHorario = hora;
-                }
-            }
-            console.log(this.pacienteAAtender);
-            var cita_create = {
-                idCitaMedica: this.citaMedica.idCitaMedica,
-                fecha: this.citaMedica.fecha,
-                comentarios: this.citaMedica.comentarios,
-                horarioAtencionAsignado: this.atributoHorario,
-                pacienteAAtender: this.pacienteAAtender
-            };    
-            this.citaMedicaService.createCitaMedica(cita_create)
-                .subscribe(citaMedica => {
-                    this.router.navigate(['/citasMedicas/' + citaMedica.idCitaMedica]);
-                    this.toastrService.success("The cita médica was successfully created", 'Cita médica creation');
-                }, err => {
-                    this.toastrService.error(err, 'Error');
-                });
-        
+            this.citaMedicaService.createCitaMedica(this.citaMedica, this.idPaciente, this.idHorario)
+            .subscribe(() => {
+                this.create.emit();
+                this.toastrService.success("La cita medica fue creado", "Creacion Cita");      
+        }, err =>{
+            this.toastrService.error(err, "Error");
+        }
+        );
     }
     
     /**
@@ -148,3 +129,4 @@ export class CitaMedicaCreateComponent implements OnInit {
   }
 
 }
+        

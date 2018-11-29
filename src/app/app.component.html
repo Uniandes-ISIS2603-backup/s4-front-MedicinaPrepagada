@@ -25,29 +25,25 @@
      
    
     <li class=""nav nav-item active>
-        <button class="btn btn-outline-primary" routerLink="/pacientes/list" id = "sel"><span class="fa fa-users"></span> Pacientes </button>
+        <button class="btn btn-outline-primary" *ngxPermissionsOnly="['ADMIN','MEDICO']" routerLink="/pacientes/list" id = "sel"><span class="fa fa-users"></span> Pacientes </button>
     </li>
     
     <li class=""nav nav-item active>
         <button class="btn btn-outline-primary" routerLink="/medicos/list" id = "sel"><span class="fa fa-user-md"></span>  Medicos</button>
     </li>
-    
-     <li>
+    <li class=""nav nav-item activ>
         <button class="btn btn-outline-primary" routerLink="/sedes/list" id = "sel"><span class="fa fa-hospital-o"></span> Sedes</button>   
     </li>
-      
-    <li class=""nav nav-item active>
-        <button class="btn btn-outline-primary" routerLink="/citasMedicas/list" id = "sel"><span class="fa fa-stethoscope"></span> Citas Médicas </button>
+    <li class=""nav nav-item activ>
+            <button class="btn btn-outline-primary"routerLink="/especialidades/list" id = "sel"><span class="fa fa-address-card"></span> Especialidades</button>
     </li>
-     
-     <li class=""nav nav-item active>
-        <button class="btn btn-outline-primary" *ngxPermissionsOnly="['ADMIN']" routerLink="/administradores/list" id="sel">Administradores</button>   
+    <li class=""nav nav-item activ>
+        <button class="btn btn-outline-primary"routerLink="/laboratorios/list" id = "sel"><span class="fa fa-flask"></span>Laboratorios</button>
     </li>
-    
-     <li>
-        <button class="btn btn-outline-primary" routerLink="/citalaboratorio/list" id = "sel"><span class="fa fa-calendar-check-o"></span>  Citas Laboratorio</button>
+    <li class=""nav nav-item activ>
+        <button class="btn btn-outline-primary" routerLink="/horariosAtencion/list" id = "sel"><span class="fa fa-handshake-o"></span>Horarios atención</button>
     </li>
-    
+
    <li class=""nav nav-item active>
         <div class="row">
   <div class="col">
@@ -56,14 +52,14 @@
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
         <button class="dropdown-item" routerLink="/farmacias/list">Farmacias</button>
         <button class="dropdown-item" routerLink="/medicamentos/list">Medicamentos</button>
-        <button class="dropdown-item"routerLink="/examenesMedicos/list">Exámenes médicos</button>
-        <button class="dropdown-item"routerLink="/especialidades/list"> Especialidades</button>
-        <button class="dropdown-item"routerLink="/laboratorios/list">Laboratorios</button>
-        <button class="dropdown-item"routerLink="/tarjetascredito/list"> Tarjetas de Credito</button>
-        <button class="dropdown-item"routerLink="/facturas/list"> Facturas</button>
-        <button class="dropdown-item"routerLink="/ordenesMedicas/list"> Ordenes médicas</button>
-        <button class="dropdown-item"routerLink="/historiasClinicas/list"> Historias clínicas</button>
-        <button class="dropdown-item"routerLink="/horariosAtencion/list"> Horarios atención</button>
+        <button class="dropdown-item" *ngxPermissionsOnly="['ADMIN','MEDICO','PACIENTE']"  routerLink="/examenesMedicos/list">Exámenes médicos</button>
+        <button class="dropdown-item" *ngxPermissionsOnly="['ADMIN']" routerLink="/administradores/list">Administradores</button>   
+        <button class="dropdown-item" *ngxPermissionsOnly="['ADMIN','PACIENTE']" routerLink="/tarjetascredito/list"> Tarjetas de Credito</button>
+        <button class="dropdown-item" *ngxPermissionsOnly="['ADMIN','PACIENTE']" routerLink="/facturas/list"> Facturas</button>
+        <button class="dropdown-item" *ngxPermissionsOnly="['ADMIN','MEDICO','PACIENTE']" routerLink="/ordenesMedicas/list"> Ordenes médicas</button>
+        <button class="dropdown-item" *ngxPermissionsOnly="['ADMIN','MEDICO','PACIENTE']" routerLink="/historiasClinicas/list"> Historias clínicas</button>
+        <button class="dropdown-item" *ngxPermissionsOnly="['ADMIN','MEDICO','PACIENTE']" routerLink="/citasMedicas/list"> Citas Médicas </button>
+        <button class="dropdown-item" *ngxPermissionsOnly="['ADMIN','MEDICO','PACIENTE']" routerLink="/citalaboratorio/list"> Citas Laboratorio</button>
 
       </div>
     </div>

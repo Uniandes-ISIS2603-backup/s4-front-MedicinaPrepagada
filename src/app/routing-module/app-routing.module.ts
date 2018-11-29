@@ -108,7 +108,7 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN','MEDICO']
+                        only: ['ADMIN','MEDICO','PACIENTE']
                     }
                 }
             },
@@ -128,7 +128,7 @@ const routes: Routes = [
               canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN','MEDICO' ]
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
                     }
                 }  
             },
@@ -138,7 +138,7 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN']
+                        only: ['ADMIN', 'PACIENTE']
                     }
                 }
             },
@@ -147,7 +147,7 @@ const routes: Routes = [
             canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN' ]
+                        only: ['ADMIN', 'PACIENTE' ]
                     }
                 }
             },
@@ -157,21 +157,39 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN','MEDICO' ]
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
                     }
                 }
             },
             {
                 path:':id/facturas',
-                component: PacienteFacturasComponent
+                component: PacienteFacturasComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path:':id/citasmedicas',
-                component: PacienteCitasmedicasComponent
+                component: PacienteCitasmedicasComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path:':id/historiasclinicas',
-                component: PacienteHistoriasclinicasComponent
+                component: PacienteHistoriasclinicasComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             }
             
         ]
@@ -182,20 +200,39 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : MedicamentoListComponent
+                 
             },
             {
                 path: ':id',
-                component: MedicamentoDetailComponent
+                component: MedicamentoDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             },
             {
                 path: ':id/farmacias',
-                component: MedicamentoFarmaciaComponent
+                component: MedicamentoFarmaciaComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             },
             { 
                 path:':id/farmacias/add',
-                component: MedicamentoFarmaciaAddComponent
+                component: MedicamentoFarmaciaAddComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'MEDICO' ]
+                    }
+                }
             }
         ]
     },
@@ -205,10 +242,17 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : FarmaciaListComponent
+                 
             },
             {
                 path: ':id',
-                component: FarmaciaDetailComponent
+                component: FarmaciaDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             }
         ]
@@ -218,21 +262,45 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : ExamenMedicoListComponent
+                component : ExamenMedicoListComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path: ':id',
-                component: ExamenMedicoDetailComponent
+                component: ExamenMedicoDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             },
             {
                 path: ':id/laboratorios',
-                component: ExamenMedicoLaboratorioComponent
+                component: ExamenMedicoLaboratorioComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             },
             { 
                 path:':id/laboratorios/add',
-                component: ExamenMedicoLaboratorioAddComponent
+                component: ExamenMedicoLaboratorioAddComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'MEDICO' ]
+                    }
+                }
             }
         ]
     },
@@ -241,11 +309,23 @@ const routes: Routes = [
         children:[
             {
                 path:'list',
-                component: CitaLaboratorioListComponent
+                component: CitaLaboratorioListComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path: ':id',
-                component:CitaLaboratorioDetailComponent
+                component:CitaLaboratorioDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             }
         ]
     },
@@ -255,18 +335,37 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : LaboratorioListComponent
+                
             },
             {
                 path:'create',
-                component: LaboratorioCreateComponent
+                component: LaboratorioCreateComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },
             {
                 path:':id',
-                component:LaboratorioDetailComponent
+                component:LaboratorioDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path:':id/update',
-                component:LaboratorioEditComponent
+                component:LaboratorioEditComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             }
         ]
     },
@@ -275,19 +374,43 @@ const routes: Routes = [
         children: [
             {
                 path:'list',
-                component: FacturaListComponent
+                component: FacturaListComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','PACIENTE' ]
+                    }
+                }
             },
             {
                 path:'add',
-                component: FacturaCreateComponent
+                component: FacturaCreateComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },
             {
                 path:':idFactura',
-                component:FacturaDetailComponent
+                component:FacturaDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path:':idFactura/update',
-                component:FacturaEditComponent
+                component:FacturaEditComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'PACIENTE' ]
+                    }
+                }
             }
         ]
     },
@@ -342,34 +465,78 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : SedeListComponent
+                component : SedeListComponent,
+                 canActivate: [NgxPermissionsGuard]
+                
             },{
                 path: 'add',
-                component: SedeCreateComponent
+                component: SedeCreateComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },
-            {
-                path: ':id',
-                component: SedeDetailComponent
-                
-            },
+            
             {
                 path: ':id/edit',
-                component: SedeEditComponent
+                component: SedeEditComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
                 
             },
             {
                 path: ':id/consultorios/add',
-                component: SedeAddConsultorioComponent
-                
-            },{
-                path: ':id/consultorios/:idConsultorio',
-                component: ConsultorioDetailComponent
+                component: SedeAddConsultorioComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
                 
             },{
                 path: ':id/consultorios/update/:idConsultorio',
                 component: ConsultorioEditComponent
                 
-            }
+            }, 
+            {
+                path: ':id/consultorios/:idConsultorio',
+                component: ConsultorioDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
+                
+            },{
+                path: ':id/consultorios/update/:idConsultorio',
+                component: ConsultorioEditComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
+                
+            },
+            {
+                path: ':id',
+                component: SedeDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
+                
+            },
         ]
     },
     {
@@ -378,14 +545,27 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: HorarioAtencionListComponent
+                
             },
              {
                 path: 'add',
-                 component: HorarioAtencionCreateComponent
+                 component: HorarioAtencionCreateComponent,
+                  canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO' ]
+                    }
+                }
             },
             {
                 path: ':id',
-                component: HorarioAtencionDetailComponent
+                component: HorarioAtencionDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             }
         ]
@@ -396,19 +576,38 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : MedicoListComponent
+                
             },
             {
                 path:'create',
-                component: MedicoCreateComponent
+                component: MedicoCreateComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },
             {
                 path: ':id',
-                component: MedicoDetailComponent
+                component: MedicoDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
 //                runGuardsAndResolvers: 'always'
             },
             {
               path: ':id/edit',
-              component: MedicoEditComponent  
+              component: MedicoEditComponent  ,
+               canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             }
         ]
     },
@@ -418,19 +617,38 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : EspecialidadListComponent
+                 
             },
             {
                 path:'create',
-                component: EspecialidadCreateComponent
+                component: EspecialidadCreateComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },
             {
                 path: ':id',
-                component: EspecialidadDetailComponent
+                component: EspecialidadDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             },
             {
               path: ':id/edit',
-              component: EspecialidadEditComponent  
+              component: EspecialidadEditComponent  ,
+               canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             }
         ]
     },
@@ -439,20 +657,44 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : CitaMedicaListComponent
+                component : CitaMedicaListComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path:'create',
-                component: CitaMedicaCreateComponent
+                component: CitaMedicaCreateComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },
             {
                 path: ':id',
-                component: CitaMedicaDetailComponent
+                component: CitaMedicaDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             },
             {
               path: ':id/edit',
-              component: CitaMedicaEditComponent  
+              component: CitaMedicaEditComponent  ,
+               canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             }
         ]
     },
@@ -461,24 +703,54 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : HistoriaClinicaListComponent
+                component : HistoriaClinicaListComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path:'create',
-                component: HistoriaClinicaCreateComponent
+                component: HistoriaClinicaCreateComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },
             {
                 path: ':id',
-                component: HistoriaClinicaDetailComponent
+                component: HistoriaClinicaDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             },
             {
                 path: ':id/edit',
-                component: HistoriaClinicaEditComponent
+                component: HistoriaClinicaEditComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },
             {
                 path:':id/historiasclinicas',
-                component: HistoriasOrdenMedicaComponent
+                component: HistoriasOrdenMedicaComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             }
             
         ]
@@ -488,20 +760,44 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : OrdenMedicaListComponent
+                component : OrdenMedicaListComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path:'create',
-                component: OrdenMedicaCreateComponent
+                component: OrdenMedicaCreateComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             },   
             {
                 path: ':id',
-                component: OrdenMedicaDetailComponent
+                component: OrdenMedicaDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
                 
             },
             {
                 path: ':id/edit',
-                component: OrdenMedicaEditComponent
+                component: OrdenMedicaEditComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN' ]
+                    }
+                }
             }
         ]
     },
@@ -510,11 +806,23 @@ const routes: Routes = [
         children:[
             {
                 path:'list',
-                component: TarjetaCreditoListComponent
+                component: TarjetaCreditoListComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'PACIENTE' ]
+                    }
+                }
             },
             {
                 path: ':id',
-                component: TarjetaCreditoDetailComponent
+                component: TarjetaCreditoDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'PACIENTE' ]
+                    }
+                }
             }
         ]
     }, 

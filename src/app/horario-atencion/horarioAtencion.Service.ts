@@ -34,6 +34,15 @@ export class HorarioAtencionService{
         return this.http.post<HorarioAtencion>(API_URL + horariosAtencion, horarioAtencion).catch(err => this.handleError(err));
     }
 
+         /**
+    * Deletes a sede
+    * @param sedeId The sede's id
+    * @returns True if the sede was deleted, false otherwise
+    */
+    deleteHorarioAtencion(horarioAtencionId): Observable<HorarioAtencion> {
+        return this.http.delete<HorarioAtencion>(API_URL + horariosAtencion + '/' + horarioAtencionId);
+    }
+    
     private handleError(error: any){
         return throwError(error.error.errorMessage);
     }

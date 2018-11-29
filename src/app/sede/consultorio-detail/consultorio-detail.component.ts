@@ -26,7 +26,7 @@ export class ConsultorioDetailComponent implements OnInit {
                     private router: Router,
                 private toastrservice: ToastrService) { }
 
-    consultorioDetail: ConsultorioDetail;
+    consultorioDetail: Consultorio;
     
     consultorio_id: number;
   
