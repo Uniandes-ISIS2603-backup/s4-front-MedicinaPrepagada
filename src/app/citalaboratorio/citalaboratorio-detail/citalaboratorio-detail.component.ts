@@ -22,10 +22,17 @@ export class CitaLaboratorioDetailComponent implements OnInit {
         private toastrservice: ToastrService
         ) {}
         
+    //Objeto cita laboratorio
     citaLaboratorio: CitaLaboratorio;
+    //Laboratorio donde sera la cita
     laboratorio:Laboratorio;
+    //id de la cita
     citaLaboratorio_id: number;
     
+    
+    /**
+     * Metodo para obtener la citaLaboratorio del servicio
+     */
     getCitaLaboratorio(): void 
         {
         this.citaLabService.getCitaLaboratorio(this.citaLaboratorio_id)
@@ -36,6 +43,9 @@ export class CitaLaboratorioDetailComponent implements OnInit {
             
         );
     }
+    /**
+     * Metodo para borrar una cita
+     */
     deleteCitaLaboratorio(): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Borrar una cita laboratorio',
@@ -59,6 +69,10 @@ export class CitaLaboratorioDetailComponent implements OnInit {
             ]
         });
     }
+    
+    /**
+     * Metodo para obtener el laboratorio de la cita
+     */
     getLaboratorioFromCita ():void
     {
         this.citaLabService.getLaboratorioFromCita(this.citaLaboratorio_id)

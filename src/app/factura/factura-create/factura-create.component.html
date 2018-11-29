@@ -32,7 +32,7 @@
             </div>
               
             <div class="form-group">
-                <label for="facturaPagada"><b>Pagada(0 para no pagada, 1 para pagada.)</b></label>
+                <label for="facturaPagada"><b>Pagada</b></label>
                 <input type="text" name="facturaPagada" class="form-control" id="facturaPagada" [(ngModel)]="factura.pagada"
                     #facturaPagada="ngModel" [ngClass]="{ 'is-invalid': f.submitted && facturaPagada.invalid }" required>
                 <div class="invalid-feedback">

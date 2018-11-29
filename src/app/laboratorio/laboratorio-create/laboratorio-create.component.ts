@@ -21,6 +21,9 @@ export class LaboratorioCreateComponent implements OnInit {
     
     @Output() create = new EventEmitter();
     
+    /**
+     * Metodo para crear un laboratorio
+     */
     createLaboratorio(): void{
         this.laboratorioService.createLaboratorio(this.laboratorio)
             .subscribe(() => {
@@ -32,6 +35,9 @@ export class LaboratorioCreateComponent implements OnInit {
         );
     }
     
+    /**
+     * Metodo para cancelar la creacion del laboratorio
+     */
     cancelCreation(): void {
        this.toastr.warning('El lab no fue creado', 'Lab creation');
 

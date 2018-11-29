@@ -17,11 +17,14 @@ export class CitaLaboratorioCreateComponent implements OnInit {
                 private toastr: ToastrService, 
                 private router: Router
     ) { }
-    
+    //Objeto cita lab
     citaLab: CitaLaboratorio;
     
+    //lista de laboratorios
     laboratorios: Laboratorio [];
     
+    
+    //laboratorio escogido para la cita
     atributoLab: Laboratorio;
     
     @Output() cancel = new EventEmitter();
@@ -40,6 +43,9 @@ export class CitaLaboratorioCreateComponent implements OnInit {
             });
     }
 
+    /**
+     * Crea una cita de laboratorio
+     */
     createCitaLaboratorio(): void{
         
         var listaLabs = this.laboratorios;

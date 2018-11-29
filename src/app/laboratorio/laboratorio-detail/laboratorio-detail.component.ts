@@ -35,7 +35,12 @@ export class LaboratorioDetailComponent implements OnInit {
     
     laboratorio: Laboratorio;
     
+    /**
+    * The suscription which helps to know when a new sede
+    * needs to be loaded
+    */
     navigationSubscription;
+    
     lat:number;
      
     lng:number;
@@ -52,6 +57,9 @@ export class LaboratorioDetailComponent implements OnInit {
             
         );
     }
+    /**
+     * Metodo para borrar un laboratorio
+     */
     deleteLaboratorio(): void {
         this.modalDialogService.openDialog(this.viewRef, {
             title: 'Borrar un laboratorio',

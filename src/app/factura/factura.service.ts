@@ -35,9 +35,15 @@ export class FacturaService{
         return this.http.get<Factura[]> (API_URL + facturas);
     }
     
+    /**
+     * Crea una factura 
+     */
     createFactura(factura): Observable<Factura>{
         return this.http.post<Factura>(API_URL + facturas, factura).catch(err => this.handleError(err));
     }
+    /**
+     * Actualiza una factura
+     */
     updateFactura(factura): Observable<Factura> {
         return this.http.put<Factura>(API_URL + facturas + '/' + factura.idFactura, factura);
     }
