@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 import { IngresoService } from '../ingreso.service';
 import {Usuario} from '../usuario';
 import { ToastrService } from 'ngx-toastr';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-ingreso-register',
@@ -21,6 +22,7 @@ export class RegisterComponent {
    * Constructor de RegisterComponent
    */ 
     constructor(
+        private router: Router,
         private userService: IngresoService,
         private toastrService: ToastrService) { }
 
@@ -49,6 +51,6 @@ export class RegisterComponent {
     ngOnInit() 
     {
         this.user = new Usuario();
-        this.roles = ['Administrador', 'Paciente', 'Medico'];
+        this.roles = [ 'Paciente'];
     }
 }
