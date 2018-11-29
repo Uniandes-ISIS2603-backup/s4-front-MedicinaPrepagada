@@ -103,6 +103,13 @@ export class PacienteService{
 
     }
     
+    /**
+     * Le crea una cita medica a un paciente
+     */
+    createCitaMedicaPacinte(pacienteId, horarioId, citaMedica):Observable<Boolean>{
+        return this.http.post<Boolean>(API_URL + '/citaMedica/' + pacienteId + '/' + horarioId, citaMedica).catch(err => this.handleError(err));
+    }
+    
     
     
     /**
