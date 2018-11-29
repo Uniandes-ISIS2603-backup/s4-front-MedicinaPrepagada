@@ -16,8 +16,11 @@
                     <td routerLink="/horariosAtencion/{{horarioAtencion.id}}"><span id ="idHorarioAtencoon">{{horarioAtencion.id}}</span></td>
                     <td routerLink="/horariosAtencion/{{horarioAtencion.id}}">{{horarioAtencion.fechaInicio}}</td>
                     <td routerLink="/horariosAtencion/{{horarioAtencion.id}}">{{horarioAtencion.fechaFin}}</td>
-                 <td >
-                    <button class="btn btn-danger"   (click)="deleteHorarioAtencion(horarioAtencion.id)"><span class="fa fa-trash"></span> Eliminar</button>
+                    <td >
+                    <button class="btn btn-primary" routerLink= "/horariosAtencion/{{horarioAtencion.id}}/edit"><span class="fa fa-pencil"></span></button>
+                </td>
+                 <td>
+                    <button class="btn btn-danger" (click)="deleteHorarioAtencion(horarioAtencion.id)"><span class="fa fa-trash"></span> </button>
                 </td>
                 </tr>
             </tbody>
