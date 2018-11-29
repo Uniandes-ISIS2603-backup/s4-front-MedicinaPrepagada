@@ -24,6 +24,9 @@ export class LaboratorioEditComponent implements OnInit, OnChanges{
     @Output() cancel = new EventEmitter();
     @Output() update = new EventEmitter();
     
+    /**
+     * Metodo para obtener el laboratorio
+     */
      getLaboratorio():void{
       this.laboratorioService.getLaboratorio(this.laboratorio_id)
           .subscribe(lab => {this.laboratorio = lab;
@@ -32,7 +35,11 @@ export class LaboratorioEditComponent implements OnInit, OnChanges{
               this.toastrService.error(err, "Error");
           });
   }
-
+  
+  
+  /**
+   * Metodo para actualizar un laboratorio
+   */
     updateLaboratorio():void{
       var lab_edit={
           id: this.laboratorio.id,
@@ -52,7 +59,10 @@ export class LaboratorioEditComponent implements OnInit, OnChanges{
           this.toastrService.error(err, "Error");
       });
   }
-
+  
+  /**
+   * Metodo para cancelar la edicion
+   */
     cancelEdition(): void {
        this.toastrService.warning('El laboratorio no fue editado', 'Laboratorio edit');
 

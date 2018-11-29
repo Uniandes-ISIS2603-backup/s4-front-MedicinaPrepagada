@@ -19,10 +19,15 @@ export class FacturaDetailComponent implements OnInit {
         private toastrservice: ToastrService
         ) {}
         
+    //Objeto factura
     factura: Factura;
     
+    //Id de la factura
     factura_id: number;
     
+    /**
+     * Metodo para obtener la factura 
+     */
     getFactura(): void 
         {
         this.facturaService.getFactura(this.factura_id)

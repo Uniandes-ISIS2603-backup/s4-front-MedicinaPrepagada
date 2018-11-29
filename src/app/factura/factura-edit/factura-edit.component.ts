@@ -18,12 +18,18 @@ export class FacturaEditComponent implements OnInit, OnChanges{
         private route: ActivatedRoute
     ) {}
 
-    factura: Factura; 
+    //objeto factura
+    factura: Factura;
+    
+    //Id factura 
     factura_id:number;
     
     @Output() cancel = new EventEmitter();
     @Output() update = new EventEmitter();
     
+    /**
+     * Metodo para obtener la factura
+     */
     getFactura():void{
       this.facturaService.getFactura(this.factura_id)
           .subscribe(factura => {this.factura = factura;
@@ -33,6 +39,9 @@ export class FacturaEditComponent implements OnInit, OnChanges{
           });
   }
 
+    /**
+     * Metodo para actualizar una factura
+     */
     updateFactura():void{
       var factura_edit={
           idFactura: this.factura.idFactura,
@@ -51,7 +60,9 @@ export class FacturaEditComponent implements OnInit, OnChanges{
           this.toastrService.error(err, "Error");
       });
   }
-
+    /**
+     * Metodo para cancelar la edicion
+     */
     cancelEdition(): void {
         this.cancel.emit();
     }

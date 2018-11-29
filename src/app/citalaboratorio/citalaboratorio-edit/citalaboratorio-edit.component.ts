@@ -20,16 +20,26 @@ export class CitaLaboratorioEditComponent implements OnInit, OnChanges{
         private route: ActivatedRoute,
         private router: Router
     ) {}
-
+    //Laboratorio de la cita
     laboratorio:Laboratorio;
+    
+    //Lista de labs existentes
     laboratorios : Laboratorio[];
+    
+    //citaLab
     citaLaboratorio: CitaLaboratorio; 
+    
+    //Laboratorio elejido para la cita
     atributoLab:Laboratorio;
+    
     @Input() citaLaboratorio_id:number;
     
     @Output() cancel = new EventEmitter();
     @Output() update = new EventEmitter();
     
+    /**
+     * Metodo para obtener el lab del servicio
+     */
      getCitaLaboratorio():void{
       this.citaLaboratorioService.getCitaLaboratorio(this.citaLaboratorio_id)
           .subscribe(citalab => {this.citaLaboratorio = citalab;
@@ -51,6 +61,9 @@ export class CitaLaboratorioEditComponent implements OnInit, OnChanges{
             });
     }
     
+    /**
+     * Metodo para actualizar la cita medica
+     */
     updateCitaLaboratorio():void{
         
         var listaLabs = this.laboratorios;
@@ -78,6 +91,9 @@ export class CitaLaboratorioEditComponent implements OnInit, OnChanges{
       });
   }
 
+/**
+ * Metodo para cancelar la edicion
+ */
     cancelEdition(): void {
        this.toastrService.warning('La cita no fue editada', 'CitaLab edit');
 

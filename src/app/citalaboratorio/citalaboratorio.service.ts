@@ -30,6 +30,9 @@ export class CitaLaboratorioService{
         return this.http.get<CitaLaboratorio[]> (API_URL + citaslaboratorio);
     }
     
+    /**
+     * Obtiene el lab de la cita
+     */
     getLaboratorioFromCita (citaLabId): Observable<Laboratorio>
     {
         return this.http.get<Laboratorio>(API_URL + citaslaboratorio + '/' +citaLabId+ '/laboratorio' ).catch(err => this.handleError(err));
@@ -44,15 +47,21 @@ export class CitaLaboratorioService{
         return this.http.delete<CitaLaboratorio>(API_URL + citaslaboratorio + '/' + citalaboratorioId);
     }
     
+    /**
+     * Metodo para actualizar la cita laboratorio
+     */
     updateCitaLaboratorio(citalaboratorio): Observable<CitaLaboratorio> {
         return this.http.put<CitaLaboratorio>(API_URL + citaslaboratorio + '/' + citalaboratorio.id, citalaboratorio);
     }
+    /**
+     * Metodo para crear una cita laboratorio
+     */
     createCitaLaboratorio(citalaboratorio): Observable<CitaLaboratorio>{
         return this.http.post<CitaLaboratorio>(API_URL + citaslaboratorio, citalaboratorio).catch(err => this.handleError(err));
     }
     /**
     * Returns the Observable object containing the laboratorio retrieved from the API
-    * @returns Laboratorio
+    * @returns CitaLaboratorio
     */
     getCitaLaboratorio(citaLabId): Observable<CitaLaboratorio>
     {

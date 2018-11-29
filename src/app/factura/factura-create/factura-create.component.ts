@@ -13,13 +13,16 @@ export class FacturaCreateComponent implements OnInit {
     constructor(private facturaService: FacturaService,
                 private toastr: ToastrService
     ) { }
-    
+    //Objeto factura
     factura: Factura;
     
     @Output() cancel = new EventEmitter();
     
     @Output() create = new EventEmitter();
     
+    /**
+     * Metodo para crear una factura
+     */
     createFactura(): void{
         this.facturaService.createFactura(this.factura)
             .subscribe(() => {
@@ -30,7 +33,9 @@ export class FacturaCreateComponent implements OnInit {
         }
         );
     }
-    
+    /**
+     * Metodo para cancelar la creacion
+     */
     cancelCreation() : void{
         this.cancel.emit();
     }
