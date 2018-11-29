@@ -51,7 +51,7 @@ export class SedeConsultorioComponent implements OnInit {
                     onAction: () => {
                         this.sedeService.deleteConsultorio(this.sede_id, consultorio_Id ).subscribe(sede => {
                             this.toastrservice.success("El consultorio fue borrado  ", "Consultorio Eliminada");
-                            //this.router.navigate(['sedes/list']);
+                            this.router.navigate(['sedes/' + this.sede_id]);
                         }, err => {
                             this.toastrservice.error(err, "No fue posible eliminar el consultorio");
                         });
