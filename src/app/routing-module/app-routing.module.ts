@@ -201,13 +201,8 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : MedicamentoListComponent,
-                 canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
-                    }
-                }
+                component : MedicamentoListComponent
+                 
             },
             {
                 path: ':id',
@@ -237,7 +232,7 @@ const routes: Routes = [
                  canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN' ]
+                        only: ['ADMIN', 'MEDICO' ]
                     }
                 }
             }
@@ -248,13 +243,8 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : FarmaciaListComponent,
-                 canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
-                    }
-                }
+                component : FarmaciaListComponent
+                 
             },
             {
                 path: ':id',
@@ -310,7 +300,7 @@ const routes: Routes = [
                  canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN' ]
+                        only: ['ADMIN', 'MEDICO' ]
                     }
                 }
             }
@@ -346,13 +336,8 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : LaboratorioListComponent,
-                 canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
-                    }
-                }
+                component : LaboratorioListComponent
+                
             },
             {
                 path:'create',
@@ -483,12 +468,8 @@ const routes: Routes = [
             {
                 path: 'list',
                 component : SedeListComponent,
-                 canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
-                    }
-                }
+                 canActivate: [NgxPermissionsGuard]
+                
             },{
                 path: 'add',
                 component: SedeCreateComponent,
@@ -565,13 +546,8 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component: HorarioAtencionListComponent,
-                 canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
-                    }
-                }
+                component: HorarioAtencionListComponent
+                
             },
              {
                 path: 'add',
@@ -611,13 +587,8 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : MedicoListComponent,
-                 canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
-                    }
-                }
+                component : MedicoListComponent
+                
             },
             {
                 path:'create',
@@ -657,13 +628,8 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component : EspecialidadListComponent,
-                 canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
-                    }
-                }
+                component : EspecialidadListComponent
+                 
             },
             {
                 path:'create',

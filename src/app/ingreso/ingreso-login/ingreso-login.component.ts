@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit
    * Metodo para verificar las credenciales del usuario
    */ 
     performLogin():void{
-                if(this.user.contrasena != this.usuario.contrasena){
+                if(this.user.contrasena != this.usuario.contrasena ){
             this.toasteservice.error("La contraseña es incorrecta");
             console.log('mala contrasena')
         }else{
