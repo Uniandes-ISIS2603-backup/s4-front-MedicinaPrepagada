@@ -36,6 +36,8 @@ import {SedeCreateComponent} from '../sede/sede-create/sede-create.component';
 import {HorarioAtencionListComponent} from '../horario-atencion/horario-atencion-list/horario-atencion-list.component';
 import {HorarioAtencionDetailComponent} from '../horario-atencion/horario-atencion-detail/horario-atencion-detail.component';
 import {HorarioAtencionCreateComponent} from '../horario-atencion/horario-atencion-create/horario-atencion-create.component';
+import {HorarioAtencionEditComponent} from '../horario-atencion/horario-atencion-edit/horario-atencion-edit.component';
+
 import {SedeAddConsultorioComponent} from '../sede/sede-add-consultorio/sede-add-consultorio.component';
 import {SedeEditComponent} from '../sede/sede-edit/sede-edit.component';
 import {ConsultorioDetailComponent} from '../sede/consultorio-detail/consultorio-detail.component';
@@ -550,6 +552,16 @@ const routes: Routes = [
              {
                 path: 'add',
                  component: HorarioAtencionCreateComponent,
+                  canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO' ]
+                    }
+                }
+            },
+             {
+                path: ':id/edit',
+                 component: HorarioAtencionEditComponent,
                   canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
