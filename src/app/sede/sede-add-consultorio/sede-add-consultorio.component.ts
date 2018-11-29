@@ -79,6 +79,7 @@ export class SedeAddConsultorioComponent implements OnInit {
             .subscribe(() => {
                 consultorioForm.resetForm();
                 this.create.emit();
+                this.router.navigate(['/sedes/' + this.sede_id]);
                 this.toastr.success("The consultorio was successfully created", 'Consultorio added');
             }, err => {
                 this.toastr.error(err, 'Error');
@@ -89,6 +90,7 @@ export class SedeAddConsultorioComponent implements OnInit {
     
     cancelCreation() : void{
         this.cancel.emit();
+        this.router.navigate(['/sedes/' + this.sede_id]);
     }
         
   ngOnInit() {

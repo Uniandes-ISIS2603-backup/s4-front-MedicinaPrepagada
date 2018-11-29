@@ -497,17 +497,7 @@ const routes: Routes = [
                     }
                 }
             },
-            {
-                path: ':id',
-                component: SedeDetailComponent,
-                 canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
-                    }
-                }
-                
-            },
+            
             {
                 path: ':id/edit',
                 component: SedeEditComponent,
@@ -530,6 +520,11 @@ const routes: Routes = [
                 }
                 
             },{
+                path: ':id/consultorios/update/:idConsultorio',
+                component: ConsultorioEditComponent
+                
+            }, 
+            {
                 path: ':id/consultorios/:idConsultorio',
                 component: ConsultorioDetailComponent,
                  canActivate: [NgxPermissionsGuard],
@@ -549,7 +544,18 @@ const routes: Routes = [
                     }
                 }
                 
-            }
+            },
+            {
+                path: ':id',
+                component: SedeDetailComponent,
+                 canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','MEDICO', 'PACIENTE' ]
+                    }
+                }
+                
+            },
         ]
     },
     {

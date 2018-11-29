@@ -9,11 +9,11 @@
             <div class="row">
                              
 
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <div class="row">
-                        <div class="col-md-3 text-center">
+                        <div class="col-md-12 text-center">
                             <div class="thumb">
-                                 <img class="img-fluid" src="{{sedeDetail.image}}"/>
+                                 <img class="img-fluid" src="{{sedeDetail.imagen}}" style="width:800px;height:600px;" />
                             </div>
                         </div>                                               
                     </div>
@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="col-md-3">
                              
-                             <button class="btn btn-success" routerLink="/sedes/{{sedeDetail.id}}/consultorios/add">Crear Consultorio (todavia no sirvo)</button>
+                             <button class="btn btn-success" routerLink="/sedes/{{sedeDetail.id}}/consultorios/add">Crear Consultorio</button>
    
                                 
                              <button [ngClass]="{ 'btn-success': !showConsultorios, 'btn-primary': showConsultorios }" type="button" class="btn"
