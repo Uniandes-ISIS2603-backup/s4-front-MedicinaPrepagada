@@ -22,10 +22,11 @@ export class ConsultorioEditComponent implements OnInit {
     * @param authorService The authors' services provider
     * @param toastrService The toastr to show messages to the user
     */
-  constructor( private sedeService: SedeService,private especialidadService: EspecialidadService,
-                      private router: Router,    
+  constructor( private sedeService: SedeService,
+                private especialidadService: EspecialidadService,
+                private router: Router,    
                 private route: ActivatedRoute,
-        private toastrService: ToastrService,) { }
+                private toastrService: ToastrService,) { }
 
         sede_id: number;
         consultorio_id:number;
