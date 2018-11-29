@@ -15,20 +15,37 @@ import {Router} from '@angular/router';
     templateUrl: './administrador-create.component.html',
     styleUrls: ['./administrador-create.component.css']
 })
-export class AdministradorCreateComponent implements OnInit {
-
-    constructor(
+export class AdministradorCreateComponent implements OnInit 
+{
+    /**
+     * Constructor de AdministradorCreateComponent
+    */
+     
+    constructor
+    (
         private administradorService: AdministradorService,
         private toastr: ToastrService, 
         private router: Router
     ) { }
 
+    /**
+     * Atributo de tipo Administrador
+    */
     administrador: Administrador;
 
+    /**
+     * Output para cancelar la creacion
+    */
     @Output() cancel = new EventEmitter();
 
+    /**
+     * Output para crear el administrador
+    */
     @Output() create = new EventEmitter();
 
+    /**
+     * Crea el administrador
+    */
      createAdministrador(): void {
        
         this.administradorService.createAdministrador(this.administrador)
@@ -42,10 +59,16 @@ export class AdministradorCreateComponent implements OnInit {
         );
     }
 
+    /**
+     * Cancela la creacion del administrador
+    */
     cancelCreation(): void {
         this.cancel.emit();
     }
 
+    /**
+     * Metodo para inicializar el componenete
+    */
     ngOnInit() {
         this.administrador = new Administrador();
     }

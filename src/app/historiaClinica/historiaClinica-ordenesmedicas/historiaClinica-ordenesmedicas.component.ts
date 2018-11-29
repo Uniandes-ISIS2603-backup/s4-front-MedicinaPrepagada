@@ -20,17 +20,26 @@ import {OrdenMedica} from '../../ordenMedica/ordenMedica';
 export class HistoriasOrdenMedicaComponent implements OnInit {
 
   /**
-   * constructor del componnete
+   * constructor del HistoriasOrdenMedicaComponent
    */
   constructor(
       private histService: HistoriaClinicaService,
       private route: ActivatedRoute,
       private toastr: ToastrService) { }
       
+   /**
+   * Atributo para modelar el identificador de una historia clinica
+   */  
     historia_id: number;
-      
+    
+    /**
+   * Lista de ordnenes medicas
+   */  
     ordenesmedicas: OrdenMedica[];
     
+    /**
+   * Metodo para obetenr las ordenes medicas de una historia clinica
+   */  
     getOrdenesMedicasHistoriaClinica(): void
     {
         this.histService.getOrdenesHistoriaClinica(this.historia_id)
@@ -39,6 +48,9 @@ export class HistoriasOrdenMedicaComponent implements OnInit {
     }
    
 
+    /**
+   * Metodo para inicializar el componente
+   */  
   ngOnInit() {
       this.historia_id = +this.route.snapshot.paramMap.get('id');
       this.ordenesmedicas = [];

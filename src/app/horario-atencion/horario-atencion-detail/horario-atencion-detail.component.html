@@ -3,16 +3,26 @@
     <div class="container-fluid">
         <table>
             <tr>
-                <th>Id</th>
+                <th>Id: </th>
                 <th>{{horarioAtencion.id}}</th>
             </tr>
             <tr>
-                <th>Fecha de Inicio</th>
-                <th>{{horarioAtencion.fechaInicio}}</th>
+                <th>Fecha de Inicio: </th>
+                <td>{{horarioAtencion.fechaInicio}}</td>
             </tr>
             <tr>
-                <th>Fecha de Fin</th>
-                <th>{{horarioAtencion.fechaFin}}</th>
+                <th>Fecha de Fin: </th>
+                <td>{{horarioAtencion.fechaFin}}</td>
+            </tr>
+            <tr>
+                <th>Consultorio: </th>
+                <td>
+            <tr><label>Edificio: {{horarioAtencion.consultorio.edificio}} </label> </tr>
+               </tr>
+
+            <tr routerLink="/medicos/{{horarioAtencion.medico.idMedico}}" >
+                <th >Medico:  </th>
+                <td> {{horarioAtencion.medico.nombre}} </td>
             </tr>
            
         </table>

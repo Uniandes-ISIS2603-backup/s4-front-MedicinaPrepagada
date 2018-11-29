@@ -16,22 +16,37 @@ import {Administrador} from '../administrador';
 
 export class AdministradorListComponent implements OnInit 
 {
+    /**
+     * Constructor de AdministradorListComponent
+    */ 
     constructor(
     private administradorService: AdministradorService) {}
     
+    /**
+     * Lista de administradores
+    */ 
     administradores: Administrador[];
     
+    /**
+     * Atributo del identificador del adminsitrador
+    */ 
     admi_id: number;
     
+     /**
+     * Metodo para obenter los administradores
+    */ 
     getAdministradores(): void 
     {
         this.administradorService.getAdministradores()
             .subscribe(administradores => this.administradores = administradores);
     }
     
-  ngOnInit() 
-  {
-      this.getAdministradores();
-  }
+     /**
+     * Metodo para inicializar el componente
+    */ 
+    ngOnInit() 
+    {
+        this.getAdministradores();
+    }
 }
 

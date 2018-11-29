@@ -17,17 +17,32 @@ import {Router} from '@angular/router';
 })
 export class OrdenMedicaCreateComponent implements OnInit {
 
+   /**
+   * Constructor de OrdenMedicaCreateComponent
+   */  
     constructor(private ordenMedicaService: OrdenMedicaService,
                 private toastr: ToastrService, 
                 private router: Router
     ) { }
     
+    /**
+   * Atributo de tipo Orden Medica
+   */  
     ordenMedica: OrdenMedica;
     
+    /**
+   * Output para cancelar la creacion de una orden medica
+   */  
     @Output() cancel = new EventEmitter();
     
+    /**
+   * Output para crear una orden medica
+   */  
     @Output() create = new EventEmitter();
     
+    /**
+   * Metodo para crear una orden medica
+   */  
     createOrdenMedica(): void
         {
         this.ordenMedicaService.createOrdenMedica(this.ordenMedica)
@@ -41,10 +56,16 @@ export class OrdenMedicaCreateComponent implements OnInit {
         );
     }
     
+    /**
+   * Metodo para cancelar la creacion de una ordne medica
+   */  
     cancelCreation() : void{
         this.cancel.emit();
     }
 
+   /**
+   * Metodo para inicializar el componente
+   */  
   ngOnInit() {
       this.ordenMedica = new OrdenMedica();
   }
