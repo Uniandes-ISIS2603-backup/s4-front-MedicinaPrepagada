@@ -1,6 +1,7 @@
 import {Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import {LaboratorioService} from '../laboratorio.service';
+import {ActivatedRoute, Router} from '@angular/router/';
 import {Laboratorio} from '../laboratorio';
 @Component({
   selector: 'app-laboratorio-create',
@@ -10,7 +11,8 @@ import {Laboratorio} from '../laboratorio';
 export class LaboratorioCreateComponent implements OnInit {
 
     constructor(private laboratorioService: LaboratorioService,
-                private toastr: ToastrService
+                private toastr: ToastrService,
+                private router:Router
     ) { }
     
     laboratorio: Laboratorio;
@@ -30,8 +32,10 @@ export class LaboratorioCreateComponent implements OnInit {
         );
     }
     
-    cancelCreation() : void{
-        this.cancel.emit();
+    cancelCreation(): void {
+       this.toastr.warning('El lab no fue creado', 'Lab creation');
+
+        this.router.navigate(['/laboratorios/list']);
     }
 
   ngOnInit() {

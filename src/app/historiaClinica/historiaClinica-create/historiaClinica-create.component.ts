@@ -17,17 +17,33 @@ import {Router} from '@angular/router';
 })
 export class HistoriaClinicaCreateComponent implements OnInit {
 
+    /**
+     * Contructor de HistoriaClinicaCreateComponent
+    */
     constructor(private historiaClinicaService: HistoriaClinicaService,
                 private toastr: ToastrService, 
                 private router: Router
     ) { }
     
+    /**
+     * Atributo de tipo HistoriaClinica
+    */
     historiaClinica: HistoriaClinica;
     
+    /**
+     * Output para cancelar la creacion de una historia clinica
+    */
     @Output() cancel = new EventEmitter();
     
+    /**
+     * Output para crear una histria clinica
+    */
     @Output() create = new EventEmitter();
     
+    
+    /**
+     * Metodo para crear una HistoriaClinica
+    */
     createHistoriaClinica(): void
         {
         this.historiaClinicaService.createHistoriaClinica(this.historiaClinica)
@@ -41,13 +57,19 @@ export class HistoriaClinicaCreateComponent implements OnInit {
         );
     }
     
+    /**
+     * Metodo para cancelar la creacion de una historia clinica
+    */
     cancelCreation() : void{
         this.cancel.emit();
     }
 
-  ngOnInit() {
+    /**
+     * Metodo para inicializar el componente
+    */
+    ngOnInit() {
       this.historiaClinica = new HistoriaClinica();
-  }
+    }
 
 }
 

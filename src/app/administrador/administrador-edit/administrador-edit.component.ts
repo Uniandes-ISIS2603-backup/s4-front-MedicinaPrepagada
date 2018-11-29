@@ -19,19 +19,41 @@ import {ActivatedRoute, Router} from '@angular/router/';
 
 export class AdministradorEditComponent implements OnInit, OnChanges 
 {
-    constructor(
-       
+    /**
+     * Constructor de AdministradorEditComponent
+    */
+    
+    constructor
+    (
         private admiService: AdministradorService,
         private toastrService: ToastrService,
         private route: ActivatedRoute,
         private router: Router   
     ) {}
 
+    /**
+     * Input para ingresar el identificador del adminsitrador
+    */
     @Input() admi_id;
-    administrador: Administrador; 
+    
+    /**
+     * Atributo de tipo Adminsitrador
+    */
+    administrador: Administrador;
+    
+    /**
+     * Output para cancelar la edicion del Administrador
+    */ 
     @Output() cancel = new EventEmitter();
+    
+    /**
+     * Output para editar el Administrador
+    */ 
     @Output() update = new EventEmitter();
     
+    /**
+     * Metodo para obetener el administrador con el identificador dado
+    */ 
     getAdministrador(): void {
         this.admiService.getAdministrador(this.admi_id)
             .subscribe(admi => {
@@ -39,6 +61,9 @@ export class AdministradorEditComponent implements OnInit, OnChanges
             }, err =>  {this.toastrService.error(err, "Error"); })
     }
 
+    /**
+     * Metodo para editar el adminsitrador
+    */ 
     editAdministrador(): void 
     {
         var admi_edit =
@@ -56,8 +81,11 @@ export class AdministradorEditComponent implements OnInit, OnChanges
       }, err =>{
           this.toastrService.error(err, "Error");
       });
-  }
-
+    }
+    
+    /**
+     * Metodo para cancelar la edicion del Administrador
+    */ 
     cancelEdition(): void 
     {
         this.toastrService.warning('El administrador no fue editado', 'Editar Administrador');
@@ -65,6 +93,9 @@ export class AdministradorEditComponent implements OnInit, OnChanges
         this.cancel.emit();
     }
 
+    /**
+     * Metodo para inicializar el componente
+    */ 
     ngOnInit() 
     {
         this.admi_id = + this.route.snapshot.paramMap.get('id');
@@ -73,6 +104,9 @@ export class AdministradorEditComponent implements OnInit, OnChanges
         this.getAdministrador();
     }
 
+    /**
+     * Metodo para editar otro administrador
+    */ 
     ngOnChanges() {
         this.ngOnInit();
     }

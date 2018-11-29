@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="citaLabComentario"><b>Comentarios</b></label>
-                <input type="text" name="citaLabComentarios" class="form-control" id="citaLabComentarios" [(ngModel)]="citaLab.comenentarios"
+                <input type="text" name="citaLabComentarios" class="form-control" id="citaLabComentarios" [(ngModel)]="citaLab.comentarios"
                     #citaLabComentarios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLabComentarios.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hacen falta los comentarios</div>
@@ -32,8 +32,8 @@
             </div>
               
             <div class="form-group">
-                <label for="citaLabRecomendacion"><b>Recomendaciones</b></label>
-                <input type="text" name="citaLabRecomendacion" class="form-control" id="citaLabRecomendacion" [(ngModel)]="citaLab.recomendacion"
+                <label for="citaLabRecomendacion"><b>Recomendaciones (Alergia de cualquier tipo a medicamentos, etc...)</b></label>
+                <input type="text" name="citaLabRecomendacion" class="form-control" id="citaLabRecomendacion" [(ngModel)]="citaLab.recomendaciones"
                     #citaLabRecomendacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && citaLabRecomendacion.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hacen falta las recomendaciones </div>

@@ -6,7 +6,7 @@
 import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {CitaLaboratorio} from './citalaboratorio';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Laboratorio} from '../laboratorio/laboratorio';
 
@@ -16,6 +16,9 @@ const citaslaboratorio = '/citaLaboratorio';
 @Injectable()
 export class CitaLaboratorioService{
     
+     headers = new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+    });
     /**
     * Constructor of the service
     * @param http The HttpClient - This is necessary in order to perform requests
@@ -38,6 +41,9 @@ export class CitaLaboratorioService{
     updateCitaLaboratorio(citaLaboratorio): Observable<CitaLaboratorio> {
         return this.http.put<CitaLaboratorio>(API_URL + citaslaboratorio + '/' + citaLaboratorio.id, citaLaboratorio);
     }
+    /**  
+     * Crea una cita de laboratorio
+     */
     createCitaLaboratorio(citalaboratorio): Observable<CitaLaboratorio>{
         return this.http.post<CitaLaboratorio>(API_URL + citaslaboratorio, citalaboratorio).catch(err => this.handleError(err));
     }

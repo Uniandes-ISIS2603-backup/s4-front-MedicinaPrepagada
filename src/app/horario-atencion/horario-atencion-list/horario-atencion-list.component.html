@@ -12,11 +12,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let horarioAtencion of horariosAtencion" routerLink="/horariosAtencion/{{horarioAtencion.id}}" >
-                    <td><span id ="idHorarioAtencoon">{{horarioAtencion.id}}</span></td>
-                    <td>{{horarioAtencion.fechaInicio}}</td>
-                    <td>{{horarioAtencion.fechaFin}}</td>
-                  
+                <tr *ngFor ="let horarioAtencion of horariosAtencion"  >
+                    <td routerLink="/horariosAtencion/{{horarioAtencion.id}}"><span id ="idHorarioAtencoon">{{horarioAtencion.id}}</span></td>
+                    <td routerLink="/horariosAtencion/{{horarioAtencion.id}}">{{horarioAtencion.fechaInicio}}</td>
+                    <td routerLink="/horariosAtencion/{{horarioAtencion.id}}">{{horarioAtencion.fechaFin}}</td>
+                 <td >
+                    <button class="btn btn-danger" (click)="deleteHorarioAtencion(horarioAtencion.id)"><span class="fa fa-trash"></span> Eliminar</button>
+                </td>
                 </tr>
             </tbody>
         </table>

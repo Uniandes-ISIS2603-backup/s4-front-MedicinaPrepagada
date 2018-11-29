@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import {CitaLaboratorioService} from '../citalaboratorio.service';
 import {ToastrService} from 'ngx-toastr';
-import {ActivatedRoute} from '@angular/router/';
+import {ActivatedRoute, Router} from '@angular/router/';
 import { CitaLaboratorio } from '../citalaboratorio';
 import {Laboratorio} from '../../laboratorio/laboratorio';
 import {LaboratorioService} from '../../laboratorio/laboratorio.service';
@@ -17,12 +17,14 @@ export class CitaLaboratorioEditComponent implements OnInit, OnChanges{
         private labService: LaboratorioService,
         private citaLaboratorioService: CitaLaboratorioService,
         private toastrService: ToastrService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private router: Router
     ) {}
 
     laboratorio:Laboratorio;
     laboratorios : Laboratorio[];
     citaLaboratorio: CitaLaboratorio; 
+    atributoLab:Laboratorio;
     @Input() citaLaboratorio_id:number;
     
     @Output() cancel = new EventEmitter();
@@ -51,14 +53,21 @@ export class CitaLaboratorioEditComponent implements OnInit, OnChanges{
     
     updateCitaLaboratorio():void{
         
+        var listaLabs = this.laboratorios;
         
+       for(let laboratorio of listaLabs){
+                if(laboratorio.id = +(document.getElementById('citaLabLaboratorios') as HTMLInputElement).value)
+                {
+                    this.atributoLab
+                }
+            }
       var citalab_edit={
           id: this.citaLaboratorio.id,
           especialidad: this.citaLaboratorio.especialidad,
           fecha: this.citaLaboratorio.fecha,
           comentarios: this.citaLaboratorio.comentarios,
           recomedaciones: this.citaLaboratorio.recomendaciones,
-          laboratorio: this.citaLaboratorio.idLaboratorio
+          laboratorio: this.atributoLab
           
       }
       this.citaLaboratorioService.updateCitaLaboratorio(citalab_edit)
@@ -70,13 +79,17 @@ export class CitaLaboratorioEditComponent implements OnInit, OnChanges{
   }
 
     cancelEdition(): void {
-        this.cancel.emit();
+       this.toastrService.warning('La cita no fue editada', 'CitaLab edit');
+
+        this.router.navigate(['/citalaboratorio/list']);
     }
 
     ngOnInit() {
         this.citaLaboratorio_id = +this.route.snapshot.paramMap.get('id'); 
         this.citaLaboratorio = new CitaLaboratorio();
         this.getCitaLaboratorio();  
+        this.laboratorios=[];
+        this.getLaboratorios();
     }
 
     ngOnChanges() {

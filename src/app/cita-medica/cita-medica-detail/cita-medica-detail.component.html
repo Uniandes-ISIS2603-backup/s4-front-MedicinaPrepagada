@@ -1,5 +1,11 @@
 <div class="container-fluid row">
-    <div class="col-md-4"></div>
+    <div class="col-md-4"><div class="row justify-content-center align-self-center">
+                            <button class="btn btn-primary text-center" routerLink="/citasMedicas/{{citaMedica.idCitaMedica}}/edit">Editar</button>
+                            <button type="button" class="btn btn-outline-danger" (click)="deleteCitaMedica()">Eliminar</button>
+                            <div class="divider"></div>
+<!--                            <button class="btn btn-danger text-center" (click)="deleteSede()"><span class="fa fa-trash"></span></button>-->
+
+                        </div></div>
 <div class="col-md-8">
     <div class="container-fluid">
         <table class="table table-striped">

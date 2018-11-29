@@ -61,7 +61,7 @@ export class CitaLaboratorioCreateComponent implements OnInit {
             };    
             this.citaLabService.createCitaLaboratorio(citaLab_create)
                 .subscribe(citaLab => {
-                    this.router.navigate(['/citaLaboratorio/' + citaLab.id]);
+                    this.router.navigate(['/citalaboratorio/' + citaLab.id]);
                     this.toastr.success("The cita laboratorio was successfully created", 'Cita Laboratorio creation');
                 }, err => {
                     this.toastr.error(err, 'Error');
@@ -69,13 +69,21 @@ export class CitaLaboratorioCreateComponent implements OnInit {
     }
     
     
-    cancelCreation() : void{
-        this.cancel.emit();
+     /**
+    * Emits the signal to tell the parent component that the
+    * user no longer wants to create an citaLab
+    */
+    
+    cancelCreation() : void{        
+        this.toastr.warning('La cita no fue creada', 'CitaLab creation');
+
+        this.router.navigate(['/citalaboratorio/list']);
     }
 
   ngOnInit() {
        this.citaLab = new CitaLaboratorio();
        this.laboratorios = [];
+       this.getLaboratorios();
   }
 
 }

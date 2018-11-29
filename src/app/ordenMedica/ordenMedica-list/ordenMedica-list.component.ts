@@ -16,16 +16,28 @@ import {OrdenMedica} from '../ordenMedica';
 
 export class OrdenMedicaListComponent implements OnInit 
 {
+    /**
+   * Constructor de OrdenMedicaListComponent
+   */ 
     constructor(private ordenMedicaService: OrdenMedicaService) { }
     
+    /**
+   * Lista  de ordenes medicas
+   */ 
     ordenesMedicas: OrdenMedica[];
     
+    /**
+   * Metodo para obtener las ordenes medicas
+   */ 
     getOrdenesMedicas(): void 
     {
         this.ordenMedicaService.getOrdenesMedicas()
             .subscribe(ordenesMedicas => this.ordenesMedicas = ordenesMedicas);
     }
 
+    /**
+   * Metodo para inicializar el componenete
+   */ 
   ngOnInit() 
   {
       this.getOrdenesMedicas();

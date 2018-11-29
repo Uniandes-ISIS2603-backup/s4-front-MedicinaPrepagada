@@ -64,6 +64,14 @@ export class MedicoService{
     * Trae un mensaje de error en caso de que haya un error
     * @returns error
     */
+    
+    /**
+     * elimina el medico con el id que llega por param
+     */
+    deleteMedico(medicoId):Observable<Boolean>{
+        return this.http.delete<Boolean>(API_URL + medicos + '/' + medicoId).catch(err => this.handleError(err));
+    }
+    
      private handleError(error: any){
         return throwError(error.error.errorMessage);
     }

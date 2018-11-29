@@ -61,3 +61,32 @@ color:blue;}
 #sel:hover { 
     color: blue;
 }
+
+#acc{
+    font-size: 1.85em;
+         font-family: 'Roboto', sans-serif;
+}
+
+#par{
+    font-size: 1.55em;
+         font-family: 'Roboto', sans-serif;
+}
+
+.ngb-accordion{
+    padding: 25px;
+    width: 70%;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+#holi
+{
+    padding-right: 150px;
+    padding-left: 150px;
+}

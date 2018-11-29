@@ -6,7 +6,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { IngresoService } from '../ingreso.service';
-import { User } from '../ingreso';
+import {Usuario} from '../usuario';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -16,23 +16,67 @@ import { ToastrService } from 'ngx-toastr';
 })
 
 export class LoginComponent implements OnInit 
-    {
+{
 
+    /**
+   * Constructor de LoginComponent
+   */ 
     constructor(
         private toasteservice: ToastrService,
         private ingresoService: IngresoService) { }
         
-    user: User;
+    /**
+   * Atributo que modela el usuario que se ingresa
+   */ 
+    user: Usuario;
+    
+    /**
+   * Atributo que modlea el usuario en la base de datos
+   */ 
+    usuario: Usuario;
 
+   /**
+   * Lista de roles
+   */ 
     roles: String[];
 
+   /**
+   * Metodo para hacer login
+   */ 
     login(): void {
-        this.ingresoService.login(this.user.role);
-        this.toasteservice.success('Ha ingresado a su cuenta')
+        console.log(this.user.login);
+        console.log(this.user.contrasena);
+        this.getCredenciales();        
     }
     
+   /**
+   * Metodo para obtener las credenciales del usuario
+   */ 
+    getCredenciales():void{
+        this.ingresoService.getCredencialesUsuario(this.user.login).toPromise().then(usuario => {this.usuario = usuario;
+            this.performLogin();});
+    }
+    
+    /**
+   * Metodo para verificar las credenciales del usuario
+   */ 
+    performLogin():void{
+                if(this.user.contrasena != this.usuario.contrasena){
+            this.toasteservice.error("La contraseña es incorrecta");
+            console.log('mala contrasena')
+        }else{
+            this.ingresoService.login(this.usuario.tipoUsuario);
+            this.toasteservice.success('Ha ingresado a su cuenta')    
+        }
+    }
+    
+    /**
+   * Metodo para inicializar el componente
+   */ 
         ngOnInit() {
-        this.user = new User();
-        this.roles = ['Administrador', 'Paciente', 'Medico'];
+            this.user = new Usuario();
+            this.roles = ['Administrador', 'Paciente', 'Medico'];
+            this.usuario = new Usuario();
+            
     }
 }

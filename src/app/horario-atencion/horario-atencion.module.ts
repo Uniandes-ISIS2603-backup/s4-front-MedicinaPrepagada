@@ -9,6 +9,7 @@ import {HorarioAtencionService} from './horarioAtencion.service';
 import { HorarioAtencionListComponent } from './horario-atencion-list/horario-atencion-list.component';
 import { HorarioAtencionDetailComponent } from './horario-atencion-detail/horario-atencion-detail.component';
 import { HorarioAtencionCreateComponent } from './horario-atencion-create/horario-atencion-create.component';
+import { HorarioAtencionEditComponent } from './horario-atencion-edit/horario-atencion-edit.component';
 
 
 
@@ -21,7 +22,7 @@ import { HorarioAtencionCreateComponent } from './horario-atencion-create/horari
     HttpClientModule,
     FormsModule
   ],
-  declarations: [HorarioAtencionListComponent, HorarioAtencionDetailComponent, HorarioAtencionCreateComponent],
+  declarations: [HorarioAtencionListComponent, HorarioAtencionDetailComponent, HorarioAtencionCreateComponent, HorarioAtencionEditComponent],
   
     providers: [HorarioAtencionService],
 
