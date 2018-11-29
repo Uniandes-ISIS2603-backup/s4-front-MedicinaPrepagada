@@ -52,8 +52,8 @@ export class CitaMedicaService{
     * Crea una cita medica en MediSistemas
     * @returns cita medica creada
     */
-    createCitaMedica(citaMedica): Observable<CitaMedica>{
-        return this.http.post<CitaMedica>(API_URL + citasMedicas, citaMedica).catch(err => this.handleError(err));
+    createCitaMedica(citaMedica, idPaciente, idHorario): Observable<CitaMedica>{
+        return this.http.post<CitaMedica>(API_URL + citasMedicas + '/' + idPaciente + '/' + idHorario, citaMedica).catch(err => this.handleError(err));
     }
     
     /**
