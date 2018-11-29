@@ -34,5 +34,10 @@
                     <button class="btn btn-danger" (click)="deleteLaboratorio(laboratorio.id)"><span class="fa fa-trash"></span></button>
              </td>
         </table>
+        <div class="col-md-6">
+                    <agm-map [latitude]=laboratorio.latitud [longitude]=laboratorio.longitud [zoom]=16>
+                    <agm-marker [latitude]=laboratorio.latitud [longitude]=laboratorio.longitud></agm-marker>
+                    </agm-map>
+                    </div>
     </div>
 </div>
